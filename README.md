@@ -1,6 +1,6 @@
 ﻿# Master thesis
 
-This is the master thesis of Øyvind Lye. This document is started from the UiB Latex repo by Aleksander Skjæveland Larsen. 
+This is the master thesis of Øyvind Lye. This document is started from the UiB Latex repo by Aleksander Skjæveland Larsen, found at ogrim/uib-latex. 
 
 
 
@@ -8,6 +8,6 @@ This is the master thesis of Øyvind Lye. This document is started from the UiB 
 
 UiB logo is Copyright (C) of the University of Bergen
 
-Copyright (C) 2011-2012 Aleksander Skjæveland Larsen
+Copyright (C) 2015 Øyvind Lye
 
 Distributed under the Eclipse Public License
