@@ -1,6 +1,6 @@
 \contentsline {section}{Preface}{i}{Doc-Start}
 \contentsline {section}{Abstract}{iii}{Doc-Start}
-\contentsline {section}{\numberline {1}Avsnitt 1}{1}{section.1}
-\contentsline {subsection}{\numberline {1.1}Avsnitt 2}{2}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Avsnitt 3}{2}{subsubsection.1.1.1}
-\contentsline {subsection}{\numberline {1.2}Avsnitt 4}{3}{subsection.1.2}
+\contentsline {section}{\numberline {1}Avsnitt 1}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Avsnitt 2}{3}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Avsnitt 3}{3}{subsubsection.1.1.1}
+\contentsline {subsection}{\numberline {1.2}Avsnitt 4}{4}{subsection.1.2}
