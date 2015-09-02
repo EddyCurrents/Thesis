@@ -1,0 +1,14 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{UniComputing}{UniComputing}{2012}]{obt}
+UniComputing, U.~. (2012).
+\newblock The oslo-bergen tagger.
+\newblock \url{http://www.tekstlab.uio.no/obt-ny/english/index.html}.
+\newblock Accessed: 13/02/2012.
+
+\bibitem[\protect\citeauthoryear{Wirth}{Wirth}{1976}]{wirth1976algorithms}
+Wirth, N. (1976).
+\newblock {\em Algorithms + Data Structures=programs}.
+\newblock Prentice Hall.
+
+\end{thebibliography}

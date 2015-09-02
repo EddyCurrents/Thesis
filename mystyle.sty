@@ -1,0 +1,63 @@
+%Style file
+
+\ProvidesPackage{mystyle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage[integrals]{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage[scaled]{helvet}
+\usepackage{courier}
+\usepackage{natbib}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.0in}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[raggedright,bf,sf]{titlesec}
+\usepackage{fullpage}
+\usepackage{xcolor}
+\usepackage{listings}
+\renewcommand{\maketitle}{}
+\usepackage{float}
+
+% Følgende angir bokser rundt figurer og tabeller
+\floatstyle{boxed}
+\restylefloat{figure}
+% \restylefloat{table}
+% -------------------
+
+
+\definecolor{lightgray}{gray}{0.95}
+\lstnewenvironment{code}[1][]%
+{\minipage{\linewidth}
+	\lstset{
+		language=,
+		keywordstyle=\bfseries,
+		captionpos=b,
+		backgroundcolor=\color{lightgray},
+		frame=shadowbox,
+		rulesepcolor=\color{gray},
+		basicstyle=\ttfamily\fontsize{10}{10}\selectfont,
+		aboveskip=20pt,
+		literate={æ}{{\ae}}1
+		{ø}{{\o}}1
+		{å}{{\aa}}1
+		{Æ}{{\AE}}1
+		{Ø}{{\O}}1
+		{Å}{{\AA}}1,
+		#1}}
+{\endminipage}
