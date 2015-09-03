@@ -2,10 +2,10 @@ This is BibTeX, Version 0.99d (TeX Live 2015/W32TeX)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: chicago.bst
-Database file #1: litteratur.bib
+Database file #1: ../literature.bib
 You've used 2 entries,
             2861 wiz_defined-function locations,
-            623 strings with 5070 characters,
+            623 strings with 5073 characters,
 and the built_in function-call counts, 970 in all, are:
 = -- 75
 > -- 52
