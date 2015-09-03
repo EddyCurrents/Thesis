@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.2)  2 SEP 2015 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.9.2)  3 SEP 2015 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -14,28 +14,45 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks15
 \verbatim@in@stream=\read1
 )
-Preamble taken from file `thesis.tex'
+Preamble taken from file `../thesis.tex'
+(../thesis.tex (c:/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2015/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
 
-! LaTeX Error: File `thesis.tex' not found.
+! LaTeX Error: File `./mystyle.sty' not found.
 
 Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
+or enter new name. (Default extension: sty)
 
 Enter file name: 
 ! Emergency stop.
 <read *> 
          
-l.40 \input{\preamble@file}
-                           ^^M
+l.5 ^^M
+       
 *** (cannot \read from terminal in nonstop modes)
 
  
 Here is how much of TeX's memory you used:
- 50 strings out of 494270
- 984 string characters out of 6160796
- 48428 words of memory out of 5000000
- 3445 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 248 strings out of 494270
+ 3030 string characters out of 6160796
+ 51227 words of memory out of 5000000
+ 3631 multiletter control sequences out of 15000+600000
+ 3938 words of font info for 15 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
- 18i,0n,17p,182b,16s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,0n,21p,182b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
