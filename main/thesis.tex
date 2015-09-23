@@ -1,5 +1,5 @@
 % Created 2015-09-02
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 
 \usepackage{../mystyle}
 \usepackage{../myglossary}
@@ -41,15 +41,15 @@
 \blankpage	%Maybe replace this with a quote
 
 \pagenumbering{roman}
-\section*{Abstract}
+\chapter*{Abstract}
 Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
-\addcontentsline{toc}{section}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
 
 \blankpage
 
-\section*{Acknowledgements}
+\chapter*{Acknowledgements}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur \gls{asic} ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas \cite{obt} mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.
-\addcontentsline{toc}{section}{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
 
 \blankpage
 
@@ -68,11 +68,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Se
 %Imports subfiles, instead of having all chapters in the main file
 %\subfile{./../tex/example.tex}	%Examples
 
-%\subfile{./../tex/intro.tex}
-\addcontentsline{toc}{section}{Introduction}
+\subfile{./../tex/intro.tex}
 
 %\subfile{./../tex/theory.tex}
-\addcontentsline{toc}{section}{Theory}
 
 
 % innhold slutt
@@ -82,7 +80,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Se
 \clearpage
 \bibliographystyle{chicago}
 \bibliography{../literature}
-\addcontentsline{toc}{section}{References}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 %\blankpage
 \newpage
