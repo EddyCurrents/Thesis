@@ -1,0 +1,14 @@
+%Had to install glossaries manually from https://www.ctan.org/pkg/glossaries?lang=en
+%Then open MiKTeX Options (Admin) and click "Refresh FNDB"
+%Also had to open MiKteX Package Manager (Admin): Repository->Synchronize
+%Also needed to install Perl
+%Options->Configure->Build: Default compiler: txs:///pdflatex | txs:///makeglossaries | txs:///pdflatex
+
+\ProvidesPackage{myglossary}
+
+%Example:
+%\newacronym{lvm}{LVM}{Logical Volume Manager}
+
+\newacronym{asic}{ASIC}{Application-Specific Integrated Circuit}
+
+\endinput

@@ -2,11 +2,9 @@
 
 \ProvidesPackage{mystyle}
 
-\usepackage{subfiles}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{fixltx2e}
+%\usepackage{fixltx2e}   %Not needed with new LaTeX kernel
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{float}
@@ -35,6 +33,13 @@
 \usepackage{listings}
 \renewcommand{\maketitle}{}
 \usepackage{float}
+
+%Added by me
+\usepackage{subfiles}
+\usepackage[toc]{glossaries}
+\makeglossaries
+
+
 
 % Følgende angir bokser rundt figurer og tabeller
 \floatstyle{boxed}

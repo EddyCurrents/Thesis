@@ -2,6 +2,7 @@
 \documentclass[12pt]{article}
 
 \usepackage{../mystyle}
+\usepackage{../myglossary}
 \graphicspath{{./../img/}}
 
 \begin{document}
@@ -31,13 +32,13 @@
 {
 	\includegraphics[width=7cm]{uib-emblem-svart}\\[0.5cm]
 	
-	\large Department of Physics and Technology\\
-	\large University of Bergen\\[1cm]
-	\today}
+	\large {Department of Physics and Technology}\\
+	\large {University of Bergen}\\[1cm]
+	September 2016}
 \end{center}
 \end{titlepage}
 
-\blankpage
+\blankpage	%Maybe replace this with a quote
 
 \pagenumbering{roman}
 \section*{Abstract}
@@ -47,7 +48,7 @@ Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor
 \blankpage
 
 \section*{Acknowledgements}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur \gls{asic} ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas \cite{obt} mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.
 \addcontentsline{toc}{section}{Acknowledgements}
 
 \blankpage
@@ -64,12 +65,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Se
 
 % header slutt, følgende er innhold
 
-%Imports a subfile, instead of having all chapters in the main file
-\subfile{./../tex/example.tex}
+%Imports subfiles, instead of having all chapters in the main file
+%\subfile{./../tex/example.tex}	%Examples
 
+%\subfile{./../tex/intro.tex}
+\addcontentsline{toc}{section}{Introduction}
+
+%\subfile{./../tex/theory.tex}
+\addcontentsline{toc}{section}{Theory}
 
 
 % innhold slutt
+\newpage
 
 % sett inn riktig .bib-fil
 \clearpage
@@ -77,19 +84,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Se
 \bibliography{../literature}
 \addcontentsline{toc}{section}{References}
 
-\blankpage
+%\blankpage
+\newpage
 
-\listoffigures
-\addcontentsline{toc}{section}{List of Figures}
+\printglossaries
 
-\blankpage
-
-\listoftables
-\addcontentsline{toc}{section}{List of Tables}
-
-\blankpage
-
-\lstlistoflistings
-\addcontentsline{toc}{section}{List of Listings}
+%Temporary disable as I do not need them
+%\blankpage
+%
+%\listoffigures
+%\addcontentsline{toc}{section}{List of Figures}
+%
+%\blankpage
+%
+%\listoftables
+%\addcontentsline{toc}{section}{List of Tables}
+%
+%\blankpage
+%
+%\lstlistoflistings
+%\addcontentsline{toc}{section}{List of Listings}
 
 \end{document}
