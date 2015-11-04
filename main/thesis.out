@@ -1,8 +1,24 @@
-\BOOKMARK [0][-]{chapter*.1}{Abstract}{}% 1
-\BOOKMARK [0][-]{chapter*.2}{Acknowledgements}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
-\BOOKMARK [1][-]{section.1.1}{Background and motivation}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Goal of the thesis}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{Structure of the thesis}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter*.4}{Bibliography}{}% 7
-\BOOKMARK [0][-]{section*.5}{Glossary}{}% 8
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Background and motivation}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Goal of the thesis}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Structure of the thesis}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Scientific environment}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Theory}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Radiation}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{Interactions of radiation with matter}{section.2.1}% 8
+\BOOKMARK [3][-]{section*.2}{Interactions of charged particles with matter}{subsection.2.1.1}% 9
+\BOOKMARK [3][-]{figure.2.1}{Interactions of photons with matter}{subsection.2.1.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.2}{Biological effects of radiation}{section.2.1}% 11
+\BOOKMARK [1][-]{section.2.2}{Radiation therapy}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.1}{Proton therapy}{section.2.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Radiation detectors}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{Semiconductor detectors}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.2}{Si-3DMiMic}{section.2.3}% 16
+\BOOKMARK [1][-]{section.2.4}{Detector readout}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.4.1}{Pre-amplifier}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.2}{Shaper}{section.2.4}% 19
+\BOOKMARK [2][-]{subsection.2.4.3}{ADC}{section.2.4}% 20
+\BOOKMARK [2][-]{subsection.2.4.4}{Digital signal processing}{section.2.4}% 21
+\BOOKMARK [2][-]{subsection.2.4.5}{Medipix}{section.2.4}% 22
+\BOOKMARK [0][-]{chapter*.3}{Bibliography}{}% 23
+\BOOKMARK [0][-]{section*.4}{Glossary}{}% 24

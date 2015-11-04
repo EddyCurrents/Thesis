@@ -1,15 +1,98 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{UiO and UniComputing}{UiO and
-  UniComputing}{2012}]{obt}
-UiO and UniComputing (2012).
-\newblock The oslo-bergen tagger.
-\newblock \url{http://www.tekstlab.uio.no/obt-ny/english/index.html}.
-\newblock Accessed: 13/02/2012.
+\bibitem[\protect\citeauthoryear{ASU}{ASU}{2000}]{asu2000}
+ASU (2000).
+\newblock Arizona state university: Mechanism for the absorption of light.
+\newblock
+  \url{https://www.asu.edu/courses/phs208/patternsbb/PiN/rdg/mechanism/}.
+\newblock Accessed: 14/10/2015.
 
-\bibitem[\protect\citeauthoryear{Wirth}{Wirth}{1976}]{wirth1976algorithms}
-Wirth, N. (1976).
-\newblock {\em Algorithms + Data Structures=programs}.
-\newblock Prentice Hall.
+\bibitem[\protect\citeauthoryear{{Board of the Faculty of Clinical
+  Radiology}}{{Board of the Faculty of Clinical
+  Radiology}}{2006}]{fractionation}
+{Board of the Faculty of Clinical Radiology} (2006).
+\newblock {\em Radiotherapy Dose-Fractionation}.
+\newblock Royal College of Radiologists, London.
+
+\bibitem[\protect\citeauthoryear{Freeman}{Freeman}{2013}]{proton-ct}
+Freeman, T. (2013).
+\newblock The potential of proton ct.
+\newblock \url{http://medicalphysicsweb.org/cws/article/research/53211}.
+\newblock Accessed: 15/10/2015.
+
+\bibitem[\protect\citeauthoryear{Hysing}{Hysing}{2015}]{hysing-uncertain}
+Hysing, L.~B. (2015).
+\newblock Geometrical uncertainties in radiotherapy.
+\newblock Powerpoint presentation from PHYS213 lecture october 2015 at
+  \gls{uib}.
+
+\bibitem[\protect\citeauthoryear{JLab}{JLab}{}]{jlab}
+JLab.
+\newblock Jefferson lab: Radiation worker training: Effects of radiation on
+  cells.
+\newblock \url{https://www.jlab.org/div_dept/train/rad_guide/effects.html}.
+\newblock Accessed: 06/10/2015.
+
+\bibitem[\protect\citeauthoryear{Khan and Gibbons}{Khan and
+  Gibbons}{2014}]{Khan}
+Khan, F.~M. and J.~P. Gibbons (2014).
+\newblock {\em Khan's The Physics of Radiation Therapy}.
+\newblock Lippincott Williams and Wilkins.
+
+\bibitem[\protect\citeauthoryear{NIH}{NIH}{2010}]{nih}
+NIH (2010).
+\newblock National institutes of health: Radiation therapy for cancer.
+\newblock
+  \url{http://www.cancer.gov/about-cancer/treatment/types/radiation-therapy/radiation-fact-sheet}.
+\newblock Accessed: 09/10/2015.
+
+\bibitem[\protect\citeauthoryear{P-Cure}{P-Cure}{}]{pcure}
+P-Cure.
+\newblock P-cure clinics.
+\newblock \url{http://www.p-cure.com/index.aspx?id=4013}.
+\newblock Accessed: 12/10/2015.
+
+\bibitem[\protect\citeauthoryear{Paganetti}{Paganetti}{2012}]{Paganetti-range}
+Paganetti, H. (2012).
+\newblock Range uncertainties in proton therapy and the role of monte carlo
+  simulations.
+\newblock {\em Physics in Medicine and Biology\/}~{\em 57\/}(11), R99.
+
+\bibitem[\protect\citeauthoryear{Serway and Jewett}{Serway and
+  Jewett}{2014}]{Serway}
+Serway, R.~A. and J.~W. Jewett (2014).
+\newblock {\em Physics for Scientists and Engineers with Modern Physics}.
+\newblock Cenage Learning.
+
+\bibitem[\protect\citeauthoryear{SINTEF}{SINTEF}{2015}]{sintef3dmimic}
+SINTEF (2015).
+\newblock Si-3dmimic - silicon-based 3d mini and micro-dosimeters.
+\newblock \url{https://www.sintef.no/en/projects/3dmimic/}.
+\newblock Accessed: 24/09/2015.
+
+\bibitem[\protect\citeauthoryear{Thorsteinsen}{Thorsteinsen}{1995}]{Thorsteinsen}
+Thorsteinsen, T.~F. (1995).
+\newblock {\em PHYS231}.
+\newblock University of Bergen.
+\newblock Compendium for the \gls{uib} course PHYS231 (Physics of Radiation).
+
+\bibitem[\protect\citeauthoryear{UiO and Lynnebakken}{UiO and
+  Lynnebakken}{2012}]{uio2012}
+UiO and H.~Lynnebakken (2012).
+\newblock Jubler for partikkelterapi.
+\newblock
+  \url{http://www.mn.uio.no/fysikk/forskning/aktuelt/aktuelle-saker/2012/jubler-for-partikkelterapi.html}.
+\newblock Accessed: 24/09/2015.
+
+\bibitem[\protect\citeauthoryear{Young, Freedman, and Ford}{Young
+  et~al.}{2007}]{UniversityPhysics}
+Young, H.~D., R.~A. Freedman, and L.~Ford (2007).
+\newblock {\em University Physics with Modern Physics}.
+\newblock Addison-Wesley.
+
+\bibitem[\protect\citeauthoryear{Ytre-Hauge}{Ytre-Hauge}{2015}]{ksyh-phys251}
+Ytre-Hauge, K.~S. (2015).
+\newblock Radiation therapy with photons, protons and carbon ions.
+\newblock Powerpoint presentation from PHYS251 lecture march 2015 at \gls{uib}.
 
 \end{thebibliography}
