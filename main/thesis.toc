@@ -1,18 +1,18 @@
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background and motivation}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Goal of the thesis}{3}{section.1.2}
-\contentsline {section}{\numberline {1.3}Structure of the thesis}{3}{section.1.3}
+\contentsline {section}{\numberline {1.2}Goal of the thesis}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Structure of the thesis}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Scientific environment}{3}{section.1.4}
 \contentsline {chapter}{\numberline {2}Theory}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}Radiation}{4}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Interactions of radiation with matter}{5}{subsection.2.1.1}
-\contentsline {subsubsection}{Interactions of charged particles with matter}{5}{section*.2}
-\contentsline {subsubsection}{Interactions of photons with matter}{6}{figure.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Interactions of radiation with matter}{4}{subsection.2.1.1}
+\contentsline {subsubsection}{Interactions of charged particles with matter}{4}{section*.2}
+\contentsline {subsubsection}{Interactions of photons with matter}{5}{figure.2.1}
 \contentsline {subsection}{\numberline {2.1.2}Biological effects of radiation}{7}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Radiation therapy}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Proton therapy}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Proton therapy}{10}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Radiation detectors}{13}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Semiconductor detectors}{14}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Semiconductor detectors}{13}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Si-3DMiMic}{14}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Detector readout}{14}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Pre-amplifier}{14}{subsection.2.4.1}

@@ -16,7 +16,7 @@ ASU (2000).
 
 \bibitem[\protect\citeauthoryear{Freeman}{Freeman}{2013}]{proton-ct}
 Freeman, T. (2013).
-\newblock The potential of proton ct.
+\newblock The potential of proton {CT}.
 \newblock \url{http://medicalphysicsweb.org/cws/article/research/53211}.
 \newblock Accessed: 15/10/2015.
 
@@ -38,6 +38,11 @@ JLab.
 Khan, F.~M. and J.~P. Gibbons (2014).
 \newblock {\em Khan's The Physics of Radiation Therapy}.
 \newblock Lippincott Williams and Wilkins.
+
+\bibitem[\protect\citeauthoryear{Knoll}{Knoll}{2000}]{Knoll}
+Knoll, G.~F. (2000).
+\newblock {\em Radiation Detection and Measurement}.
+\newblock Wiley.
 
 \bibitem[\protect\citeauthoryear{NIH}{NIH}{2010}]{nih}
 NIH (2010).
@@ -69,12 +74,6 @@ SINTEF (2015).
 \newblock Si-3dmimic - silicon-based 3d mini and micro-dosimeters.
 \newblock \url{https://www.sintef.no/en/projects/3dmimic/}.
 \newblock Accessed: 24/09/2015.
-
-\bibitem[\protect\citeauthoryear{Thorsteinsen}{Thorsteinsen}{1995}]{Thorsteinsen}
-Thorsteinsen, T.~F. (1995).
-\newblock {\em PHYS231}.
-\newblock University of Bergen.
-\newblock Compendium for the \gls{uib} course PHYS231 (Physics of Radiation).
 
 \bibitem[\protect\citeauthoryear{UiO and Lynnebakken}{UiO and
   Lynnebakken}{2012}]{uio2012}

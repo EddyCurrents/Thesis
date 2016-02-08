@@ -39,7 +39,7 @@ Due to all the above processes, a photon travelling through matter will at each 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{asu-photon.png}%4.1?
-	\caption{Photon intensity through an abosrber as a function of thickness \citep{asu2000}}
+	\caption{Photon intensity through an absorber as a function of thickness \citep{asu2000}}
 	\label{fig-photon}
 \end{figure}
 
@@ -47,7 +47,7 @@ Due to all the above processes, a photon travelling through matter will at each 
 \label{t-bio}
 As discussed in the previous sections, radiation travelling through matter deposits energy in the medium. Examining the effects of this in biological tissue is an extremely complex field. Non-ionizing radiation can heat the matter it passes through, which might cause damage such as sunburns. Ionizing radiation is much more dangerous as it breaks molecular bonds, causing molecules to fall apart. This can cause massive damage to tissue cells, change the genetic material (DNA), and destroy the components that produce red blood cells. \citep[chap. 43]{UniversityPhysics} 
 
-When cell has been damaged by radiation, there are three possible effects: The cell dies, the cell is repaired correctly, or the cell is repaired incorrectly. The human body has very effective repair mechanisms which constantly repair cellular damage, including damage to DNA. Occasionally, these repair mechanisms will perform their function incorrectly, which can result in cells that cannot perform their normal function, or cells that damage other cells. Some of these cells are unable to reproduce themselves, while others reproduced at an uncontrolled rate, which can be the cause of cancers.\citetext{\citeauthor{jlab}}
+When a cell has been damaged by radiation, there are three possible effects: The cell dies, the cell is repaired correctly, or the cell is repaired incorrectly. The human body has very effective repair mechanisms which constantly repair cellular damage, including damage to DNA. Occasionally, these repair mechanisms will perform their function incorrectly, which can result in cells that cannot perform their normal function, or cells that damage other cells. Some of these cells are unable to reproduce themselves, while others reproduced at an uncontrolled rate, which can be the cause of cancers.\citetext{\citeauthor{jlab}}
 
 To be able to describe the quantity of ionizing radiation for all energies, materials, and types of radiation, it is common to use the quantity \textit{absorbed dose}, or simply \textit{dose}, which is a measure of the biologically significant effects that ionizing radiation produces. It is defined as the energy delivered to tissue per unit mass. The SI unit for dose is gray (Gy), where $1 Gy = 1 J/kg$. \citep[chap. 8]{Khan} The quantity \textit{dose equivalent} has been defined because the biological effects of radiation depend on the type of radiation in addition to the dose. Dose equivalent is the dose multiplied by a quality factor for the type of radiation, in units of sievert (Sv). $1 Sv = 1 J/kg$. Additionally, the sensitivity to radiation-induced effects will vary for different types of tissue, leading to the definition of \textit{effective dose equivalent}, defined as "the sum of the weighted dose equivalents for irradiated tissues or organs". \citep[chap. 16]{Khan} 
 
@@ -66,7 +66,7 @@ The dose is usually delivered once per day every workday for 4-6 weeks. One deli
 
 As already mentioned, radiation therapy also damages healthy tissue, which can produce both acute (early) and chronic (late) side effects. Acute side effects occur before the treatment ends, and is usually temporary. Examples include skin irritation, hair loss, fatigue and nausea. Chronic side effects develop months to decades after treatment is complete. Examples are skin damage, memory loss, infertility and second cancer. Second cancer is the development of a new cancer in a person that has previously had cancer. As this takes a long time to develop, it might not be a very large problem for older patients, but it is critical to avoid second cancer when treating cancer in children and adolescents. \citep{nih} 
 
-When plotting the absorbed dose in water (or tissue), the differences between photon beams and heavy charged particle beams become even more apparent than when plotting the intensities (section \ref{t-int}). Figure \ref{fig-photonproton} shows the relative dose deposited in water for a proton and a photon beam. The photon beam's maximum is very close to the surface, and the photons will damage tissue far into the body. Also, if the tumor is deep into the body, and the beam only comes from one direction, the photons will have to do a lot of damage to the skin to be able to do enough damage to the tumor. Protons (and other heavy charged particles) on the other hand have their maximum deeper into the material, in what is called the \textit{Bragg peak}. Protons deposit less energy before the maximum, and almost no damage behind the maximum. 
+When plotting the absorbed dose in water (or tissue), the differences between photon beams and heavy charged particle beams become even more apparent than when plotting the intensities (section \ref{t-int}). Figure \ref{fig-photonproton} shows the relative dose deposited in water for a proton and a photon beam. The photon beam's maximum is very close to the surface, and the photons will damage tissue far into the body. Also, if the tumor is deep into the body, and the beam only comes from one direction, the photons will have to do a lot of damage to the skin to be able to do enough damage to the tumor. Protons (and other heavy charged particles) on the other hand have their maximum deeper into the material, in what is called the \textit{Bragg peak}. Protons deposit less energy before the maximum, and close to no damage behind the maximum. 
 
 \begin{figure}%[h]
 	\centering
@@ -116,7 +116,7 @@ Proton therapy can theoretically be delivered in a low fewer fraction than photo
 
 \section{Radiation detectors}
 \label{t-detector}
-A radiation detector records interactions between incoming radiation and the detector. These interactions could be electrical, chemical, light- or heat-based. Detectors can be based on many different materials, including gas chambers, semiconductors, crystals, and liquid. \citep[chap. 9]{Thorsteinsen} In a simple radiation detector a single particle interacts with the detector, resulting in an electric charge appearing inside the detector. This charge is typically collected by setting up an electric field inside the detector, which causes positive and negative charge to flow in opposite directions, forming an electric signal. This signal could be measured as a current (current mode), voltage (\gls{MSV} mode), or a charge (pulse mode). \citep[chap. 4]{Knoll}
+A radiation detector records interactions between incoming radiation and the detector. These interactions could be electrical, chemical, light- or heat-based. Detectors can be based on many different materials, including gas chambers, semiconductors, crystals, and liquid.\comm{\citep[chap. 9]{Thorsteinsen}} In a simple radiation detector a single particle interacts with the detector, resulting in an electric charge appearing inside the detector. This charge is typically collected by setting up an electric field inside the detector, which causes positive and negative charge to flow in opposite directions, forming an electric signal. This signal could be measured as a current (current mode), voltage (mean square voltage mode), or a charge (pulse mode). \citep[chap. 4]{Knoll}
 
 %modes
 
@@ -124,12 +124,20 @@ A radiation detector records interactions between incoming radiation and the det
 
 \subsection{Semiconductor detectors}
 \label{t-semi}
-Semiconductor diode detectors, also called simply semiconductor detectors or solid-state detectors, are radiation detectors employing semiconductor diodes as the basic detection medium. Charged particles passing through the detector create electron-hole pairs along the particles path. split blah blah. Silicon is the most common material used, but germanium detectors are superior for gamma-ray measurements. 
+Work in progress
 
-Semiconductor detectors offer energy resolutions that are superior to other radiation detectors in addition to small size and fast timing characteristics. Perhaps their biggest drawback is that they are degraded by radiation-induced damage during normal use.  
+Semiconductor diode detectors, also called simply semiconductor detectors or solid-state detectors, are radiation detectors employing semiconductor diodes as the basic detection medium. Silicon is the most common material used, but germanium detectors are superior for gamma-ray measurements. Semiconductor detectors offer energy resolutions that are superior to other radiation detectors in addition to small size and fast timing characteristics. A big drawback is that they are degraded by radiation-induced damage during normal use. 
+
+Charged particles passing through a semiconductor detector create electron-hole pairs along the particles path. By setting up an electric potential across the diode, there will be an electric field present that will cause the holes to drift in the same direction as the electric field vector, and the electrons in the opposite direction. By monitoring one of the diodes sides, a pulse is measured as the charge from either the holes or the electrons (depending on which side is measured) is collected. 
+
+
+
 
 \subsection{Si-3DMiMic}
 \label{t-3d}
+Si-3DMiMic is a silicon-based 3D mini and micro-dosimeter developed by SINTEF, which is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level. It consists of an array of 32x32 cylindrical p-i-n diodes. Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
+
+In the first released version of Si-3DMiMic, all the n+ cores in a line is connected together. Every second line is also connected, leaving two channels for readout. All the outer n+ rings are connected and can be read out if desired. 
 
 \section{Detector readout}
 \label{t-read}
@@ -142,6 +150,7 @@ Semiconductor detectors offer energy resolutions that are superior to other radi
 
 \subsection{ADC}
 \label{t-adc}
+%This link for ADC vs ToT: https://books.google.no/books?id=DFDRBQAAQBAJ&pg=PA173&lpg=PA173&dq=time+over+threshold+energy+measurement&source=bl&ots=J7wJ9nACVW&sig=ra60jHHnJxCc7g3g1TV2RLwHjqU&hl=en&sa=X&ved=0CBsQ6AEwADgKahUKEwi-zcfjuZTJAhUKnnIKHSQ4BAI#v=onepage&q=time%20over%20threshold%20energy%20measurement&f=false
 
 \subsection{Digital signal processing}
 \label{t-dsp}

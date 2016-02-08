@@ -6,6 +6,11 @@ You're missing a field name---line 71 of file ../literature.bib
  : % author = {Stephanie Lang and Oliver Riesterer},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+You're missing a field name---line 129 of file ../literature.bib
+ : 
+ : %title={PHYS231},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty year in jlab
 Warning--empty year in pcure
-(There was 1 error message)
+(There were 2 error messages)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.11)  23 OCT 2015 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.11)  8 FEB 2016 12:06
 entering extended mode
 **thesis.tex
 (thesis.tex
@@ -939,7 +939,6 @@ Package: glossary-tree 2015/09/09 v4.18 (NLCT)
 \glswrite=\write3
 \glo@main@file=\write4
 Package glossaries Info: Writing glossary file thesis.glo on input line 40.
-\@float@every@figure=\toks46
 ) (../myglossary.sty
 
 LaTeX Warning: You have requested package `../myglossary',
@@ -979,12 +978,12 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 \scratchbox=\box39
 \nofMPsegments=\count151
 \nofMParguments=\count152
-\everyMPshowfont=\toks47
+\everyMPshowfont=\toks46
 \MPscratchCnt=\count153
 \MPscratchDim=\dimen145
 \MPnumerator=\count154
 \makeMPintoPDFobject=\count155
-\everyMPtoPDFconversion=\toks48
+\everyMPtoPDFconversion=\toks47
 )
 \AtBeginShipoutBox=\box40
 Package hyperref Info: Link coloring OFF on input line 8.
@@ -1015,23 +1014,7 @@ Package pdftex.def Info: ./../img/uib-emblem-svart.pdf used on input line 33.
  [1
 
 {C:/Users/Øyvind/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./../img/
-uib-emblem-svart.pdf>]
-LaTeX Font Info:    Try loading font information for T1+phv on input line 57.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
-File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-)
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 57.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 57.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 57.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 57.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 23.63593pt on input line 57.
- (thesis.toc
+uib-emblem-svart.pdf>] (thesis.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 2.
@@ -1080,86 +1063,99 @@ LaTeX Font Info:    Try loading font information for OT1+zplm on input line 2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.24 ...tsline {chapter}{Glossary}{17}{section*.4}
-                                                   [1
-
-])
+))
 \tf@toc=\write6
- (../tex/intro.texpdfTeX warning (ext4): destination with the same identifier (
-name{page.1}) has been already used, duplicate ignored
+
+(../tex/intro.texpdfTeX warning (ext4): destination with the same identifier (n
+ame{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 \newpage
-             [1]
+             [1
+
+]
 Chapter 1.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 8.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 8.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 8.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 16.41594pt on input line 8.
-[2
+ [2
 
-]) (../tex/theory.tex [3]
+])
+(../tex/theory.tex [3]
 Chapter 2.
-[4
-
-]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 13.67995pt on input line 18.
 
-
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 20.
 
-[5] <./../img/figure_5_15.jpg, id=192, 504.9264pt x 364.2408pt>
+[4
+
+] <./../img/figure_5_15.jpg, id=182, 504.9264pt x 364.2408pt>
 File: ./../img/figure_5_15.jpg Graphic file (type jpg)
 
 <use ./../img/figure_5_15.jpg>
 Package pdftex.def Info: ./../img/figure_5_15.jpg used on input line 28.
 (pdftex.def)             Requested size: 375.80544pt x 271.10129pt.
- [6 <./../img/figure_5_15.jpg>]
-<./../img/asu-photon.png, id=206, 190.7125pt x 166.12062pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5] <./../img/asu-photon.png, id=198, 190.7125pt x 166.12062pt>
 File: ./../img/asu-photon.png Graphic file (type png)
 
 <use ./../img/asu-photon.png>
 Package pdftex.def Info: ./../img/asu-photon.png used on input line 41.
 (pdftex.def)             Requested size: 281.85587pt x 245.54034pt.
- [7 <./../img/asu-photon.png>] [8] [9]
-<./../img/pcure-photonproton.png, id=271, 216.81pt x 134.904pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6 <./../img/figure_5_15.jpg>] [7 <./../img/asu-photon.png>] [8]
+<./../img/pcure-photonproton.png, id=260, 216.81pt x 134.904pt>
 File: ./../img/pcure-photonproton.png Graphic file (type png)
 
 <use ./../img/pcure-photonproton.png>
 Package pdftex.def Info: ./../img/pcure-photonproton.png used on input line 75.
 
 (pdftex.def)             Requested size: 328.82707pt x 204.63011pt.
- [10 <./../img/pcure-photonproton.png>]
-<./../img/figure_27_10.jpg, id=288, 473.6094pt x 433.62pt>
+ [9]
+<./../img/figure_27_10.jpg, id=278, 473.6094pt x 433.62pt>
 File: ./../img/figure_27_10.jpg Graphic file (type jpg)
 
 <use ./../img/figure_27_10.jpg>
 Package pdftex.def Info: ./../img/figure_27_10.jpg used on input line 88.
 (pdftex.def)             Requested size: 328.82707pt x 301.07059pt.
- [11 <./../img/figure_27_10.jpg>]
-<./../img/pcure-dose-distribution.jpeg, id=304, 405.01312pt x 298.11375pt>
+
+<./../img/pcure-dose-distribution.jpeg, id=287, 405.01312pt x 298.11375pt>
 File: ./../img/pcure-dose-distribution.jpeg Graphic file (type jpg)
 
 <use ./../img/pcure-dose-distribution.jpeg>
 Package pdftex.def Info: ./../img/pcure-dose-distribution.jpeg used on input li
 ne 99.
 (pdftex.def)             Requested size: 375.80544pt x 276.61972pt.
- [12 <./../img/pcure-dose-distribution.jpeg>] <./../img/ksyh-miss.png, id=323, 
-564.60938pt x 216.81pt>
+ [10 <./../img/pcure-photonproton.png>] [11 <./../img/figure_27_10.jpg>]
+<./../img/ksyh-miss.png, id=312, 564.60938pt x 216.81pt>
 File: ./../img/ksyh-miss.png Graphic file (type png)
 
 <use ./../img/ksyh-miss.png>
 Package pdftex.def Info: ./../img/ksyh-miss.png used on input line 112.
 (pdftex.def)             Requested size: 469.75502pt x 180.38893pt.
-) [13 <./../img/ksyh-miss.png>] [14] (thesis.bbl
+ [12 <./../img/pcure-dose-distribution.jpeg>]
+[13 <./../img/ksyh-miss.png>]) [14] (thesis.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 7.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
@@ -1183,7 +1179,7 @@ de / effects . html$[]\T1/ppl/m/n/12 .  Ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--48
+Underfull \hbox (badness 10000) in paragraph at lines 48--53
 $\T1/pcr/m/n/12 www . cancer . gov / about-[]cancer / treatment / types / radia
 tion-[]therapy /$
  []
@@ -1192,13 +1188,13 @@ tion-[]therapy /$
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 81--86
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
 []\T1/ppl/m/n/12 UiO and H. Lyn-nebakken (2012).  Jubler for par-tikkel-ter-api
 .  []$\T1/pcr/m/n/12 http : / /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--86
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
 $\T1/pcr/m/n/12 www . mn . uio . no / fysikk / forskning / aktuelt / aktuelle-[
 ]saker / 2012 /$
  []
@@ -1218,13 +1214,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
  ) 
 Here is how much of TeX's memory you used:
- 14388 strings out of 493673
- 202995 string characters out of 3141524
- 340537 words of memory out of 3000000
- 17324 multiletter control sequences out of 15000+200000
- 41597 words of font info for 76 fonts, out of 3000000 for 9000
+ 14385 strings out of 493673
+ 202945 string characters out of 3141524
+ 341581 words of memory out of 3000000
+ 17322 multiletter control sequences out of 15000+200000
+ 38867 words of font info for 74 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 53i,6n,45p,1935b,574s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,6n,43p,1935b,579s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
@@ -1234,9 +1230,9 @@ X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplri8a.pfb>
-Output written on thesis.pdf (19 pages, 702744 bytes).
+Output written on thesis.pdf (18 pages, 700947 bytes).
 PDF statistics:
- 433 PDF objects out of 1000 (max. 8388607)
+ 429 PDF objects out of 1000 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)
  228 words of extra memory for PDF output out of 10000 (max. 10000000)
 
