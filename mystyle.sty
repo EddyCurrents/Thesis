@@ -34,8 +34,9 @@
 \renewcommand{\maketitle}{}
 \usepackage{float}
 
-%Added by me
+%Added by me %%%%%%%%%%%%%
 \usepackage{subfiles}
+\usepackage{enumitem} %for glossaries margin
 \usepackage[toc]{glossaries}
 \makeglossaries
 \newcommand{\comm}[1]{} %Block comment command
@@ -45,6 +46,14 @@
 \titlespacing{\section}{0pt}{0pt}{-10pt}
 \titlespacing{\subsection}{0pt}{0pt}{-10pt}
 \titlespacing{\subsubsection}{0pt}{0pt}{-10pt}
+
+\usepackage[toc,page]{appendix}
+\newcommand{\appendixpagenumbering}{
+	\break
+	\pagenumbering{arabic}
+	\renewcommand{\thepage}{A-\arabic{page}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % Følgende angir bokser rundt figurer og tabeller

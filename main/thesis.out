@@ -13,12 +13,22 @@
 \BOOKMARK [2][-]{subsection.2.2.1}{Proton therapy}{section.2.2}% 13
 \BOOKMARK [1][-]{section.2.3}{Radiation detectors}{chapter.2}% 14
 \BOOKMARK [2][-]{subsection.2.3.1}{Semiconductor detectors}{section.2.3}% 15
-\BOOKMARK [2][-]{subsection.2.3.2}{Si-3DMiMic}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{3DMiMic}{section.2.3}% 16
 \BOOKMARK [1][-]{section.2.4}{Detector readout}{chapter.2}% 17
 \BOOKMARK [2][-]{subsection.2.4.1}{Pre-amplifier}{section.2.4}% 18
 \BOOKMARK [2][-]{subsection.2.4.2}{Shaper}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.3}{ADC}{section.2.4}% 20
-\BOOKMARK [2][-]{subsection.2.4.4}{Digital signal processing}{section.2.4}% 21
-\BOOKMARK [2][-]{subsection.2.4.5}{Medipix}{section.2.4}% 22
-\BOOKMARK [0][-]{chapter*.3}{Bibliography}{}% 23
-\BOOKMARK [0][-]{section*.4}{Glossary}{}% 24
+\BOOKMARK [2][-]{subsection.2.4.3}{Analog-to-Digital Conversion}{section.2.4}% 20
+\BOOKMARK [2][-]{subsection.2.4.4}{Digital Signal Processing}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{Semiconductor Characterization}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.5.1}{Capacitance-Voltage measurements}{section.2.5}% 23
+\BOOKMARK [2][-]{subsection.2.5.2}{Current-Voltage measurements}{section.2.5}% 24
+\BOOKMARK [0][-]{chapter.3}{Choice of Readout Electronics for the 3DMiMic Detector}{}% 25
+\BOOKMARK [1][-]{section.3.1}{Medipix and Timepix}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.2}{UiO Portable Front-End Readout System}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.3}{IDEAS Amadeus preamp-shaper}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.4}{Ortec 142A pre-amplifier}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.5}{Portable PCIe ADC System}{chapter.3}% 30
+\BOOKMARK [0][-]{section.3.5}{Bibliography}{}% 31
+\BOOKMARK [0][-]{section*.4}{Glossary}{}% 32
+\BOOKMARK [0][-]{section*.6}{Appendices}{}% 33
+\BOOKMARK [0][-]{Appendix.1.A}{Detector interface PCB}{}% 34

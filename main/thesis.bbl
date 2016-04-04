@@ -2,10 +2,15 @@
 
 \bibitem[\protect\citeauthoryear{ASU}{ASU}{2000}]{asu2000}
 ASU (2000).
-\newblock Arizona state university: Mechanism for the absorption of light.
+\newblock {Arizona State University: Mechanism for the Absorption of Light}.
 \newblock
   \url{https://www.asu.edu/courses/phs208/patternsbb/PiN/rdg/mechanism/}.
 \newblock Accessed: 14/10/2015.
+
+\bibitem[\protect\citeauthoryear{Bentley}{Bentley}{2005}]{Bentley}
+Bentley, J.~P. (2005).
+\newblock {\em Principles of Measurement Systems}.
+\newblock Prentice Hall.
 
 \bibitem[\protect\citeauthoryear{{Board of the Faculty of Clinical
   Radiology}}{{Board of the Faculty of Clinical
@@ -20,15 +25,26 @@ Freeman, T. (2013).
 \newblock \url{http://medicalphysicsweb.org/cws/article/research/53211}.
 \newblock Accessed: 15/10/2015.
 
+\bibitem[\protect\citeauthoryear{Halámek, Visčor, and Kasal}{Halámek
+  et~al.}{2001}]{dynamic-range}
+Halámek, J., I.~Visčor, and M.~Kasal (2001).
+\newblock Dynamic range and acquisition system.
+\newblock {\em MEASUREMENT SCIENCE REVIEW\/}~{\em 1\/}(1).
+
 \bibitem[\protect\citeauthoryear{Hysing}{Hysing}{2015}]{hysing-uncertain}
 Hysing, L.~B. (2015).
 \newblock Geometrical uncertainties in radiotherapy.
-\newblock Powerpoint presentation from PHYS213 lecture october 2015 at
+\newblock Powerpoint presentation from PHYS213 lecture October 2015 at
   \gls{uib}.
+
+\bibitem[\protect\citeauthoryear{Iniewski}{Iniewski}{2010}]{ToT}
+Iniewski, K. (2010).
+\newblock {\em Electronics for Radiation Detection}.
+\newblock CRC Press.
 
 \bibitem[\protect\citeauthoryear{JLab}{JLab}{}]{jlab}
 JLab.
-\newblock Jefferson lab: Radiation worker training: Effects of radiation on
+\newblock {Jefferson Lab}: Radiation worker training: Effects of radiation on
   cells.
 \newblock \url{https://www.jlab.org/div_dept/train/rad_guide/effects.html}.
 \newblock Accessed: 06/10/2015.
@@ -39,21 +55,38 @@ Khan, F.~M. and J.~P. Gibbons (2014).
 \newblock {\em Khan's The Physics of Radiation Therapy}.
 \newblock Lippincott Williams and Wilkins.
 
-\bibitem[\protect\citeauthoryear{Knoll}{Knoll}{2000}]{Knoll}
-Knoll, G.~F. (2000).
+\bibitem[\protect\citeauthoryear{Knoll}{Knoll}{2010}]{Knoll}
+Knoll, G.~F. (2010).
 \newblock {\em Radiation Detection and Measurement}.
 \newblock Wiley.
 
+\bibitem[\protect\citeauthoryear{Lynnebakken}{Lynnebakken}{2012}]{uio2012}
+Lynnebakken, H. (2012).
+\newblock Jubler for partikkelterapi.
+\newblock
+  \url{http://www.mn.uio.no/fysikk/forskning/aktuelt/aktuelle-saker/2012/jubler-for-partikkelterapi.html}.
+\newblock Accessed: 24/09/2015.
+
+\bibitem[\protect\citeauthoryear{Maehlum, Meier, and Stein}{Maehlum
+  et~al.}{2015}]{IDE1180}
+Maehlum, G., D.~Meier, and T.~Stein (2015, 11).
+\newblock {\em IDE1180 Preliminary Datasheet\/} (V1R3 ed.).
+\newblock IDEAS.
+
 \bibitem[\protect\citeauthoryear{NIH}{NIH}{2010}]{nih}
 NIH (2010).
-\newblock National institutes of health: Radiation therapy for cancer.
+\newblock {National Institutes of Health: Radiation Therapy for Cancer}.
 \newblock
   \url{http://www.cancer.gov/about-cancer/treatment/types/radiation-therapy/radiation-fact-sheet}.
 \newblock Accessed: 09/10/2015.
 
+\bibitem[\protect\citeauthoryear{Oltedal}{Oltedal}{2015}]{oltedal}
+Oltedal, E.~J. (2015).
+\newblock {FPGA based readout of a silicon PIN detector}.
+
 \bibitem[\protect\citeauthoryear{P-Cure}{P-Cure}{}]{pcure}
 P-Cure.
-\newblock P-cure clinics.
+\newblock {P-Cure Clinics}.
 \newblock \url{http://www.p-cure.com/index.aspx?id=4013}.
 \newblock Accessed: 12/10/2015.
 
@@ -63,6 +96,11 @@ Paganetti, H. (2012).
   simulations.
 \newblock {\em Physics in Medicine and Biology\/}~{\em 57\/}(11), R99.
 
+\bibitem[\protect\citeauthoryear{Schroder}{Schroder}{2005}]{Schroder}
+Schroder, D.~K. (2005).
+\newblock {\em Semiconductor material and device characterization}.
+\newblock Wiley.
+
 \bibitem[\protect\citeauthoryear{Serway and Jewett}{Serway and
   Jewett}{2014}]{Serway}
 Serway, R.~A. and J.~W. Jewett (2014).
@@ -71,17 +109,13 @@ Serway, R.~A. and J.~W. Jewett (2014).
 
 \bibitem[\protect\citeauthoryear{SINTEF}{SINTEF}{2015}]{sintef3dmimic}
 SINTEF (2015).
-\newblock Si-3dmimic - silicon-based 3d mini and micro-dosimeters.
+\newblock {Si-3DMiMic - Silicon-based 3D Mini and Micro-dosimeters}.
 \newblock \url{https://www.sintef.no/en/projects/3dmimic/}.
 \newblock Accessed: 24/09/2015.
 
-\bibitem[\protect\citeauthoryear{UiO and Lynnebakken}{UiO and
-  Lynnebakken}{2012}]{uio2012}
-UiO and H.~Lynnebakken (2012).
-\newblock Jubler for partikkelterapi.
-\newblock
-  \url{http://www.mn.uio.no/fysikk/forskning/aktuelt/aktuelle-saker/2012/jubler-for-partikkelterapi.html}.
-\newblock Accessed: 24/09/2015.
+\bibitem[\protect\citeauthoryear{Tali}{Tali}{2015}]{tali}
+Tali, M. (2015).
+\newblock {Portable Front-End Readout System for Radiation Detection}.
 
 \bibitem[\protect\citeauthoryear{Young, Freedman, and Ford}{Young
   et~al.}{2007}]{UniversityPhysics}

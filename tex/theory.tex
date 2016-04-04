@@ -51,6 +51,8 @@ When a cell has been damaged by radiation, there are three possible effects: The
 
 To be able to describe the quantity of ionizing radiation for all energies, materials, and types of radiation, it is common to use the quantity \textit{absorbed dose}, or simply \textit{dose}, which is a measure of the biologically significant effects that ionizing radiation produces. It is defined as the energy delivered to tissue per unit mass. The SI unit for dose is gray (Gy), where $1 Gy = 1 J/kg$. \citep[chap. 8]{Khan} The quantity \textit{dose equivalent} has been defined because the biological effects of radiation depend on the type of radiation in addition to the dose. Dose equivalent is the dose multiplied by a quality factor for the type of radiation, in units of sievert (Sv). $1 Sv = 1 J/kg$. Additionally, the sensitivity to radiation-induced effects will vary for different types of tissue, leading to the definition of \textit{effective dose equivalent}, defined as "the sum of the weighted dose equivalents for irradiated tissues or organs". \citep[chap. 16]{Khan} 
 
+%Dosimetry, microdosimetry?
+
 %Vann vs tissue?
 %Rekkevidde i vann?
 
@@ -85,7 +87,7 @@ Proton therapy is radiation therapy using high energy proton beams. The main pri
 
 \begin{figure}%[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{figure_27_10.jpg}
+	\includegraphics[width=0.6\textwidth]{figure_27_10.jpg}
 	\caption{\gls{SOBP} depth dose distribution \citep[fig. 27.10]{Khan}}
 	\label{fig-sobp}
 \end{figure}
@@ -118,45 +120,88 @@ Proton therapy can theoretically be delivered in a low fewer fraction than photo
 \label{t-detector}
 A radiation detector records interactions between incoming radiation and the detector. These interactions could be electrical, chemical, light- or heat-based. Detectors can be based on many different materials, including gas chambers, semiconductors, crystals, and liquid.\comm{\citep[chap. 9]{Thorsteinsen}} In a simple radiation detector a single particle interacts with the detector, resulting in an electric charge appearing inside the detector. This charge is typically collected by setting up an electric field inside the detector, which causes positive and negative charge to flow in opposite directions, forming an electric signal. This signal could be measured as a current (current mode), voltage (mean square voltage mode), or a charge (pulse mode). \citep[chap. 4]{Knoll}
 
-%modes
+Pulse mode is the most common readout mode because the measurement records each individual quantum of radiation. Pulse mode is therefore required when attempting to measure the energy of individual radiation events. The charge generated in the detector is usually integrated over a certain period of time. Pulse mode however does not work well at very high event rates as the time between events becomes too short to analyse the data. Current mode measures the average current over many events, therefore loosing the amplitude and timing information of individual events, but allowing for measurement with high event rates. Mean square voltage mode works much like current mode, but the output signal will be more dependent on the charge per event, making this mode more useful for mixed radiation environments. \citep[chap. 4]{Knoll}
 
 %pulse height spectra, energy resolution, efficiency, dead time
 
+
+%Dosimeter, microdosimeter?
+
 \subsection{Semiconductor detectors}
 \label{t-semi}
-Work in progress
-
-Semiconductor diode detectors, also called simply semiconductor detectors or solid-state detectors, are radiation detectors employing semiconductor diodes as the basic detection medium. Silicon is the most common material used, but germanium detectors are superior for gamma-ray measurements. Semiconductor detectors offer energy resolutions that are superior to other radiation detectors in addition to small size and fast timing characteristics. A big drawback is that they are degraded by radiation-induced damage during normal use. 
+Semiconductor diode detectors, also called simply semiconductor detectors or solid-state detectors, are radiation detectors employing semiconductor diodes as the basic detection medium. Silicon is the most common material used, but germanium detectors are superior for gamma-ray measurements. Semiconductor detectors offer energy resolutions that are superior to other radiation detectors in addition to small size and fast timing characteristics. A big drawback is that they are degraded by radiation-induced damage during normal use. \citep[chap. 11]{Knoll}
 
 Charged particles passing through a semiconductor detector create electron-hole pairs along the particles path. By setting up an electric potential across the diode, there will be an electric field present that will cause the holes to drift in the same direction as the electric field vector, and the electrons in the opposite direction. By monitoring one of the diodes sides, a pulse is measured as the charge from either the holes or the electrons (depending on which side is measured) is collected. 
 
+A semiconductor detector, like other diodes, can be forward biased (positive potential on p-side) or reverse biased (positive potential on n-side). It is possible to operate a semiconductor detector without external bias, but it will perform poorly as the electric field across the junction will be too weak to read out the charge carriers before many are lost. Applying forward bias to the detector reduces the electric field even further, while reverse bias increases it. This is the main reason for reverse bias being the dominant choice for radiation detectors. \citep[chap. 11]{Knoll}
 
+%Tran phd fig 1.3?
 
-
-\subsection{Si-3DMiMic}
+\subsection{3DMiMic}
 \label{t-3d}
-Si-3DMiMic is a silicon-based 3D mini and micro-dosimeter developed by SINTEF, which is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level. It consists of an array of 32x32 cylindrical p-i-n diodes. Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
+Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter developed by SINTEF, which is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level. It consists of an array of 32x32 cylindrical p-i-n diodes. Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
 
-In the first released version of Si-3DMiMic, all the n+ cores in a line is connected together. Every second line is also connected, leaving two channels for readout. All the outer n+ rings are connected and can be read out if desired. 
+In the first released version of 3DMiMic, all the n+ cores in a line is connected together. Every second line is also connected, leaving two channels for readout. All the outer n+ rings are connected and can be read out if desired. 
+
+%Need a picture
+
 
 \section{Detector readout}
 \label{t-read}
+In different situations, the desired output from the detector readout will be different. In some cases, it is enough to simply count the radiation quanta, and in other cases one might want to read out a energy spectrum. In both cases the readout chain starts with a pre-amplifier that produces a voltage that is proportional to the radiation charge. The output from the pre-amplifier is sent to a shaping amplifier which converts the signal to a shape that is more suitable for the next component in the readout chain. This is to select the interesting pulses and convert the analog signal to a digital signal in one way or another. \citep[chap. 16]{Knoll}
 
 \subsection{Pre-amplifier}
 \label{t-amp}
+For most radiation detectors, the liberated charge is too small to be processed, which is why pre-amplifiers are needed in most detector readout chains. The pre-amplifier is located close to the detector to reduce noise. A pre-amplifier can be voltage-sensitive or charge-sensitive. A voltage-sensitive pre-amplifier has an output signal proportional to the input voltage, which will be proportional to the input charge if the detector capacitance is constant. This is not the case for semiconductor detectors where the capacitance may change with the operating parameters. A \gls{CSA} has a output signal that is independent of the input capacitance as long as the amplifier gain is high enough compared to a relationship between capacitances in the system. \citep[chap. 16]{Knoll}
+%fig 16.13?
+
+One often important parameter to consider in a pre-amplifier is the dynamic range, which is the range of input signal amplitudes that can be reliably measured without changing the system. The lowest measurable input signal is limited by the noise in the system, mainly in the detector, detector cables, and pre-amplifier. A signal is not reliable if it is difficult to discern from the noise. The highest measurable input signal can be limited by the pre-amplifier or later stages, like the \gls{ADC}. If the pre-amplifier has a high gain, then a large input signal will require a higher output signal than the pre-amplifier can deliver. If the gain is low, then another stage in the system will likely be the bottleneck before the pre-amplifier reaches its highest output level. \citep{dynamic-range}
+
+It is typically convenient to use the pre-amplifier to supply bias voltage to the detector. When this is done a single cable is used both to provide voltage to the detector and to transfer the signal pulses to the readout system. \citep[chap. 16]{Knoll}
+%fig 16.16a?
 
 \subsection{Shaper}
 \label{t-shaper}
+The shaper, or shaping amplifier, converts the shape of the signal to a form that is suitable for measurement. The pulse height of the signal from the shaper is proportional to the input charge. It is important that the output from the shaper quickly returns to the baseline to prevent pulse overlapping that will cause measurement errors. Tje first stage of the shaper is a differentiator (high pass filter) which passes the steep rise of the input pulse, but quickly returns to the baseline. The differentiator decides the fall time of the pulse. The signal is then amplified to a level that is suitable for the \gls{ADC}, before it is passed through the integrator (low pass filter) that filters away noise and changes the rise time of the pulse. The duration of the shaped pulse is called the shaping time. \citep[chap. 16]{Knoll}
 
-\subsection{ADC}
+%discriminator?
+
+\subsection{Analog-to-Digital Conversion}
 \label{t-adc}
+The analog signal from the shaper needs to be converted to a digital signal for processing and storage. When it is desired to keep as much information as possible, an \gls{ADC} is used, but these use a lot of area and power. In situations where area, power, and cost is more important than accuracy of measurements (typically when there are a lot of channels), there are some simpler methods that can be used instead. The simplest is a counter, which merely counts the number of pulses with a height above a defined threshold. The information on the radiation quanta energy is lost, but the circuit is very simple. It is also possible to have multiple counters with different thresholds, which will keep some information about the distribution of radiation quanta energies. Another much used method is the \gls{ToT} technique. A \gls{ToT} circuit measures the time that the pulse is over a defined threshold, and then this measurement can be used to estimate the height of the pulse. The relationship between pulse height and \gls{ToT} is only linear within a certain range, and will usually limit the dynamic range of the readout system. \citep[chap. 6]{ToT}
+
 %This link for ADC vs ToT: https://books.google.no/books?id=DFDRBQAAQBAJ&pg=PA173&lpg=PA173&dq=time+over+threshold+energy+measurement&source=bl&ots=J7wJ9nACVW&sig=ra60jHHnJxCc7g3g1TV2RLwHjqU&hl=en&sa=X&ved=0CBsQ6AEwADgKahUKEwi-zcfjuZTJAhUKnnIKHSQ4BAI#v=onepage&q=time%20over%20threshold%20energy%20measurement&f=false
 
-\subsection{Digital signal processing}
+An \gls{ADC} samples the analog signal amplitude at a certain interval (sampling rate) and converts each sampled value to a digital signal. The resolution, which is the number of bits in the digital signal, will limit the accuracy of the conversion. The quantisation error is introduced as each analog value needs to be converted to the closest digital value. The maximum percentage quantisation error can be seen in equation \ref{eq-eqmax}, where n is the number of digits in the binary code and $2^n$ is the number of digital values. \citep[chap. 10]{Bentley}
+
+\begin{equation}%[h]
+	e_q^{MAX} = \pm \frac{100}{2(2^n - 1)}\%
+	\label{eq-eqmax}
+\end{equation}
+
+The dynamic range of an \gls{ADC} will mainly be limited by its resolution, noise, linearity, and jitter (small timing errors). %https://en.wikipedia.org/wiki/Analog-to-digital_converter
+%Types of ADC?
+
+\subsection{Digital Signal Processing}
 \label{t-dsp}
 
-\subsection{Medipix}
-\label{t-medipix}
+%\subsection{Medipix}
+%\label{t-medipix}
 
+\section{Semiconductor Characterization}
+\label{t-char}
+
+\subsection{Capacitance-Voltage measurements}
+\label{t-cv}
+\gls{CV} profiling is a semiconductor characterisation technique that is much used to find doping- and defect densities in semiconductor junctions. The technique relies on the fact that the width of a reverse biased depletion region depends on the applied voltage. The small signal capacitance is dependent on both the doping density and width of the depletion region. \gls{CV} profiles are made by measuring the capacitance while sweeping over a voltage range. The doping density is found from the slope of a C-V curve or a $1/C^2$-V curve. \citep[chap. 2]{Schroder}
+
+There are multiple ways to measure capacitance. A simple method is to supply a known current, and measure how fast the voltage across the capacitor rises. This method assumes an ideal capacitor, and is therefore inaccurate for a real capacitor. A more accurate method is to supply an AC signal to the \gls{DUT} and measure the AC current and voltage. A high frequency signal ($\sim$10 MHz) will be better for measuring dynamic performance, while a low frequency signal ($\sim$10 kHz) is better to find quasistatic characteristics. The capacitance is calculated from the frequency, current, and voltage. 
+%https://en.wikipedia.org/wiki/Capacitance_meter
+%http://www.planetanalog.com/document.asp?doc_id=527457
+%Paper we got in lab
+
+\subsection{Current-Voltage measurements}
+\label{t-iv}
+\gls{IV} characterization is observation of the current through a device when sweeping over the voltage across it. This can be used to find basic electrical parameters for the device. This includes leakage current, resistance, cut-in voltage, breakdown voltage, saturation voltage, and hysteresis. 
 
 \end{document}

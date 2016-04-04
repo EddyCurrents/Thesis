@@ -1,5 +1,5 @@
 % Created 2015-09-02
-\documentclass[12pt]{report}
+\documentclass[12pt, a4paper]{report}
 
 \usepackage{../mystyle}
 \usepackage{../myglossary}
@@ -14,7 +14,8 @@
 
 \begin{titlepage}
 \begin{center}
-{ \Huge \bfseries Readout of silicon pixel detectors \\with the Medipix ASIC}\\[1cm]
+%{ \Huge \bfseries Readout of silicon pixel detectors \\with the Medipix ASIC}\\[1cm]
+{ \Huge \bfseries The Medipix ASIC\\is useless for my project}\\[1cm]
 
 \large by\\ \Large Øyvind Lye\\[1.6cm]
 
@@ -38,17 +39,21 @@
 \end{center}
 \end{titlepage}
 
-%\blankpage	%Maybe replace this with a quote
-%
-%\pagenumbering{roman}
-%\chapter*{Abstract}
+\blankpage	%Maybe replace this with a quote
+
+\pagenumbering{roman}
+%%\chapter*{Abstract} %begin abstract?
+%\begin{abstract}
 %Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
 %\addcontentsline{toc}{chapter}{Abstract}
+%\end{abstract}
 %
 %\blankpage
 %
 %\chapter*{Acknowledgements}
 %Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur \gls{asic} ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas \cite{obt} mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.
+
+%Kjetil, Dieter, Andreas, Marco
 %\addcontentsline{toc}{chapter}{Acknowledgements}
 %
 %\blankpage
@@ -59,7 +64,7 @@
 % fjern denne blanke siden om TOC lengde = partall
 %\blankpage
 % --
-
+\newpage
 \setlength{\parskip}{0.2in}
 \pagenumbering{arabic}
 
@@ -72,6 +77,9 @@
 
 \subfile{./../tex/theory.tex}
 
+%Testing and Characterization of 3DMiMic
+
+\subfile{./../tex/electronics.tex}
 
 % innhold slutt
 \newpage
@@ -79,13 +87,15 @@
 % sett inn riktig .bib-fil
 \clearpage
 \bibliographystyle{chicago}
-\bibliography{../literature}
 \addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{../literature}
 
 %\blankpage
 \newpage
 
+\setlist[description]{leftmargin=!, labelwidth=3em} %Change for glossaries
 \printglossaries
+\setlist[description]{style=standard} % reset settings back to default
 %\addcontentsline{toc}{chapter}{Glossary}
 
 %Temporary disable as I do not need them
@@ -103,5 +113,17 @@
 %
 %\lstlistoflistings
 %\addcontentsline{toc}{section}{List of Listings}
+
+%\appendixpagenumbering
+\begin{appendices}
+%\appendixpagenumbering
+\chapter{Detector interface PCB}
+%\appendixpagenumbering
+\subfile{./../tex/appendix1.tex} %PCB
+%\chapter{PCB for detector connection}
+%\appendixpagenumbering
+%test
+\end{appendices}
+
 
 \end{document}
