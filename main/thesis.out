@@ -1,38 +1,38 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Background and motivation}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Goal of the thesis}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Structure of the thesis}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.1}{Background and Motivation}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Goal of the Thesis}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Structure of the Thesis}{chapter.1}% 4
 \BOOKMARK [2][-]{subsection.1.3.1}{Citations}{section.1.3}% 5
-\BOOKMARK [1][-]{section.1.4}{Scientific environment}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{Theory}{}% 7
+\BOOKMARK [1][-]{section.1.4}{Scientific Environment}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Radiation and Radiotherapy}{}% 7
 \BOOKMARK [1][-]{section.2.1}{Radiation}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.1.1}{Interactions of radiation with matter}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{Interactions of Radiation with Matter}{section.2.1}% 9
 \BOOKMARK [3][-]{section*.2}{Interactions of charged particles with matter}{subsection.2.1.1}% 10
 \BOOKMARK [3][-]{figure.caption.3}{Interactions of photons with matter}{subsection.2.1.1}% 11
-\BOOKMARK [2][-]{subsection.2.1.2}{Biological effects of radiation}{section.2.1}% 12
-\BOOKMARK [1][-]{section.2.2}{Radiation therapy}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.1}{Proton therapy}{section.2.2}% 14
-\BOOKMARK [1][-]{section.2.3}{Radiation detectors}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.3.1}{Semiconductor detectors}{section.2.3}% 16
-\BOOKMARK [1][-]{section.2.4}{Detector readout}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.4.1}{Pre-amplifier}{section.2.4}% 18
-\BOOKMARK [3][-]{section*.9}{Charge-Sensitive Amplifier Operation}{subsection.2.4.1}% 19
-\BOOKMARK [2][-]{subsection.2.4.2}{Shaper}{section.2.4}% 20
-\BOOKMARK [2][-]{subsection.2.4.3}{Analog-to-Digital Conversion}{section.2.4}% 21
-\BOOKMARK [2][-]{subsection.2.4.4}{Digital Signal Processing}{section.2.4}% 22
-\BOOKMARK [1][-]{section.2.5}{Semiconductor Characterization}{chapter.2}% 23
-\BOOKMARK [2][-]{subsection.2.5.1}{Capacitance-Voltage measurements}{section.2.5}% 24
-\BOOKMARK [2][-]{subsection.2.5.2}{Current-Voltage measurements}{section.2.5}% 25
-\BOOKMARK [0][-]{chapter.3}{Testing and Characterization of the 3DMiMic Detector}{}% 26
-\BOOKMARK [1][-]{section.3.1}{3DMiMic}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.2}{I-V Measurements of 3DMiMic Detectors}{chapter.3}% 28
-\BOOKMARK [1][-]{section.3.3}{Detector Interface PCB}{chapter.3}% 29
-\BOOKMARK [0][-]{chapter.4}{Choice of Readout Electronics for the 3DMiMic Detector}{}% 30
-\BOOKMARK [1][-]{section.4.1}{Medipix and Timepix}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.2}{UiO Portable Front-End Readout System}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.3}{IDEAS Amadeus preamp-shaper}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.4}{Ortec 142A pre-amplifier}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.5}{Portable PCIe ADC System}{chapter.4}% 35
+\BOOKMARK [2][-]{subsection.2.1.2}{Biological Effects of Radiation}{section.2.1}% 12
+\BOOKMARK [1][-]{section.2.2}{Radiation Therapy}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{Proton Therapy}{section.2.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Testing and Characterization of the 3DMiMic Detector}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Radiation Detectors}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Semiconductor Detectors}{section.3.1}% 17
+\BOOKMARK [1][-]{section.3.2}{Semiconductor Characterization}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.2.1}{Capacitance-Voltage Measurements}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.2}{Current-Voltage Measurements}{section.3.2}% 20
+\BOOKMARK [1][-]{section.3.3}{3DMiMic}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.4}{I-V Measurements of 3DMiMic Detectors}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.5}{Detector Interface PCB}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Choice of Readout Electronics for the 3DMiMic Detector}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Detector Readout}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.1.1}{Pre-Amplifier}{section.4.1}% 26
+\BOOKMARK [3][-]{section*.12}{Charge-Sensitive Amplifier Operation}{subsection.4.1.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.2}{Shaper}{section.4.1}% 28
+\BOOKMARK [2][-]{subsection.4.1.3}{Analog-to-Digital Conversion}{section.4.1}% 29
+\BOOKMARK [2][-]{subsection.4.1.4}{Digital Signal Processing}{section.4.1}% 30
+\BOOKMARK [1][-]{section.4.2}{Medipix and Timepix}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.3}{UiO Portable Front-End Readout System}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.4}{IDEAS Amadeus Preamp-Shaper}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.5}{Ortec 142A Pre-Amplifier}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.6}{Portable PCIe ADC System}{chapter.4}% 35
 \BOOKMARK [0][-]{table.caption.14}{Bibliography}{}% 36
 \BOOKMARK [0][-]{section*.16}{Glossary}{}% 37
 \BOOKMARK [0][-]{section*.18}{Appendices}{}% 38

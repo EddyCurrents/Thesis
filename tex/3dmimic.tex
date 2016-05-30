@@ -5,15 +5,55 @@
 \chapter{Testing and Characterization of the 3DMiMic Detector}
 \label{3dmimic}
 
-\begin{figure}[h]
+\section{Radiation Detectors}
+\label{t-detector}
+A radiation detector records interactions between incoming radiation and the detector. These interactions could be electrical, chemical, light- or heat-based. Detectors can be based on many different materials, including gas chambers, semiconductors, crystals, and liquid.\comm{\citep[chap. 9]{Thorsteinsen}} In a simple radiation detector a single particle interacts with the detector, resulting in an electric charge appearing inside the detector. This charge is typically collected by setting up an electric field inside the detector, which causes positive and negative charge to flow in opposite directions, forming an electric signal. This signal could be measured as a current (current mode), voltage (mean square voltage mode), or a charge (pulse mode). \citep[chap. 4]{Knoll}
+
+Pulse mode is the most common readout mode because the measurement records each individual quantum of radiation. Pulse mode is therefore required when attempting to measure the energy of individual radiation events. The charge generated in the detector is usually integrated over a certain period of time. Pulse mode however does not work well at very high event rates as the time between events becomes too short to analyse the data. Current mode measures the average current over many events, therefore loosing the amplitude and timing information of individual events, but allowing for measurement with high event rates. Mean square voltage mode works much like current mode, but the output signal will be more dependent on the charge per event, making this mode more useful for mixed radiation environments. \citep[chap. 4]{Knoll}
+
+%pulse height spectra, energy resolution, efficiency, dead time
+
+
+%Dosimeter, microdosimeter?
+
+\subsection{Semiconductor Detectors}
+\label{t-semi}
+Semiconductor diode detectors, also called simply semiconductor detectors or solid-state detectors, are radiation detectors employing semiconductor diodes as the basic detection medium. Silicon is the most common material used, but germanium detectors are superior for gamma-ray measurements. Semiconductor detectors offer energy resolutions that are superior to other radiation detectors in addition to small size and fast timing characteristics. A big drawback is that they are degraded by radiation-induced damage during normal use. \citep[chap. 11]{Knoll}
+
+Charged particles passing through a semiconductor detector create electron-hole pairs along the particles path. By setting up an electric potential across the diode, there will be an electric field present that will cause the holes to drift in the same direction as the electric field vector, and the electrons in the opposite direction. By monitoring one of the diodes sides, a pulse is measured as the charge from either the holes or the electrons (depending on which side is measured) is collected. 
+
+A semiconductor detector, like other diodes, can be forward biased (positive potential on p-side) or reverse biased (positive potential on n-side). It is possible to operate a semiconductor detector without external bias, but it will perform poorly as the electric field across the junction will be too weak to read out the charge carriers before many are lost. Applying forward bias to the detector reduces the electric field even further, while reverse bias increases it. This is the main reason for reverse bias being the dominant choice for radiation detectors. \citep[chap. 11]{Knoll}
+
+%Tran phd fig 1.3?
+
+
+
+\section{Semiconductor Characterization}
+\label{t-char}
+
+\subsection{Capacitance-Voltage Measurements}
+\label{t-cv}
+\gls{CV} profiling is a semiconductor characterisation technique that is much used to find doping- and defect densities in semiconductor junctions. The technique relies on the fact that the width of a reverse biased depletion region depends on the applied voltage. The small signal capacitance is dependent on both the doping density and width of the depletion region. \gls{CV} profiles are made by measuring the capacitance while sweeping over a voltage range. The doping density is found from the slope of a C-V curve or a $1/C^2$-V curve. \citep[chap. 2]{Schroder}
+
+There are multiple ways to measure capacitance. A simple method is to supply a known current, and measure how fast the voltage across the capacitor rises. This method assumes an ideal capacitor, and is therefore inaccurate for a real capacitor. A more accurate method is to supply an AC signal to the \gls{DUT} and measure the AC current and voltage. A high frequency signal ($\sim$10 MHz) will be better for measuring dynamic performance, while a low frequency signal ($\sim$10 kHz) is better to find quasistatic characteristics. The capacitance is calculated from the frequency, current, and voltage. 
+%https://en.wikipedia.org/wiki/Capacitance_meter
+%http://www.planetanalog.com/document.asp?doc_id=527457
+%Paper we got in lab
+
+\subsection{Current-Voltage Measurements}
+\label{t-iv}
+\gls{IV} characterization is observation of the current through a device when sweeping over the voltage across it. This can be used to find basic electrical parameters for the device. This includes leakage current, resistance, cut-in voltage, breakdown voltage, saturation voltage, and hysteresis. 
+
+\section{3DMiMic}
+\label{3d-3d}
+
+\begin{figure}%[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{3dmimic.png}
 	\caption{Presentation sketches of the 3DMiMic detector, shown without and with PMMA. \citep{Trento2015}}
 	\label{fig-3dmimic}
 \end{figure}
 
-\section{3DMiMic}
-\label{3d-3d}
 Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter being developed by SINTEF MiNaLab in Oslo, but was invented and ordered by researchers at the University of Wollongong. The detector is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level, and consists of an array of 32x32 cylindrical p-i-n diodes. Each diode, or cell, is made of a thin n+ core cylinder (red in figure \ref{fig-3dmimic}), a circular p+ trench some micrometers out (dark blue in figure \ref{fig-3dmimic}), and in some cases a n+ ring further away from the core (to the right in figure \ref{fig-3dmimic-side}). There are multiple versions of the detectors, with differences including presence of n+ guard ring, size of cell, and structure. The silicon between the different cells should be etched away and replaced with tissue equivalent \gls{PMMA}, but this has not been attempted by SINTEF yet as of the time this thesis is written. This should be done because \gls{PMMA} is ionized by radiation very similar to the way tissue would, unlike silicon, due to the mass numbers of the atoms. 
 
 %Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
