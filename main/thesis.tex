@@ -73,13 +73,17 @@
 %Imports subfiles, instead of having all chapters in the main file
 %\subfile{./../tex/example.tex}	%Examples
 
+%change to "Radiaton", "Radiation Therapy", "Ionizing Radiation and Radiation Therapy" or something
 \subfile{./../tex/intro.tex}
 
 \subfile{./../tex/theory.tex}
 
 %Testing and Characterization of 3DMiMic
+\subfile{./../tex/3dmimic.tex}
 
 \subfile{./../tex/electronics.tex}
+
+
 
 % innhold slutt
 \newpage
@@ -93,6 +97,7 @@
 %\blankpage
 \newpage
 
+%Remove page numbers of glossary entries before handing in!
 \setlist[description]{leftmargin=!, labelwidth=3em} %Change for glossaries
 \printglossaries
 \setlist[description]{style=standard} % reset settings back to default
@@ -117,10 +122,11 @@
 %\appendixpagenumbering
 \begin{appendices}
 %\appendixpagenumbering
-\chapter{Detector interface PCB}
-%\appendixpagenumbering
-\subfile{./../tex/appendix1.tex} %PCB
-%\chapter{PCB for detector connection}
+
+\subfile{./../tex/appendix_3dmimic.tex}
+
+\subfile{./../tex/appendix_pcb.tex}
+
 %\appendixpagenumbering
 %test
 \end{appendices}

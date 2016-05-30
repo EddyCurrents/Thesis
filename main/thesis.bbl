@@ -31,6 +31,12 @@ Halámek, J., I.~Visčor, and M.~Kasal (2001).
 \newblock Dynamic range and acquisition system.
 \newblock {\em MEASUREMENT SCIENCE REVIEW\/}~{\em 1\/}(1).
 
+\bibitem[\protect\citeauthoryear{Hamamatsu}{Hamamatsu}{2001}]{Hamamatsu}
+Hamamatsu (2001, 10).
+\newblock {\em Characteristics and use of Charge amplifier\/} (KACC9001E01
+  ed.).
+\newblock Hamamatsu Photonics.
+
 \bibitem[\protect\citeauthoryear{Hysing}{Hysing}{2015}]{hysing-uncertain}
 Hysing, L.~B. (2015).
 \newblock Geometrical uncertainties in radiotherapy.
@@ -95,6 +101,17 @@ Paganetti, H. (2012).
 \newblock Range uncertainties in proton therapy and the role of monte carlo
   simulations.
 \newblock {\em Physics in Medicine and Biology\/}~{\em 57\/}(11), R99.
+
+\bibitem[\protect\citeauthoryear{Povoli}{Povoli}{2016}]{Marco}
+Povoli, M. (2016).
+\newblock From email conversation.
+
+\bibitem[\protect\citeauthoryear{Povoli et~al.}{Povoli
+  et~al.}{2015}]{Trento2015}
+Povoli, M. et~al. (2015).
+\newblock Simulation and testing of thin silicon microdosimeters realized with
+  planar technology.
+\newblock \url{https://indico.cern.ch/event/351695/contributions/828320/}.
 
 \bibitem[\protect\citeauthoryear{Schroder}{Schroder}{2005}]{Schroder}
 Schroder, D.~K. (2005).

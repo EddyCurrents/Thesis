@@ -49,7 +49,7 @@ As discussed in the previous sections, radiation travelling through matter depos
 
 When a cell has been damaged by radiation, there are three possible effects: The cell dies, the cell is repaired correctly, or the cell is repaired incorrectly. The human body has very effective repair mechanisms which constantly repair cellular damage, including damage to DNA. Occasionally, these repair mechanisms will perform their function incorrectly, which can result in cells that cannot perform their normal function, or cells that damage other cells. Some of these cells are unable to reproduce themselves, while others reproduced at an uncontrolled rate, which can be the cause of cancers.\citetext{\citeauthor{jlab}}
 
-To be able to describe the quantity of ionizing radiation for all energies, materials, and types of radiation, it is common to use the quantity \textit{absorbed dose}, or simply \textit{dose}, which is a measure of the biologically significant effects that ionizing radiation produces. It is defined as the energy delivered to tissue per unit mass. The SI unit for dose is gray (Gy), where $1 Gy = 1 J/kg$. \citep[chap. 8]{Khan} The quantity \textit{dose equivalent} has been defined because the biological effects of radiation depend on the type of radiation in addition to the dose. Dose equivalent is the dose multiplied by a quality factor for the type of radiation, in units of sievert (Sv). $1 Sv = 1 J/kg$. Additionally, the sensitivity to radiation-induced effects will vary for different types of tissue, leading to the definition of \textit{effective dose equivalent}, defined as "the sum of the weighted dose equivalents for irradiated tissues or organs". \citep[chap. 16]{Khan} 
+To be able to describe the quantity of ionizing radiation for all energies, materials, and types of radiation, it is common to use the quantity \textit{absorbed dose}, or simply \textit{dose}, which is a measure of the biologically significant effects that ionizing radiation produces. It is defined as the energy delivered to tissue per unit mass. The SI unit for dose is gray (Gy), where $1 Gy = 1 J/kg$. The quantity \textit{dose equivalent} has been defined because the biological effects of radiation depend on the type of radiation in addition to the dose. Dose equivalent is the dose multiplied by a quality factor for the type of radiation, in units of sievert (Sv). $1 Sv = 1 J/kg$. Additionally, the sensitivity to radiation-induced effects will vary for different types of tissue, leading to the definition of \textit{effective dose equivalent}, defined as "the sum of the weighted dose equivalents for irradiated tissues or organs". \citep[chap. 8 $\&$ 16]{Khan} 
 
 %Dosimetry, microdosimetry?
 
@@ -58,11 +58,11 @@ To be able to describe the quantity of ionizing radiation for all energies, mate
 
 \section{Radiation therapy}
 \label{t-therapy}
-Radiation therapy, also known as radiotherapy, is therapy using the biological effects of ionizing radiation to kill or control cancer cells. One of the main principles behind radiotherapy's effectiveness in treating cancer is that radiation causes much more damage to rapidly dividing cells, and tumor cells divide extremely rapidly. \citep[chap. 45]{Serway} Roughly half of all cancer patients receive radiotherapy as a part of their treatment. The radiation can originate from a machine outside the body (external beam radiation therapy), or from a radioactive source being placed into the body (internal radiation therapy). Traditional external beam radiation therapy is delivered using photon beams (photon therapy), but treatment with beams of heavy charged particles (particle therapy), like protons (proton therapy) or carbon ions, are becoming more common. Electron beam therapy is also used, mainly to treat cancer close to the surface of the body. \citep{nih}
+Radiation therapy, also known as radiotherapy, is therapy using the biological effects of ionizing radiation to kill or control cancer cells. One of the main principles behind radiotherapy's effectiveness in treating cancer is that radiation causes much more damage to rapidly dividing cells, and tumor cells divide extremely rapidly \citep[chap. 45]{Serway}. Roughly half of all cancer patients receive radiotherapy as a part of their treatment. The radiation can originate from a machine outside the body (external beam radiation therapy), or from a radioactive source being placed into the body (internal radiation therapy). Traditional external beam radiation therapy is delivered using photon beams (photon therapy), but treatment with beams of heavy charged particles (particle therapy), like protons (proton therapy) or carbon ions, are becoming more common. Electron beam therapy is also used, mainly to treat cancer close to the surface of the body. \citep{nih}
 
-The radiation will also damage healthy tissue, but a lot of work is put into reducing this as much as possible. Planning and simulations are done to increase the certainty of avoiding complications. Detailed imaging scans are done to get a 3D map of the patient's tumor and surrounding areas. The basis for these maps are usually \gls{CT} scans, but can also be combined with \gls{MRI}, \gls{PET}, X-ray images, or ultrasound scans. \citep{nih} One of the main reasons for \gls{CT}'s importance for photon therapy is that as it is based on photon beams, a \gls{CT} scan also yields the body's tissue-density information and photon attenuation coefficient, which is needed for photon therapy planning.  \citep[chap. 12]{Khan}
+The radiation will also damage healthy tissue, but a lot of work is put into reducing this as much as possible. Planning and simulations are done to increase the certainty of avoiding complications. Detailed imaging scans are done to get a 3D map of the patient's tumor and surrounding areas. The basis for these maps are usually \gls{CT} scans, but can also be combined with \gls{MRI}, \gls{PET}, X-ray images, or ultrasound scans \citep{nih}. One of the main reasons for \gls{CT}'s importance for photon therapy is that as it is based on photon beams, a \gls{CT} scan also yields the body's tissue-density information and photon attenuation coefficient, which is needed for photon therapy planning.  \citep[chap. 12]{Khan}
 
-The particle beams of external beam radiation therapy are of high energy and needs to be produced in or near the treatment machine. For photon therapy, it is most common to accelerate photons using a \gls{linac}, which is small enough to fit inside the same room as the patient table. \citep{nih} For particle therapy a bigger and more expensive accelerator is needed to accelerate the particles to high enough energies. For proton therapy a cyclotron or a synchrotron is used. \citep[chap. 27]{Khan}
+The particle beams of external beam radiation therapy are of high energy and needs to be produced in or near the treatment machine. For photon therapy, it is most common to accelerate photons using a \gls{linac}, which is small enough to fit inside the same room as the patient table \citep{nih}. For particle therapy a bigger and more expensive accelerator is needed to accelerate the particles to high enough energies. For proton therapy a cyclotron or a synchrotron is used. \citep[chap. 27]{Khan}
 
 The dose is usually delivered once per day every workday for 4-6 weeks. One delivery is called a fraction. Fractionation is done for multiple reasons: One is to allow healthy tissue time to repair the damage from radiation. Another is to increase the chance of hitting the cancer cells at a time when they are vulnerable. Fractionation also helps to minimize the effects of random variations in the patient's position and internal geometry. \citep{fractionation} \citep{hysing-uncertain}
 
@@ -94,7 +94,7 @@ Proton therapy is radiation therapy using high energy proton beams. The main pri
 
 %Bilde av range endring? phys251 pdf
 
-The shape of the \gls{SOBP} makes it possible to treat tumors with a lot less dose to the surrounding tissue than with photon therapy, which has two main benefits. One is the ability to treat tumors in close proximity to to critical organs without damaging said organ. The other is to avoid the chronic side effects mentioned in section \ref{t-therapy}, which is very important when treating children with cancer. \citep[chap. 27]{Khan} Figure \ref{fig-photonproton-dose} compares photon (A) and proton (B) beams, where red is high dose, blue is low dose, and gray is negligible dose. 
+The shape of the \gls{SOBP} makes it possible to treat tumors with a lot less dose to the surrounding tissue than with photon therapy, which has two main benefits. One is the ability to treat tumors in close proximity to to critical organs without damaging said organ. The other is to avoid the chronic side effects mentioned in section \ref{t-therapy}, which is very important when treating children with cancer \citep[chap. 27]{Khan}. Figure \ref{fig-photonproton-dose} compares photon (A) and proton (B) beams, where red is high dose, blue is low dose, and gray is negligible dose. 
 
 \begin{figure}%[h]
 	\centering
@@ -137,13 +137,7 @@ A semiconductor detector, like other diodes, can be forward biased (positive pot
 
 %Tran phd fig 1.3?
 
-\subsection{3DMiMic}
-\label{t-3d}
-Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter developed by SINTEF, which is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level. It consists of an array of 32x32 cylindrical p-i-n diodes. Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
 
-In the first released version of 3DMiMic, all the n+ cores in a line is connected together. Every second line is also connected, leaving two channels for readout. All the outer n+ rings are connected and can be read out if desired. 
-
-%Need a picture
 
 
 \section{Detector readout}
@@ -160,9 +154,20 @@ One often important parameter to consider in a pre-amplifier is the dynamic rang
 It is typically convenient to use the pre-amplifier to supply bias voltage to the detector. When this is done a single cable is used both to provide voltage to the detector and to transfer the signal pulses to the readout system. \citep[chap. 16]{Knoll}
 %fig 16.16a?
 
+\subsubsection{Charge-Sensitive Amplifier Operation}
+\label{t-csa}
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=\textwidth]{csa.png}
+	\caption{Schematic of a basic \gls{CSA}. \citep{Hamamatsu}}
+	\label{fig-csa}
+\end{figure}
+
+Figure \ref{fig-csa} shows a general \gls{CSA}. When a radiation quanta strikes the detector, a pulse of charge $Q_s$ and width $t_o$ is generated. This creates a rising potential on the negative input of the amplifier, which triggers a falling potential on the output of the amplifier. Because of the negative feedback, this will quickly draw the negative input close to zero, making the negative input a point of virtual ground. The feedback currents charge the feedback capacitor, and then the capacitor is slowly discharged when there is no signal on the input. This creates a voltage pulse on the output that slowly falls from a peak value that is proportional to the input charge. \citep{Hamamatsu}
+
 \subsection{Shaper}
 \label{t-shaper}
-The shaper, or shaping amplifier, converts the shape of the signal to a form that is suitable for measurement. The pulse height of the signal from the shaper is proportional to the input charge. It is important that the output from the shaper quickly returns to the baseline to prevent pulse overlapping that will cause measurement errors. Tje first stage of the shaper is a differentiator (high pass filter) which passes the steep rise of the input pulse, but quickly returns to the baseline. The differentiator decides the fall time of the pulse. The signal is then amplified to a level that is suitable for the \gls{ADC}, before it is passed through the integrator (low pass filter) that filters away noise and changes the rise time of the pulse. The duration of the shaped pulse is called the shaping time. \citep[chap. 16]{Knoll}
+The shaper, or shaping amplifier, converts the shape of the signal to a form that is suitable for measurement. The pulse height of the signal from the shaper is proportional to the input charge. It is important that the output from the shaper quickly returns to the baseline to prevent pulse overlapping that will cause measurement errors. The first stage of the shaper is a differentiator (high pass filter) which passes the steep rise of the input pulse, but quickly returns to the baseline. The differentiator decides the fall time of the pulse. The signal is then amplified to a level that is suitable for the \gls{ADC}, before it is passed through the integrator (low pass filter) that filters away noise and changes the rise time of the pulse. The duration of the shaped pulse is called the shaping time. \citep[chap. 16]{Knoll}
 
 %discriminator?
 

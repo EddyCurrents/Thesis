@@ -8,22 +8,44 @@
 
 \section{Medipix and Timepix}
 \label{e-medipix}
-Medipix is a family of chips developed to exploit technology from the experiments at CERN in other fields of science, mainly medical imaging. The chips made by the Medipix collaboration are; Medipix1, Medipix2, Timepix, Medipix3, Timepix3, and Dosepix. The Medipix 1-3 chips are made for photon counting and are therefore not useful for dosimetry. The Timepix chips are made to do \gls{ToT} measurements, with Timepix and Timepix3 being based on Medipix2 and Medipix3 respectively. Dosepix is a currently in development chip made for photon dosimetry. Timepix3 and Dosepix were considered for the 3DMiMic project, but as \gls{ToT} their dynamic range is not very large. Also, since they are made for photon detectors they cannot read the large charges released by a carbon ion in the Bragg peak. 
+Medipix is a family of chips developed to exploit technology from the experiments at CERN in other fields of science, mainly medical imaging. The chips made by the Medipix collaboration are; Medipix1, Medipix2, Timepix, Medipix3, Timepix3, and Dosepix. The Medipix 1-3 chips are made for photon counting and are therefore not useful for dosimetry. The Timepix chips are made to do \gls{ToT} measurements, with Timepix and Timepix3 being based on Medipix2 and Medipix3 respectively. Dosepix is a currently in development chip made for photon dosimetry. Timepix3 and Dosepix were considered for the 3DMiMic project, but as \gls{ToT} devices their dynamic range is not very large. Also, since they are made for photon detectors they cannot read the large charges released by a carbon ion in the Bragg peak. 
 
 \section{UiO Portable Front-End Readout System}
 \label{e-uio}
-During the school year 2014-2015 two master students at \gls{uio} made a portable front-end readout system for radiation detectors. \citep{tali} \citep{oltedal} This system consists of two custom made cards and a \gls{FPGA} evaluation board. The first card, the analog card, has three channels with pre-amplifiers while two of those channels also including shapers. The second card, the digital card, includes an \gls{ADC}, comparators, and current monitors. The components of the digital card is connected to the \gls{FPGA} on the SoCKit evaluation board by Arrow, which is connected to a computer through network. 
+During the school year 2014-2015 two master students at \gls{uio} made a portable front-end readout system for radiation detectors \citep{tali} \citep{oltedal}. This system consists of two custom made cards and a \gls{FPGA} evaluation board. The first card, the analog card, has three channels with pre-amplifiers while two of those channels also including shapers. The second card, the digital card, includes an \gls{ADC}, comparators, and current monitors. The components of the digital card is connected to the \gls{FPGA} on the SoCKit evaluation board by Arrow, which is connected to a computer through network. The system is made to detect fission fragments which produce very large signals, and therefore has a low gain. This makes the system too noisy for the low noise requirements of the 3DMiMic detector at the default gain, but this can be changed using external components.
 
 \section{IDEAS Amadeus preamp-shaper}
 \label{e-ide1180}
-IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. The preliminary datasheet \citep{IDE1180} specifies a shaping time between 20 ns and 40 ns, negative and positive input charges up to 400 fC with lowest gain, and equivalent noise charge of 1106 e- plus 68 e- per pF load at default gain. 
+IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. The preliminary datasheet \citep{IDE1180} specifies a shaping time between 20~ns and 40~ns, negative and positive input charges up to 400~fC with lowest gain, and equivalent noise charge of 1106~e- plus 68~e- per pF load at default gain. 
 
-
+This chip was considered by multiple projects at \gls{ift} and a evaluation board (7045) was given to \gls{ift} so that more extensive tests could be performed. 
 
 \section{Ortec 142A pre-amplifier}
 \label{e-ortec}
+Ortec 142A is a single channel low-noise \gls{CSA} optimized for charged particle or heavy-ion detectors. It was considered for the 3DMiMic project since \gls{uib} already owns a few of these. It features a very high dynamic range, but the gain is too low for the 3DMiMic detector. 
 
 \section{Portable PCIe ADC System}
 \label{e-adc}
+The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sitting in a VMI crate. This features four 14 bit channels with 2~GS/s sampling rate, but is very large and heavy, making it cumbersome to bring for radiation tests. It was desirable to purchase a new \gls{ADC} for the department that could be put inside a small computer using PCI Express (PCIe) to make a portable system. Three manufacturers that produced suitable \gls{ADC}s for a reasonable price were found; AlazarTech, Keysight Technologies, and SP Devices. The considered models are listed in table~\ref{tab-adc}. 
+
+\begin{table}[h]
+\begin{center}
+	\caption{The analog-to-digital converters considered for purchase.}
+	\label{tab-adc}
+	\begin{tabular}{| c | c | c | c | c |}
+		\hline
+		Manufacturer & Model & Channels & Resolution & Sampling \\ 
+		 & & & (bits) & (GS/s) \\ \hline
+		AlazarTech & ATS9360 & 2 & 12 & 1.8 \\ \hline
+		Keysight & U5303A & 2 (1) & 12 & 1.6 (3.2) \\ \hline
+		SP Devices & ADQ14AC-2X & 2 & 14 & 2 \\ \hline
+		SP Devices & ADQ14AC-4C & 4 & 14 & 1 \\ \hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+The Keysight model was interesting with a signal interleaving feature where both 1.6~GS/s channels could be combined into one 3.2~GS/s channel. In the end SP Devices was chosen, being the only discovered company that produces 14 bit PCIe \gls{ADC}s in the GS/s range. ADQ14AC-4C was chosen as having two extra channels was considered more important than higher sampling rate for radiation tests. The old Caen \gls{ADC} can be used for projects and tests that require higher sampling rate. 
+
+
 
 \end{document}

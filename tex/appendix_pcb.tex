@@ -1,0 +1,31 @@
+\documentclass[../main/thesis.tex]{subfiles}
+\begin{document}
+%\appendixpagenumbering
+%\chapter{Appendix}
+%\addcontentsline{toc}{chapter}{Appendix}
+%\appendixpagenumbering
+%\appendix
+%\section{PCB for detector connection}
+%\appendixpagenumbering
+\chapter{Detector Interface PCB}
+\label{a-pcb}
+
+A \gls{PCB} was needed to connect the detector to the outside world, as the detector pads are too small for any other connection than wire-bonding. This \gls{PCB} could simply have consisted of wire-bonding pads going to connectors for cables, but it was decided to make a more multi-purpose board to make it simple to try different set-ups. The board was made so that it is possible to connect the substrate, the guard rings, and the p+ rings individually to ground or external bias. It is also possible to read out the guard rings of the cells. Each channel can also be connected to a bias filter for removal of high frequency noise. The n+ core readout channel was designed to add as little capacitance as possible. LEMO connectors were chosen to connect to the outside world as they are well shielded and much used at \gls{ift}. The exposed metal is coated with electroless nickel immersion gold (ENIG) to provide better contact for wire-bonding. One mistake was done with the \gls{PCB} design in that solder mask where the detector is mounted was forgotten. This has no consequences for the 3DMiMic detector, since there is an insulating layer between the bulk and the support wafer. The solder resist can be scratched off if the \gls{PCB} is to be used for a different detector. The layout of the \gls{PCB} can be seen in figure \ref{fig-pcb} and a photograph can be seen in figure \ref{fig-pcb-pic}. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{pcb-pic.png}
+	\caption{Top side of PCB.}
+	\label{fig-pcb-pic} 
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[angle=270,width=0.8\textwidth]{pcb.png}
+	\caption{PCB layout. Ground planes not shown.}
+	\label{fig-pcb} 
+\end{figure}
+
+After the design had been produced, it was again considered to read out the two sides of the detector separately, instead of in one signal. On the \gls{PCB}, this can be solved by wire-bonding one of the sides to one of the spare pads and connecting this to the through-hole by the GUARD connector with a wire. To avoid extra capacitance, the wires leading to the unused surface-mounting pads can be cut with a knife. 
+
+\end{document}

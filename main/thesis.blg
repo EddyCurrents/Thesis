@@ -1,16 +1,16 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
 The style file: chicago.bst
 Database file #1: ../literature.bib
-You're missing a field name---line 97 of file ../literature.bib
+You're missing a field name---line 106 of file ../literature.bib
  : 
  : % author = {Stephanie Lang and Oliver Riesterer},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "oltedal" isn't style-file defined
---line 112 of file ../literature.bib
+--line 121 of file ../literature.bib
 Warning--entry type for "tali" isn't style-file defined
---line 161 of file ../literature.bib
-You're missing a field name---line 169 of file ../literature.bib
+--line 182 of file ../literature.bib
+You're missing a field name---line 190 of file ../literature.bib
  : 
  : %title={PHYS231},
 (Error may have been on previous line)
@@ -18,4 +18,5 @@ I'm skipping whatever remains of this entry
 Warning--page numbers missing in dynamic-range
 Warning--empty year in jlab
 Warning--empty year in pcure
+Warning--empty note in Marco
 (There were 2 error messages)

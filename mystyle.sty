@@ -35,24 +35,25 @@
 \usepackage{float}
 
 %Added by me %%%%%%%%%%%%%
-\usepackage{subfiles}
+\usepackage{subfiles} %Can compile from subfile
 \usepackage{enumitem} %for glossaries margin
-\usepackage[toc]{glossaries}
-\makeglossaries
+\usepackage[toc]{glossaries} %For glossary/abreviations
+	\makeglossaries
 \newcommand{\comm}[1]{} %Block comment command
-\usepackage{titlesec}
-\titlespacing*{\chapter}{0pt}{0pt}{10pt} %left, above, below
-\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter: }{0pt}{\Huge}
-\titlespacing{\section}{0pt}{0pt}{-10pt}
-\titlespacing{\subsection}{0pt}{0pt}{-10pt}
-\titlespacing{\subsubsection}{0pt}{0pt}{-10pt}
-
-\usepackage[toc,page]{appendix}
-\newcommand{\appendixpagenumbering}{
-	\break
-	\pagenumbering{arabic}
-	\renewcommand{\thepage}{A-\arabic{page}}
-}
+\usepackage{titlesec} %Change title spacings
+	\titlespacing*{\chapter}{0pt}{0pt}{10pt} %left, above, below
+	\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter: }{0pt}{\Huge}
+	\titlespacing{\section}{0pt}{0pt}{-10pt}
+	\titlespacing{\subsection}{0pt}{0pt}{-10pt}
+	\titlespacing{\subsubsection}{0pt}{0pt}{-10pt}
+\usepackage{caption}
+	\captionsetup[table]{skip=0pt} %Reduce caption spacing for tables
+\usepackage[toc,page]{appendix} %Attempt for appendix page numbering: A-1. Not working
+	\newcommand{\appendixpagenumbering}{
+		\break
+		\pagenumbering{arabic}
+		\renewcommand{\thepage}{A-\arabic{page}}
+	}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

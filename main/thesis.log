@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.11)  4 APR 2016 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.11)  27 MAY 2016 13:32
 entering extended mode
 **thesis.tex
 (thesis.tex
@@ -947,11 +947,37 @@ Package: glossary-tree 2015/09/09 v4.18 (NLCT)
 \glswrite=\write3
 \glo@main@file=\write4
 Package glossaries Info: Writing glossary file thesis.glo on input line 41.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen145
+\captionmargin@=\dimen146
+\captionwidth=\dimen147
+\caption@tempdima=\dimen148
+\caption@indent=\dimen149
+\caption@parindent=\dimen150
+\caption@hangindent=\dimen151
+)
+\c@ContinuedFloat=\count151
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+)
+Package caption Info: supertabular package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count151
-\c@@ppsavesec=\count152
-\c@@ppsaveapp=\count153
+\c@@pps=\count152
+\c@@ppsavesec=\count153
+\c@@ppsaveapp=\count154
 ))
 (../myglossary.sty
 
@@ -987,16 +1013,16 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count154
-\scratchdimen=\dimen145
+\scratchcounter=\count155
+\scratchdimen=\dimen152
 \scratchbox=\box40
-\nofMPsegments=\count155
-\nofMParguments=\count156
+\nofMPsegments=\count156
+\nofMParguments=\count157
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count157
-\MPscratchDim=\dimen146
-\MPnumerator=\count158
-\makeMPintoPDFobject=\count159
+\MPscratchCnt=\count158
+\MPscratchDim=\dimen153
+\MPnumerator=\count159
+\makeMPintoPDFobject=\count160
 \everyMPtoPDFconversion=\toks48
 )
 \AtBeginShipoutBox=\box41
@@ -1007,7 +1033,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count160
+\c@section@level=\count161
 )
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
@@ -1015,11 +1041,13 @@ LaTeX Info: Redefining \nameref on input line 8.
 
 (thesis.out) (thesis.out)
 \@outlinefile=\write5
-\c@lstlisting=\count161
+\c@lstlisting=\count162
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 18.
 
-<./../img/uib-emblem-svart.pdf, id=138, 80.3pt x 80.3pt>
+<./../img/uib-emblem-svart.pdf, id=163, 80.3pt x 80.3pt>
 File: ./../img/uib-emblem-svart.pdf Graphic file (type pdf)
 
 <use ./../img/uib-emblem-svart.pdf>
@@ -1107,23 +1135,23 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 C
-      itations in this thesis generally follows the guidelines recommended f...
-[1
+l.31 \subsection{Citations}
+                            [1
 
-]) (../tex/theory.tex [2]
-Chapter 2.
+]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 18.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 18.
+(Font)              scaled to size 13.67995pt on input line 31.
+) (../tex/theory.tex [2]
+Chapter 2.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 20.
 
 [3
 
-] <./../img/figure_5_15.jpg, id=244, 504.9264pt x 364.2408pt>
+] <./../img/figure_5_15.jpg, id=275, 504.9264pt x 364.2408pt>
 File: ./../img/figure_5_15.jpg Graphic file (type jpg)
 
 <use ./../img/figure_5_15.jpg>
@@ -1133,7 +1161,7 @@ Package pdftex.def Info: ./../img/figure_5_15.jpg used on input line 28.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] <./../img/asu-photon.png, id=260, 190.7125pt x 166.12062pt>
+[4] <./../img/asu-photon.png, id=291, 190.7125pt x 166.12062pt>
 File: ./../img/asu-photon.png Graphic file (type png)
 
 <use ./../img/asu-photon.png>
@@ -1144,7 +1172,7 @@ Package pdftex.def Info: ./../img/asu-photon.png used on input line 41.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5 <./../img/figure_5_15.jpg>] [6 <./../img/asu-photon.png>] [7]
-<./../img/pcure-photonproton.png, id=325, 216.81pt x 134.904pt>
+<./../img/pcure-photonproton.png, id=354, 216.81pt x 134.904pt>
 File: ./../img/pcure-photonproton.png Graphic file (type png)
 
 <use ./../img/pcure-photonproton.png>
@@ -1152,34 +1180,68 @@ Package pdftex.def Info: ./../img/pcure-photonproton.png used on input line 77.
 
 (pdftex.def)             Requested size: 317.07614pt x 197.31638pt.
 
-<./../img/figure_27_10.jpg, id=334, 473.6094pt x 433.62pt>
+<./../img/figure_27_10.jpg, id=363, 473.6094pt x 433.62pt>
 File: ./../img/figure_27_10.jpg Graphic file (type jpg)
 
 <use ./../img/figure_27_10.jpg>
 Package pdftex.def Info: ./../img/figure_27_10.jpg used on input line 90.
 (pdftex.def)             Requested size: 271.7835pt x 248.83994pt.
- [8]
-<./../img/pcure-dose-distribution.jpeg, id=352, 405.01312pt x 298.11375pt>
+ [8] [9 <./../img/pcure-photonproton.png> <./../img/figure_27_10.jpg>]
+<./../img/pcure-dose-distribution.jpeg, id=391, 405.01312pt x 298.11375pt>
 File: ./../img/pcure-dose-distribution.jpeg Graphic file (type jpg)
 
 <use ./../img/pcure-dose-distribution.jpeg>
 Package pdftex.def Info: ./../img/pcure-dose-distribution.jpeg used on input li
 ne 101.
 (pdftex.def)             Requested size: 362.37569pt x 266.73509pt.
- [9 <./../img/pcure-photonproton.png>] [10 <./../img/figure_27_10.jpg> <./../im
-g/pcure-dose-distribution.jpeg>]
-<./../img/ksyh-miss.png, id=378, 564.60938pt x 216.81pt>
+ [10 <./../img/pcure-dose-distribution.jpeg>] <./../img/ksyh-miss.png, id=410, 
+564.60938pt x 216.81pt>
 File: ./../img/ksyh-miss.png Graphic file (type png)
 
 <use ./../img/ksyh-miss.png>
 Package pdftex.def Info: ./../img/ksyh-miss.png used on input line 114.
 (pdftex.def)             Requested size: 452.9679pt x 173.94115pt.
- [11 <./../img/ksyh-miss.png>] [12] [13] [14])
-(../tex/electronics.tex [15]
-Chapter 3.
-[16
+ [11 <./../img/ksyh-miss.png>] [12]
 
-]) [17] (thesis.bbl
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 157.
+
+<./../img/csa.png, id=444, 931.48pt x 501.37312pt>
+File: ./../img/csa.png Graphic file (type png)
+ <use ./../img/csa.png>
+Package pdftex.def Info: ./../img/csa.png used on input line 161.
+(pdftex.def)             Requested size: 452.9679pt x 243.80829pt.
+
+[13] [14 <./../img/csa.png>] [15]) (../tex/3dmimic.tex [16]
+Chapter 3.
+<./../img/3dmimic.png, id=507, 462.72874pt x 401.5pt>
+File: ./../img/3dmimic.png Graphic file (type png)
+
+<use ./../img/3dmimic.png>
+Package pdftex.def Info: ./../img/3dmimic.png used on input line 10.
+(pdftex.def)             Requested size: 271.7835pt x 235.82307pt.
+ [17
+
+ <./../img/3dmimic.png>]
+<./../img/3d-side.png, id=530, 288.57813pt x 280.54813pt>
+File: ./../img/3d-side.png Graphic file (type png)
+
+<use ./../img/3d-side.png>
+Package pdftex.def Info: ./../img/3d-side.png used on input line 26.
+(pdftex.def)             Requested size: 226.48395pt x 220.19221pt.
+
+<./../img/3d-top15.png, id=535, 722.7pt x 542.025pt>
+File: ./../img/3d-top15.png Graphic file (type png)
+
+<use ./../img/3d-top15.png>
+Package pdftex.def Info: ./../img/3d-top15.png used on input line 33.
+(pdftex.def)             Requested size: 271.7835pt x 203.83781pt.
+ [18 <./../img/3d-side.png>])
+(../tex/electronics.tex [19 <./../img/3d-top15.png>]
+Chapter 4.
+[20
+
+]) [21] (thesis.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 7.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
@@ -1197,67 +1259,166 @@ Underfull \hbox (badness 2435) in paragraph at lines 4--9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--69
+Underfull \hbox (badness 10000) in paragraph at lines 70--75
 []\T1/ppl/m/n/12 Lynnebakken, H. (2012).  Jubler for par-tikkel-ter-api.  []$\T
 1/pcr/m/n/12 http : / / www .$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--69
+Underfull \hbox (badness 10000) in paragraph at lines 70--75
 $\T1/pcr/m/n/12 mn . uio . no / fysikk / forskning / aktuelt / aktuelle-[]saker
  / 2012 /$
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 77--82
+Underfull \hbox (badness 5231) in paragraph at lines 83--88
 []\T1/ppl/m/n/12 NIH (2010).  Na-tional In-sti-tutes of Health: Ra-di-a-tion Th
 er-apy for Can-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--82
+Underfull \hbox (badness 10000) in paragraph at lines 83--88
 \T1/ppl/m/n/12 cer.  []$\T1/pcr/m/n/12 http : / / www . cancer . gov / about-[]
 cancer / treatment / types /$
  []
 
-[18
+[22
 
 
-]) [19] (thesis.gls) [20
+]) [23] (thesis.gls) [24
 
 
-] [21
+] [25
 
 
-]
+] (../tex/appendix_3dmimic.tex
 Appendix A.
-(../tex/appendix1.tex <./../img/pcb.png, id=556, 872.25874pt x 492.33937pt>
+<./../img/layout/wafer_2.png, id=668, 755.2215pt x 720.291pt>
+File: ./../img/layout/wafer_2.png Graphic file (type png)
+
+<use ./../img/layout/wafer_2.png>
+Package pdftex.def Info: ./../img/layout/wafer_2.png used on input line 9.
+(pdftex.def)             Requested size: 452.9679pt x 432.01306pt.
+
+<./../img/3d-top-both.png, id=673, 1445.4pt x 542.025pt>
+File: ./../img/3d-top-both.png Graphic file (type png)
+
+<use ./../img/3d-top-both.png>
+Package pdftex.def Info: ./../img/3d-top-both.png used on input line 18.
+(pdftex.def)             Requested size: 452.9679pt x 169.86209pt.
+
+<./../img/layout/MIC_ARRAY_1.png, id=674, 592.614pt x 612.48825pt>
+File: ./../img/layout/MIC_ARRAY_1.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_1.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_1.png used on input line 27.
+
+(pdftex.def)             Requested size: 181.18784pt x 187.26192pt.
+
+<./../img/layout/MIC_ARRAY_1_L.png, id=675, 666.0885pt x 666.0885pt>
+File: ./../img/layout/MIC_ARRAY_1_L.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_1_L.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_1_L.png used on input line 3
+3.
+(pdftex.def)             Requested size: 181.18784pt x 181.1879pt.
+
+<./../img/layout/MIC_ARRAY_2.png, id=676, 622.7265pt x 620.91975pt>
+File: ./../img/layout/MIC_ARRAY_2.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_2.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_2.png used on input line 43.
+
+(pdftex.def)             Requested size: 181.18784pt x 180.659pt.
+
+<./../img/layout/MIC_ARRAY_2_L.png, id=677, 683.55376pt x 682.34924pt>
+File: ./../img/layout/MIC_ARRAY_2_L.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_2_L.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_2_L.png used on input line 4
+9.
+(pdftex.def)             Requested size: 181.18784pt x 180.86333pt.
+
+<./../img/layout/MIC_ARRAY_3.png, id=678, 468.5505pt x 522.753pt>
+File: ./../img/layout/MIC_ARRAY_3.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_3.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_3.png used on input line 59.
+
+(pdftex.def)             Requested size: 181.18784pt x 202.14194pt.
+
+<./../img/layout/MIC_ARRAY_3_L.png, id=679, 702.2235pt x 703.428pt>
+File: ./../img/layout/MIC_ARRAY_3_L.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_3_L.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_3_L.png used on input line 6
+5.
+(pdftex.def)             Requested size: 181.18784pt x 181.49162pt.
+
+<./../img/layout/MIC_ARRAY_3_PSTOP_L.png, id=680, 692.5875pt x 693.792pt>
+File: ./../img/layout/MIC_ARRAY_3_PSTOP_L.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_3_PSTOP_L.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_3_PSTOP_L.png used on input 
+line 75.
+(pdftex.def)             Requested size: 181.18784pt x 181.50381pt.
+
+<./../img/layout/MIC_ARRAY_PSTOP.png, id=681, 626.34pt x 626.94225pt>
+File: ./../img/layout/MIC_ARRAY_PSTOP.png Graphic file (type png)
+
+<use ./../img/layout/MIC_ARRAY_PSTOP.png>
+Package pdftex.def Info: ./../img/layout/MIC_ARRAY_PSTOP.png used on input line
+ 81.
+(pdftex.def)             Requested size: 181.18784pt x 181.35898pt.
+
+<./../img/layout/MIC_3D.png, id=682, 700.41675pt x 699.21225pt>
+File: ./../img/layout/MIC_3D.png Graphic file (type png)
+
+<use ./../img/layout/MIC_3D.png>
+Package pdftex.def Info: ./../img/layout/MIC_3D.png used on input line 89.
+(pdftex.def)             Requested size: 158.54152pt x 158.2655pt.
+) (../tex/appendix_pcb.tex [26
+
+ <./../img/layout/wafer_2.png>] [27 <./../img/3d-top-both.png> <./../img/layout
+/MIC_ARRAY_1.png> <./../img/layout/MIC_ARRAY_1_L.png> <./../img/layout/MIC_ARRA
+Y_2.png> <./../img/layout/MIC_ARRAY_2_L.png>] [28 <./../img/layout/MIC_ARRAY_3.
+png> <./../img/layout/MIC_ARRAY_3_L.png> <./../img/layout/MIC_ARRAY_3_PSTOP_L.p
+ng> <./../img/layout/MIC_ARRAY_PSTOP.png> <./../img/layout/MIC_3D.png>]
+Appendix B.
+<./../img/pcb-pic.png, id=721, 1249.66875pt x 721.19438pt>
+File: ./../img/pcb-pic.png Graphic file (type png)
+
+<use ./../img/pcb-pic.png>
+Package pdftex.def Info: ./../img/pcb-pic.png used on input line 17.
+(pdftex.def)             Requested size: 407.66833pt x 235.26576pt.
+
+<./../img/pcb.png, id=722, 872.25874pt x 492.33937pt>
 File: ./../img/pcb.png Graphic file (type png)
-
-<use ./../img/pcb.png>
-Package pdftex.def Info: ./../img/pcb.png used on input line 21.
+ <use ./../img/pcb.png>
+Package pdftex.def Info: ./../img/pcb.png used on input line 24.
 (pdftex.def)             Requested size: 872.2566pt x 492.33815pt.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
- [22
 
-] [23 <./../img/pcb.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
+[29
+
+ <./../img/pcb-pic.png>] [30 <./../img/pcb.png>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
+ [31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
  (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D2968073E405C53143380E162666E667;2400.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
+(rerunfilecheck)             Checksum: 67B1959BD98CBC24600424A2B635CE12;2859.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
  ) 
 Here is how much of TeX's memory you used:
- 15180 strings out of 493673
- 214837 string characters out of 3141524
- 354364 words of memory out of 3000000
- 18061 multiletter control sequences out of 15000+200000
- 40827 words of font info for 78 fonts, out of 3000000 for 9000
+ 16383 strings out of 493673
+ 237575 string characters out of 3141524
+ 375769 words of memory out of 3000000
+ 19203 multiletter control sequences out of 15000+200000
+ 42689 words of font info for 80 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 53i,7n,43p,1935b,604s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,10n,94p,1936b,739s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
@@ -1267,9 +1428,9 @@ X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/pa
 latino/uplri8a.pfb>
-Output written on thesis.pdf (27 pages, 1040110 bytes).
+Output written on thesis.pdf (35 pages, 6239387 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
- 313 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 795 PDF objects out of 1000 (max. 8388607)
+ 140 named destinations out of 1000 (max. 500000)
+ 441 words of extra memory for PDF output out of 10000 (max. 10000000)
 
