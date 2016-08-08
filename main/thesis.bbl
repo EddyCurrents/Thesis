@@ -73,11 +73,19 @@ Lynnebakken, H. (2012).
   \url{http://www.mn.uio.no/fysikk/forskning/aktuelt/aktuelle-saker/2012/jubler-for-partikkelterapi.html}.
 \newblock Accessed: 24/09/2015.
 
+\bibitem[\protect\citeauthoryear{Maehlum}{Maehlum}{2015}]{IDE1180sch}
+Maehlum, G. (2015, 11).
+\newblock {IDE1180-EvalBoard V9 Schematic}.
+
 \bibitem[\protect\citeauthoryear{Maehlum, Meier, and Stein}{Maehlum
   et~al.}{2015}]{IDE1180}
 Maehlum, G., D.~Meier, and T.~Stein (2015, 11).
 \newblock {\em IDE1180 Preliminary Datasheet\/} (V1R3 ed.).
 \newblock IDEAS.
+
+\bibitem[\protect\citeauthoryear{Meier}{Meier}{2016}]{IDE1180email}
+Meier, D. (2016).
+\newblock From email conversation.
 
 \bibitem[\protect\citeauthoryear{NIH}{NIH}{2010}]{nih}
 NIH (2010).
@@ -102,6 +110,10 @@ Paganetti, H. (2012).
   simulations.
 \newblock {\em Physics in Medicine and Biology\/}~{\em 57\/}(11), R99.
 
+\bibitem[\protect\citeauthoryear{Poulianitis}{Poulianitis}{2016}]{Thomas}
+Poulianitis, T. (2016).
+\newblock {Project work.}
+
 \bibitem[\protect\citeauthoryear{Povoli}{Povoli}{2016}]{Marco}
 Povoli, M. (2016).
 \newblock From email conversation.
@@ -112,6 +124,10 @@ Povoli, M. et~al. (2015).
 \newblock Simulation and testing of thin silicon microdosimeters realized with
   planar technology.
 \newblock \url{https://indico.cern.ch/event/351695/contributions/828320/}.
+
+\bibitem[\protect\citeauthoryear{Samnøy}{Samnøy}{2016}]{Samnoy}
+Samnøy, A.~T. (2016).
+\newblock {Ph.D. work.}
 
 \bibitem[\protect\citeauthoryear{Schroder}{Schroder}{2005}]{Schroder}
 Schroder, D.~K. (2005).

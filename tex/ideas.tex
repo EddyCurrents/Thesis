@@ -1,0 +1,456 @@
+\documentclass[../main/thesis.tex]{subfiles}
+\begin{document}
+\newpage
+%% IDEAS
+
+\chapter{Characterization of IDE1180}
+\label{ide}
+
+IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. Two chips, on evaluation boards 7045-1-03 and 7048-1-04 was characterized by the author, partly together with master student Sanjeeda Sharmin and chief engineer Thomas Poulianitis. The tests have been focused on the 7045 board as it showed the best characteristics, and if nothing else is mentioned for a measurement, this it the board that was used. 
+
+XXX need more basic info about IDE1180
+
+The IDE1180 can be configured to different gains, shapes, etc. by setting different inputs on the \gls{asic}. Some of these inputs are digital, and are set to either ground or 3.3 V. The rest are set by the current into the input. This is done by configuring a potentiometer, and connecting this to 3.3 V. The connections are done by adding jumpers to 3-pin pin-headers. The middle pin is connected to either the left side, ground, or the right side, 3.3 V. No jumper should be equal to a ground connection. Using "1" and "0" to specify jumper positions can easily cause confusion, because the ground pins on the pin headers are marked with a "1" (pin 1) on the \gls{PCB}. Therefore, L and R (left and right) is used to specify jumper positions in this chapter. This is when looking at the \gls{PCB} with the input on the left and the output on the right. An X is used for no jumper. The current in the potentiometers can be checked for future reference by connecting it to ground through a 10 k$\Omega$ resistor using a L jumper. The voltage across this resistor can be measured using a multimeter, and gives the current when divided by 10 k$\Omega$. 
+
+\section{Measurement Setups}
+\label{ide-setup}
+
+The main measurement setup used for the characterization included the Caen V1729A \gls{ADC} mentioned in section \ref{e-adc}. This \gls{ADC} has an input impedance of 50 $\Omega$, while the IDE1180 is configured to drive a load impedance of 1 M$\Omega$. Therefore a in-house buffer was used between the IDE1180 and ADC. By default, the IDE1180 has an output offset voltage of 0.5 V. Since the ADC has an input range from -1 V to +1 V, a 100 nF capacitor was used to remove the offset. Some measurements used an oscilloscope instead of the ADC, which made the buffer and DC blocking capacitor unnecessary. Three different oscilloscopes have been used: Tektronix MSO 4034, Tektronix DPO 7254, and Agilent InfiniiVision MSO-X 3104A. 
+
+A wave generator was often used to simulate the pulse from a detector. This has mainly been configured to a ramp with a long rise time and a fall time as short as possible. At first, Agilent 3325OA was used, but this generator was unable to produce a quick falling edge when a long rise time was used. The Tektronix AFG3252 wave generator was later used to obtain a rise time of 1 ms. The wave generator is mainly connected to the external calibrate input, where a test capacitance of 1 pF is present in series (see figure \ref{fig-capmount}). The input charge to the pre-amplifier is then equal to 1 pF times the peak-to-peak voltage of the test pulse from the generator. 
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[
+node distance=1cm and 1cm,
+ar/.style={->,>=latex},
+mynode/.style={
+	draw,
+	text width=2cm,
+	minimum height=1cm,
+	align=center
+}
+]
+\node[mynode] (wg) {Wave Generator};
+\node[mynode,right=of wg] (ide) {IDE1180};
+\node[mynode,below=of ide] (psi) {Power supply};
+\node[mynode,right=of ide] (dc) {DC block};
+\node[mynode,right=of dc] (buf) {Buffer};
+\node[mynode,below=of buf] (psb) {Power supply};
+\node[mynode,right=of buf] (adc) {ADC};
+
+\draw[ar] (wg) --  (ide);
+\draw[ar] (psi)--(ide);
+\draw[ar] (ide)--(dc);
+\draw[ar] (dc)--(buf);
+\draw[ar] (psb)--(buf);
+\draw[ar] (buf)--(adc);
+\end{tikzpicture}
+\caption{Measurement setup using the ADC.}
+\label{fig-setup-adc}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[
+	node distance=1cm and 1cm,
+	ar/.style={->,>=latex},
+	mynode/.style={
+		draw,
+		text width=2.5cm,
+		minimum height=1cm,
+		align=center
+	}
+	]
+	\node[mynode] (wg) {Wave Generator};
+	\node[mynode,right=of wg] (ide) {IDE1180};
+	\node[mynode,below=of ide] (psi) {Power supply};
+	\node[mynode,right=of ide] (osc) {Oscilloscope};
+	
+	\draw[ar] (wg) --  (ide);
+	\draw[ar] (psi)--(ide);
+	\draw[ar] (ide)--(osc);
+	\end{tikzpicture}
+	\caption{Measurement setup using an oscilloscope.}
+	\label{fig-setup-scope}
+\end{figure}
+
+For many measurements it is required to vary the input load capacitance of the pre-amplifier, to simulate different detector capacitances. To make this possible, a mount was added that can be used to place through-hole capacitors, see figure \ref{fig-capmount}. This connects the capacitor between the input of one channel and ground. A similar mount was made to connect an input to the output offset voltage.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=\textwidth]{capamount.png}
+	\caption{Image and schematic of capacitor mount. \citep{Thomas} \citep{IDE1180sch}}
+	\label{fig-capmount}
+\end{figure} 
+
+The IDE1180 has been configured to four different shaping times: 40 ns (default), 500 ns, 1 $\mu$s, and 2 $\mu$s. Table \ref{tab-ide-shaping} shows the necessary parameters to configure the IDE1180 to these shaping times. 40 ns is the default shaping time, and therefore requires no jumpers. The voltages specify the potential that should be across the 10 $k\Omega$ resistor belonging to said signal.  
+
+\begin{table}[h!]
+	\centering
+	\caption{Configurations for different shaping times on IDE1180.}
+	\label{tab-ide-shaping}
+	\begin{tabular}{cccccc}\toprule
+		\textbf{Shaping time} & \textbf{PZ\_ENABLE} & \textbf{PZ\_BIAS\_HI} & \textbf{SH\_BIAS}  & \textbf{VFS\_BIAS} & \textbf{PZ\_BIAS}    \\ \midrule
+		40 ns        & X or L          & X or L            & X or L        & X or L        & X or L          \\
+		500 ns       & R          & R            & R, 325 mV & R, 81 mV  & L, 500 mV   \\
+		1 $\mu$s     & R          & R            & R, 350 mV & R, 92 mV  & L, 268 mV   \\
+		2 $\mu$s     & R          & R            & R, 357 mV & R, 91 mV  & L, 109.5 mV \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\section{Gain vs. Input Load Capacitance}
+\label{ide-gain}
+
+During early measurements it quickly became evident that the output voltage from the IDE1180 is reduced when the input load capacitance is increased. This drop was not understood or expected by anyone involved in the measurements, or professor Kjetil Ullaland. Tables \ref{tab-gain-nobuffer} to \ref{tab-gain-nobuffer-offset} show gain measurements with different gain settings, using different setups. A "1" is either a jumper to the left, or no jumper at all, while a "0" is a jumper to the right. "11" is equal to default setting with no jumpers in place. The oscilloscope measurements are done by placing a cursor in the middle of the noise. The ADC measurements are calculated from the mean of a gaussian fit to the amplitude measurements done by the ADC. 
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Gain [mV/fC] vs. capacitance for different gain settings measured with oscilloscope without buffer connected.}
+		\label{tab-gain-nobuffer}
+		\begin{tabular}{ccccc}\toprule
+			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
+			"11"     & 11.4 & 10.1 & 6.6  & 5.1   \\
+			"10"     & 7.0    & 6.3  & 4.6  & 3.8   \\
+			"01"     & 4.3  & 4.1  & 3.4  & 3.0     \\
+			"00"     & 2.3  & 2.2  & 2.0    & 1.76 \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Gain [mV/fC] vs. capacitance for different gain settings measured with oscilloscope with buffer connected.}
+		\label{tab-gain-wbuffer}
+		\begin{tabular}{ccccc}\toprule
+			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
+			"11"     & 10.2 & 8.6  & 5.4  & 4.3   \\
+			"10"     & 6.0    & 5.4  & 4.0    & 3.2   \\
+			"01"     & 3.6  & 3.5  & 2.9  & 2.5   \\
+			"00"     & 2.0    & 1.9  & 1.6  & 1.4 \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Gain [mV/fC] vs. capacitance measured with ADC.}
+		\label{tab-gain-adc}
+		\begin{tabular}{ccccc}\toprule
+			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
+			"11"     & 10.8 & 9.4  & 5.8  & 4.5   \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Gain [mV/fC] vs. capacitance for different gain settings measured with oscilloscope without buffer connected. Input load capacitor connected to $V_{offset}$ instead of ground.}
+		\label{tab-gain-nobuffer-offset}
+		\begin{tabular}{cccc}\toprule
+			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{56pF} & \textbf{100pF} \\ \midrule
+			"11"     & 10.2 & 5.8  & 4.44  \\
+			"10"     & 6.3  & 4.1  & 3.5   \\
+			"01"     & 3.75 & 2.95 & 2.6   \\
+			"00"     & 2.05 & 1.75 & 1.5   \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+As the ADC measurements takes the maximum peak signal, while the oscilloscope measurements are done with cursors in the center of the peak noise, it was expected that the table \ref{tab-gain-adc} values were slightly higher than the table \ref{tab-gain-wbuffer} values. The values in table \ref{tab-gain-wbuffer} are 10 to 20 \% lower than those in table \ref{tab-gain-nobuffer}, showing that the in-house buffer does not perfectly pass the signal. The values in table \ref{tab-gain-nobuffer-offset} are 8 to 15 \% lower than those in table \ref{tab-gain-nobuffer}. It should also be noted that the measured gains at 0 pF are very different from the gains of 24/12/6/3 that are noted in the datasheet \citep{IDE1180}.
+
+Gain versus capacitance and gain for different gain settings was also measured on the 7048 chip. On this chip, unlike the 7045, the gain was different with no jumpers in place, and with jumpers in the left, "1", position. In table \ref{tab-gains-7048} "0" is right jumper position, "1" is left position, and "X" is no jumper in place. It is also interesting to see that for the 7045 board, gain setting "11" gives the highest gain, while on the 7048 board "00" has the highest gain. XXX sjekke om pcb er lik
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Gain [mV/fC] vs. capacitance measured with ADC on the 7048 PCB, with no jumpers in place.}
+		\label{tab-gain-adc-7048}
+		\begin{tabular}{cccccc}\toprule
+			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
+			"XX"     & 3.19 & 2.66  & 2.23  & 1.51 & 1.12   \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Gain [mV/fC] measurements for different gain settings measured with oscilloscope on the 7048 evaluation board.}
+		\label{tab-gains-7048}
+		\begin{tabular}{cc}\toprule
+			\textbf{PA\_GAIN<1:0>} & \textbf{Gain}   \\ \midrule
+			"00" & 5.4  \\
+			"0X" & 5.2  \\
+			"01" & 3.45 \\
+			"X0" & 5.3  \\
+			"XX" & 3.2  \\
+			"X1" & 2.35 \\
+			"10" & 2.2  \\
+			"1X" & 1.8  \\
+			"11" & 1.0   \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Figure \ref{fig-IDE1180-gain} shows how the gain falls off for the different shaping times. The drop becomes less and less distinct as the shaping time is increased, and at 2 $\mu$s the gain vs. capacitance curve is fairly flat. Note that the default shaping time curve does not fit well with the data in the tables above. XXX
+
+XXX teste om forskjell på gain skyldes dc block før/etter buffer. Eller annen signalgenerator. kanskje fordi 1pf ble byttet ut (29.04)....
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Gain_shaping.png}
+		\caption{Gain.}
+		\label{fig-IDE1180-gain-}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Gain_shaping_relative.png}
+		\caption{Relative gain.}
+		\label{fig-IDE1180-gain-rel} %need to check permission
+	\end{subfigure}
+	\caption{Gain and relative gain vs. capacitance at different shaping times.}
+	\label{fig-IDE1180-gain}
+\end{figure}
+
+\subsection{Gain vs. Capacitance Simulations}
+
+To check if the drops in gain is something that should have been expected or not, a pre-amplifier was simulated in LTspice IV. One of the pre-amplifiers from \citep{tali} was simulated (figure \ref{fig-sim-sch}), as the specifications of the IDE1180 pre-amplifier are unavailable. This was simulated both with an ideal \gls{opamp}, and with the LT1122 that was used in one of the channels in \citep{tali}. The input signal was a square wave of 2 ms period, 100 mV amplitude, and 10 ns edge times. Simulations were performed for $C_{load}$ of 1 pF and 100 pF.  
+
+\begin{figure}
+\centering
+\begin{circuitikz}  
+	\draw  
+	(5,2) node[op amp] (opamp) {}  
+	(0,2.5) to [C, l=$1 pF$] (opamp.-)
+	(3,0.5)  to [C=$C_{load}$] (3,2.5)
+	(0,2.5) to [short, -] (0,2.5)  
+	(0,0.5) to [short, -o] (7,0.5)  
+	(3.8,0.5) to [short, -] (opamp.+)  
+	(3.8,3.5) to [R, l=$4.7 M\Omega$] (6.2,3.5) 
+	(3.8,5) to [C, l=$2.2 pF$] (6.2,5) 
+	(3.8,5) to [short, -] (opamp.-)  
+	(6.2,5) to [short, -] (opamp.out)  
+	(opamp.out) to [short, -o] (7, 2)  
+	(0,2.5) to[sqV,v=$V_{in}$] (0,0.5);
+	\draw[->] 
+	(6.75,1.8) to node[right] {$V_{out}$} (6.75,0.7);
+\end{circuitikz}
+\caption{Schematic of simulated circuit.}
+\label{fig-sim-sch}
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=\textwidth]{sim_ideal_both.png}
+	\caption{Simulation of ideal \gls{opamp} with 1 pF (blue) and 100 pF (red) load capacitance. Input pulse in green.}
+	\label{fig-sim-ideal}
+\end{figure} 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=\textwidth]{sim_LT1122_both.png}
+	\caption{Simulation of LT1122 \gls{opamp} with 1 pF (blue) and 100 pF (red) load capacitance.}
+	\label{fig-sim-LT1122}
+\end{figure} 
+
+For the ideal \gls{opamp}, figure \ref{fig-sim-ideal} shows a peak height drop of roughly 9 \% and an increase in pulse area of about 1 \% when the load capacitance is increased from 1 pF to 100 pF. Similarly for the LT1122, figure \ref{fig-sim-LT1122} shows a peak height drop of about 32 \% and a pulse area increase of roughly 11 \%. Compared to the measured peak amplitude drops of almost 60 \%, this shows that the drops should have been expected, but not in that magnitude. This has later been confirmed by figure \ref{fig-ide-gain} which shows an expected peak amplitude drop of about 10 \% at 100 pF, calculated by IDEAS. 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{IDE1180-gain.png}
+	\caption{Calculated change in gain from increased input load capacitance. \citep{IDE1180email}}
+	\label{fig-ide-gain}
+\end{figure} 
+
+
+\subsection{Ballistic defict}
+\label{ide-gain-ballistic}
+%http://ns.ph.liv.ac.uk/~ajb/radiometrics/glossary/ballistic_deficit.html
+%http://ns.ph.liv.ac.uk/~ajb/radiometrics/practical_analysis/practical_aspects/shaping_time_constant.htm
+%http://www-physics.lbl.gov/~spieler/USPAS-MSU_2012/pdf/IV_Signal_Processing.pdf
+
+Ballistic defict is an error source that was investigated as a contributor to the drop in amplitude for high load capacitors. This occurs when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude. Figures \ref{fig-IDE1180-shaperamp} to \ref{fig-IDE1180-shaperrisetime} show measurements investigating the drop in gain by comparing the output signal from the IDE1180 when the shaper is connected and disconnected using the SH\_ENABLE pin header. This is measured at default settings, using the Agilent InfiniiVision MSO-X 3104A oscilloscope. These data are based on only one curve saved from the oscilloscope, except  for 100 pF with shaper disabled, where two curves were saved as the signal was very noisy. Therefore this data is not very accurate, but it is still possible to observe trends. 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{shaper_amplitude.png}
+		\caption{Peak amplitudes.}
+		\label{fig-IDE1180-shaperamp-}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{shaper_amplitude_relative.png}
+		\caption{Relative peak amplitudes.}
+		\label{fig-IDE1180-shaperamp-rel} %need to check permission
+	\end{subfigure}
+	\caption{Peak amplitudes and relative peak amplitudes with and without shaper connected.}
+	\label{fig-IDE1180-shaperamp}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{shaper_area.png}
+		\caption{Pulse areas.}
+		\label{fig-IDE1180-shaperarea-}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{shaper_area_relative.png}
+		\caption{Relative pulse areas.}
+		\label{fig-IDE1180-shaperarea-rel} %need to check permission
+	\end{subfigure}
+	\caption{Pulse areas and relative pulse areas with and without shaper connected.}
+	\label{fig-IDE1180-shaperarea}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{shaper_risetime.png}
+		\caption{Pulse rise times.}
+		\label{fig-IDE1180-shaperrisetime-}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{shaper_risetime_relative.png}
+		\caption{Relative pulse rise times.}
+		\label{fig-IDE1180-shaperrisetime-rel} %need to check permission
+	\end{subfigure}
+	\caption{Pulse rise times and relative pulse rise times with and without shaper connected.}
+	\label{fig-IDE1180-shaperrisetime}
+\end{figure}
+
+%Figure \ref{fig-IDE1180-shaperamp-rel} shows that the shaper contributes only a minor part of the gain reduction. 
+In figure \ref{fig-IDE1180-shaperrisetime-} we see that even at 0 pF input load capacitance, the rise time of the pulse from the pre-amplifier is 60 ns, which is longer than the shaping time of 40 ns. As the capacitance is increased, the rise time is greatly increased, and we see the difference between the two curves in figure \ref{fig-IDE1180-shaperamp-rel} increasing. This appears to be a ballistic defict, but as gain reduction in the shaper from the increased capacitance is only about one fifth of the total gain reduction, ballistic defict does not seem to be the main issue.  
+
+\subsection{PCB Input Capacitance}
+\label{ide-gain-pcb}
+%Higher than expected
+%Slope of sim is so much lower, so probably not this. 
+
+
+\section{Noise Measurements}
+\label{ide-noise}
+
+Noise measurements on the IDE1180 have been performed with the ADC setup in figure \ref{fig-setup-adc}. Three different methods have been used to measure the noise:
+\begin{enumerate}  
+	\item No input signal. Fit a Gaussian to the raw signal histogram. 
+	\item With pulse on input. Fit a Gaussian to the raw signal histogram.  
+	\item With pulse on input. Using peak detection. Fit a Gaussian to the peak histogram.   
+\end{enumerate}
+
+The results were expected to be somehow different on method three as it does not use the same histogram. Methods one and two looks at variations in the baseline, while method three looks at variations in the peak height. Figure \ref{fig-noise-methods} shows a comparison of measurement results on the same system with the three different methods. All methods show a slightly different slope. For method two, the higher noise values at high capacitance is because the histogram consists of two overlapping Gaussians.  %If the noise varies between 10 mV and 30 mV, the raw signal measurements will see noise up to 30 mV, while the peak measurement will only see noise of 20 mV, because the period of the noise is much shorter than the peak width. 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Noise-methods.png}
+	\caption{Comparison of the three noise measurement methods used.}
+	\label{fig-noise-methods}
+\end{figure} 
+
+Noise is calculated as \gls{ENC}, the number of electrons needed on the input to create a signal equivalent to the measured noise, using eq. \ref{eq-noise}, where G is the gain, and $\sigma$ (sigma) is the standard deviation of the noise histogram. The noise can also be given in \gls{FWHM} by multiplying with $2\sqrt{2*ln2}$ ($\approx 2.355$). 
+
+\begin{equation}%[h]
+ENC_\sigma [e-] = \frac{\sigma [mV]}{G [mV/fC]*1.6*10^{-4} [fC/e-]}
+\label{eq-noise}
+\end{equation}
+
+It is unknown if the noise measurement from IDEAS, figure \ref{fig-ide-noise}, is measured from the baseline variations or peak height variations, or if it is calculated as $\sigma$ or \gls{FWHM}. It is therefore hard to compare to this measurement. 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{IDE1180-noise.png}
+	\caption{Measurement of the \gls{ENC} vs. input capacitive load. \citep{IDE1180}}
+	\label{fig-ide-noise}
+\end{figure} 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{noise-default-nocomp.png}
+	\caption{Measurement of the \gls{ENC} vs. input capacitive load. Calculated with gain of 12 mV/fC.}
+	\label{fig-noise-nocomp}
+\end{figure} 
+
+Figure \ref{fig-noise-nocomp} shows a noise measurement using method 3, calculated with a gain of 12 mV/fC, as specified in the datasheet \citep{IDE1180}. It is clear that the slope is extremely low, about 25 \%, compared to the measurement from IDEAS in figure \ref{fig-ide-noise}. 
+
+\subsection{Gain Compensation}
+\label{ide-noise-gain}
+
+As shown in equation \ref{eq-noise}, the gain is needed to calculate the equivalent input noise, but as discussed in section \ref{ide-gain} the gain varies with input load capacitance. It is therefore necessary to change the gain for different capacitances in the noise calculation. Originally, this was done using the tables in section \ref{ide-gain}, but as this is not optimal in case something in the system is changed. Therefore the MATLAB script for plotting the gain was modified to also calculate the gain at each capacitance when the third method for noise measurements was used. The gain is simply calculated by taking the mean of the peak histogram and dividing by the input charge. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{noise-default-auto.png}
+	\caption{Measurement of the \gls{ENC} vs. input capacitive load. Calculated with automatic gain compensation.}
+	\label{fig-noise-auto}
+\end{figure} 
+
+When gain compensation is performed, see figure \ref{fig-noise-auto}, the noise curves have a slope very close to the one shown in the datasheet. 
+
+XXX figures for shaping time 0.5-2
+
+
+
+
+\subsection{Noise from Input Circuitry}
+\label{ide-noise-input}
+
+Since the noise measurements in the datasheet were performed directly on the \gls{asic} while the measurements at \gls{uib} are performed on the \gls{PCB}, it is easy to assume that the differences in noise are due to the extra input circuitry on the \gls{PCB}. Therefore, noise measurements were performed with six different connections on the input. This was done with method 1 mentioned at the beginning of section \ref{ide-noise} (except for measurement 6 which is using method 2), with 0 pF input load capacitance. Table \ref{tab-gain-adc} is used for gain compensation. The six connections were as following:
+\begin{enumerate}  
+	\item No input jumper on SV2 in figure \ref{fig-capmount} (SMA connector and 1pF capacitor disconnected from the \gls{asic}).
+	\item Input jumper on SV2 (SMA connector and 1pF connected).
+	\item As 2, but aluminium foil covering input SMA.
+	\item Input jumper on SV2. SMA-BNC and BNC-LEMO adapters and short LEMO cable connected. Cable left floating.
+	\item As 4, but cable connected to wave generator. Generator powered on, but the output is turned off.
+	\item As 5, but with a ramp pulse from the generator output.   
+\end{enumerate}
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Noise measurements with different input circuitry connected.}
+		\label{tab-noise-input}
+		\begin{tabular}{ccccccc}\toprule
+			\textbf{Measurement \#}      & 1    & 2    & 3    & 4    & 5    & 6   \\ 
+			\textbf{ENC$_\sigma$ [e-]} & 1612 & 3512 & 3437 & 3462 & 3553 & 3871   \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+The main conclusion from table \ref{tab-noise-input} is that the input circuitry has a huge impact on the noise at low capacitance. From measurements 2-5, we see that the adapters, cable, and wave generator do not contribute noticeably to the noise. We also see an increase in noise between measurements 5 and 6, which indicates that method 2 is not a reliable form of measurement. 
+
+XXX figures for method 1 and 2, from noise docx
+
+\section{Gain Linearity}
+\label{ide-linearity}
+
+\subsection{Dynamic Range}
+\label{ide-dynamicrange}
+%Noise-gain linearity
+
+\section{Crosstalk}
+\label{ide-crosstalk}
+%http://www.slideshare.net/RohdeSchwarzNA/crosstalk-measurements-for-signal-integrity-applications
+
+\section{Input Sharing}
+\label{ide-inputshare}
+
+\section{Power Consumption}
+\label{ide-power}
+
+\section{Pile-up}
+\label{ide-pileup}
+
+\section{Resolution}
+\label{ide-resolution}
+%%ADC+noise
+
+
+
+\end{document}

@@ -2,7 +2,7 @@
 \BOOKMARK [1][-]{section.1.1}{Background and Motivation}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Goal of the Thesis}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Structure of the Thesis}{chapter.1}% 4
-\BOOKMARK [2][-]{subsection.1.3.1}{Citations}{section.1.3}% 5
+\BOOKMARK [2][-]{subsection.1.3.1}{Note on Citations}{section.1.3}% 5
 \BOOKMARK [1][-]{section.1.4}{Scientific Environment}{chapter.1}% 6
 \BOOKMARK [0][-]{chapter.2}{Radiation and Radiotherapy}{}% 7
 \BOOKMARK [1][-]{section.2.1}{Radiation}{chapter.2}% 8
@@ -19,22 +19,45 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{Capacitance-Voltage Measurements}{section.3.2}% 19
 \BOOKMARK [2][-]{subsection.3.2.2}{Current-Voltage Measurements}{section.3.2}% 20
 \BOOKMARK [1][-]{section.3.3}{3DMiMic}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.4}{I-V Measurements of 3DMiMic Detectors}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.5}{Detector Interface PCB}{chapter.3}% 23
-\BOOKMARK [0][-]{chapter.4}{Choice of Readout Electronics for the 3DMiMic Detector}{}% 24
-\BOOKMARK [1][-]{section.4.1}{Detector Readout}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.1.1}{Pre-Amplifier}{section.4.1}% 26
-\BOOKMARK [3][-]{section*.12}{Charge-Sensitive Amplifier Operation}{subsection.4.1.1}% 27
-\BOOKMARK [2][-]{subsection.4.1.2}{Shaper}{section.4.1}% 28
-\BOOKMARK [2][-]{subsection.4.1.3}{Analog-to-Digital Conversion}{section.4.1}% 29
-\BOOKMARK [2][-]{subsection.4.1.4}{Digital Signal Processing}{section.4.1}% 30
-\BOOKMARK [1][-]{section.4.2}{Medipix and Timepix}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.3}{UiO Portable Front-End Readout System}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.4}{IDEAS Amadeus Preamp-Shaper}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.5}{Ortec 142A Pre-Amplifier}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.6}{Portable PCIe ADC System}{chapter.4}% 35
-\BOOKMARK [0][-]{table.caption.14}{Bibliography}{}% 36
-\BOOKMARK [0][-]{section*.16}{Glossary}{}% 37
-\BOOKMARK [0][-]{section*.18}{Appendices}{}% 38
-\BOOKMARK [0][-]{Appendix.1.A}{3DMiMic Layouts}{}% 39
-\BOOKMARK [0][-]{Appendix.1.B}{Detector Interface PCB}{}% 40
+\BOOKMARK [2][-]{subsection.3.3.1}{3DMiMic Response to Radiation}{section.3.3}% 22
+\BOOKMARK [1][-]{section.3.4}{I-V Measurements of 3DMiMic Detectors on Wafer}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.5}{Detector Interface PCB}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.6}{Wire Bonding}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.7}{I-V Measurements of 3DMiMic Detectors on PCB}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.8}{C-V Measurements of 3DMiMic Detectors}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.9}{Radiation Measurements with Americium source}{chapter.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Choice of Readout Electronics for the 3DMiMic Detector}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Detector Readout}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.1.1}{Pre-Amplifier}{section.4.1}% 31
+\BOOKMARK [3][-]{section*.13}{Charge-sensitive amplifier operation}{subsection.4.1.1}% 32
+\BOOKMARK [2][-]{subsection.4.1.2}{Shaper}{section.4.1}% 33
+\BOOKMARK [2][-]{subsection.4.1.3}{Analog-to-Digital Conversion}{section.4.1}% 34
+\BOOKMARK [2][-]{subsection.4.1.4}{Digital Signal Processing}{section.4.1}% 35
+\BOOKMARK [1][-]{section.4.2}{Medipix and Timepix}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.3}{UiO Portable Front-End Readout System}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.4}{IDEAS Amadeus Preamp-Shaper}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.5}{Ortec 142A Pre-Amplifier}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.6}{Portable PCIe ADC System}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.6.1}{PC for ADC}{section.4.6}% 41
+\BOOKMARK [0][-]{chapter.5}{Characterization of IDE1180}{}% 42
+\BOOKMARK [1][-]{section.5.1}{Measurement Setups}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.2}{Gain vs. Input Load Capacitance}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.2.1}{Gain vs. Capacitance Simulations}{section.5.2}% 45
+\BOOKMARK [2][-]{subsection.5.2.2}{Ballistic defict}{section.5.2}% 46
+\BOOKMARK [2][-]{subsection.5.2.3}{PCB Input Capacitance}{section.5.2}% 47
+\BOOKMARK [1][-]{section.5.3}{Noise Measurements}{chapter.5}% 48
+\BOOKMARK [2][-]{subsection.5.3.1}{Gain Compensation}{section.5.3}% 49
+\BOOKMARK [2][-]{subsection.5.3.2}{Noise from Input Circuitry}{section.5.3}% 50
+\BOOKMARK [1][-]{section.5.4}{Gain Linearity}{chapter.5}% 51
+\BOOKMARK [2][-]{subsection.5.4.1}{Dynamic Range}{section.5.4}% 52
+\BOOKMARK [1][-]{section.5.5}{Crosstalk}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.6}{Input Sharing}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.7}{Power Consumption}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.8}{Pile-up}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.9}{Resolution}{chapter.5}% 57
+\BOOKMARK [0][-]{section.5.9}{Bibliography}{}% 58
+\BOOKMARK [0][-]{section*.40}{Glossary}{}% 59
+\BOOKMARK [0][-]{section*.42}{Appendices}{}% 60
+\BOOKMARK [0][-]{Appendix.1.A}{3DMiMic Layouts}{}% 61
+\BOOKMARK [0][-]{Appendix.1.B}{Detector Interface PCB}{}% 62
+\BOOKMARK [0][-]{Appendix.1.C}{List of Readout Electronics}{}% 63

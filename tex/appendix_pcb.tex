@@ -14,7 +14,7 @@ A \gls{PCB} was needed to connect the detector to the outside world, as the dete
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{pcb-pic.png}
+	\includegraphics[width=0.95\textwidth]{pcb-pic.png}
 	\caption{Top side of PCB.}
 	\label{fig-pcb-pic} 
 \end{figure}
@@ -26,6 +26,61 @@ A \gls{PCB} was needed to connect the detector to the outside world, as the dete
 	\label{fig-pcb} 
 \end{figure}
 
-After the design had been produced, it was again considered to read out the two sides of the detector separately, instead of in one signal. On the \gls{PCB}, this can be solved by wire-bonding one of the sides to one of the spare pads and connecting this to the through-hole by the GUARD connector with a wire. To avoid extra capacitance, the wires leading to the unused surface-mounting pads can be cut with a knife. 
+After the design had been produced, it was again considered to read out the two sides of the detector separately, instead of in one signal. On the \gls{PCB}, this can be solved by wire-bonding one of the sides to one of the spare pads and connecting this to the through-hole by the GUARD connector with a wire. To avoid extra capacitance, the wires leading to the unused surface-mounting pads can be cut with a knife. A new layout for two channel readout has been designed, and can be produced when needed. 
+
+\gls{uib} uses an X-Y table to position the detector during beam tests. This can move the detector in two dimensions with small, controlled steps. A mount was designed that can be used to connect the PCB to the X-Y table, see figure . 
+
+Picture
+
+Figures \ref{fig-wire-1-g} to \ref{fig-wire-2} show how wire bonding should be performed for different detectors and readout schemes. Figures \ref{fig-wiring-1-g} to \ref{fig-wiring-2} show where external wires (red) should be soldered, and where PCB lanes should be cut (black). Dotted line for optional wires not necessary for detector operation.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{w_single_channel.png}
+	\caption{Wirebonding for single channel readout on a detector with n+ guard rings.}
+	\label{fig-wire-1-g} 
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{w_two_channel_guard.png}
+	\caption{Wirebonding for two channel readout on a detector with n+ guard rings.}
+	\label{fig-wire-2-g} 
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{w_two_channel_no_guard.png}
+	\caption{Wirebonding for two channel readout on a detector without n+ guard rings.}
+	\label{fig-wire-2} 
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{pcb-pic-single-channel.png}
+	\caption{Wiring for single channel readout on a detector with n+ guard rings.}
+	\label{fig-wiring-1-g} 
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{pcb-pic-two-channel-guard.png}
+	\caption{Wiring for two channel readout on a detector with n+ guard rings.}
+	\label{fig-wiring-2-g} 
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{pcb-pic-two-channel-no-guard.png}
+	\caption{Wiring for two channel readout on a detector without n+ guard rings.}
+	\label{fig-wiring-2} 
+\end{figure}
+
+New version:
+two channel readout
+solder mask detektor
+detector both sides
+spares closer
+text both sides
 
 \end{document}

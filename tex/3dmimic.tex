@@ -26,7 +26,7 @@ A semiconductor detector, like other diodes, can be forward biased (positive pot
 
 %Tran phd fig 1.3?
 
-
+%%XXX p-i-n
 
 \section{Semiconductor Characterization}
 \label{t-char}
@@ -54,37 +54,77 @@ There are multiple ways to measure capacitance. A simple method is to supply a k
 	\label{fig-3dmimic}
 \end{figure}
 
-Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter being developed by SINTEF MiNaLab in Oslo, but was invented and ordered by researchers at the University of Wollongong. The detector is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level, and consists of an array of 32x32 cylindrical p-i-n diodes. Each diode, or cell, is made of a thin n+ core cylinder (red in figure \ref{fig-3dmimic}), a circular p+ trench some micrometers out (dark blue in figure \ref{fig-3dmimic}), and in some cases a n+ ring further away from the core (to the right in figure \ref{fig-3dmimic-side}). There are multiple versions of the detectors, with differences including presence of n+ guard ring, size of cell, and structure. The silicon between the different cells should be etched away and replaced with tissue equivalent \gls{PMMA}, but this has not been attempted by SINTEF yet as of the time this thesis is written. This should be done because \gls{PMMA} is ionized by radiation very similar to the way tissue would, unlike silicon, due to the mass numbers of the atoms. 
+Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter being developed by SINTEF MiNaLab in Oslo, but was invented and ordered by researchers at the University of Wollongong. The detector is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level, and consists of an array of more than a thousand cylindrical p-i-n diodes (see figure \ref{fig-3dmimic}). Each diode, or cell, is made of a thin n+ core cylinder, a circular p+ trench some micrometers out, and in some cases a n+ guard ring further away from the core (see figure \ref{fig-3dmimic-top-side}). There are multiple versions of the detectors, with differences including presence of n+ guard ring, size of cell, and structure. The silicon between the different cells should be etched away and replaced with tissue equivalent \gls{PMMA}, but this has not been attempted by SINTEF yet as of the time this thesis is written. This should be done because \gls{PMMA} is ionized by radiation very similar to the way tissue would, unlike silicon, due to the mass numbers of the atoms. 
+%some are 50x50
 
 %Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
 
-Figure \ref{fig-3dmimic-side} show a "3D" layout with the n+ core cylinder and the p+ trench going all the way through the bulk, and a planar n+ guard ring. There also exist designs with either or both the n+ core and p+ trench made planar. Figure \ref{fig-3dmimic-top15} shows the smallest, "15 $\mu$m", layout of 3DMiMic from above with a size scale. The larger, "30 $\mu$m", layout is roughly 25 \% larger than the "15 $\mu$m" layout. Images of some of the different layouts can be found in Appendix \ref{a-3dmimic-layout}.
+Figure \ref{fig-3dmimic-side} show a "3D" layout with the n+ core cylinder and the p+ trench going all the way through the bulk, and a planar n+ guard ring. There also exist designs with either or both the n+ core and p+ trench made planar. Figure \ref{fig-3dmimic-top15} shows the smallest, "15 $\mu$m", layout of 3DMiMic from above with a size scale. The larger, "30 $\mu$m", layout is roughly 25 \% larger than the "15 $\mu$m" layout. The detectors with the smaller diodes have 50x50 cells, while the larger variant has 32x33 cells. Images of some of the different layouts can be found in Appendix \ref{a-3dmimic-layout}.
 
-\begin{figure}%[h]
+%\begin{figure}%[h]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{3d-side.png}
+%	\caption{Layout of 3DMiMic design with 3D n+ core and 3D p+ trench. \citep{Marco}}
+%	\label{fig-3dmimic-side} %need to check permission
+%\end{figure}
+
+\begin{figure}
 	\centering
-	\includegraphics[width=0.5\textwidth]{3d-side.png}
-	\caption{Layout of 3DMiMic design with 3D n+ core and 3D p+ trench. \citep{Marco}}
-	\label{fig-3dmimic-side} %need to check permission
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{3d-top.png}
+		\caption{Top view with guard ring present.}
+		\label{fig-3dmimic-top}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{3d-side.png}
+		\caption{Side view with 3D n+ core, 3D p+ trench, and planar n+ guard.}
+		\label{fig-3dmimic-side} %need to check permission
+	\end{subfigure}
+	\caption{Layout of a 3DMiMic cell. \citep{Marco}}
+	\label{fig-3dmimic-top-side}
 \end{figure}
 
-\begin{figure}%[h]
+
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{3d-top15.png}
+	\includegraphics[width=0.7\textwidth]{3d-top15.png}
 	\caption{Smallest, "15 $\mu$m", layout of 3DMiMic seen from above. Distance scale is in $\mu$m. \citep{Marco}}
 	\label{fig-3dmimic-top15} %need to check permission
 \end{figure}
 
-In the main layout of 3DMiMic, all the n+ cores in a line is connected together. Every second line is also connected, leaving two channels (odd/even) for readout. When present, all the outer n+ rings are connected and can be read out if desired. There also exist other layouts, for example with all diodes connected together, readout in eight channels, and a larger design made to be bump bonded to a Medipix chip (see section \ref{e-medipix}). 
+In the main layout of 3DMiMic, all the n+ cores in a line is connected together. Every second line is also connected, leaving two channels (odd/even) for readout. When present, all the outer n+ rings are connected and can be read out if desired. A full die is shown in figure \ref{fig-3dmimic-die}, where the "+" pads are the n+ cores, the "G" pads are for the p+ trenches, the "GUARD" pads are for the cell guard rings, and the large square around the detector is a guard ring. There also exist other layouts, for example with all diodes connected together, readout in eight channels, and a larger design made to be bump bonded to a Medipix chip (see section \ref{e-medipix}). 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{3d-die.png}
+	\caption{Layout of a full 3DMiMic die, showing bonding pads and the guard ring outside the active area. \citep{Marco}}
+	\label{fig-3dmimic-die} %need to check permission
+\end{figure}
 
 Even though the odd/even readout scheme contains two channels, it does not provide any spacial information, as both channels cover the whole active area of the detector. The reason for this layout is to notice if a particle track goes through multiple adjacent cells. If both readout channels are triggered at the same time, this was not a single event, as it will look if all cells are read in a single channel.
 
-\section{I-V Measurements of 3DMiMic Detectors}
+\subsection{3DMiMic Response to Radiation}
+Table XXXX from \citep{Samnoy} show the expected signal strength in number of electrons from a \gls{MIP} to a Carbon ion in the Bragg peak. 
+
+\section{I-V Measurements of 3DMiMic Detectors on Wafer}
 \label{3d-IV}
 \gls{IV} measurements of seven 3DMiMic wafers where performed in the cleanroom at SINTEF MiNaLab in Oslo by Øyvind Lye and Andreas Tefre Samnøy in May 2016. These seven wafers have been produced with different designs and fabrication processes. Each wafer has 104 detectors with odd/even readout, 6 detectors with single channel readout, and several other experimental layouts. The detectors had to be tested with manual needle placement, as the designs are too different to use an automatic system with a probe card. The wafer is held in place on a stand using vacuum, and the stand can be moved in the horizontal plane. The needles can be manually placed at the desired location, and the position can be fine-tuned in Cartesian space using screws. The cell n+ guard ring was not connected on the detectors where it is present. This was done because it would require a separate test setup for the detectors with the ring, which would increase the time needed for the measurement. A total of 580 detectors were measured. 
 
 \section{Detector Interface PCB}
 \label{3d-pcb}
-A \gls{PCB} was designed to interface 3DMiMic to the supply and readout electronics. This is described in more detailed in appendix \ref{a-pcb}.
+A \gls{PCB} was designed to interface 3DMiMic to the supply and readout electronics. This is described in detail in appendix \ref{a-pcb}.
+
+\section{Wire Bonding}
+Wire bonding the detectors to the PCB was supposed to be performed by SINTEF, but they had problems with the wire bonder in June 2016 which would have led to another delay. To avoid this delay, three detectors glued to PCBs were picket up at SINTEF and brought to the cleanroom at Vestfold Innovation Park for wire bonding. The wire bonder was already loaded with 17.5 $\mu$m gold wire, and this was used even though it is thinner than necessary for the 3DMiMic detectors. Each connection was done with two parallel wires to have some redundancy in case of mechanical damage to the thin wires. The three detectors are numbered: S10-15 $\#$128 (MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout), S10-17 $\#$51 (MIC$\_$ARRAY$\_$1 layout), and S10-17 $\#$128 (MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout). See appendix \ref{a-3dmimic-layout} for the differences in the wafers and layouts.
+See appendix \ref{a-pcb} for bonding schematics. 
+
+\section{I-V Measurements of 3DMiMic Detectors on PCB}
+
+\section{C-V Measurements of 3DMiMic Detectors}
+
+\section{Radiation Measurements with Americium source}
 
 
 \end{document}

@@ -37,7 +37,7 @@
 %Added by me %%%%%%%%%%%%%
 \usepackage{subfiles} %Can compile from subfile
 \usepackage{enumitem} %for glossaries margin
-\usepackage[toc]{glossaries} %For glossary/abreviations
+\usepackage[toc, nonumberlist]{glossaries} %For glossary/abreviations
 	\makeglossaries
 \newcommand{\comm}[1]{} %Block comment command
 \usepackage{titlesec} %Change title spacings
@@ -48,12 +48,20 @@
 	\titlespacing{\subsubsection}{0pt}{0pt}{-10pt}
 \usepackage{caption}
 	\captionsetup[table]{skip=0pt} %Reduce caption spacing for tables
+\usepackage{booktabs} % To thicken table lines
+\usepackage{subcaption} %For subfigure a) b)
+\usepackage{scrextend} %For fancy list with tab https://en.wikibooks.org/wiki/LaTeX/List_Structures#Some_special_lists
+	\addtokomafont{labelinglabel}{\sffamily}
 \usepackage[toc,page]{appendix} %Attempt for appendix page numbering: A-1. Not working
 	\newcommand{\appendixpagenumbering}{
 		\break
 		\pagenumbering{arabic}
 		\renewcommand{\thepage}{A-\arabic{page}}
 	}
+\usepackage{tikz} %For drawing box diagrams. http://tex.stackexchange.com/questions/163481/specific-box-diagram-with-multiple-arrows
+	\usetikzlibrary{positioning}
+\usepackage[european]{circuitikz}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

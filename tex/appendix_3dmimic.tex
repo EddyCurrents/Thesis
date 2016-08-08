@@ -24,7 +24,7 @@ Figure \ref{fig-wafer} shows a whole 3DMiMic wafer. The highlighted area are the
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{layout/MIC_ARRAY_1.png}
+		\includegraphics[width=.78\linewidth]{layout/MIC_ARRAY_1.png}
 		\captionof{figure}{MIC$\_$ARRAY$\_$1 layout.}
 		\label{fig-mic-array-1}
 	\end{minipage}%
@@ -40,7 +40,7 @@ Figure \ref{fig-wafer} shows a whole 3DMiMic wafer. The highlighted area are the
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{layout/MIC_ARRAY_2.png}
+		\includegraphics[width=.79\linewidth]{layout/MIC_ARRAY_2.png}
 		\captionof{figure}{MIC$\_$ARRAY$\_$2 layout.}
 		\label{fig-mic-array-2}
 	\end{minipage}%
@@ -56,7 +56,7 @@ Figure \ref{fig-wafer} shows a whole 3DMiMic wafer. The highlighted area are the
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{layout/MIC_ARRAY_3.png}
+		\includegraphics[width=.72\linewidth]{layout/MIC_ARRAY_3.png}
 		\captionof{figure}{MIC$\_$ARRAY$\_$3 layout.}
 		\label{fig-mic-array-3}
 	\end{minipage}%
@@ -72,15 +72,15 @@ Figure \ref{fig-wafer} shows a whole 3DMiMic wafer. The highlighted area are the
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{layout/MIC_ARRAY_3_PSTOP_L.png}
-		\captionof{figure}{MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout.}
-		\label{fig-mic-array-3-pstop-L}
+		\includegraphics[width=.74\linewidth]{layout/MIC_ARRAY_PSTOP.png}
+		\captionof{figure}{MIC$\_$ARRAY$\_$PSTOP layout.}
+		\label{fig-mic-array-pstop}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{layout/MIC_ARRAY_PSTOP.png}
-		\captionof{figure}{MIC$\_$ARRAY$\_$PSTOP layout.}
-		\label{fig-mic-array-pstop}
+		\includegraphics[width=.8\linewidth]{layout/MIC_ARRAY_3_PSTOP_L.png}
+		\captionof{figure}{MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout.}
+		\label{fig-mic-array-3-pstop-L}
 	\end{minipage}
 \end{figure}
 
@@ -90,5 +90,35 @@ Figure \ref{fig-wafer} shows a whole 3DMiMic wafer. The highlighted area are the
 	\caption{MIC$\_$3D layout. Every second column is n+ or p+ pillars.}
 	\label{fig-mic-3D} 
 \end{figure}
+
+The differences between the measured wafers are listed below \citep{Marco}: %list \ref{list-wafer}
+\comm{
+- S10-01 and S10-02: Fully planar wafers, all dopings performed with implantation.
+
+- S10-4: the p+ trench is NOT CLOSED and not filled with poly and is doped with gas phase, the n+ is planar and doped with implantation.
+
+- S10-11: both p+ and n+ are etched but not filled, both dopings performed with gas phase.
+
+- S10-14: FULL 3D, both gas phase, but OLD metal (connection issues due to broken metal links).
+
+- S10-15: (this is the wafer they tested in Japan), both p+ and n+ etched and NOT CLOSED and not filled, p+gas phase, n+ implanted.
+
+- S10-16: like S10-15 but the p+ is also implanted.
+
+- S10-17: FULL 3D, complete trench and filled with poly, both doping gas phase, NEW METAL and no overetch in the process, should have better metal contacts than S10-14.
+}
+
+\begin{labeling}{S10-11}
+	\item [S10-01] Fully planar wafer, all dopings performed with implantation.
+	\item [S10-02] Same as S10-01.
+	\item [S10-04] The p+ trench is NOT CLOSED and not filled with poly and is doped with gas phase, the n+ is planar and doped with implantation.
+	\item [S10-11] Both p+ and n+ are etched but not filled, both dopings performed with gas phase.
+	\item [S10-14] FULL 3D, both gas phase, but OLD metal (connection issues due to broken metal links).
+	\item [S10-15] Both p+ and n+ etched and NOT CLOSED and not filled, p+gas phase, n+ implanted. (This wafer was tested in Japan).
+	\item [S10-16] Like S10-15 but the p+ is also implanted.
+	\item [S10-17] FULL 3D, complete trench and filled with poly, both doping gas phase, NEW METAL and no overetch in the process, should have better metal contacts than S10-14.
+	%\label{list-wafer}
+	%\caption{test}
+\end{labeling}
 
 \end{document}
