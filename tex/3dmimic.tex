@@ -22,11 +22,13 @@ Semiconductor diode detectors, also called simply semiconductor detectors or sol
 
 Charged particles passing through a semiconductor detector create electron-hole pairs along the particles path. By setting up an electric potential across the diode, there will be an electric field present that will cause the holes to drift in the same direction as the electric field vector, and the electrons in the opposite direction. By monitoring one of the diodes sides, a pulse is measured as the charge from either the holes or the electrons (depending on which side is measured) is collected. 
 
-A semiconductor detector, like other diodes, can be forward biased (positive potential on p-side) or reverse biased (positive potential on n-side). It is possible to operate a semiconductor detector without external bias, but it will perform poorly as the electric field across the junction will be too weak to read out the charge carriers before many are lost. Applying forward bias to the detector reduces the electric field even further, while reverse bias increases it. This is the main reason for reverse bias being the dominant choice for radiation detectors. \citep[chap. 11]{Knoll}
+A semiconductor detector, like other diodes, can be forward biased (positive potential on p-side) or reverse biased (positive potential on n-side). It is possible to operate a semiconductor detector without external bias, but it will perform poorly as the electric field across the junction will be too weak to read out the charge carriers before many are lost. Applying forward bias to the detector reduces the electric field even further, while reverse bias increases it. Another important factor is that reverse bias increases the depletion region, which is also the active volume of the detector. \comm{This is the main reason for reverse bias being the dominant choice for radiation detectors.}\citep[chap. 11]{Knoll}
 
 %Tran phd fig 1.3?
 
 %%XXX p-i-n
+
+%%%XXX More details and figures
 
 \section{Semiconductor Characterization}
 \label{t-char}
@@ -36,6 +38,8 @@ A semiconductor detector, like other diodes, can be forward biased (positive pot
 \gls{CV} profiling is a semiconductor characterisation technique that is much used to find doping- and defect densities in semiconductor junctions. The technique relies on the fact that the width of a reverse biased depletion region depends on the applied voltage. The small signal capacitance is dependent on both the doping density and width of the depletion region. \gls{CV} profiles are made by measuring the capacitance while sweeping over a voltage range. The doping density is found from the slope of a C-V curve or a $1/C^2$-V curve. \citep[chap. 2]{Schroder}
 
 There are multiple ways to measure capacitance. A simple method is to supply a known current, and measure how fast the voltage across the capacitor rises. This method assumes an ideal capacitor, and is therefore inaccurate for a real capacitor. A more accurate method is to supply an AC signal to the \gls{DUT} and measure the AC current and voltage. A high frequency signal ($\sim$10 MHz) will be better for measuring dynamic performance, while a low frequency signal ($\sim$10 kHz) is better to find quasistatic characteristics. The capacitance is calculated from the frequency, current, and voltage. 
+%%XXX equation?
+
 %https://en.wikipedia.org/wiki/Capacitance_meter
 %http://www.planetanalog.com/document.asp?doc_id=527457
 %Paper we got in lab
@@ -54,12 +58,14 @@ There are multiple ways to measure capacitance. A simple method is to supply a k
 	\label{fig-3dmimic}
 \end{figure}
 
-Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter being developed by SINTEF MiNaLab in Oslo, but was invented and ordered by researchers at the University of Wollongong. The detector is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level, and consists of an array of more than a thousand cylindrical p-i-n diodes (see figure \ref{fig-3dmimic}). Each diode, or cell, is made of a thin n+ core cylinder, a circular p+ trench some micrometers out, and in some cases a n+ guard ring further away from the core (see figure \ref{fig-3dmimic-top-side}). There are multiple versions of the detectors, with differences including presence of n+ guard ring, size of cell, and structure. The silicon between the different cells should be etched away and replaced with tissue equivalent \gls{PMMA}, but this has not been attempted by SINTEF yet as of the time this thesis is written. This should be done because \gls{PMMA} is ionized by radiation very similar to the way tissue would, unlike silicon, due to the mass numbers of the atoms. 
+Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter being developed by SINTEF MiNaLab in Oslo, but was invented and ordered by Professor Anatoly Rozenfeld from the Centre for Medical Radiation Physics at the University of Wollongong. The detector is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level, and consists of an array of more than a thousand cylindrical p-i-n diodes (see figure \ref{fig-3dmimic}). Each diode, or cell, is made of a thin n+ core cylinder, a circular p+ trench some micrometers out, and in some cases a n+ guard ring further away from the core (see figure \ref{fig-3dmimic-top-side}). There are multiple versions of the detectors, with differences including presence of n+ guard ring, size of cell, and structure. The silicon between the different cells should be etched away and replaced with tissue equivalent \gls{PMMA}, but this has not been attempted by SINTEF yet as of the time this thesis is written. This should be done because \gls{PMMA} produces secondary radiation in a very similar way to how tissue does, unlike silicon, due to the mass numbers of the atoms. 
 %some are 50x50
 
 %Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
 
-Figure \ref{fig-3dmimic-side} show a "3D" layout with the n+ core cylinder and the p+ trench going all the way through the bulk, and a planar n+ guard ring. There also exist designs with either or both the n+ core and p+ trench made planar. Figure \ref{fig-3dmimic-top15} shows the smallest, "15 $\mu$m", layout of 3DMiMic from above with a size scale. The larger, "30 $\mu$m", layout is roughly 25 \% larger than the "15 $\mu$m" layout. The detectors with the smaller diodes have 50x50 cells, while the larger variant has 32x33 cells. Images of some of the different layouts can be found in Appendix \ref{a-3dmimic-layout}.
+Figure \ref{fig-3dmimic-side} show a "3D" layout with the n+ core cylinder and the p+ trench going all the way through the bulk, and a planar n+ guard ring. There also exist designs with either or both the n+ core and p+ trench made planar. Figure \ref{fig-3dmimic-top15} shows the smallest, "15 $\mu$m", layout of 3DMiMic from above with a size scale. The larger, "30 $\mu$m", layout has a roughly 25 \% larger radius than the "15 $\mu$m" layout. The detectors with the smaller diodes have 50x50 cells, while the larger variant has 32x33 cells. Images of some of the different layouts can be found in Appendix \ref{a-3dmimic-layout}.
+
+%%XXX doublecheck 32x33 again
 
 %\begin{figure}%[h]
 %	\centering

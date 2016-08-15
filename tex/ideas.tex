@@ -6,11 +6,25 @@
 \chapter{Characterization of IDE1180}
 \label{ide}
 
-IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. Two chips, on evaluation boards 7045-1-03 and 7048-1-04 was characterized by the author, partly together with master student Sanjeeda Sharmin and chief engineer Thomas Poulianitis. The tests have been focused on the 7045 board as it showed the best characteristics, and if nothing else is mentioned for a measurement, this it the board that was used. 
+IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. Important specifications from the preliminary datasheet can be seen in table \ref{tab-ide-specs}. The gain at default settings is specified as 12.45 mV/fC. Two chips, on evaluation boards 7045-1-03 and 7048-1-04 was characterized by the author, partly together with master student Sanjeeda Sharmin and chief engineer Thomas Poulianitis. The tests have been focused on the 7045 board as it showed the best characteristics, and if nothing else is mentioned for a measurement, this it the board that was used. 
 
-XXX need more basic info about IDE1180
+\begin{table}[h!]
+	\begin{center}
+		\caption{Specifications from the IDE1180 datasheet \citep{IDE1180}.}
+		\label{tab-ide-specs}
+		\begin{tabular}{cc}\toprule
+			\textbf{Gain [mV/fC]} & 24/12/6/3 at different settings  \\ 
+			\textbf{Input range [fC]}     & 0 to $\pm$50/100/200/400  \\
+			\textbf{Maximum non-linearity}	&	3 \%	\\
+			\textbf{\gls{ENC} [e-]}		& 	1106 + 68 per pF load at default gain \\
+			\textbf{Maximum input event rate}	&	5 MHz	\\
+			\textbf{Maximum power consumption}	&	32 mW	\\
+			 \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
 
-The IDE1180 can be configured to different gains, shapes, etc. by setting different inputs on the \gls{asic}. Some of these inputs are digital, and are set to either ground or 3.3 V. The rest are set by the current into the input. This is done by configuring a potentiometer, and connecting this to 3.3 V. The connections are done by adding jumpers to 3-pin pin-headers. The middle pin is connected to either the left side, ground, or the right side, 3.3 V. No jumper should be equal to a ground connection. Using "1" and "0" to specify jumper positions can easily cause confusion, because the ground pins on the pin headers are marked with a "1" (pin 1) on the \gls{PCB}. Therefore, L and R (left and right) is used to specify jumper positions in this chapter. This is when looking at the \gls{PCB} with the input on the left and the output on the right. An X is used for no jumper. The current in the potentiometers can be checked for future reference by connecting it to ground through a 10 k$\Omega$ resistor using a L jumper. The voltage across this resistor can be measured using a multimeter, and gives the current when divided by 10 k$\Omega$. 
+The IDE1180 can be configured to different gains, shapes, etc. by setting different inputs on the \gls{asic}. Some of these inputs are digital, and are set to either ground or 3.3~V. The rest are set by the current into the input. This is done by configuring a potentiometer, and connecting this to 3.3~V. The connections are done by adding jumpers to 3-pin pin-headers. The middle pin is connected to either the left side, ground, or the right side, 3.3~V. No jumper should be equal to a ground connection. Using "1" and "0" to specify jumper positions can easily cause confusion, because the ground pins on the pin headers are marked with a "1" (pin 1) on the \gls{PCB}. Therefore, L and R (left and right) is used to specify jumper positions in this chapter. This is when looking at the \gls{PCB} with the input on the left and the output on the right. An X is used for no jumper. The current in the potentiometers can be checked for future reference by connecting it to ground through a 10 k$\Omega$ resistor using a L jumper. The voltage across this resistor can be measured using a multimeter, and gives the current when divided by 10 k$\Omega$. 
 
 \section{Measurement Setups}
 \label{ide-setup}
@@ -84,7 +98,7 @@ For many measurements it is required to vary the input load capacitance of the p
 	\label{fig-capmount}
 \end{figure} 
 
-The IDE1180 has been configured to four different shaping times: 40 ns (default), 500 ns, 1 $\mu$s, and 2 $\mu$s. Table \ref{tab-ide-shaping} shows the necessary parameters to configure the IDE1180 to these shaping times. 40 ns is the default shaping time, and therefore requires no jumpers. The voltages specify the potential that should be across the 10 $k\Omega$ resistor belonging to said signal.  
+The IDE1180 has been configured to four different shaping times: 40~ns (default), 500~ns, 1~$\mu$s, and 2~$\mu$s. Table \ref{tab-ide-shaping} shows the necessary parameters to configure the IDE1180 to these shaping times. 40 ns is the default shaping time, and therefore requires no jumpers. The voltages specify the potential that should be across the 10~$k\Omega$ resistor belonging to said signal.  
 
 \begin{table}[h!]
 	\centering
@@ -355,7 +369,7 @@ The results were expected to be somehow different on method three as it does not
 	\label{fig-noise-methods}
 \end{figure} 
 
-Noise is calculated as \gls{ENC}, the number of electrons needed on the input to create a signal equivalent to the measured noise, using eq. \ref{eq-noise}, where G is the gain, and $\sigma$ (sigma) is the standard deviation of the noise histogram. The noise can also be given in \gls{FWHM} by multiplying with $2\sqrt{2*ln2}$ ($\approx 2.355$). 
+Noise is calculated as \acrfull{ENC}, the number of electrons needed on the input to create a signal equivalent to the measured noise, using eq. \ref{eq-noise}, where G is the gain, and $\sigma$ (sigma) is the standard deviation of the noise histogram. The noise can also be given in \gls{FWHM} by multiplying with $2\sqrt{2*ln2}$ ($\approx 2.355$). 
 
 \begin{equation}%[h]
 ENC_\sigma [e-] = \frac{\sigma [mV]}{G [mV/fC]*1.6*10^{-4} [fC/e-]}
@@ -426,6 +440,11 @@ Since the noise measurements in the datasheet were performed directly on the \gl
 The main conclusion from table \ref{tab-noise-input} is that the input circuitry has a huge impact on the noise at low capacitance. From measurements 2-5, we see that the adapters, cable, and wave generator do not contribute noticeably to the noise. We also see an increase in noise between measurements 5 and 6, which indicates that method 2 is not a reliable form of measurement. 
 
 XXX figures for method 1 and 2, from noise docx
+
+\section{Shaping Time}
+\label{ide-shapingtime}
+%shaping time vs input charge (from gain linearity)
+%shaping time vs. C (from gain/risetime/area)
 
 \section{Gain Linearity}
 \label{ide-linearity}

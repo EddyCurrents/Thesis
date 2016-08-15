@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.11)  8 AUG 2016 11:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.11)  15 AUG 2016 16:56
 entering extended mode
 **thesis.tex
 (thesis.tex
@@ -1415,7 +1415,7 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 19.
 
-<./../img/uib-emblem-svart.pdf, id=257, 80.3pt x 80.3pt>
+<./../img/uib-emblem-svart.pdf, id=265, 80.3pt x 80.3pt>
 File: ./../img/uib-emblem-svart.pdf Graphic file (type pdf)
 
 <use ./../img/uib-emblem-svart.pdf>
@@ -1480,10 +1480,10 @@ LaTeX Font Info:    Try loading font information for OT1+zplm on input line 2.
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 ) [1
 
-])
+] [2])
 \tf@toc=\write7
- [2]
-(../tex/intro.tex
+
+[3] (../tex/intro.tex
 Chapter 1.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 8.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
@@ -1503,23 +1503,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 \subsection{Note on Citations}
-                                    [1
+l.30 ... Characterization of the 3DMiMic Detector}
+                                                   [1
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 31.
-) (../tex/theory.tex [2]
+(Font)              scaled to size 13.67995pt on input line 49.
+ [2]) (../tex/theory.tex
+[3]
 Chapter 2.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 22.
 
-[3
+[4
 
-] <./../img/figure_5_15.jpg, id=391, 504.9264pt x 364.2408pt>
+] <./../img/figure_5_15.jpg, id=409, 504.9264pt x 364.2408pt>
 File: ./../img/figure_5_15.jpg Graphic file (type jpg)
 
 <use ./../img/figure_5_15.jpg>
@@ -1529,7 +1530,7 @@ Package pdftex.def Info: ./../img/figure_5_15.jpg used on input line 30.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] <./../img/asu-photon.png, id=407, 190.7125pt x 166.12062pt>
+[5] <./../img/asu-photon.png, id=425, 190.7125pt x 166.12062pt>
 File: ./../img/asu-photon.png Graphic file (type png)
 
 <use ./../img/asu-photon.png>
@@ -1539,8 +1540,8 @@ Package pdftex.def Info: ./../img/asu-photon.png used on input line 43.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5 <./../img/figure_5_15.jpg>] [6 <./../img/asu-photon.png>] [7]
-<./../img/pcure-photonproton.png, id=470, 216.81pt x 134.904pt>
+[6 <./../img/figure_5_15.jpg>] [7 <./../img/asu-photon.png>] [8]
+<./../img/pcure-photonproton.png, id=489, 216.81pt x 134.904pt>
 File: ./../img/pcure-photonproton.png Graphic file (type png)
 
 <use ./../img/pcure-photonproton.png>
@@ -1548,255 +1549,269 @@ Package pdftex.def Info: ./../img/pcure-photonproton.png used on input line 79.
 
 (pdftex.def)             Requested size: 317.07614pt x 197.31638pt.
 
-<./../img/figure_27_10.jpg, id=479, 473.6094pt x 433.62pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./../img/figure_27_10.jpg, id=498, 473.6094pt x 433.62pt>
 File: ./../img/figure_27_10.jpg Graphic file (type jpg)
 
 <use ./../img/figure_27_10.jpg>
 Package pdftex.def Info: ./../img/figure_27_10.jpg used on input line 92.
-(pdftex.def)             Requested size: 271.7835pt x 248.83994pt.
- [8] [9 <./../img/pcure-photonproton.png> <./../img/figure_27_10.jpg>]
-<./../img/pcure-dose-distribution.jpeg, id=507, 405.01312pt x 298.11375pt>
+(pdftex.def)             Requested size: 226.48395pt x 207.3611pt.
+ [9]
+<./../img/pcure-dose-distribution.jpeg, id=519, 405.01312pt x 298.11375pt>
 File: ./../img/pcure-dose-distribution.jpeg Graphic file (type jpg)
 
 <use ./../img/pcure-dose-distribution.jpeg>
 Package pdftex.def Info: ./../img/pcure-dose-distribution.jpeg used on input li
 ne 103.
 (pdftex.def)             Requested size: 362.37569pt x 266.73509pt.
- [10 <./../img/pcure-dose-distribution.jpeg>] <./../img/ksyh-miss.png, id=526, 
-564.60938pt x 216.81pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./../img/pcure-photonproton.png> <./../img/figure_27_10.jpg>]
+<./../img/ksyh-miss.png, id=538, 564.60938pt x 216.81pt>
 File: ./../img/ksyh-miss.png Graphic file (type png)
 
 <use ./../img/ksyh-miss.png>
 Package pdftex.def Info: ./../img/ksyh-miss.png used on input line 116.
 (pdftex.def)             Requested size: 452.9679pt x 173.94115pt.
-) (../tex/3dmimic.tex [11 <./../img/ksyh-miss.png>]
-Chapter 3.
-[12
 
-] [13] <./../img/3dmimic.png, id=563, 462.72874pt x 401.5pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11 <./../img/pcure-dose-distribution.jpeg>]
+<./../img/carbon.png, id=554, 383.18156pt x 225.84375pt>
+File: ./../img/carbon.png Graphic file (type png)
+
+<use ./../img/carbon.png>
+Package pdftex.def Info: ./../img/carbon.png used on input line 133.
+(pdftex.def)             Requested size: 317.07614pt x 186.89198pt.
+) (../tex/3dmimic.tex [12 <./../img/ksyh-miss.png> <./../img/carbon.png>]
+Chapter 3.
+[13
+
+] [14] <./../img/3dmimic.png, id=593, 462.72874pt x 401.5pt>
 File: ./../img/3dmimic.png Graphic file (type png)
 
 <use ./../img/3dmimic.png>
-Package pdftex.def Info: ./../img/3dmimic.png used on input line 52.
+Package pdftex.def Info: ./../img/3dmimic.png used on input line 56.
 (pdftex.def)             Requested size: 271.7835pt x 235.82307pt.
- [14 <./../img/3dmimic.png>]
-<./../img/3d-top.png, id=584, 255.95625pt x 265.49188pt>
+ [15 <./../img/3dmimic.png>]
+<./../img/3d-top.png, id=614, 255.95625pt x 265.49188pt>
 File: ./../img/3d-top.png Graphic file (type png)
 
 <use ./../img/3d-top.png>
-Package pdftex.def Info: ./../img/3d-top.png used on input line 75.
+Package pdftex.def Info: ./../img/3d-top.png used on input line 81.
 (pdftex.def)             Requested size: 203.83417pt x 211.42963pt.
 
-<./../img/3d-side.png, id=585, 288.57813pt x 280.54813pt>
+<./../img/3d-side.png, id=615, 288.57813pt x 280.54813pt>
 File: ./../img/3d-side.png Graphic file (type png)
 
 <use ./../img/3d-side.png>
-Package pdftex.def Info: ./../img/3d-side.png used on input line 81.
+Package pdftex.def Info: ./../img/3d-side.png used on input line 87.
 (pdftex.def)             Requested size: 226.48395pt x 220.19221pt.
 
-<./../img/3d-top15.png, id=590, 481.8pt x 246.42062pt>
+<./../img/3d-top15.png, id=620, 481.8pt x 246.42062pt>
 File: ./../img/3d-top15.png Graphic file (type png)
 
 <use ./../img/3d-top15.png>
-Package pdftex.def Info: ./../img/3d-top15.png used on input line 92.
+Package pdftex.def Info: ./../img/3d-top15.png used on input line 98.
 (pdftex.def)             Requested size: 317.07614pt x 162.1756pt.
- [15 <./../img/3d-top.png> <./../img/3d-side.png> <./../img/3d-top15.png>]
-<./../img/3d-die.png, id=604, 244.41313pt x 276.53313pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./../img/3d-die.png, id=627, 244.41313pt x 276.53313pt>
 File: ./../img/3d-die.png Graphic file (type png)
 
 <use ./../img/3d-die.png>
-Package pdftex.def Info: ./../img/3d-die.png used on input line 101.
+Package pdftex.def Info: ./../img/3d-die.png used on input line 107.
 (pdftex.def)             Requested size: 271.7835pt x 307.50815pt.
- [16 <./../img/3d-die.png>]) (../tex/electronics.tex
-[17] [18]
+ [16 <./../img/3d-top.png> <./../img/3d-side.png>]
+[17 <./../img/3d-top15.png>] [18 <./../img/3d-die.png>])
+(../tex/electronics.tex [19]
 Chapter 4.
-[19
+[20
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 25.
+(hyperref)                be the same. Added a new anchor on input line 27.
 
-<./../img/csa.png, id=651, 931.48pt x 501.37312pt>
+<./../img/csa.png, id=681, 931.48pt x 501.37312pt>
 File: ./../img/csa.png Graphic file (type png)
  <use ./../img/csa.png>
-Package pdftex.def Info: ./../img/csa.png used on input line 29.
+Package pdftex.def Info: ./../img/csa.png used on input line 31.
 (pdftex.def)             Requested size: 452.9679pt x 243.80829pt.
 
-[20 <./../img/csa.png>] [21] [22]
+[21 <./../img/csa.png>] [22] [23]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23]) (../tex/ideas.tex [24] [25]
+[24]) (../tex/ideas.tex [25]
 Chapter 5.
 [26
 
-] <./../img/capamount.png, id=768, 1084.05pt x 564.60938pt>
+] [27] <./../img/capamount.png, id=812, 1084.05pt x 564.60938pt>
 File: ./../img/capamount.png Graphic file (type png)
 
 <use ./../img/capamount.png>
-Package pdftex.def Info: ./../img/capamount.png used on input line 82.
+Package pdftex.def Info: ./../img/capamount.png used on input line 96.
 (pdftex.def)             Requested size: 452.9679pt x 235.91957pt.
 
-Overfull \hbox (10.24179pt too wide) in paragraph at lines 93--100
+Overfull \hbox (10.24179pt too wide) in paragraph at lines 107--114
  [][] 
  []
 
-[27]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [28 <./../img/capamount.png>] [29]
-<./../img/Gain_shaping.png, id=813, 632.3625pt x 474.27188pt>
+<./../img/Gain_shaping.png, id=849, 632.3625pt x 474.27188pt>
 File: ./../img/Gain_shaping.png Graphic file (type png)
 
 <use ./../img/Gain_shaping.png>
-Package pdftex.def Info: ./../img/Gain_shaping.png used on input line 203.
+Package pdftex.def Info: ./../img/Gain_shaping.png used on input line 217.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
 
-<./../img/Gain_shaping_relative.png, id=814, 632.3625pt x 474.27188pt>
+<./../img/Gain_shaping_relative.png, id=850, 632.3625pt x 474.27188pt>
 File: ./../img/Gain_shaping_relative.png Graphic file (type png)
 
 <use ./../img/Gain_shaping_relative.png>
 Package pdftex.def Info: ./../img/Gain_shaping_relative.png used on input line 
-209.
+223.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
-
+ [30]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7.6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 226.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 240.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 226.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 240.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7.6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 226.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 240.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 226.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 240.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 226.
+(Font)              scaled to size 10.42007pt on input line 240.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 226.
+(Font)              scaled to size 7.91925pt on input line 240.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 226.
+(Font)              scaled to size 6.25204pt on input line 240.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 226.
+(Font)              scaled to size 10.42007pt on input line 240.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 226.
+(Font)              scaled to size 7.91925pt on input line 240.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 226.
-[30] <./../img/sim_ideal_both.png, id=830, 1065.9825pt x 267.24844pt>
+(Font)              scaled to size 6.25204pt on input line 240.
+<./../img/sim_ideal_both.png, id=864, 1065.9825pt x 267.24844pt>
 File: ./../img/sim_ideal_both.png Graphic file (type png)
 
 <use ./../img/sim_ideal_both.png>
-Package pdftex.def Info: ./../img/sim_ideal_both.png used on input line 246.
+Package pdftex.def Info: ./../img/sim_ideal_both.png used on input line 260.
 (pdftex.def)             Requested size: 452.9679pt x 113.56073pt.
 
-<./../img/sim_LT1122_both.png, id=833, 710.655pt x 178.16562pt>
+<./../img/sim_LT1122_both.png, id=867, 710.655pt x 178.16562pt>
 File: ./../img/sim_LT1122_both.png Graphic file (type png)
 
 <use ./../img/sim_LT1122_both.png>
-Package pdftex.def Info: ./../img/sim_LT1122_both.png used on input line 253.
+Package pdftex.def Info: ./../img/sim_LT1122_both.png used on input line 267.
 (pdftex.def)             Requested size: 452.9679pt x 113.56616pt.
-
-<./../img/IDE1180-gain.png, id=840, 349.305pt x 236.885pt>
+ [31 <./../img/Gain_shaping.png (PNG copy)> <./../img/Gain_shaping_relative.png
+ (PNG copy)>]
+<./../img/IDE1180-gain.png, id=884, 349.305pt x 236.885pt>
 File: ./../img/IDE1180-gain.png Graphic file (type png)
 
 <use ./../img/IDE1180-gain.png>
-Package pdftex.def Info: ./../img/IDE1180-gain.png used on input line 262.
+Package pdftex.def Info: ./../img/IDE1180-gain.png used on input line 276.
 (pdftex.def)             Requested size: 271.7835pt x 184.32495pt.
- [31 <./../img/Gain_shaping.png (PNG copy)> <./../img/Gain_shaping_relative.png
- (PNG copy)>] [32 <./../img/sim_ideal_both.png> <./../img/sim_LT1122_both.png> 
-<./../img/IDE1180-gain.png>]
-<./../img/shaper_amplitude.png, id=863, 632.3625pt x 474.27188pt>
+
+<./../img/shaper_amplitude.png, id=891, 632.3625pt x 474.27188pt>
 File: ./../img/shaper_amplitude.png Graphic file (type png)
 
 <use ./../img/shaper_amplitude.png>
-Package pdftex.def Info: ./../img/shaper_amplitude.png used on input line 280.
+Package pdftex.def Info: ./../img/shaper_amplitude.png used on input line 294.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
 
-<./../img/shaper_amplitude_relative.png, id=864, 632.3625pt x 474.27188pt>
+<./../img/shaper_amplitude_relative.png, id=892, 632.3625pt x 474.27188pt>
 File: ./../img/shaper_amplitude_relative.png Graphic file (type png)
 
 <use ./../img/shaper_amplitude_relative.png>
 Package pdftex.def Info: ./../img/shaper_amplitude_relative.png used on input l
-ine 286.
+ine 300.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
 
-<./../img/shaper_area.png, id=865, 632.3625pt x 474.27188pt>
+<./../img/shaper_area.png, id=893, 632.3625pt x 474.27188pt>
 File: ./../img/shaper_area.png Graphic file (type png)
 
 <use ./../img/shaper_area.png>
-Package pdftex.def Info: ./../img/shaper_area.png used on input line 298.
+Package pdftex.def Info: ./../img/shaper_area.png used on input line 312.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
 
-<./../img/shaper_area_relative.png, id=866, 632.3625pt x 474.27188pt>
+<./../img/shaper_area_relative.png, id=894, 632.3625pt x 474.27188pt>
 File: ./../img/shaper_area_relative.png Graphic file (type png)
 
 <use ./../img/shaper_area_relative.png>
 Package pdftex.def Info: ./../img/shaper_area_relative.png used on input line 3
-04.
+18.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
 
-<./../img/shaper_risetime.png, id=867, 632.3625pt x 474.27188pt>
+<./../img/shaper_risetime.png, id=895, 632.3625pt x 474.27188pt>
 File: ./../img/shaper_risetime.png Graphic file (type png)
 
 <use ./../img/shaper_risetime.png>
-Package pdftex.def Info: ./../img/shaper_risetime.png used on input line 316.
+Package pdftex.def Info: ./../img/shaper_risetime.png used on input line 330.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
 
-<./../img/shaper_risetime_relative.png, id=868, 632.3625pt x 474.27188pt>
+<./../img/shaper_risetime_relative.png, id=896, 632.3625pt x 474.27188pt>
 File: ./../img/shaper_risetime_relative.png Graphic file (type png)
 
 <use ./../img/shaper_risetime_relative.png>
 Package pdftex.def Info: ./../img/shaper_risetime_relative.png used on input li
-ne 322.
+ne 336.
 (pdftex.def)             Requested size: 226.48395pt x 169.86209pt.
- [33 <./../img/shaper_amplitude.png (PNG copy)> <./../img/shaper_amplitude_rela
-tive.png (PNG copy)>] [34 <./../img/shaper_area.png (PNG copy)> <./../img/shape
-r_area_relative.png (PNG copy)> <./../img/shaper_risetime.png (PNG copy)> <./..
-/img/shaper_risetime_relative.png (PNG copy)>] <./../img/Noise-methods.png, id=
-885, 632.3625pt x 474.27188pt>
+ [32 <./../img/sim_ideal_both.png> <./../img/sim_LT1122_both.png>] [33 <./../im
+g/IDE1180-gain.png> <./../img/shaper_amplitude.png (PNG copy)> <./../img/shaper
+_amplitude_relative.png (PNG copy)>] [34 <./../img/shaper_area.png (PNG copy)> 
+<./../img/shaper_area_relative.png (PNG copy)> <./../img/shaper_risetime.png (P
+NG copy)> <./../img/shaper_risetime_relative.png (PNG copy)>]
+<./../img/Noise-methods.png, id=921, 632.3625pt x 474.27188pt>
 File: ./../img/Noise-methods.png Graphic file (type png)
 
 <use ./../img/Noise-methods.png>
-Package pdftex.def Info: ./../img/Noise-methods.png used on input line 353.
+Package pdftex.def Info: ./../img/Noise-methods.png used on input line 367.
 (pdftex.def)             Requested size: 317.07614pt x 237.80838pt.
- [35 <./../img/Noise-methods.png (PNG copy)>]
-<./../img/IDE1180-noise.png, id=901, 1217.2978pt x 889.07156pt>
+
+<./../img/IDE1180-noise.png, id=928, 1217.2978pt x 889.07156pt>
 File: ./../img/IDE1180-noise.png Graphic file (type png)
 
 <use ./../img/IDE1180-noise.png>
-Package pdftex.def Info: ./../img/IDE1180-noise.png used on input line 369.
+Package pdftex.def Info: ./../img/IDE1180-noise.png used on input line 383.
 (pdftex.def)             Requested size: 317.07614pt x 231.5737pt.
 
-<./../img/noise-default-nocomp.png, id=908, 632.3625pt x 474.27188pt>
+<./../img/noise-default-nocomp.png, id=935, 632.3625pt x 474.27188pt>
 File: ./../img/noise-default-nocomp.png Graphic file (type png)
 
 <use ./../img/noise-default-nocomp.png>
 Package pdftex.def Info: ./../img/noise-default-nocomp.png used on input line 3
-76.
+90.
 (pdftex.def)             Requested size: 317.07614pt x 237.80838pt.
- [36 <./../img/IDE1180-noise.png>]
-<./../img/noise-default-auto.png, id=925, 632.3625pt x 474.27188pt>
+ [35] [36 <./../img/Noise-methods.png (PNG copy)> <./../img/IDE1180-noise.png>]
+
+<./../img/noise-default-auto.png, id=960, 632.3625pt x 474.27188pt>
 File: ./../img/noise-default-auto.png Graphic file (type png)
 
 <use ./../img/noise-default-auto.png>
-Package pdftex.def Info: ./../img/noise-default-auto.png used on input line 390
+Package pdftex.def Info: ./../img/noise-default-auto.png used on input line 404
 .
 (pdftex.def)             Requested size: 317.07614pt x 237.80838pt.
- [37 <./../img/noise-default-nocomp.png (PNG copy)> <./../img/noise-default-aut
-o.png (PNG copy)>]) [38] [39] (thesis.bbl
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[37 <./../img/noise-default-nocomp.png (PNG copy)>] [38 <./../img/noise-default
+-auto.png (PNG copy)>]) [39] (thesis.bbl
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 7.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
@@ -1848,21 +1863,21 @@ cancer / treatment / types /$
 
 ] (../tex/appendix_3dmimic.tex
 Appendix A.
-<./../img/layout/wafer_2.png, id=1000, 755.2215pt x 720.291pt>
+<./../img/layout/wafer_2.png, id=1037, 755.2215pt x 720.291pt>
 File: ./../img/layout/wafer_2.png Graphic file (type png)
 
 <use ./../img/layout/wafer_2.png>
 Package pdftex.def Info: ./../img/layout/wafer_2.png used on input line 9.
 (pdftex.def)             Requested size: 452.9679pt x 432.01306pt.
 
-<./../img/3d-top-both.png, id=1005, 1445.4pt x 542.025pt>
+<./../img/3d-top-both.png, id=1042, 1445.4pt x 542.025pt>
 File: ./../img/3d-top-both.png Graphic file (type png)
 
 <use ./../img/3d-top-both.png>
 Package pdftex.def Info: ./../img/3d-top-both.png used on input line 18.
 (pdftex.def)             Requested size: 452.9679pt x 169.86209pt.
 
-<./../img/layout/MIC_ARRAY_1.png, id=1006, 592.614pt x 612.48825pt>
+<./../img/layout/MIC_ARRAY_1.png, id=1043, 592.614pt x 612.48825pt>
 File: ./../img/layout/MIC_ARRAY_1.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_1.png>
@@ -1870,7 +1885,7 @@ Package pdftex.def Info: ./../img/layout/MIC_ARRAY_1.png used on input line 27.
 
 (pdftex.def)             Requested size: 176.6572pt x 182.57967pt.
 
-<./../img/layout/MIC_ARRAY_1_L.png, id=1007, 666.0885pt x 666.0885pt>
+<./../img/layout/MIC_ARRAY_1_L.png, id=1044, 666.0885pt x 666.0885pt>
 File: ./../img/layout/MIC_ARRAY_1_L.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_1_L.png>
@@ -1878,7 +1893,7 @@ Package pdftex.def Info: ./../img/layout/MIC_ARRAY_1_L.png used on input line 3
 3.
 (pdftex.def)             Requested size: 181.18784pt x 181.1879pt.
 
-<./../img/layout/MIC_ARRAY_2.png, id=1008, 622.7265pt x 620.91975pt>
+<./../img/layout/MIC_ARRAY_2.png, id=1045, 622.7265pt x 620.91975pt>
 File: ./../img/layout/MIC_ARRAY_2.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_2.png>
@@ -1886,7 +1901,7 @@ Package pdftex.def Info: ./../img/layout/MIC_ARRAY_2.png used on input line 43.
 
 (pdftex.def)             Requested size: 178.92079pt x 178.3946pt.
 
-<./../img/layout/MIC_ARRAY_2_L.png, id=1009, 683.55376pt x 682.34924pt>
+<./../img/layout/MIC_ARRAY_2_L.png, id=1046, 683.55376pt x 682.34924pt>
 File: ./../img/layout/MIC_ARRAY_2_L.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_2_L.png>
@@ -1894,7 +1909,7 @@ Package pdftex.def Info: ./../img/layout/MIC_ARRAY_2_L.png used on input line 4
 9.
 (pdftex.def)             Requested size: 181.18784pt x 180.86333pt.
 
-<./../img/layout/MIC_ARRAY_3.png, id=1010, 468.5505pt x 522.753pt>
+<./../img/layout/MIC_ARRAY_3.png, id=1047, 468.5505pt x 522.753pt>
 File: ./../img/layout/MIC_ARRAY_3.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_3.png>
@@ -1902,7 +1917,7 @@ Package pdftex.def Info: ./../img/layout/MIC_ARRAY_3.png used on input line 59.
 
 (pdftex.def)             Requested size: 163.06871pt x 181.92934pt.
 
-<./../img/layout/MIC_ARRAY_3_L.png, id=1011, 702.2235pt x 703.428pt>
+<./../img/layout/MIC_ARRAY_3_L.png, id=1048, 702.2235pt x 703.428pt>
 File: ./../img/layout/MIC_ARRAY_3_L.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_3_L.png>
@@ -1910,7 +1925,7 @@ Package pdftex.def Info: ./../img/layout/MIC_ARRAY_3_L.png used on input line 6
 5.
 (pdftex.def)             Requested size: 181.18784pt x 181.49162pt.
 
-<./../img/layout/MIC_ARRAY_PSTOP.png, id=1012, 626.34pt x 626.94225pt>
+<./../img/layout/MIC_ARRAY_PSTOP.png, id=1049, 626.34pt x 626.94225pt>
 File: ./../img/layout/MIC_ARRAY_PSTOP.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_PSTOP.png>
@@ -1918,7 +1933,7 @@ Package pdftex.def Info: ./../img/layout/MIC_ARRAY_PSTOP.png used on input line
  75.
 (pdftex.def)             Requested size: 167.59937pt x 167.75562pt.
 
-<./../img/layout/MIC_ARRAY_3_PSTOP_L.png, id=1013, 692.5875pt x 693.792pt>
+<./../img/layout/MIC_ARRAY_3_PSTOP_L.png, id=1050, 692.5875pt x 693.792pt>
 File: ./../img/layout/MIC_ARRAY_3_PSTOP_L.png Graphic file (type png)
 
 <use ./../img/layout/MIC_ARRAY_3_PSTOP_L.png>
@@ -1930,7 +1945,7 @@ Underfull \hbox (badness 3758) in paragraph at lines 82--82
 []\T1/ppl/m/n/12 Figure A.10: |MIC$[]$ARRAY$[]$3$[]$PSTOP$[]$L
  []
 
-<./../img/layout/MIC_3D.png, id=1014, 700.41675pt x 699.21225pt>
+<./../img/layout/MIC_3D.png, id=1051, 700.41675pt x 699.21225pt>
 File: ./../img/layout/MIC_3D.png Graphic file (type png)
 
 <use ./../img/layout/MIC_3D.png>
@@ -1945,14 +1960,14 @@ png> <./../img/layout/MIC_ARRAY_3_L.png> <./../img/layout/MIC_ARRAY_PSTOP.png>
 <./../img/layout/MIC_ARRAY_3_PSTOP_L.png> <./../img/layout/MIC_3D.png>]) (../te
 x/appendix_pcb.tex [48]
 Appendix B.
-<./../img/pcb-pic.png, id=1060, 897.85437pt x 497.35812pt>
+<./../img/pcb-pic.png, id=1096, 897.85437pt x 497.35812pt>
 File: ./../img/pcb-pic.png Graphic file (type png)
 
 <use ./../img/pcb-pic.png>
 Package pdftex.def Info: ./../img/pcb-pic.png used on input line 17.
 (pdftex.def)             Requested size: 430.31812pt x 238.3725pt.
 
-<./../img/pcb.png, id=1061, 872.25874pt x 492.33937pt>
+<./../img/pcb.png, id=1097, 872.25874pt x 492.33937pt>
 File: ./../img/pcb.png Graphic file (type png)
  <use ./../img/pcb.png>
 Package pdftex.def Info: ./../img/pcb.png used on input line 24.
@@ -1961,14 +1976,14 @@ Package pdftex.def Info: ./../img/pcb.png used on input line 24.
 [49
 
  <./../img/pcb-pic.png>] [50 <./../img/pcb.png>]
-<./../img/w_single_channel.png, id=1080, 342.78062pt x 363.3575pt>
+<./../img/w_single_channel.png, id=1117, 342.78062pt x 363.3575pt>
 File: ./../img/w_single_channel.png Graphic file (type png)
 
 <use ./../img/w_single_channel.png>
 Package pdftex.def Info: ./../img/w_single_channel.png used on input line 39.
 (pdftex.def)             Requested size: 271.7835pt x 288.11932pt.
 
-<./../img/w_two_channel_guard.png, id=1081, 342.78062pt x 363.3575pt>
+<./../img/w_two_channel_guard.png, id=1118, 342.78062pt x 363.3575pt>
 File: ./../img/w_two_channel_guard.png Graphic file (type png)
 
 <use ./../img/w_two_channel_guard.png>
@@ -1976,7 +1991,7 @@ Package pdftex.def Info: ./../img/w_two_channel_guard.png used on input line 46
 .
 (pdftex.def)             Requested size: 271.7835pt x 288.11932pt.
 
-<./../img/w_two_channel_no_guard.png, id=1082, 342.78062pt x 363.3575pt>
+<./../img/w_two_channel_no_guard.png, id=1119, 342.78062pt x 363.3575pt>
 File: ./../img/w_two_channel_no_guard.png Graphic file (type png)
 
 <use ./../img/w_two_channel_no_guard.png>
@@ -1984,7 +1999,7 @@ Package pdftex.def Info: ./../img/w_two_channel_no_guard.png used on input line
  53.
 (pdftex.def)             Requested size: 271.7835pt x 288.11932pt.
 
-<./../img/pcb-pic-single-channel.png, id=1083, 897.85437pt x 497.35812pt>
+<./../img/pcb-pic-single-channel.png, id=1120, 897.85437pt x 497.35812pt>
 File: ./../img/pcb-pic-single-channel.png Graphic file (type png)
 
 <use ./../img/pcb-pic-single-channel.png>
@@ -1992,7 +2007,7 @@ Package pdftex.def Info: ./../img/pcb-pic-single-channel.png used on input line
  60.
 (pdftex.def)             Requested size: 362.37569pt x 200.73074pt.
 
-<./../img/pcb-pic-two-channel-guard.png, id=1084, 897.85437pt x 497.35812pt>
+<./../img/pcb-pic-two-channel-guard.png, id=1121, 897.85437pt x 497.35812pt>
 File: ./../img/pcb-pic-two-channel-guard.png Graphic file (type png)
 
 <use ./../img/pcb-pic-two-channel-guard.png>
@@ -2000,7 +2015,7 @@ Package pdftex.def Info: ./../img/pcb-pic-two-channel-guard.png used on input l
 ine 67.
 (pdftex.def)             Requested size: 362.37569pt x 200.73074pt.
 
-<./../img/pcb-pic-two-channel-no-guard.png, id=1085, 897.85437pt x 497.35812pt>
+<./../img/pcb-pic-two-channel-no-guard.png, id=1122, 897.85437pt x 497.35812pt>
 File: ./../img/pcb-pic-two-channel-no-guard.png Graphic file (type png)
 <use ./../img/pcb-pic-two-channel-no-guard.png>
 Package pdftex.def Info: ./../img/pcb-pic-two-channel-no-guard.png used on inpu
@@ -2021,17 +2036,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 886904CC5E8B26CF1ED4ADBF3CBD20FB;4525.
+(rerunfilecheck)             Checksum: 5D65ABBAD200A498B14488A74B471CD7;4656.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
- 34275 strings out of 493673
- 679943 string characters out of 3141524
- 893341 words of memory out of 3000000
- 36678 multiletter control sequences out of 15000+200000
+ 34291 strings out of 493673
+ 680203 string characters out of 3141524
+ 891637 words of memory out of 3000000
+ 36688 multiletter control sequences out of 15000+200000
  55860 words of font info for 117 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 71i,10n,94p,1936b,1060s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,10n,94p,1936b,1062s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program F
@@ -2045,9 +2060,9 @@ ts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 atino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/up
 lr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pf
 b>
-Output written on thesis.pdf (59 pages, 18136966 bytes).
+Output written on thesis.pdf (60 pages, 18180256 bytes).
 PDF statistics:
- 1208 PDF objects out of 1440 (max. 8388607)
- 238 named destinations out of 1000 (max. 500000)
- 757 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1245 PDF objects out of 1440 (max. 8388607)
+ 243 named destinations out of 1000 (max. 500000)
+ 778 words of extra memory for PDF output out of 10000 (max. 10000000)
 

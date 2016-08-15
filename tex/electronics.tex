@@ -22,6 +22,8 @@ One often important parameter to consider in a pre-amplifier is the dynamic rang
 It is typically convenient to use the pre-amplifier to supply bias voltage to the detector. When this is done a single cable is used both to provide voltage to the detector and to transfer the signal pulses to the readout system. \citep[chap. 16]{Knoll}
 %fig 16.16a?
 
+%%XXX equivalent noice charge. 
+
 \subsubsection{Charge-sensitive amplifier operation}
 \label{t-csa}
 \begin{figure}%[h]
@@ -36,13 +38,15 @@ Figure \ref{fig-csa} shows a general \gls{CSA}. When a radiation quanta strikes 
 %http://www.allaboutcircuits.com/textbook/semiconductors/chpt-8/differentiator-integrator-circuits/
 %Virtual ground: http://electronics.stackexchange.com/questions/124709/op-amp-reason-for-virtual-ground
 
+%%XXX figure with pulse?
 
 \subsection{Shaper}
 \label{t-shaper}
 The shaper, or shaping amplifier, converts the shape of the signal to a form that is suitable for measurement. The pulse height of the signal from the shaper is proportional to the input charge. It is important that the output from the shaper quickly returns to the baseline to prevent pulse overlapping that will cause measurement errors. The first stage of the shaper is a differentiator (high pass filter) which passes the steep rise of the input pulse, but quickly returns to the baseline. The differentiator decides the fall time of the pulse. The signal is then amplified to a level that is suitable for the \gls{ADC}, before it is passed through the integrator (low pass filter) that filters away noise and changes the rise time of the pulse. A much used parameter to describe a shaper is the shaping time, which is related to the duration of the shaped pulse. \citep[chap. 16]{Knoll}
 
-XXXX: More details. Noise. Ballistic defict
+XXXX: More details. Noise. Ballistic defict. semi-gauss shape
 %discriminator?
+%% Figure with pulse from pre-amp and from shaper
 
 \subsection{Analog-to-Digital Conversion}
 \label{t-adc}
@@ -77,12 +81,9 @@ During the school year 2014-2015 two master students at \gls{uio} made a portabl
 
 \section{IDEAS Amadeus Preamp-Shaper}
 \label{e-ide1180}
-IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. The preliminary datasheet \citep{IDE1180} specifies a shaping time between 20~ns and 40~ns, negative and positive input charges up to 400~fC with lowest gain, and equivalent noise charge of 1106~e- plus 68~e- per pF load at default gain. 
-%not sure if I can publish this
+IDE1180, or Amadeus, by Oslo-based IDEAS is an \gls{asic} for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. The preliminary datasheet \citep{IDE1180} specifies a shaping time between 20~ns and 40~ns, negative and positive input charges up to 400~fC with lowest gain, and equivalent noise charge of 1106~e- plus 68~e- per pF load at default gain. 
 
-XXX Hei Kjetil! Har jeg lov til å publisere denne informasjonen fra databladet?
-
-This chip was considered by multiple projects at \gls{ift} and a evaluation board (7045) was given to \gls{ift} so that more extensive tests could be performed. Later, a second evaluation board (XXX) was also received from IDEAS. The IDE1180 characterization is described in chapter \ref{ide}. 
+This chip was considered by multiple projects at \gls{ift} and a evaluation board (7045) was given to \gls{ift} so that more extensive tests could be performed. Later, a second evaluation board (7048) was also received from IDEAS. The IDE1180 characterization is described in chapter \ref{ide}. 
 
 \section{Ortec 142A Pre-Amplifier}
 \label{e-ortec}
@@ -111,7 +112,7 @@ The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sittin
 \end{center}
 \end{table}
 
-The Keysight model was interesting with a signal interleaving feature where both 1.6~GS/s channels could be combined into one 3.2~GS/s channel. In the end SP Devices was chosen, being the only discovered company that produces 14 bit \gls{PCIe} \gls{ADC}s in the GS/s range. ADQ14AC-4C was chosen as having two extra channels was considered more important than higher sampling rate for radiation tests. The old Caen \gls{ADC} can be used for projects and tests that require higher sampling rate. 
+The Keysight model was interesting with a signal interleaving feature where both 1.6~GS/s channels could be combined into one 3.2~GS/s channel. In the end SP Devices was chosen, being the only discovered company that produces 14 bit \gls{PCIe} \gls{ADC}s in the GS/s range. ADQ14AC-4C was chosen since having two extra channels was considered more important than higher sampling rate for radiation tests, and the old Caen \gls{ADC} can be used for projects and tests that require higher sampling rate. 
 
 \subsection{PC for ADC}
 \label{e-adc-pc}
