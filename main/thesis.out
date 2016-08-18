@@ -49,17 +49,18 @@
 \BOOKMARK [1][-]{section.5.3}{Noise Measurements}{chapter.5}% 49
 \BOOKMARK [2][-]{subsection.5.3.1}{Gain Compensation}{section.5.3}% 50
 \BOOKMARK [2][-]{subsection.5.3.2}{Noise from Input Circuitry}{section.5.3}% 51
-\BOOKMARK [1][-]{section.5.4}{Shaping Time}{chapter.5}% 52
-\BOOKMARK [1][-]{section.5.5}{Gain Linearity}{chapter.5}% 53
-\BOOKMARK [2][-]{subsection.5.5.1}{Dynamic Range}{section.5.5}% 54
-\BOOKMARK [1][-]{section.5.6}{Crosstalk}{chapter.5}% 55
-\BOOKMARK [1][-]{section.5.7}{Input Sharing}{chapter.5}% 56
-\BOOKMARK [1][-]{section.5.8}{Power Consumption}{chapter.5}% 57
-\BOOKMARK [1][-]{section.5.9}{Pile-up}{chapter.5}% 58
-\BOOKMARK [1][-]{section.5.10}{Resolution}{chapter.5}% 59
-\BOOKMARK [0][-]{section.5.10}{Bibliography}{}% 60
-\BOOKMARK [0][-]{section*.42}{Glossary}{}% 61
-\BOOKMARK [0][-]{section*.44}{Appendices}{}% 62
-\BOOKMARK [0][-]{Appendix.1.A}{3DMiMic Layouts}{}% 63
-\BOOKMARK [0][-]{Appendix.1.B}{Detector Interface PCB}{}% 64
-\BOOKMARK [0][-]{Appendix.1.C}{List of Readout Electronics}{}% 65
+\BOOKMARK [1][-]{section.5.4}{Gain Linearity}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.4.1}{Dynamic Range}{section.5.4}% 53
+\BOOKMARK [1][-]{section.5.5}{Shaping Time}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.6}{Rise Time}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.7}{Crosstalk}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.8}{Input Sharing}{chapter.5}% 57
+\BOOKMARK [1][-]{section.5.9}{Power Consumption}{chapter.5}% 58
+\BOOKMARK [1][-]{section.5.10}{Pile-up}{chapter.5}% 59
+\BOOKMARK [1][-]{section.5.11}{Resolution}{chapter.5}% 60
+\BOOKMARK [0][-]{section.5.11}{Bibliography}{}% 61
+\BOOKMARK [0][-]{section*.43}{Glossary}{}% 62
+\BOOKMARK [0][-]{section*.45}{Appendices}{}% 63
+\BOOKMARK [0][-]{Appendix.1.A}{3DMiMic Layouts}{}% 64
+\BOOKMARK [0][-]{Appendix.1.B}{Detector Interface PCB}{}% 65
+\BOOKMARK [0][-]{Appendix.1.C}{List of Readout Electronics}{}% 66
