@@ -11,12 +11,14 @@ In 2013 the Norwegian government started a project to build centers for cancer t
 
 %To be able to assure the quality of the treatment system, the hospitals will need a system that can predict how the energy from a beam of protons will be absorbed in the body. For this and other purposes, SINTEF is developing a silicon based radiation detector (see section \ref{t-detector}), named Si-3DMiMic, which mimics the response of biological tissue to ionizing radiation on a cellular and sub-cellular level. By measuring how the energy is distributed in the detector, the hospitals will have an idea about how a patient will react to the same radiation beam. \citep{sintef3dmimic}
 
-To be able to assure the quality of the treatment system, the hospitals need to be able to predict how the energy from a beam of heavy charged particles will be absorbed in the body. The uncertainties because of the lack of knowledge on this causes an increased risk of side effects for proton therapy patients. To bolster the research on the effects of radiation on humans, SINTEF is developing a silicon based radiation detector\comm{(see section \ref{t-detector})}, named 3DMiMic, which mimics the response of biological tissue to ionizing radiation on a cellular and sub-cellular level. By measuring how the energy is distributed in the detector, researchers will will learn more about how a patient will react to the same radiation beam. \citep{sintef3dmimic}
+To be able to assure the quality of the treatment system, the hospitals need to be able to predict how the energy from a beam of heavy charged particles will be absorbed in the body. The uncertainties because of the lack of knowledge on this causes an increased risk of side effects for particle therapy patients. To bolster the research on the effects of radiation on humans, SINTEF is developing a silicon based radiation detector\comm{(see section \ref{t-detector})}, named 3DMiMic, which mimics the response of biological tissue to ionizing radiation on a cellular and sub-cellular level. By measuring how the energy is distributed in the detector, researchers will learn more about how radiation effects tissue on a small scale, which will reduce the uncertainties in future treatment systems. \citep{sintef3dmimic}
 
 \section{Goal of the Thesis}
 \label{i-goal}
 
+The original goal of the thesis was to read the data from the 3DMiMic detector into a computer. This was planned to be done with a two part system. First, an analog system with a pre-amplifier, shaper, and ADC. Then an FPGA performing some data processing and sending the data to a PC for storage. The thesis should also include some work on characterizing the detectors, and radiation tests with an alpha source at the University of Bergen, and hopefully also tests in a proton beam facility. The Medipix family of chips were considered as possibilities for the analog part.
 
+Many of the projects goal changed during the work on the thesis. Firstly, the detectors, which had been expected to be delivered in August 2015, were regularly delayed and not received until June 2016. This lead to the planned work on the detectors being reduced. When the work on the thesis started, it was discovered that the Medipix chips are not usable for this project. 
 
 
 \section{Structure of the Thesis}
@@ -27,22 +29,22 @@ Introduces the thesis, including background, motivation and goals.
 \textbf{Chapter 2: Radiation and Radiotherapy}\\
 Important background theory for full understanding of the thesis. Includes theory of ionizing radiation, biological effects of radiation, and radiotherapy.
 
-\textbf{Chapter 3: Testing and Characterization of the 3DMiMic Detector}
+\textbf{Chapter 3: Testing and Characterization of the 3DMiMic Detector}\\
 Includes important background theory about radiation detectors, an introduction to the 3DMiMic detectors, and measurement results from the detectors.
 
-\textbf{Chapter 4: Choice of Readout Electronics for the 3DMiMic Detector}
+\textbf{Chapter 4: Choice of Readout Electronics for the 3DMiMic Detector}\\
 Background theory on detector readout, and short introductions to the main readout electronics that was considered for this project.
 
-\textbf{Chapter 5: Characterization of IDE1180}
+\textbf{Chapter 5: Characterization of IDE1180}\\
 Measurement setups, results, and conclusions from the characterization of the IDE1180 pre-amplifier shaper from IDEAS.
 
-\textbf{Appendix A: 3DMiMic Layouts}
+\textbf{Appendix A: 3DMiMic Layouts}\\
 Figures and explanations on the different 3DMiMic layouts and wafers. 
 
-\textbf{Appendix B: Detector Interface PCB}
+\textbf{Appendix B: Detector Interface PCB}\\
 Description of the interface PCB that was made for the 3DMiMic detectors. Includes pictures of how the detectors should be wire-bonded to the PCB. 
 
-\textbf{Appendix C: List of Readout Electronics}
+\textbf{Appendix C: List of Readout Electronics}\\
 Table including all readout electronics that was considered for the project with relevant specifications. 
 
 %How to read my references?

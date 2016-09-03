@@ -6,7 +6,7 @@
 \chapter{Characterization of IDE1180}
 \label{ide}
 
-IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. Important specifications from the preliminary datasheet can be seen in table \ref{tab-ide-specs}. The gain at default settings is specified as 12.45 mV/fC. Two chips, on evaluation boards 7045-1-03 and 7048-1-04 was characterized by the author, partly together with master student Sanjeeda Sharmin and chief engineer Thomas Poulianitis. The tests have been focused on the 7045 board as it showed the best characteristics, and if nothing else is mentioned for a measurement, this it the board that was used. 
+IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA}s and shapers with adjustable shaping time. Important specifications from the preliminary datasheet can be seen in table \ref{tab-ide-specs}. The gain at default settings is specified as 12.45 mV/fC. Two chips, on evaluation boards 7045-1-03 and 7048-1-04 was characterized by the author, partly together with master student Sanjeeda Sharmin and chief engineer Thomas Poulianitis. The tests have been focused on the 7045 board as it showed the best characteristics, and if nothing else is mentioned for a measurement, this it the board that was used. 
 
 \begin{table}[h!]
 	\begin{center}
@@ -29,9 +29,9 @@ The IDE1180 can be configured to different gains, shapes, etc. by setting differ
 \section{Measurement Setups}
 \label{ide-setup}
 
-The main measurement setup used for the characterization included the Caen V1729A \gls{ADC} mentioned in section \ref{e-adc}. This \gls{ADC} has an input impedance of 50 $\Omega$, while the IDE1180 is configured to drive a load impedance of 1 M$\Omega$. Therefore a in-house buffer was used between the IDE1180 and ADC. The in-house buffer cuts the signal at 750 mV (XXX double check) which makes the \gls{ADC} unusable for measurements that need to cover the entire dynamic range of IDE1180. By default, the IDE1180 has an output offset voltage of 0.5 V. Since the ADC has an input range from -1 V to +1 V, a 100 nF capacitor was used to remove the offset. Some measurements used an oscilloscope instead of the ADC, which made the buffer and DC blocking capacitor unnecessary. Three different oscilloscopes have been used: Tektronix MSO 4034, Tektronix DPO 7254, and Agilent InfiniiVision MSO-X 3104A. 
+The main measurement setup used for the characterization included the Caen V1729A \gls{ADC} mentioned in section \ref{e-adc}. This \gls{ADC} has an input impedance of 50 $\Omega$, while the IDE1180 is configured to drive a load impedance of 1 M$\Omega$. Therefore a in-house buffer was used between the IDE1180 and ADC. The in-house buffer cuts the signal at 750 mV (XXX double check) which makes the \gls{ADC} a bad choice for measurements that need to cover the entire dynamic range of IDE1180. By default, the IDE1180 has an output offset voltage of 0.5 V. Since the ADC has an input range from -1 V to +1 V, a 100 nF capacitor (DC block) was used to remove the offset. Some measurements used an oscilloscope instead of the ADC, which made the buffer and DC blocking capacitor unnecessary. Three different oscilloscopes have been used: Tektronix MSO 4034, Tektronix DPO 7254, and Agilent InfiniiVision MSO-X 3104A. 
 
-A wave generator was often used to simulate the pulse from a detector. This has mainly been configured to a ramp with a long rise time and a fall time as short as possible. At first, Agilent 3325OA was used, but this generator was unable to produce a quick falling edge when a long rise time was used. The Tektronix AFG3252 wave generator was later used to obtain a rise time of 1 ms. The wave generator is mainly connected to the external calibrate input, where a test capacitance of 1 pF is present in series (see figure \ref{fig-capmount}). The input charge to the pre-amplifier is then equal to 1 pF times the peak-to-peak voltage of the test pulse from the generator. 
+A wave generator was often used to simulate the pulse from a detector. This has mainly been configured to a ramp with a long rise time and a fall time as short as possible. At first, Agilent 3325OA was used, but this generator was unable to produce a quick falling edge when a long rise time was used. The Tektronix AFG3252 wave generator was later used to obtain a rise time of 1 ms. The wave generator is mainly connected to the external calibrate input, where a test capacitance of 1 pF is present in series (see figure \ref{fig-capmount}). The input charge to the pre-amplifier is then equal to 1 pF times the peak-to-peak voltage of the test pulse from the generator. The original 1 pF $\pm5\%$ capacitor on the board was broken and replaced with a 1 pF $\pm25\%$ on the 29.05.2016. The only measurements shown in this thesis with the original capacitor is those from table \ref{tab-gain-nobuffer} to \ref{tab-gain-adc}, table \ref{tab-dynrange-estimate}, and subsection \ref{ide-noise-input}. The rest are with the second capacitor. A third capacitor with $\pm5\%$ was added on the 29.08.2016 to better estimate the values of the capacitors by comparing measurements with the exact same setup. This gave values of 1.02 pF, 0.95 pF, and 0.98 pF $\pm0.02$ pF for the three capacitors. These values have been used for compensation in all the data of the thesis.
 
 \begin{figure}
 \centering
@@ -98,12 +98,13 @@ For many measurements it is required to vary the input load capacitance of the p
 	\label{fig-capmount}
 \end{figure} 
 
-The IDE1180 has been configured to six different shaping times: 40~ns (default), 100~ns, 300~ns, 500~ns, 1~$\mu$s, and 2~$\mu$s. The 100~ns and 300~ns settings have only been used to investigate the relationship between noise and shaping time. Table \ref{tab-ide-shaping} shows the necessary parameters to configure the IDE1180 to these shaping times. 40 ns is the default shaping time, and therefore requires no jumpers. The voltages specify the potential that should be across the 10~$k\Omega$ resistor belonging to said signal.  
+The IDE1180 has been configured to six different shaping times: 40~ns (default), 100~ns, 300~ns, 500~ns, 1~$\mu$s, and 2~$\mu$s. The 100~ns and 300~ns settings have only been used to investigate the relationship between noise and shaping time. Table \ref{tab-ide-shaping} shows the necessary parameters to configure the IDE1180 to these shaping times. 40 ns is the default shaping time, and therefore requires no jumpers. The voltages specify the potential that should be across the 10~$k\Omega$ resistor belonging to said signal, and can be measured when a GND jumper is in place. PZ\_ENABLE enables the pole-zero cancellation on 3V3. PZ\_BIAS\_HI to 3V3 switches to high range of pole-zero time constant (low pole-zero resistance). SH\_BIAS adjusts the shaper operation current. VFS\_BIAS sets the peaking time. PZ\_BIAS adjusts the pole-zero time constant. SH\_BIAS and VFS\_BIAS must be enabled with 3V3 jumpers for settings to take effect, while for PZ\_BIAS settings take effect for a GND jumper. 
 
 \begin{table}[h!]
 	\centering
 	\caption{Configurations for different shaping times on IDE1180.}
 	\label{tab-ide-shaping}
+	\makebox[\textwidth][c]{	%Center too large table
 	\begin{tabular}{cccccc}\toprule
 		\textbf{Shaping time} & \textbf{PZ\_ENABLE} & \textbf{PZ\_BIAS\_HI} & \textbf{SH\_BIAS}  & \textbf{VFS\_BIAS} & \textbf{PZ\_BIAS}    \\ \midrule
 		40 ns        & X or GND          & X or GND            & X or GND        & X or GND        & X or GND          \\
@@ -113,7 +114,9 @@ The IDE1180 has been configured to six different shaping times: 40~ns (default),
 		1 $\mu$s     & 3V3          & 3V3            & 3V3, 350 mV & 3V3, 92 mV  & GND, 268 mV   \\
 		2 $\mu$s     & 3V3          & 3V3            & 3V3, 357 mV & 3V3, 91 mV  & GND, 109.5 mV \\ \bottomrule
 	\end{tabular}
+	}
 \end{table}
+
 
 \section{Gain vs. Input Load Capacitance}
 \label{ide-gain}
@@ -127,10 +130,14 @@ During early measurements it quickly became evident that the output voltage from
 		\label{tab-gain-nobuffer}
 		\begin{tabular}{ccccc}\toprule
 			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
-			"GND-GND"     & 11.4 & 10.1 & 6.6  & 5.1   \\
-			"GND-3V3"     & 7.0    & 6.3  & 4.6  & 3.8   \\
-			"3V3-GND"     & 4.3  & 4.1  & 3.4  & 3.0     \\
-			"3V3-3V3"     & 2.3  & 2.2  & 2.0    & 1.76 \\ \bottomrule
+%			"GND-GND"     & 11.4 & 10.1 & 6.6  & 5.1   \\
+%			"GND-3V3"     & 7.0    & 6.3  & 4.6  & 3.8   \\
+%			"3V3-GND"     & 4.3  & 4.1  & 3.4  & 3.0     \\
+%			"3V3-3V3"     & 2.3  & 2.2  & 2.0    & 1.76 \\ \bottomrule
+			"GND-GND"     & 11.2 & 9.9 & 6.5  & 5.0   \\
+			"GND-3V3"     & 6.9    & 6.2  & 4.5  & 3.7   \\
+			"3V3-GND"     & 4.2  & 4.0  & 3.3  & 2.9     \\
+			"3V3-3V3"     & 2.3  & 2.2  & 2.0    & 1.7 \\ \bottomrule
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -141,9 +148,13 @@ During early measurements it quickly became evident that the output voltage from
 		\label{tab-gain-wbuffer}
 		\begin{tabular}{ccccc}\toprule
 			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
-			"GND-GND"     & 10.2 & 8.6  & 5.4  & 4.3   \\
-			"GND-3V3"     & 6.0    & 5.4  & 4.0    & 3.2   \\
-			"3V3-GND"     & 3.6  & 3.5  & 2.9  & 2.5   \\
+%			"GND-GND"     & 10.2 & 8.6  & 5.4  & 4.3   \\
+%			"GND-3V3"     & 6.0    & 5.4  & 4.0    & 3.2   \\
+%			"3V3-GND"     & 3.6  & 3.5  & 2.9  & 2.5   \\
+%			"3V3-3V3"     & 2.0    & 1.9  & 1.6  & 1.4 \\ \bottomrule
+			"GND-GND"     & 10.0 & 8.4  & 5.3  & 4.2   \\
+			"GND-3V3"     & 5.9    & 5.3  & 3.9    & 3.1   \\
+			"3V3-GND"     & 3.5  & 3.4  & 2.8  & 2.5   \\
 			"3V3-3V3"     & 2.0    & 1.9  & 1.6  & 1.4 \\ \bottomrule
 		\end{tabular}
 	\end{center}
@@ -156,7 +167,8 @@ During early measurements it quickly became evident that the output voltage from
 		\label{tab-gain-adc}
 		\begin{tabular}{ccccc}\toprule
 			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
-			"GND-GND"     & 10.8 & 9.4  & 5.8  & 4.5   \\ \bottomrule
+%			"GND-GND"     & 10.8 & 9.4  & 5.8  & 4.5   \\ \bottomrule
+			"GND-GND"     & 10.6 & 9.2  & 5.7  & 4.4   \\ \bottomrule
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -167,17 +179,21 @@ During early measurements it quickly became evident that the output voltage from
 		\label{tab-gain-nobuffer-offset}
 		\begin{tabular}{cccc}\toprule
 			\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{56pF} & \textbf{100pF} \\ \midrule
-			"GND-GND"     & 10.2 & 5.8  & 4.44  \\
-			"GND-3V3"     & 6.3  & 4.1  & 3.5   \\
-			"3V3-GND"     & 3.75 & 2.95 & 2.6   \\
-			"3V3-3V3"     & 2.05 & 1.75 & 1.5   \\ \bottomrule
+%			"GND-GND"     & 10.2 & 5.8  & 4.44  \\
+%			"GND-3V3"     & 6.3  & 4.1  & 3.5   \\
+%			"3V3-GND"     & 3.75 & 2.95 & 2.6   \\
+%			"3V3-3V3"     & 2.05 & 1.75 & 1.5   \\ \bottomrule
+			"GND-GND"     & 10.7 & 6.1  & 4.6  \\
+			"GND-3V3"     & 6.6  & 4.3  & 3.7   \\
+			"3V3-GND"     & 3.9 & 3.1 & 2.7   \\
+			"3V3-3V3"     & 2.2 & 1.8 & 1.6   \\ \bottomrule
 		\end{tabular}
 	\end{center}
 \end{table}
 
-As the ADC measurements takes the maximum peak signal, while the oscilloscope measurements are done with cursors in the center of the peak noise, it was expected that the table \ref{tab-gain-adc} values were slightly higher than the table \ref{tab-gain-wbuffer} values. The values in table \ref{tab-gain-wbuffer} are 10 to 20 \% lower than those in table \ref{tab-gain-nobuffer}, showing that the in-house buffer does not perfectly pass the signal. The values in table \ref{tab-gain-nobuffer-offset} are 8 to 15 \% lower than those in table \ref{tab-gain-nobuffer}. It should also be noted that the measured gains at 0 pF are very different from the gains of 24/12/6/3 that are noted in the datasheet \citep{IDE1180}.
+As the ADC measurements takes the maximum peak signal, while the oscilloscope measurements are done with cursors in the center of the peak noise, it was expected that the table \ref{tab-gain-adc} values were slightly higher than the table \ref{tab-gain-wbuffer} values. The values in table \ref{tab-gain-wbuffer} are 10 to 20 \% lower than those in table \ref{tab-gain-nobuffer}, showing that the in-house buffer does not perfectly pass the signal.\comm{ The values in table \ref{tab-gain-nobuffer-offset} are 8 to 15 \% lower than those in table \ref{tab-gain-nobuffer}.} It should also be noted that the measured gains at 0 pF are very different from the gains of 24/12/6/3 that are noted in the datasheet \citep{IDE1180}.
 
-Gain versus capacitance and gain for different gain settings was also measured on the 7048 chip. On this chip, unlike the 7045, the gain was different with no jumpers in place, and with jumpers in the left, "GND", position. It is also interesting to see that for the 7045 board, gain setting "GND-GND" gives the highest gain, while on the 7048 board "3V3-3V3" has the highest gain. XXX sjekke om pcb er lik (måle spenning på pinner)
+Gain versus capacitance and gain for different gain settings was also measured on the 7048 chip. On this chip, unlike the 7045, the gain was different with no jumpers in place, and with jumpers in the left, "GND", position. It is also interesting to see that for the 7045 board, gain setting "GND-GND" gives the highest gain, while on the 7048 board "3V3-3V3" has the highest gain. 
 %In table \ref{tab-gains-7048} "0" is right jumper position, "1" is left position, and "X" is no jumper in place.
 
 \begin{table}[h!]
@@ -191,30 +207,31 @@ Gain versus capacitance and gain for different gain settings was also measured o
 	\end{center}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[h!]	%%XXXfix 00 11 here
 	\begin{center}
 		\caption{Gain [mV/fC] measurements for different gain settings measured with oscilloscope on the 7048 evaluation board.}
 		\label{tab-gains-7048}
 		\begin{tabular}{cc}\toprule
 			\textbf{PA\_GAIN<1:0>} & \textbf{Gain}   \\ \midrule
-			"00" & 5.4  \\
-			"0X" & 5.2  \\
-			"01" & 3.45 \\
-			"X0" & 5.3  \\
-			"XX" & 3.2  \\
-			"X1" & 2.35 \\
-			"10" & 2.2  \\
-			"1X" & 1.8  \\
-			"11" & 1.0   \\ \bottomrule
+			"3V3-3V3" & 5.4  \\
+			"3V3-X" & 5.2  \\
+			"3V3-GND" & 3.45 \\
+			"X-3V3" & 5.3  \\
+			"X-X" & 3.2  \\
+			"X-GND" & 2.35 \\
+			"GND-3V3" & 2.2  \\
+			"GND-X" & 1.8  \\
+			"GND-GND" & 1.0   \\ \bottomrule
 		\end{tabular}
 	\end{center}
 \end{table}
 
-Figure \ref{fig-IDE1180-gain} shows how the gain falls off for the different shaping times. The drop becomes less and less distinct as the shaping time is increased, and at 2 $\mu$s the gain vs. capacitance curve is fairly flat. Note that the default shaping time curve does not fit well with the data in the tables above. XXX
+Figure \ref{fig-IDE1180-gain} shows how the gain falls off for the different shaping times. The drop becomes less and less distinct as the shaping time is increased, and at 2 $\mu$s the gain vs. capacitance curve is fairly flat. Note that the default shaping time curve does not fit well with the data in the tables above. XXX box blah blah
+%%XXX 1pF replaced blah blah
 
-XXX teste om forskjell på gain skyldes dc block før/etter buffer. Eller annen signalgenerator. kanskje fordi 1pf ble byttet ut (29.04)....
+%%XXX teste om forskjell på gain skyldes dc block før/etter buffer. Eller annen signalgenerator. kanskje fordi 1pf ble byttet ut (29.04)....
 
-\begin{figure}
+\begin{figure}%2016.07.18
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -282,15 +299,17 @@ For the ideal \gls{opamp}, figure \ref{fig-sim-ideal} shows a peak height drop o
 	\label{fig-ide-gain}
 \end{figure} 
 
+One possible explanation for the gain drop could be leakage current. Since a large capacitance causes the rise time of the pulse to be very slow, it is possible that the leakage causes the pulse never being able to reach proper maximum value. 
 
-\subsection{Ballistic defict}
+\subsection{Ballistic deficit}
 \label{ide-gain-ballistic}
 %http://ns.ph.liv.ac.uk/~ajb/radiometrics/glossary/ballistic_deficit.html
 %http://ns.ph.liv.ac.uk/~ajb/radiometrics/practical_analysis/practical_aspects/shaping_time_constant.htm
 %http://www-physics.lbl.gov/~spieler/USPAS-MSU_2012/pdf/IV_Signal_Processing.pdf
 
-Ballistic defict is an error source that was investigated as a contributor to the drop in amplitude for high load capacitors. This occurs when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude. Figures \ref{fig-IDE1180-shaperamp} to \ref{fig-IDE1180-shaperrisetime} show measurements investigating the drop in gain by comparing the output signal from the IDE1180 when the shaper is connected and disconnected using the SH\_ENABLE pin header. This is measured at default settings, using the Agilent InfiniiVision MSO-X 3104A oscilloscope. These data are based on only one curve saved from the oscilloscope, except  for 100 pF with shaper disabled, where two curves were saved as the signal was very noisy. Therefore this data is not very accurate, but it is still possible to observe trends. 
+Ballistic deficit (see section \ref{t-shaper}) is an error source that was investigated as a contributor to the drop in amplitude for high load capacitors.\comm{ This occurs when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude.} Figures \ref{fig-IDE1180-shaperamp} to \ref{fig-IDE1180-shaperrisetime} show measurements investigating the drop in gain by comparing the output signal from the IDE1180 when the shaper is connected and disconnected using the SH\_ENABLE pin header. This is measured at default settings, using the Agilent InfiniiVision MSO-X 3104A oscilloscope. These data are based on only one curve saved from the oscilloscope, except  for 100 pF with shaper disabled, where two curves were saved as the signal was very noisy. Therefore this data is not very accurate, but it is still possible to observe trends. 
 
+%2016.06.21
 \begin{figure}
 	\centering
 	\begin{subfigure}{.5\textwidth}
@@ -346,7 +365,7 @@ Ballistic defict is an error source that was investigated as a contributor to th
 \end{figure}
 
 %Figure \ref{fig-IDE1180-shaperamp-rel} shows that the shaper contributes only a minor part of the gain reduction. 
-In figure \ref{fig-IDE1180-shaperrisetime-} we see that even at 0 pF input load capacitance, the rise time of the pulse from the pre-amplifier is 60 ns, which is longer than the shaping time of 40 ns. As the capacitance is increased, the rise time is greatly increased, and we see the difference between the two curves in figure \ref{fig-IDE1180-shaperamp-rel} increasing. This appears to be a ballistic defict, but as gain reduction in the shaper from the increased capacitance is only about one fifth of the total gain reduction, ballistic defict does not seem to be the main issue.  
+In figure \ref{fig-IDE1180-shaperrisetime-} we see that even at 0 pF input load capacitance, the rise time of the pulse from the pre-amplifier is 60 ns, which is longer than the shaping time of 40 ns. As the capacitance is increased, the rise time is greatly increased, and we see the difference between the two curves in figure \ref{fig-IDE1180-shaperamp-rel} increasing. This appears to be a ballistic deficit, but as gain reduction in the shaper from the increased capacitance is only about one fifth of the total gain reduction, ballistic deficit does not seem to be the main issue.  
 
 \subsection{PCB Input Capacitance}
 \label{ide-gain-pcb}
@@ -366,7 +385,7 @@ Noise measurements on the IDE1180 have been performed with the ADC setup in figu
 
 The results were expected to be somehow different on method three as it does not use the same histogram. Methods one and two looks at variations in the baseline, while method three looks at variations in the peak height. Figure \ref{fig-noise-methods} shows a comparison of measurement results on the same system with the three different methods. All methods show a slightly different slope. For method two, the higher noise values at high capacitance is because the histogram consists of two overlapping Gaussians.  %If the noise varies between 10 mV and 30 mV, the raw signal measurements will see noise up to 30 mV, while the peak measurement will only see noise of 20 mV, because the period of the noise is much shorter than the peak width. 
 
-\begin{figure}%[h]
+\begin{figure}%[h]   %2016.04.18
 	\centering
 	\includegraphics[width=0.7\textwidth]{Noise-methods.png}
 	\caption{Comparison of the three noise measurement methods used.}
@@ -403,20 +422,33 @@ Figure \ref{fig-noise-nocomp} shows a noise measurement using method 3, calculat
 
 As shown in equation \ref{eq-noise}, the gain is needed to calculate the equivalent input noise, but as discussed in section \ref{ide-gain} the gain varies with input load capacitance. It is therefore necessary to change the gain for different capacitances in the noise calculation. Originally, this was done using the tables in section \ref{ide-gain}, but as this is not optimal in case something in the system is changed. Therefore the MATLAB script for plotting the gain was modified to also calculate the gain at each capacitance when the third method for noise measurements was used. The gain is simply calculated by taking the mean of the peak histogram and dividing by the input charge. 
 
-\begin{figure}[h!]
+\begin{figure}[h!] %2016.06.22
 	\centering
 	\includegraphics[width=0.7\textwidth]{noise-default-auto.png}
 	\caption{Measurement of the \gls{ENC} vs. input capacitive load. Calculated with automatic gain compensation.}
 	\label{fig-noise-auto}
 \end{figure} 
 
-When gain compensation is performed, see figure \ref{fig-noise-auto}, the noise curves have a slope very close to the one shown in the datasheet. 
+When gain compensation is performed, see figure \ref{fig-noise-auto}, the noise curves have a slope very close to the one shown in the datasheet. Figure \ref{fig-noise-all} shows the noise curves for all configured shaping times. We see that for longer shaping times, the noise becomes much less dependant on the capacitance. Figure \ref{fig-noise-shape} shows how the noise changes with shaping time. Unlike figure \ref{fig-noise-min}, this does not show a single minimum. The greatest minimum is at 100 ns, but there is another minimum at 1 $\mu$s, where the minimum was expected to be from theory. This non-linear behaviour could be explained by that it is not only the shaping time constant that is being changed for the different shaping times, but also the pole-zero cancellation, which has a large impact on the noise. 
 
-XXX figures for shaping time 0.5-2
+\begin{figure}[h] %Noise combine
+	\centering
+	\includegraphics[width=\textwidth]{noise-all.png}
+	\caption{Measurements of the \gls{ENC} vs. input capacitive load. Calculated with automatic gain compensation.}
+	\label{fig-noise-all}
+\end{figure} 
 
+\begin{figure}[h] %Noise combine
+	\centering
+	\includegraphics[width=0.7\textwidth]{noise-vs-shape.png}
+	\caption{Measurements of the \gls{ENC} vs. shaping time.}
+	\label{fig-noise-shape}
+\end{figure} 
 
+XXX output referred noise
 
-
+\newpage
+\newpage
 \subsection{Noise from Input Circuitry}
 \label{ide-noise-input}
 
@@ -436,25 +468,101 @@ Since the noise measurements in the datasheet were performed directly on the \gl
 		\label{tab-noise-input}
 		\begin{tabular}{ccccccc}\toprule
 			\textbf{Measurement \#}      & 1    & 2    & 3    & 4    & 5    & 6   \\ 
-			\textbf{ENC$_\sigma$ [e-]} & 1612 & 3512 & 3437 & 3462 & 3553 & 3871   \\ \bottomrule
+			\textbf{ENC$_\sigma$ [e-]} & 1642 & 3578 & 3502 & 3527 & 3620 & 3944   \\ \bottomrule
 		\end{tabular}
 	\end{center}
 \end{table}
 
 The main conclusion from table \ref{tab-noise-input} is that the input circuitry has a huge impact on the noise at low capacitance. From measurements 2-5, we see that the adapters, cable, and wave generator do not contribute noticeably to the noise. We also see an increase in noise between measurements 5 and 6, which indicates that method 2 is not a reliable form of measurement. 
 
-XXX figures for method 1 and 2, from noise docx
+%%XXX figures for method 1 and 2, from noise docx. 2016.05.03. Maybe not
 
 
 
 \section{Gain Linearity}
 \label{ide-linearity}
 
+Gain linearity has been measured by saving pulses from the Agilent InfiniiVision MSO-X 3104A oscilloscope and using Matlab to find the pulse peak value. This was done since the buffer does not cover the entire dynamic range of the IDE1180. Since these measurements are only based on a single pulse for each data point, they have an extra inaccuracy from the noise that would be avoided by saving pulse height histograms on the ADC. 
 
-\subsection{Dynamic Range}
+\begin{figure} %2016.07.18 & 2016.08.12
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{40ns_0pF.png}
+		\caption{40 ns shaping time.}
+		\label{fig-gainlin-40n}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{1us_0pF.png}
+		\caption{1 $\mu$s shaping time.}
+		\label{fig-gainlin-1u} 
+	\end{subfigure}
+	\caption{Two examples of gain linearity measurements.}
+	\label{fig-gainlin}
+\end{figure}
+
+Figure \ref{fig-gainlin} shows two gain linearity graphs. The rest are in appendix \ref{a-gainlin}. The measurements at default settings look very much like expected, but all the other measurements show a bump in the low end, like in figure \ref{fig-gainlin-1u}. The source of this is unknown, but it is likely not from measurement inaccuracies, since the same bump is visible for all the measurements. It is possible that it is somehow related to the pole-zero cancellation that is active for these configurations, but not the default setting. Another possibility is that the bump comes from noise, since the noise has a higher relative effect on weak signals. As seen in figure \ref{fig-noise-shape}, the noise is higher for the other shaping times than for default settings. 
+
+\section{Dynamic Range}
 \label{ide-dynamicrange}
 %Noise-gain linearity
+The dynamic range of the pre-amplifier shaper is on the lower level limited by the noise. To be able to easily discern the signal from noise, it is common practice to set the lower end of the dynamic range to about 10 times the noise. The higher end of the dynamic range is set from the gain linearity curves, as the point where the curve is no longer linear. Table XXX shows the 
 
+The dynamic range has only been accurately calculated for the default gain setting. For the other three gain settings, the higher end of the dynamic range has been estimated by observing the output of the IDE1180 using the Tektronix DPO 7254 oscilloscope. See table \ref{tab-dynrange-estimate}. The actual maximum input charge is slightly lower than this, as it is hard to see on an oscilloscope exactly when the pulse height increase stops being linear.
+%table from gain excel
+\begin{table}[h!]
+	\begin{center}
+		\caption{Dynamic range estimates for different gain settings.}
+		\label{tab-dynrange-estimate}
+		\begin{tabular}{cc}\toprule
+			\textbf{PA\_GAIN<1:0>} & \textbf{$\mathbf{Q_{in_{max}}}$ [fC]}   \\ \midrule
+		    "GND-GND"     & 200   \\
+			"GND-3V3"     & 240       \\
+			"3V3-GND"     & 300    \\
+			"3V3-3V3"     & 440   \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Input Sharing}
+\label{ide-inputshare}
+
+Input sharing was investigated as a method to increase the highest signal that can be read from the detector to a higher level than what is possible by reducing the gain. The thought behind this was to connect multiple channels of the IDE1180 to the same signal, expecting that the signal would spread evenly across the channels. From this, it would be possible to divide the signal by a number between 2 and 15. However, tests showed that the signal was not spread evenly across the channels, making this method unreliable. It was however discovered that it was reliable if the outputs of all the used channels are connected together. Table \ref{tab-input-share} shows the estimated gain and dynamic range of the complete system with different amounts of channels connected.This was done using the Agilent oscilloscope with different amounts of channels connected. One channel is only with channel one connected, two channels is channel one and two, etc. Figure \ref{fig-input-sharing} shows that the dynamic range is linearly increased using this method.
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Input sharing gain and dynamic range estimates.}
+		\label{tab-input-share}
+		\begin{tabular}{ccccc}\toprule
+			\textbf{Channels} & \textbf{Output voltage at} & \textbf{Gain}     & \textbf{Saturation} & \textbf{Output voltage} \\
+			& \textbf{190 fC input [mV]} & \textbf{[mV/fC]} & \textbf{charge [fC]} & \textbf{at saturation [mV]} \\\midrule
+			1          & 1560                             & 8.21 & 190                  & 1560                            \\
+			2          & 1060                             & 5.58 &                      &                                 \\
+			3          & 930                              & 4.89 &                      &                                 \\
+			4          & 810                              & 4.26 & 710                  & 2400                            \\
+			5          & 700                              & 3.68 &                      &                                 \\
+			6          & 610                              & 3.21 &                      &                                 \\
+			7          & 540                              & 2.84 &                      &                                 \\
+			8          & 480                              & 2.53 & 1430                 & 2950                            \\
+			9          & 440                              & 2.32 &                      &                                 \\
+			10         & 400                              & 2.11 &                      &                                 \\
+			11         & 360                              & 1.89 &                      &                                 \\
+			12         & 330                              & 1.74 & 2190                 & 3250                            \\
+			13         & 310                              & 1.63 &                      &                                 \\
+			14         & 280                              & 1.47 &                      &                                 \\
+			15         & 270                              & 1.42 &                      &                                 \\
+			16         & 260                              & 1.36 & 2950                 & 3000                              \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{input-sharing.png}
+	\caption{Dynamic range variations from input sharing.}
+	\label{fig-input-sharing}
+\end{figure} 
 
 
 \section{Shaping Time}
@@ -475,7 +583,9 @@ The shaping time has some variations from the input load capacitance and input c
 	\end{center}
 \end{table}
 
-%shaping time plots
+XXX shaping time plots
+
+XXX also show FWHM
 
 \section{Rise Time}
 \label{ide-risetime}
@@ -493,18 +603,85 @@ Figure XXX shows that at 40 ns shaping time the slope increases when the amplitu
 \label{ide-crosstalk}
 %http://www.slideshare.net/RohdeSchwarzNA/crosstalk-measurements-for-signal-integrity-applications
 
-\section{Input Sharing}
-\label{ide-inputshare}
+It was first attempted to measure crosstalk between the channels by measuring the noise on channel 2, with an input signal on channel 1. However, the crosstalk signal was too close to the noise to be noticeable on the noise histogram. Therefore, measurements were instead done by measuring the amplitude of the crosstalk signal by using an external trigger signal from the wave generator. Crosstalk was measured with the ADC, for default and 1 $\mu$s shaping time, see table \ref{tab-crosstalk-adc}. For each shaping time, it was measured for the minimum amplitude from the Tektronix AFG3252 wave generator, and for the maximum amplitude before the in-house buffer cuts the signal. The wave generator signal was sent to channel 1, while the other channels were measured. The crosstalk was also roughly measured for default shaping time using cursors on the Agilent MSO-X 3104A oscilloscope, table \ref{tab-crosstalk-osc}, which showed that the crosstalk is roughly the same three channels away from the signal, as fifteen channels away. Therefore, the ADC measurements, which take some time, were not done for channels 6 to 15. 
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Crosstalk estimates using oscilloscope. Input signal to channel 1.}
+		\label{tab-crosstalk-osc}
+		\begin{tabular}{cccc} \toprule
+			\textbf{Channel \#} & \textbf{$\mathbf{V_o}$ [mV]} & \textbf{$\mathbf{V_o}$ [mV]} & \textbf{$\mathbf{V_o}$ [mV]} \\
+			     & ($Q_{in}=48 fC$) & ($Q_{in}=95 fC$) & ($Q_{in}=190 fC$) \\ \midrule
+			1    & 375     & 775      & 1500     \\
+			2    & 6    & 10       & 18    \\
+			3    & 5.5    & 8.5      & 14    \\
+			4    & 4.5    & 6        & 8     \\
+			5    & 4.5    & 6        & 8     \\
+			6    & 4    & 6        & 8     \\
+			7    & 4    & 6        & 8     \\
+			8    & 4    & 6        & 8     \\
+			9    & 4    & 6        & 8     \\
+			10   & 4    & 6        & 8     \\
+			11   & 4    & 6        & 8     \\
+			12   & 4    & 6        & 8     \\
+			13   & 4    & 6        & 8     \\
+			14   & 4    & 6        & 8     \\
+			15   & 4    & 6        & 8     \\
+			16   & 4    & 6        & 8    \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+The noise during the table \ref{tab-crosstalk-osc} was estimated to 4 mV, so the highest crosstalk was about 4.5 times the noise. Relative to the signal on channel 1, the crosstalk was between 0.5 \% and 1.75 \% of the signal strength. 
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Crosstalk measurements. Input signal to channel 1.}
+		\label{tab-crosstalk-adc}
+		\begin{tabular}{ccccc} \toprule
+			\textbf{Channel \#} & \textbf{$\mathbf{V_o}$ [mV]} & \textbf{$\mathbf{V_o}$ [mV]} & \textbf{$\mathbf{V_o}$ [mV]} & \textbf{$\mathbf{V_o}$ [mV]} \\
+			& ($Q_{in}=48 fC$) & ($Q_{in}=95 fC$) & ($Q_{in}=48 fC$)  & ($Q_{in}=475 fC$)\\ 
+			& (40 ns shaping)& (40 ns shaping)& (1 $\mu$s shaping)& (1 $\mu$s shaping) \\ \midrule
+			1       & 411.6  & 839.3   & 157.2 & 990.8 \\
+			2       & 6.5    & 10.8    & 3.2   & 10.8  \\
+			3       & 5.6    & 8.0     & 3.4   & 10.8  \\
+			4       & 4.9    & 5.3     &       & 3.1   \\
+			5       & 4.9    & 5.4     &       &       \\
+			16      & 5.2    & 5.4     & 2.3   & 2.9 \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Table \ref{tab-crosstalk-adc} shows crosstalk between 0.3 \% and 2 \% of the signal strength. The noise was measured to roughly 3 mV for these measurements, making the highest crosstalk 3.6 times the noise. These measurements are a lot more accurate than the estimates in table \ref{tab-crosstalk-osc}, but the estimates are also included in this thesis as they cover the high end of the dynamic range that cannot currently be measured using the ADC. 
 
 \section{Power Consumption}
 \label{ide-power}
 
+Power consumption was measured for different shaping times by connecting an ampere-meter between the power supply and the IDE1180. The power consumption was not affected by the input charge to the chip. 
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Power consumption measurements.}
+		\label{tab-ide-power}
+		\begin{tabular}{ccccc}\toprule
+			\textbf{Shaping time [ns]}      & 40 (Default)    & 500    & 1000    & 2000       \\ 
+			\textbf{Power consumption [mW]} & 224 & 235 & 223 & 208    \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+The power consumption values in table \ref{tab-ide-power} are a lot higher than the 32 mW from the datasheet. This is expected, as the datasheet is made from measurements directly on the chip. The extra power consumption comes from components on the PCB. 
+
 \section{Pile-up}
 \label{ide-pileup}
 
+The maximum count rate that can be used without causing pile-up has been calculated from the time between the pulse starts to rise until the undershoot has stabilized. This has been measured at the highest input signal of the dynamic range, as the pulse width is slightly increased by input charge. C depancy?XXX
+
+XXX table
+
 \section{Resolution}
 \label{ide-resolution}
-%%ADC+noise
+ADC+noise
 
 
 

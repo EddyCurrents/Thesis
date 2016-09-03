@@ -19,11 +19,25 @@ Bentley, J.~P. (2005).
 \newblock {\em Radiotherapy Dose-Fractionation}.
 \newblock Royal College of Radiologists, London.
 
+\bibitem[\protect\citeauthoryear{Ermis and Celiktas}{Ermis and
+  Celiktas}{2012}]{shapingtimedef}
+Ermis, E.~E. and C.~Celiktas (2012).
+\newblock {Timing Applications to Improve the Energy Resolution of NaI(Tl)
+  Scintillation Detectors}.
+\newblock {\em International Journal of Instrumentation Science\/}~{\em
+  1\/}(5), 54--62.
+
 \bibitem[\protect\citeauthoryear{Freeman}{Freeman}{2013}]{proton-ct}
 Freeman, T. (2013).
 \newblock The potential of proton {CT}.
 \newblock \url{http://medicalphysicsweb.org/cws/article/research/53211}.
 \newblock Accessed: 15/10/2015.
+
+\bibitem[\protect\citeauthoryear{Gray, Hurstand, Lewis, and Meyer}{Gray
+  et~al.}{2009}]{analogbok}
+Gray, P.~R., P.~J. Hurstand, S.~H. Lewis, and R.~G. Meyer (2009).
+\newblock {\em Analysis and Design of Analog Integrated Circuits}.
+\newblock Wiley.
 
 \bibitem[\protect\citeauthoryear{Halámek, Visčor, and Kasal}{Halámek
   et~al.}{2001}]{dynamic-range}
@@ -98,6 +112,12 @@ NIH (2010).
 Oltedal, E.~J. (2015).
 \newblock {FPGA based readout of a silicon PIN detector}.
 
+\bibitem[\protect\citeauthoryear{{ORTEC}}{{ORTEC}}{2009}]{ORTEC}
+{ORTEC} (2009).
+\newblock Introduction to amplifiers.
+\newblock
+  \url{http://www.ortec-online.com/download/amplifier-introduction.pdf}.
+
 \bibitem[\protect\citeauthoryear{P-Cure}{P-Cure}{}]{pcure}
 P-Cure.
 \newblock {P-Cure Clinics}.
@@ -145,6 +165,13 @@ SINTEF (2015).
 \newblock {Si-3DMiMic - Silicon-based 3D Mini and Micro-dosimeters}.
 \newblock \url{https://www.sintef.no/en/projects/3dmimic/}.
 \newblock Accessed: 24/09/2015.
+
+\bibitem[\protect\citeauthoryear{SparkFun}{SparkFun}{}]{SparkFun}
+SparkFun.
+\newblock Real diode characteristics.
+\newblock
+  \url{https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics}.
+\newblock Accessed: 26/08/2016.
 
 \bibitem[\protect\citeauthoryear{Tali}{Tali}{2015}]{tali}
 Tali, M. (2015).

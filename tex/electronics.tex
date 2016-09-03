@@ -22,7 +22,6 @@ One often important parameter to consider in a pre-amplifier is the dynamic rang
 It is typically convenient to use the pre-amplifier to supply bias voltage to the detector. When this is done a single cable is used both to provide voltage to the detector and to transfer the signal pulses to the readout system. \citep[chap. 16]{Knoll}
 %fig 16.16a?
 
-%%XXX equivalent noice charge. 
 
 \subsubsection{Charge-sensitive amplifier operation}
 \label{t-csa}
@@ -33,18 +32,56 @@ It is typically convenient to use the pre-amplifier to supply bias voltage to th
 	\label{fig-csa}
 \end{figure}
 
-Figure \ref{fig-csa} shows a general \gls{CSA}. When a radiation quanta strikes the detector, a pulse of charge $Q_s$ and width $t_o$ is generated. This creates a rising potential on the negative input of the amplifier, which triggers a falling potential on the output of the amplifier. Because of the negative feedback, this will quickly draw the negative input close to zero, making the negative input a point of virtual ground. The feedback currents charge the feedback capacitor, and then the capacitor is slowly discharged when there is no signal on the input. This creates a voltage pulse on the output that slowly falls from a peak value that is proportional to the input charge. \citep{Hamamatsu}
+Figure \ref{fig-csa} shows a general \gls{CSA}. When a radiation quanta strikes the detector, a pulse of charge $Q_s$ and width $t_o$ is generated. This creates a rising potential on the negative input of the amplifier, which triggers a falling potential on the output of the amplifier. Because of the negative feedback, this will quickly draw the negative input close to zero, making the negative input a point of virtual ground. The feedback currents charge the feedback capacitor, and then the capacitor is slowly discharged when there is no signal on the input. This creates a voltage pulse on the output that slowly falls from a peak value that is proportional to the input charge (figure \ref{fig-preampshaper}). \citep{Hamamatsu}
 
 %http://www.allaboutcircuits.com/textbook/semiconductors/chpt-8/differentiator-integrator-circuits/
 %Virtual ground: http://electronics.stackexchange.com/questions/124709/op-amp-reason-for-virtual-ground
 
 %%XXX figure with pulse?
+%%XXX basic noise stuff too? 
+
+Since noise affects the resolution and dynamic range of a readout system, it is common to document the noise of an amplifier as \textit{input referred noise}. This is the equivalent noise on the input of the amplifier that would create the noise that is seen on the output. This is done to more easily compare the noise to the expected signal strength at the input. For a charge-sensitive amplifer, it is then natural to refer to the noise as the \acrfull{ENC} on the input.  
 
 \subsection{Shaper}
 \label{t-shaper}
-The shaper, or shaping amplifier, converts the shape of the signal to a form that is suitable for measurement. The pulse height of the signal from the shaper is proportional to the input charge. It is important that the output from the shaper quickly returns to the baseline to prevent pulse overlapping that will cause measurement errors. The first stage of the shaper is a differentiator (high pass filter) which passes the steep rise of the input pulse, but quickly returns to the baseline. The differentiator decides the fall time of the pulse. The signal is then amplified to a level that is suitable for the \gls{ADC}, before it is passed through the integrator (low pass filter) that filters away noise and changes the rise time of the pulse. A much used parameter to describe a shaper is the shaping time, which is related to the duration of the shaped pulse. \citep[chap. 16]{Knoll}
+The shaper, or shaping amplifier, converts the shape of the signal from the pre-amplifier to a form that is suitable for measurement.  It is important that the output from the shaper quickly returns to the baseline to prevent pulse overlapping that will cause measurement errors. The first stage of a simple shaper, figure \ref{fig-preampshaper}, is a differentiator (high pass filter) which passes the steep rise of the input pulse, but quickly returns to the baseline, and also reduces the noise. The differentiator decides the fall time of the pulse. The signal is then amplified to a level that is suitable for the \gls{ADC}, before it is passed through the integrator (low pass filter) that filters away noise and increases the rise time of the pulse. This simple shaper is often called a CR-RC shaper, from the electronic components it is made from. \citep[chap. 16]{Knoll}
 
-XXXX: More details. Noise. Ballistic defict. semi-gauss shape
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{preampshaper2.png}
+	\caption{Schematic of simple charge sensitive pre-amplifier and shaper. Includes sketches of how the signal could look at different stages. \citep[chap. 16]{Knoll} }
+	\label{fig-preampshaper}
+\end{figure} %fig 16.2
+
+A much used parameter to describe a shaper is the shaping time, which is related to the duration of the shaped pulse. There is no standard for defining what shaping time is, but common practice is to use the (shaping) time constant ($\tau=RC$) of the filters, even though this does not clearly define all the time-related parameters. \citep[chap. 17]{Knoll} Since the shaping time constant is defined by the electronic components in the shaper, it is not possible to use this definition when measuring the shaping time of a shaper with unknown design. Therefore, in this thesis, the shaping time definition from \citep{shapingtimedef} is used. This is the time difference between the peak and 61 \% of the peak value on the falling edge (figure \ref{fig-shapingtime-def}).  
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{shapingtime.png}
+	\caption{Definition of shaping time and peaking time. \citep{shapingtimedef} }
+	\label{fig-shapingtime-def}
+\end{figure}
+
+There are many factors that come into play when deciding the shaping time. A short shaping time is needed to avoid subsequent pulses to overlap (pile-up), but a too short shaping time can lead to an error called ballistic deficit. This is when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude. The signal-to-noise ratio is also affected by both the shape and the shaping time. At short shaping times, the series noise component of the pre-amplifier dominates the total noise. The series noise is typically dominated by thermal noise in the first amplifying stage of the pre-amplifier. At long shaping times the parallel noise dominates. This could for example be detector leakage current, transistor leakage current, and thermal noise in the pre-amplifier feedback resistor. To total noise has a minimum where the series and parallel noise is equal, see figure \ref{fig-noise-min}. This is typically at 0.5 to 1 $\mu$s for semiconductor particle detectors. \citep{ORTEC}
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{noisemin.png}
+	\caption{Noise versus shaping time. \citep{ORTEC} }
+	\label{fig-noise-min}
+\end{figure}
+
+There are many other shaper configurations that can be used to create different shapes. One very popular choice is the CR-(RC)$^4$ shaper, which uses fourth order low pass filter to make the pulse shape an almost perfect Gaussian. This type of shaper is therefore often called a semi-Gaussian shaper. A CR-(RC)$^4$ shaper has about 18 \% higher signal-to-noise ratio, and about 11 \% lower deadtime than a CR-RC shaper. The fourth order filter can be implemented either by cascading four passive RC stages, or two active second order low pass filters. \citep{ORTEC} \citep[chap. 17]{Knoll}
+
+Most shapers include a pole-zero cancellation network (figure \ref{fig-shaper-pz}) to remove an undershoot that is often seen after the pulse. This makes it possible to have higher counting rates without problems with pile-up. Pole-zero cancellation is done with a potentiometer in parallel with the capacitor in the CR differentiator. The name comes from the poles and zeroes in the transfer function of the system. The network uses a zero to cancel out a pole in the complex plane. \citep{ORTEC}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{pz.png}
+	\caption{The benefit of Pole-Zero Cancellation. \citep{ORTEC} }
+	\label{fig-shaper-pz}
+\end{figure}
+
+%%XXXX: More details. Noise. Ballistic deficit. semi-gauss shape. pz
 %discriminator?
 %% Figure with pulse from pre-amp and from shaper
 %Shaping time definition
@@ -88,14 +125,13 @@ This chip was considered by multiple projects at \gls{ift} and a evaluation boar
 
 \section{Ortec 142A Pre-Amplifier}
 \label{e-ortec}
-Ortec 142A is a single channel low-noise \gls{CSA} optimized for charged particle or heavy-ion detectors. It was considered for the 3DMiMic project since \gls{uib} already owns a few of these. It features a very high dynamic range, up to 55~Me-, and an equivalent noise charge between 444~e- and 944~e- for detector capacitances between 0~pF and 100~pF. 
-The University does not have a fitting portable shaping amplifier that can be used with the 142A, and it was therefore not prioritized for this project. 
+Ortec 142A is a single channel low-noise \gls{CSA} optimized for charged particle or heavy-ion detectors. It was considered for the 3DMiMic project since \gls{uib} already owns a few of these. It features a very high dynamic range, up to 55~Me-, and an equivalent noise charge between 444~e- and 944~e- for detector capacitances between 0~pF and 100~pF. The University does not have a fitting portable shaping amplifier that can be used with the 142A, and it was therefore not prioritized for this project. The 142A is also well characterized and documented by Ortec.
 
 %but the gain is too low for the 3DMiMic detector. <-wrong
 
 \section{Portable PCIe ADC System}
 \label{e-adc}
-The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sitting in a VMI crate. This features four 14 bit channels with 2~GS/s sampling rate, but is very large and heavy, making it cumbersome to bring for radiation tests. It was desirable to purchase a new \gls{ADC} for the department that could be put inside a small computer using \gls{PCIe} to make a portable system. Three manufacturers that produced suitable \gls{ADC}s for a reasonable price were found; AlazarTech, Keysight Technologies, and SP Devices. The considered models are listed in table~\ref{tab-adc}. 
+The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sitting in a VMI crate. This features four 14 bit channels with 2~GS/s sampling rate, and 0.3 mV accuracy, but is very large and heavy, making it cumbersome to bring for radiation tests. It was desirable to purchase a new \gls{ADC} for the department that could be put inside a small computer using \gls{PCIe} to make a portable system. Three manufacturers that produced suitable \gls{ADC}s for a reasonable price were found; AlazarTech, Keysight Technologies, and SP Devices. The considered models are listed in table~\ref{tab-adc}. 
 
 \begin{table}[h]
 \begin{center}
@@ -113,7 +149,7 @@ The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sittin
 \end{center}
 \end{table}
 
-The Keysight model was interesting with a signal interleaving feature where both 1.6~GS/s channels could be combined into one 3.2~GS/s channel. In the end SP Devices was chosen, being the only discovered company that produces 14 bit \gls{PCIe} \gls{ADC}s in the GS/s range. ADQ14AC-4C was chosen since having two extra channels was considered more important than higher sampling rate for radiation tests, and the old Caen \gls{ADC} can be used for projects and tests that require higher sampling rate. 
+The Keysight model was interesting with a signal interleaving feature where both 1.6~GS/s channels could be combined into one 3.2~GS/s channel. In the end SP Devices was chosen, being the only discovered company that produces 14 bit \gls{PCIe} \gls{ADC}s in the GS/s range. ADQ14AC-4C was chosen since having two extra channels was considered more important than higher sampling rate for radiation tests, and the old Caen \gls{ADC} can be used for projects and tests that require higher sampling rate. This has a input range of 1.9 $V_{pp}$ and has a variable DC offset of $\pm1.05$ V. It has an \gls{ENOB} of 10.2, which gives an accuracy of 1.62 mV. 
 
 \subsection{PC for ADC}
 \label{e-adc-pc}

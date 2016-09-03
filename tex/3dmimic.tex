@@ -5,6 +5,35 @@
 \chapter{Testing and Characterization of the 3DMiMic Detector}
 \label{3dmimic}
 
+\section{Semiconductors}
+\label{t-semi}
+
+A semiconductor is a material with higher resistance than typical resistive materials, like copper, but lower resistance than insulators. Silicon is the most widely used semiconductor element for electronic devices. A semiconductor's conducting properties can be altered by adding different atoms into the crystal lattice. This is called doping. An n-type semiconductor has been doped with atoms containing more free electrons. A p-type similarly has more free holes. Atoms with extra electrons are called donors, and phosphorus is a common donor for silicon doping. Atoms with extra holes are called acceptors, and boron is a common acceptor for silicon doping. 
+
+\subsection{Semiconductor Diodes}
+
+A basic semiconductor diode is based on a pn junction, which is a p-type material in contact with a n-type material. Without an external bias applied, electrons from the n-region near the junction will recombine with holes in the p-region, leaving behind negatively charged ions in the n-region. The opposite happens in the p-region, creating positively charged ions. This creates a region in the junction with a strong electric field, which is called the depletion region, because it is depleted of charge carriers. This makes the depletion region non-conductive. A pn junction is shown in figure \ref{fig-pn}. The depletion region can be made smaller, eventually causing a current to flow, by setting up a voltage across the junction, with the higher potential on the p-side. This is called forward bias. The opposite, reverse bias, causes the depletion region to grow bigger as the charge carriers are pulled away from the junction. 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{pn.png}
+	\caption{PN junction with depletion region. (a) Schematic. (b) Charge density. (c) Electric field. (d) Electrostatic potential. \citep{analogbok}}
+	\label{fig-pn}
+\end{figure}
+
+The insulating properties of the depletion region causes only a minimal leakage current to flow during reverse bias. This current is caused by drift, which increases with the electric field up to the point of velocity saturation. The increased interactions between the carriers and the lattice for higher electric fields causes the leakage current to become almost independent of the voltage. This current is often called the reverse saturation current. Once the reverse bias becomes too strong, the high electric field causes the depletion region to break down and high current to flow. This current can break diodes that have not been made to withstand it. Currents for different bias voltages can be seen in figure \ref{fig-pn-iv}. 
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{pn-iv.png}
+	\caption{Current-voltage relationship of a diode. \citetext{\citeauthor{SparkFun}}}
+	\label{fig-pn-iv}
+\end{figure}
+%https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics
+%http://www.circuitstoday.com/pn-junction-diode-characteristics
+
+A PIN diode has a large undoped intrinsic semiconductor region between the p-region and n-region. The i-region is flooded with charge carriers from the p- and n-regions. This causes the electric field to cover almost the entire length of the i-region, which speeds up the transport of charge carriers. The depletion region is also independent of the bias voltage. 
+
 \section{Radiation Detectors}
 \label{t-detector}
 A radiation detector records interactions between incoming radiation and the detector. These interactions could be electrical, chemical, light- or heat-based. Detectors can be based on many different materials, including gas chambers, semiconductors, crystals, and liquid.\comm{\citep[chap. 9]{Thorsteinsen}} In a simple radiation detector a single particle interacts with the detector, resulting in an electric charge appearing inside the detector. This charge is typically collected by setting up an electric field inside the detector, which causes positive and negative charge to flow in opposite directions, forming an electric signal. This signal could be measured as a current (current mode), voltage (mean square voltage mode), or a charge (pulse mode). \citep[chap. 4]{Knoll}
@@ -22,7 +51,7 @@ Semiconductor diode detectors, also called simply semiconductor detectors or sol
 
 Charged particles passing through a semiconductor detector create electron-hole pairs along the particles path. By setting up an electric potential across the diode, there will be an electric field present that will cause the holes to drift in the same direction as the electric field vector, and the electrons in the opposite direction. By monitoring one of the diodes sides, a pulse is measured as the charge from either the holes or the electrons (depending on which side is measured) is collected. 
 
-A semiconductor detector, like other diodes, can be forward biased (positive potential on p-side) or reverse biased (positive potential on n-side). It is possible to operate a semiconductor detector without external bias, but it will perform poorly as the electric field across the junction will be too weak to read out the charge carriers before many are lost. Applying forward bias to the detector reduces the electric field even further, while reverse bias increases it. Another important factor is that reverse bias increases the depletion region, which is also the active volume of the detector. \comm{This is the main reason for reverse bias being the dominant choice for radiation detectors.}\citep[chap. 11]{Knoll}
+A semiconductor detector, like other diodes, can be forward biased or reverse biased. It is possible to operate a semiconductor detector without external bias, but it will perform poorly as the electric field across the junction will be too weak to read out the charge carriers before many are lost. Applying forward bias to the detector reduces the electric field even further, while reverse bias increases it. Another important factor is that reverse bias increases the depletion region, which is also the active volume of the detector. \comm{This is the main reason for reverse bias being the dominant choice for radiation detectors.}A PIN diode with its large active volume is therefore very useful as a radiation detector. \citep[chap. 11]{Knoll}
 
 %Tran phd fig 1.3?
 
@@ -58,7 +87,7 @@ There are multiple ways to measure capacitance. A simple method is to supply a k
 	\label{fig-3dmimic}
 \end{figure}
 
-Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter being developed by SINTEF MiNaLab in Oslo, but was invented and ordered by Professor Anatoly Rozenfeld from the Centre for Medical Radiation Physics at the University of Wollongong. The detector is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level, and consists of an array of more than a thousand cylindrical p-i-n diodes (see figure \ref{fig-3dmimic}). Each diode, or cell, is made of a thin n+ core cylinder, a circular p+ trench some micrometers out, and in some cases a n+ guard ring further away from the core (see figure \ref{fig-3dmimic-top-side}). There are multiple versions of the detectors, with differences including presence of n+ guard ring, size of cell, and structure. The silicon between the different cells should be etched away and replaced with tissue equivalent \gls{PMMA}, but this has not been attempted by SINTEF yet as of the time this thesis is written. This should be done because \gls{PMMA} produces secondary radiation in a very similar way to how tissue does, unlike silicon, due to the mass numbers of the atoms. 
+Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter being developed by SINTEF MiNaLab in Oslo, but was invented and ordered by Professor Anatoly Rozenfeld from the Centre for Medical Radiation Physics at the University of Wollongong. The detector is made to mimic the response of biological tissues to ionizing radiation on a cellular and sub-cellular level, and consists of an array of more than a thousand cylindrical p-i-n diodes (see figure \ref{fig-3dmimic}). This is in an attempt to get a better estimate of the \gls{RBE} (section \ref{t-rbe}) by observing the microscopic distribution of the dose. Each diode, or cell, is made of a thin n+ core cylinder, a circular p+ trench some micrometers out, and in some cases a n+ guard ring further away from the core (see figure \ref{fig-3dmimic-top-side}). There are multiple versions of the detectors, with differences including presence of n+ guard ring, size of cell, and structure. The silicon between the different cells should be etched away and replaced with tissue equivalent \gls{PMMA}, but this has not been attempted by SINTEF yet as of the time this thesis is written. This should be done because \gls{PMMA} produces secondary radiation in a very similar way to how tissue does, unlike silicon, due to the mass numbers of the atoms. 
 %some are 50x50
 
 %Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
@@ -118,6 +147,25 @@ Table XXXX from \citep{Samnoy} show the expected signal strength in number of el
 \label{3d-IV}
 \gls{IV} measurements of seven 3DMiMic wafers where performed in the cleanroom at SINTEF MiNaLab in Oslo by Øyvind Lye and Andreas Tefre Samnøy in May 2016. These seven wafers have been produced with different designs and fabrication processes. Each wafer has 104 detectors with odd/even readout, 6 detectors with single channel readout, and several other experimental layouts. The detectors had to be tested with manual needle placement, as the designs are too different to use an automatic system with a probe card. The wafer is held in place on a stand using vacuum, and the stand can be moved in the horizontal plane. The needles can be manually placed at the desired location, and the position can be fine-tuned in Cartesian space using screws. The cell n+ guard ring was not connected on the detectors where it is present. This was done because it would require a separate test setup for the detectors with the ring, which would increase the time needed for the measurement. A total of 580 detectors were measured. 
 
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=\textwidth]{S10-17.png}
+	\caption{I-V measurement of the S10-17 wafer. }
+	\label{fig-3d-S10-17} 
+\end{figure}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=\textwidth]{S10-17-PSTOP_L.png}
+	\caption{I-V measurement of the S10-17 MIC\_ARRAY\_3\_PSTOP\_L detectors. S10-17 \#128 marked with arrows.}
+	\label{fig-3d-S10-17-PSTOP_L} 
+\end{figure}
+
+As an example, figure \ref{fig-3d-S10-17} shows the measurements from all the measured detectors on wafer S10-17. This clearly shows the huge differences between the detectors. This is also partly because there are multiple different layouts on one wafer, but figure \ref{fig-3d-S10-17-PSTOP_L} also shows large differences between the detectors of one layout. This is not very surprising, as the 3DMiMic detectors are made of very small, complex structures. Small variations in the production process, for example etching acting at different speeds on different parts of the wafer, can make a huge impact, especially if the contact to multiple pixels is broken. It would be interesting to test the number of dead pixels with a precise laser, but the equipment at \gls{uib} is not currently in working order. 
+
+XXX differences between the wafers / layouts
+XXX More graphs in appendix? 70 graphs total
+
 \section{Detector Interface PCB}
 \label{3d-pcb}
 A \gls{PCB} was designed to interface 3DMiMic to the supply and readout electronics. This is described in detail in appendix \ref{a-pcb}.
@@ -128,7 +176,109 @@ See appendix \ref{a-pcb} for bonding schematics.
 
 \section{I-V Measurements of 3DMiMic Detectors on PCB}
 
+The I-V measurements in Bergen has been done with the Keithley 2635A sourcemeter, controlled by a LabVIEW program made by Enver Alagoz. The positive bias is set to the odd or even readout pin, while the p+ ring is connected to ground through the ground plane and the shielding of the bias wire. The exception to this is one measurement where ground is connected to the p+ ring with the separate p+ LEMO connector. 
+
+Both sides (odd/even) of the three detectors brought to Bergen have been repeatedly measured over a period of 1.5 months. The odd sides of both S10-17 \#128 and S10-17 \#51 appear to be short-circuited. Since the only measurements from SINTEF are the even sides of S10-17 \#128 and S10-17 \#51, it is unclear if the problem is on the detector, or on the \gls{PCB}. For the S10-17 \#51 it is considered likely that the wire bonding is the cause, as this is bonded according to figure \ref{fig-wire-2-g}. The bond on the odd side is very long and difficult to perform. Microscope observations show that the bond is very close to, and possibly touching the edge of the detector. The S10-17 \#51, which has guard rings for every pixel, was tested with guard rings disconnected and connected to ground. This showed no difference on the I-V measurements, so the rest of the measurements have been done with the guard rings connected to ground. 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{S10-17-128-e.png}
+		\caption{S10-17 \#128 even side.}
+		\label{fig-S10-17-128-e}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{S10-17-51-e.png}
+		\caption{S10-17 \#51 even side.}
+		\label{fig-S10-17-51-e} 
+	\end{subfigure}
+	\caption{I-V measurements of S10-17 detectors on PCB.}
+	\label{fig-3d-iv-S10-17}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{S10-17-128-e-z.png}
+		\caption{S10-17 \#128 even side.}
+		\label{fig-S10-17-128-e-z}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{S10-17-51-e-z.png}
+		\caption{S10-17 \#51 even side.}
+		\label{fig-S10-17-51-e-z} 
+	\end{subfigure}
+	\caption{I-V measurements of S10-17 detectors on PCB. Zoom on flat area.}
+	\label{fig-3d-iv-S10-17-z}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{S10-15-128-e.png}
+		\caption{S10-15 \#128 even side.}
+		\label{fig-S10-15-128-e}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{S10-15-128-o.png}
+		\caption{S10-15 \#128 odd side.}
+		\label{fig-S10-15-128-o}
+	\end{subfigure}
+	\caption{I-V measurements of S10-15 detectors on PCB.}
+	\label{fig-3d-iv-S10-15}
+\end{figure}
+
+Figures \ref{fig-3d-iv-S10-17} and \ref{fig-3d-iv-S10-15} show the I-V measurements performed at \gls{uib} together with the corresponding measurements from SINTEF (dashed line). The S10-17 detectors show a large range where the current has saturated at a fairly low leakage current, see figure \ref{fig-3d-iv-S10-17-z}. The measurements do not fit perfectly with the SINTEF measurements however, because the S10-17 \#128 went into breakdown much earlier at SINTEF, and the S10-17 \#51 saturated much later. The reason behind this is unclear, as this should not be affected by the \gls{PCB}. The slow saturation of the S10-17 \#51 could be due to bad needle contact during the SINTEF measurement. There is also two \gls{uib} measurements for S10-17 \#128, and one for S10-17 \#51 (dotted line) that do not fit with the others. These have very strange behavior, and is likely caused by equipment malfunction. The S10-15 measurements are very consistent, but the current does not saturate, and is much higher than on the S10-17 detectors. The measurement performed with ground on a separate LEMO cable (dash-dotted line) does not fit with the SINTEF measurement, which is strange. All of the measurements show breakdown between 60 and 80~V (not shown in the figures). 
+
+%show a drop in current over time. If this continues, it could be an issue. It should also be investigated if this drop is caused by the measuring equipment, and not the detectors. 
+
 \section{C-V Measurements of 3DMiMic Detectors}
+
+C-V measurements have been performed in Bergen with the HP 4263B LCR meter and Keithley 2635A sourcemeter, controlled by a LabVIEW program made by Enver Alagoz. Ground is connected to p+ through a separate cable to the p+ connector. 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cv-S10-17-128-e.png}
+		\caption{S10-17 \#128 even side.}
+		\label{fig-cv-S10-17-128-e}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cv-S10-17-51-e.png}
+		\caption{S10-17 \#51 even side.}
+		\label{fig-cv-S10-17-51-e} 
+	\end{subfigure}
+	\caption{C-V measurements of S10-17 detectors on PCB.}
+	\label{fig-3d-cv-S10-17}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cv-S10-15-128-e.png}
+		\caption{S10-15 \#128 even side.}
+		\label{fig-cv-S10-15-128-e}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cv-S10-15-128-o.png}
+		\caption{S10-15 \#128 odd side.}
+		\label{fig-cv-S10-15-128-o}
+	\end{subfigure}
+	\caption{C-V measurements of S10-15 detectors on PCB.}
+	\label{fig-3d-cv-S10-15}
+\end{figure}
+
+The expected capacitance value from simulations from \gls{uow} was about 20 to 30 pF for the detectors with large pixels. These measurements therefore show very good results, with the highest value of less than 23 pF at 10 V. Assuming every pixel is connected, the capacitance per pixel is 22 fF, 2 fF, 14 fF, and 15 fF at 10 V for the four detectors in the order they are shown in the figures above. 
 
 \section{Radiation Measurements with Americium source}
 

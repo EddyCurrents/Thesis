@@ -1,9 +1,9 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background and Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Goal of the Thesis}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Structure of the Thesis}{1}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Note on Citations}{2}{subsection.1.3.1}
-\contentsline {section}{\numberline {1.4}Scientific Environment}{2}{section.1.4}
+\contentsline {section}{\numberline {1.3}Structure of the Thesis}{2}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Note on Citations}{3}{subsection.1.3.1}
+\contentsline {section}{\numberline {1.4}Scientific Environment}{3}{section.1.4}
 \contentsline {chapter}{\numberline {2}Radiation and Radiotherapy}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}Radiation}{4}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Interactions of Radiation with Matter}{4}{subsection.2.1.1}
@@ -13,54 +13,58 @@
 \contentsline {section}{\numberline {2.2}Radiation Therapy}{8}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Proton Therapy}{9}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Carbon Therapy}{12}{subsection.2.2.2}
-\contentsline {chapter}{\numberline {3}Testing and Characterization of the 3DMiMic Detector}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Radiation Detectors}{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Semiconductor Detectors}{13}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Semiconductor Characterization}{14}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Capacitance-Voltage Measurements}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Current-Voltage Measurements}{15}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}3DMiMic}{15}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}3DMiMic Response to Radiation}{17}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}I-V Measurements of 3DMiMic Detectors on Wafer}{17}{section.3.4}
-\contentsline {section}{\numberline {3.5}Detector Interface PCB}{19}{section.3.5}
-\contentsline {section}{\numberline {3.6}Wire Bonding}{19}{section.3.6}
-\contentsline {section}{\numberline {3.7}I-V Measurements of 3DMiMic Detectors on PCB}{19}{section.3.7}
-\contentsline {section}{\numberline {3.8}C-V Measurements of 3DMiMic Detectors}{19}{section.3.8}
-\contentsline {section}{\numberline {3.9}Radiation Measurements with Americium source}{19}{section.3.9}
-\contentsline {chapter}{\numberline {4}Choice of Readout Electronics for the 3DMiMic Detector}{20}{chapter.4}
-\contentsline {section}{\numberline {4.1}Detector Readout}{20}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Pre-Amplifier}{20}{subsection.4.1.1}
-\contentsline {subsubsection}{Charge-sensitive amplifier operation}{21}{section*.14}
-\contentsline {subsection}{\numberline {4.1.2}Shaper}{22}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Analog-to-Digital Conversion}{22}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Digital Signal Processing}{23}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Medipix and Timepix}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}UiO Portable Front-End Readout System}{23}{section.4.3}
-\contentsline {section}{\numberline {4.4}IDEAS Amadeus Preamp-Shaper}{24}{section.4.4}
-\contentsline {section}{\numberline {4.5}Ortec 142A Pre-Amplifier}{24}{section.4.5}
-\contentsline {section}{\numberline {4.6}Portable PCIe ADC System}{24}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}PC for ADC}{25}{subsection.4.6.1}
-\contentsline {chapter}{\numberline {5}Characterization of IDE1180}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}Measurement Setups}{27}{section.5.1}
-\contentsline {section}{\numberline {5.2}Gain vs. Input Load Capacitance}{29}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Gain vs. Capacitance Simulations}{31}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Ballistic defict}{32}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}PCB Input Capacitance}{33}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Noise Measurements}{33}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Gain Compensation}{37}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Noise from Input Circuitry}{37}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}Gain Linearity}{39}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Dynamic Range}{39}{subsection.5.4.1}
-\contentsline {section}{\numberline {5.5}Shaping Time}{39}{section.5.5}
-\contentsline {section}{\numberline {5.6}Rise Time}{39}{section.5.6}
-\contentsline {section}{\numberline {5.7}Crosstalk}{40}{section.5.7}
-\contentsline {section}{\numberline {5.8}Input Sharing}{40}{section.5.8}
-\contentsline {section}{\numberline {5.9}Power Consumption}{40}{section.5.9}
-\contentsline {section}{\numberline {5.10}Pile-up}{40}{section.5.10}
-\contentsline {section}{\numberline {5.11}Resolution}{40}{section.5.11}
-\contentsline {chapter}{Bibliography}{41}{section.5.11}
-\contentsline {chapter}{Glossary}{43}{section*.43}
-\contentsline {chapter}{Appendices}{45}{section*.45}
-\contentsline {chapter}{\numberline {A}3DMiMic Layouts}{46}{Appendix.1.A}
-\contentsline {chapter}{\numberline {B}Detector Interface PCB}{50}{Appendix.1.B}
-\contentsline {chapter}{\numberline {C}List of Readout Electronics}{56}{Appendix.1.C}
+\contentsline {subsection}{\numberline {2.2.3}Relative Biologic Effectiveness}{13}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Testing and Characterization of the 3DMiMic Detector}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Semiconductors}{14}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Semiconductor Diodes}{14}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Radiation Detectors}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Semiconductor Detectors}{16}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Semiconductor Characterization}{17}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Capacitance-Voltage Measurements}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Current-Voltage Measurements}{18}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}3DMiMic}{18}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}3DMiMic Response to Radiation}{20}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}I-V Measurements of 3DMiMic Detectors on Wafer}{20}{section.3.5}
+\contentsline {section}{\numberline {3.6}Detector Interface PCB}{22}{section.3.6}
+\contentsline {section}{\numberline {3.7}Wire Bonding}{22}{section.3.7}
+\contentsline {section}{\numberline {3.8}I-V Measurements of 3DMiMic Detectors on PCB}{23}{section.3.8}
+\contentsline {section}{\numberline {3.9}C-V Measurements of 3DMiMic Detectors}{25}{section.3.9}
+\contentsline {section}{\numberline {3.10}Radiation Measurements with Americium source}{26}{section.3.10}
+\contentsline {chapter}{\numberline {4}Choice of Readout Electronics for the 3DMiMic Detector}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Detector Readout}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Pre-Amplifier}{27}{subsection.4.1.1}
+\contentsline {subsubsection}{Charge-sensitive amplifier operation}{28}{section*.23}
+\contentsline {subsection}{\numberline {4.1.2}Shaper}{29}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Analog-to-Digital Conversion}{32}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Digital Signal Processing}{33}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Medipix and Timepix}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}UiO Portable Front-End Readout System}{33}{section.4.3}
+\contentsline {section}{\numberline {4.4}IDEAS Amadeus Preamp-Shaper}{33}{section.4.4}
+\contentsline {section}{\numberline {4.5}Ortec 142A Pre-Amplifier}{34}{section.4.5}
+\contentsline {section}{\numberline {4.6}Portable PCIe ADC System}{34}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}PC for ADC}{35}{subsection.4.6.1}
+\contentsline {chapter}{\numberline {5}Characterization of IDE1180}{36}{chapter.5}
+\contentsline {section}{\numberline {5.1}Measurement Setups}{37}{section.5.1}
+\contentsline {section}{\numberline {5.2}Gain vs. Input Load Capacitance}{39}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Gain vs. Capacitance Simulations}{41}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Ballistic deficit}{43}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}PCB Input Capacitance}{45}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Noise Measurements}{45}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Gain Compensation}{46}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Noise from Input Circuitry}{49}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Gain Linearity}{50}{section.5.4}
+\contentsline {section}{\numberline {5.5}Dynamic Range}{51}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Input Sharing}{52}{subsection.5.5.1}
+\contentsline {section}{\numberline {5.6}Shaping Time}{53}{section.5.6}
+\contentsline {section}{\numberline {5.7}Rise Time}{54}{section.5.7}
+\contentsline {section}{\numberline {5.8}Crosstalk}{54}{section.5.8}
+\contentsline {section}{\numberline {5.9}Power Consumption}{55}{section.5.9}
+\contentsline {section}{\numberline {5.10}Pile-up}{56}{section.5.10}
+\contentsline {section}{\numberline {5.11}Resolution}{56}{section.5.11}
+\contentsline {chapter}{Bibliography}{57}{section.5.11}
+\contentsline {chapter}{Glossary}{60}{section*.65}
+\contentsline {chapter}{Appendices}{62}{section*.67}
+\contentsline {chapter}{\numberline {A}3DMiMic Layouts}{63}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}Detector Interface PCB}{67}{Appendix.1.B}
+\contentsline {chapter}{\numberline {C}List of Readout Electronics}{73}{Appendix.1.C}
+\contentsline {chapter}{\numberline {D}Gain Linearity Graphs}{74}{Appendix.1.D}

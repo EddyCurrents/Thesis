@@ -60,7 +60,7 @@ To be able to describe the quantity of ionizing radiation for all energies, mate
 
 \section{Radiation Therapy}
 \label{t-therapy}
-Radiation therapy, also known as radiotherapy, is therapy using the biological effects of ionizing radiation to kill or control cancer cells. One of the main principles behind radiotherapy's effectiveness in treating cancer is that radiation causes much more damage to rapidly dividing cells, and tumor cells divide extremely rapidly \citep[chap. 45]{Serway}. Roughly half of all cancer patients receive radiotherapy as a part of their treatment. The radiation can originate from a machine outside the body (external beam radiation therapy), or from a radioactive source being placed into the body (internal radiation therapy). Traditional external beam radiation therapy is delivered using photon beams (photon therapy), but treatment with beams of heavy charged particles (particle therapy), like protons (proton therapy) or carbon ions, are becoming more common. Electron beam therapy is also used, mainly to treat cancer close to the surface of the body. \citep{nih}
+Radiation therapy, also known as radiotherapy, is therapy using the biological effects of ionizing radiation to kill or control cancer cells. One of the main principles behind radiotherapy's effectiveness in treating cancer is that radiation causes much more damage to rapidly dividing cells, and tumor cells divide extremely rapidly \citep[chap. 45]{Serway}. Roughly half of all cancer patients receive radiotherapy as a part of their treatment. The radiation can originate from a machine outside the body (external beam radiation therapy), or from a radioactive source being placed into the body (internal radiation therapy). Traditional external beam radiation therapy is delivered using photon beams (photon therapy), but treatment with beams of heavy charged particles (commonly called "particle therapy"), like protons (proton therapy) or carbon ions, are becoming more common. Electron beam therapy is also used, mainly to treat cancer close to the surface of the body. \citep{nih}
 
 The radiation will also damage healthy tissue, but a lot of work is put into reducing this as much as possible. Planning and simulations are done to increase the certainty of avoiding complications. Detailed imaging scans are done to get a 3D map of the patient's tumor and surrounding areas. The basis for these maps are usually \gls{CT} scans, but can also be combined with \gls{MRI}, \gls{PET}, X-ray images, or ultrasound scans \citep{nih}. One of the main reasons for \gls{CT}'s importance for photon therapy is that as it is based on photon beams, a \gls{CT} scan also yields the body's tissue-density information and photon attenuation coefficient, which is needed for photon therapy planning.  \citep[chap. 12]{Khan}
 
@@ -85,7 +85,7 @@ When plotting the absorbed dose in water (or tissue), the differences between ph
 
 \subsection{Proton Therapy} %Burde bytte til particle therapy, eller legge til lite Carbon Therapy section
 \label{t-proton}
-Proton therapy is radiation therapy using high energy proton beams. The main principle behind the use of proton therapy is to exploit the Bragg peak to deposit a high dose to a tumor, with low dose delivered in front of it, and close to no dose behind. The Bragg peak is very narrow and is not able to cover most tumors, which has lead to the use of superposition of multiple beams of different energies. This superposition is called a \gls{SOBP}, see figure \ref{fig-sobp}. A \gls{SOBP} has a lot higher dose deposited in front of the tumor than a single proton beam, but it is still lower than that of a photon beam. The dose behind the tumor is still low. \citep[chap. 27]{Khan}
+Proton therapy is radiation therapy using high energy proton beams, and is the by far most tested type of particle therapy. The main principle behind the use of proton therapy is to exploit the Bragg peak to deposit a high dose to a tumor, with low dose delivered in front of it, and close to no dose behind. The Bragg peak is very narrow and is not able to cover most tumors, which has lead to the use of superposition of multiple beams of different energies. This superposition is called a \gls{SOBP}, see figure \ref{fig-sobp}. A \gls{SOBP} has a lot higher dose deposited in front of the tumor than a single proton beam, but it is still lower than that of a photon beam. The dose behind the tumor is still low. \citep[chap. 27]{Khan}
 
 \begin{figure}[h!]
 	\centering
@@ -109,7 +109,7 @@ The geometrical accuracy in proton therapy is a lot more critical than in photon
 
 As mentioned in section \ref{t-therapy}, photon \gls{CT} yields the patient's photon attenuation coefficient that is needed for photon therapy, but for proton therapy the stopping power is needed to greatly reduce range errors. Therefore proton \gls{CT} imaging techniques are being developed, based on the same principles as conventional \gls{CT}, but using low-intensity proton beams instead of photon beams. \citep{proton-ct}
 
-Proton therapy can theoretically be delivered in fewer fractions than photon therapy due to lower dose to surrounding tissue, but this is more risky in case the target is missed.
+\comm{Proton therapy can theoretically be delivered in fewer fractions than photon therapy due to lower dose to surrounding tissue, but this is more risky in case the target is missed.}
 
 \begin{figure}[h]
 	\centering
@@ -134,5 +134,10 @@ Carbons have also been used clinically for radiotherapy since 1994 in Japan, and
 	\caption{Comparison of photon, proton, and carbon depth dose distributions. \citep{ksyh-phys251}}
 	\label{fig-carbon}
 \end{figure}
+
+\subsection{Relative Biologic Effectiveness}
+\label{t-rbe}
+
+Since the biological effect of radiation depends of the type of radiation, the term relative dose is often used. This is the physical dose multiplied with the factor \gls{RBE}. The \gls{RBE} of any radiation is the ratio of the dose of the given radiation to the dose of 250-kVp X-rays that produce the same biologic effect as the given radiation. This effect includes for example cell killing, tissue damage, and mutations. The \gls{RBE} is critically dependant on the \gls{let}. Since the \gls{let} of a heavy charged particle is increased as the particle is slowed, the \gls{let} and \gls{RBE} will increase as the particle moves deeper into the body during particle therapy. Because this variation is not well enough investigated, most treatment facilities use a constant \gls{RBE} of 1.1 for protons. This causes an extra uncertainty that can be avoided by more research into \gls{RBE}. The \gls{RBE} for carbons changes a lot more than for protons, starting at about 1 upon entrance, and ending at about 5 in the deepest end of the \gls{SOBP}, making \gls{RBE} research even more critical for carbon therapy. \citep[chap. 27]{Khan} \citep{ksyh-phys251}
 
 \end{document}
