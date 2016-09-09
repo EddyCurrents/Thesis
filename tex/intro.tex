@@ -7,19 +7,20 @@
 \label{intro}
 \section{Background and Motivation}
 \label{i-background}
-In 2013 the Norwegian government started a project to build centers for cancer treatment using particle radiotherapy. The main reason for this is that radiotherapy using heavy charged particles does less damage to healthy tissue than the more conventional radiotherapy using photons that Norway has today. Many photon radiotherapy patients develops cancer again a few decades after the original treatment as a result of the treatment radiation, which makes photon radiotherapy little suited for treating cancer in children. Every year 1000 to 1500 Norwegians will experience fewer side effects by being treated with protons instead of photons \citep{uio2012}. When treating cancer with heavy charged particles it is critical to be able to deposit the energy of the radiation at the correct position inside the patient, both to kill the tumor and to avoid unnecessary damage to healthy tissue around the tumor. More on this in section \ref{t-proton}.
+In 2013 the Norwegian government started a project to build centers for cancer treatment using particle radiotherapy. The main reason for this is that radiotherapy using heavy charged particles does less damage to healthy tissue than the more conventional radiotherapy using photons that Norway has today. Many photon radiotherapy patients develop cancer again a few decades after the original treatment as a result of the treatment radiation, which makes photon radiotherapy little suited for treating cancer in children. Every year 1000 to 1500 Norwegians will experience fewer side effects by being treated with protons instead of photons \citep{uio2012}. When treating cancer with heavy charged particles it is critical to be able to deposit the energy of the radiation at the correct position inside the patient, both to kill the tumor and to avoid unnecessary damage to healthy tissue around the tumor. More on this in section \ref{t-proton}.
 
 %To be able to assure the quality of the treatment system, the hospitals will need a system that can predict how the energy from a beam of protons will be absorbed in the body. For this and other purposes, SINTEF is developing a silicon based radiation detector (see section \ref{t-detector}), named Si-3DMiMic, which mimics the response of biological tissue to ionizing radiation on a cellular and sub-cellular level. By measuring how the energy is distributed in the detector, the hospitals will have an idea about how a patient will react to the same radiation beam. \citep{sintef3dmimic}
 
-To be able to assure the quality of the treatment system, the hospitals need to be able to predict how the energy from a beam of heavy charged particles will be absorbed in the body. The uncertainties because of the lack of knowledge on this causes an increased risk of side effects for particle therapy patients. To bolster the research on the effects of radiation on humans, SINTEF is developing a silicon based radiation detector\comm{(see section \ref{t-detector})}, named 3DMiMic, which mimics the response of biological tissue to ionizing radiation on a cellular and sub-cellular level. By measuring how the energy is distributed in the detector, researchers will learn more about how radiation effects tissue on a small scale, which will reduce the uncertainties in future treatment systems. \citep{sintef3dmimic}
+To be able to assure the quality of the treatment system, the oncologists need to be able to predict how the energy from a beam of heavy charged particles will be absorbed in the body. The uncertainties because of the lack of knowledge on this causes an increased risk of side effects for particle therapy patients. To bolster the research on the effects of radiation on humans, SINTEF, together with the University of Wollongong, is developing a silicon based radiation detector\comm{(see section \ref{t-detector})}, named 3DMiMic, which mimics the response of biological tissue to ionizing radiation on a cellular and sub-cellular level. By measuring how the energy is distributed in the detector, researchers will learn more about how radiation effects tissue on a small scale, which will reduce the uncertainties in future treatment systems. \citep{sintef3dmimic}
 
-\section{Goal of the Thesis}
+\section{About this work}
 \label{i-goal}
 
-The original goal of the thesis was to read the data from the 3DMiMic detector into a computer. This was planned to be done with a two part system. First, an analog system with a pre-amplifier, shaper, and ADC. Then an FPGA performing some data processing and sending the data to a PC for storage. The thesis should also include some work on characterizing the detectors, and radiation tests with an alpha source at the University of Bergen, and hopefully also tests in a proton beam facility. The Medipix family of chips were considered as possibilities for the analog part.
+The original goal of the thesis was to read the data from the 3DMiMic detector into a computer. This was planned to be done with a two part system. The thesis should also include some work on characterizing the detectors, and radiation tests with an alpha source at the University of Bergen, and hopefully also tests in a proton beam facility. The Medipix family of chips were considered as possibilities for the analog part.
 
-Many of the projects goal changed during the work on the thesis. Firstly, the detectors, which had been expected to be delivered in August 2015, were regularly delayed and not received until June 2016. This lead to the planned work on the detectors being reduced. When the work on the thesis started, it was discovered that the Medipix chips are not usable for this project. 
+Many of the projects goal changed during the work on the thesis. Firstly, the detectors, which had been expected to be delivered in August 2015, were delayed multiple times and not received until June 2016. This lead to the planned work on the detectors being reduced. When the work on the thesis started, it turned out that the Medipix chips are not usable for this project. Some time was spent to assess available readout systems from different sources and how well they compare to the 3DMiMic specifications.
 
+The work that was done on the detectors was design of a PCB, I-V measurements on wafer and PCB, C-V measurements on PCB, and basic radiation tests with an alpha-source. Concerning the readout electronics, the thesis mostly focused on characterizing the IDE1180 pre-amlifier and shaper by IDEAS.
 
 \section{Structure of the Thesis}
 \label{i-structure}
@@ -27,10 +28,10 @@ Many of the projects goal changed during the work on the thesis. Firstly, the de
 Introduces the thesis, including background, motivation and goals.
 
 \textbf{Chapter 2: Radiation and Radiotherapy}\\
-Important background theory for full understanding of the thesis. Includes theory of ionizing radiation, biological effects of radiation, and radiotherapy.
+Includes theory of ionizing radiation, biological effects of radiation, and radiotherapy.
 
 \textbf{Chapter 3: Testing and Characterization of the 3DMiMic Detector}\\
-Includes important background theory about radiation detectors, an introduction to the 3DMiMic detectors, and measurement results from the detectors.
+Includes theory about radiation detectors, an introduction to the 3DMiMic detectors, and measurement results from the detectors.
 
 \textbf{Chapter 4: Choice of Readout Electronics for the 3DMiMic Detector}\\
 Background theory on detector readout, and short introductions to the main readout electronics that was considered for this project.
@@ -47,15 +48,17 @@ Description of the interface PCB that was made for the 3DMiMic detectors. Includ
 \textbf{Appendix C: List of Readout Electronics}\\
 Table including all readout electronics that was considered for the project with relevant specifications. 
 
+XXX check fore chapter title changes
+
 %How to read my references?
 \subsection{Note on Citations}
 Citations in this thesis generally follows the guidelines recommended for Wikipedia authors. A citation placed after the last punctuation in a paragraph supports multiple claims through the paragraph, while a citation placed before a punctuation only supports one or a few claims just before the citation. In this thesis, citations at the end of a paragraph is much used in the theory sections, where they refer to sources with more detailed information for the interested reader.
 
 \section{Scientific Environment}
 \label{i-environment}
-This master project is supervised by Professor Kjetil Ullaland in the electronics and measurement science research group at the \gls{ift} at the \gls{uib}. The 3DMiMic project is a part of the subatomic physics research group at \gls{ift} and this master project was assigned by Professor Dieter Röhrich of this group. The Ph.D. dissertation of Röhrich's student Andreas Tefre Samnøy shares many of this master projects objectives. Post doctor Kristian Smeland Ytre-Haugen at \gls{ift} leads an ongoing project that looks into microdosimetry and relative biological effectiveness of proton and heavy ion therapy. 
+This master project is supervised by Professor Kjetil Ullaland in the electronics and measurement science research group at the \gls{ift} at the \gls{uib}. The 3DMiMic project is a part of the subatomic physics research group at \gls{ift} and this master project was assigned by Professor Dieter Röhrich. The dissertation of Röhrich's Ph.D. student Andreas Tefre Samnøy shares many of this master projects objectives. Post doctor Kristian Smeland Ytre-Haugen at \gls{ift} leads an ongoing project that looks into microdosimetry and relative biological effectiveness of proton and heavy ion therapy. 
 
-SINTEF's department of Microsystems and Nanotechnology produces the 3DMiMic pixel detector that this project is based on. The \gls{uio} and the \gls{UOW} is also involved in the 3DMiMic project. 
+SINTEF's department of Microsystems and Nanotechnology produces the 3DMiMic pixel detector that this project is based on. The \gls{UOW} in Australia designed the detectors. The \gls{uio} is also involved in the 3DMiMic project. 
 
 %Haukeland?
 

@@ -1,12 +1,11 @@
 \documentclass[../main/thesis.tex]{subfiles}
 \begin{document}
-\newpage
+\newchapter
 %% Electronics
 
-\chapter{Choice of Readout Electronics for the 3DMiMic Detector}
+\chapter{Readout Electronics for the 3DMiMic Detectors}
 \label{e}
-
-All readout electronics that was checked during this project can be found with relevant specifications in appendix \ref{a-asics}. 
+ 
 
 \section{Detector Readout}
 \label{t-read}
@@ -14,10 +13,10 @@ In different situations, the desired output from the detector readout will be di
 
 \subsection{Pre-Amplifier}
 \label{t-amp}
-For most radiation detectors, the liberated charge is too small to be processed, which is why pre-amplifiers are needed in most detector readout chains. The pre-amplifier is located close to the detector to reduce noise. A pre-amplifier can be voltage-sensitive or charge-sensitive. A voltage-sensitive pre-amplifier has an output signal proportional to the input voltage, which will be proportional to the input charge if the detector capacitance is constant. This is not the case for semiconductor detectors where the capacitance may change with the operating parameters. A \gls{CSA} has a output signal that is independent of the input capacitance as long as the amplifier gain is high enough compared to a relationship between capacitances in the system. \citep[chap. 16]{Knoll}
+For most radiation detectors, the liberated charge is too small to be processed, which is why pre-amplifiers are needed in most detector readout chains. The pre-amplifier is located close to the detector to reduce noise. A pre-amplifier can be voltage-sensitive or charge-sensitive. A voltage-sensitive pre-amplifier has an output signal proportional to the input voltage, which will be proportional to the input charge if the detector capacitance is constant. This is not the case for semiconductor detectors where the capacitance may change with the operating parameters. A \gls{CSA} has an output signal that is independent of the input capacitance as long as the amplifier gain is high enough compared to a relationship between capacitances in the system. \citep[chap. 16]{Knoll}
 %fig 16.13?
 
-One often important parameter to consider in a pre-amplifier is the dynamic range, which is the range of input signal amplitudes that can be reliably measured without changing the system. The lowest measurable input signal is limited by the noise in the system, mainly in the detector, detector cables, and pre-amplifier. A signal is not reliable if it is difficult to discern from the noise. The highest measurable input signal can be limited by the pre-amplifier or later stages, like the \gls{ADC}. If the pre-amplifier has a high gain, then a large input signal will require a higher output signal than the pre-amplifier can deliver. If the gain is low, then another stage in the system will likely be the bottleneck before the pre-amplifier reaches its highest output level. \citep{dynamic-range}
+One, often important, parameter to consider in a pre-amplifier is the dynamic range, which is the range of input signal amplitudes that can be reliably measured without changing the system. The lowest measurable input signal is limited by the noise in the system, mainly in the detector, detector cables, and pre-amplifier. A signal is not reliable if it is difficult to discern from the noise. The highest measurable input signal can be limited by the pre-amplifier or later stages, like the \gls{ADC}. If the pre-amplifier has a high gain, then a large input signal will require a higher output signal than the pre-amplifier can deliver. If the gain is low, then another stage in the system will likely be the bottleneck before the pre-amplifier reaches its highest output level. \citep{dynamic-range}
 
 It is typically convenient to use the pre-amplifier to supply bias voltage to the detector. When this is done a single cable is used both to provide voltage to the detector and to transfer the signal pulses to the readout system. \citep[chap. 16]{Knoll}
 %fig 16.16a?
@@ -32,7 +31,7 @@ It is typically convenient to use the pre-amplifier to supply bias voltage to th
 	\label{fig-csa}
 \end{figure}
 
-Figure \ref{fig-csa} shows a general \gls{CSA}. When a radiation quanta strikes the detector, a pulse of charge $Q_s$ and width $t_o$ is generated. This creates a rising potential on the negative input of the amplifier, which triggers a falling potential on the output of the amplifier. Because of the negative feedback, this will quickly draw the negative input close to zero, making the negative input a point of virtual ground. The feedback currents charge the feedback capacitor, and then the capacitor is slowly discharged when there is no signal on the input. This creates a voltage pulse on the output that slowly falls from a peak value that is proportional to the input charge (figure \ref{fig-preampshaper}). \citep{Hamamatsu}
+Figure \ref{fig-csa} shows a general \gls{CSA}. When a radiation quanta strikes the detector, a pulse of charge $Q_s$ and width $t_o$ is generated. This creates a rising potential on the negative input of the amplifier, which triggers a falling potential on the output of the amplifier. Because of the negative feedback, this will quickly draw the negative input close to zero, making it a point of virtual ground. The feedback currents charge the feedback capacitor, and then the capacitor is slowly discharged when there is no signal on the input. This creates a voltage pulse on the output that slowly falls from a peak value that is proportional to the input charge (figure \ref{fig-preampshaper}). \citep{Hamamatsu}
 
 %http://www.allaboutcircuits.com/textbook/semiconductors/chpt-8/differentiator-integrator-circuits/
 %Virtual ground: http://electronics.stackexchange.com/questions/124709/op-amp-reason-for-virtual-ground
@@ -63,6 +62,7 @@ A much used parameter to describe a shaper is the shaping time, which is related
 \end{figure}
 
 There are many factors that come into play when deciding the shaping time. A short shaping time is needed to avoid subsequent pulses to overlap (pile-up), but a too short shaping time can lead to an error called ballistic deficit. This is when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude. The signal-to-noise ratio is also affected by both the shape and the shaping time. At short shaping times, the series noise component of the pre-amplifier dominates the total noise. The series noise is typically dominated by thermal noise in the first amplifying stage of the pre-amplifier. At long shaping times the parallel noise dominates. This could for example be detector leakage current, transistor leakage current, and thermal noise in the pre-amplifier feedback resistor. To total noise has a minimum where the series and parallel noise is equal, see figure \ref{fig-noise-min}. This is typically at 0.5 to 1 $\mu$s for semiconductor particle detectors. \citep{ORTEC}
+XXX fig ballistic deficit
 \begin{figure}%[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{noisemin.png}
@@ -103,35 +103,41 @@ The dynamic range of an \gls{ADC} will mainly be limited by its resolution, nois
  %https://en.wikipedia.org/wiki/Analog-to-digital_converter
 %Types of ADC?
 
+\comm{
 \subsection{Digital Signal Processing}
 \label{t-dsp}
+}
 
 %\subsection{Medipix}
 %\label{t-medipix}
 
-\section{Medipix and Timepix}
-\label{e-medipix}
-Medipix is a family of chips developed to exploit technology from the experiments at CERN in other fields of science, mainly medical imaging. The chips made by the Medipix collaboration are; Medipix1, Medipix2, Timepix, Medipix3, Timepix3, and Dosepix. The Medipix 1-3 chips are made for photon counting and are therefore not useful for dosimetry. The Timepix chips are made to do \gls{ToT} measurements, with Timepix and Timepix3 being based on Medipix2 and Medipix3 respectively. Dosepix is a currently in development chip made for photon dosimetry. They have extremely good noise properties, down to 60~e- of noise without a detector connected for Timepix3. Timepix3 and Dosepix were considered for the 3DMiMic project, but as \gls{ToT} devices their dynamic range is not very large. Also, since they are made for photon detectors they cannot read the large charges released by a carbon ion in the Bragg peak. 
+\section{Choice of Readout Electronics for the 3DMiMic Detectors}
 
-\section{UiO Portable Front-End Readout System}
+An overview of all readout electronics systems that was considered for use during this project can be found with relevant specifications in appendix \ref{a-asics}. The most promising systems are discussed and evaluated in this section. 
+
+\subsection{Medipix and Timepix}
+\label{e-medipix}
+Medipix is a family of chips developed to exploit technology from the experiments at CERN in other fields of science, mainly medical imaging. The chips made by the Medipix collaboration are; Medipix1, Medipix2, Timepix, Medipix3, Timepix3, and Dosepix. The Medipix 1-3 chips are made for photon counting and are therefore not useful for dosimetry. The Timepix chips are made to do \gls{ToT} measurements, with Timepix and Timepix3 being based on Medipix2 and Medipix3 respectively. Dosepix is a currently in development chip made for photon dosimetry. They have extremely good noise properties, down to 60~e- of noise without a detector connected for Timepix3. Timepix3 and Dosepix were considered for the 3DMiMic project, but as \gls{ToT} devices their dynamic range is not very large. Also, since they are made for photon detectors they cannot read the largest charges (table \ref{tab-3d-response}) that can be expected from the 3DMiMic detectors. \citetext{\citeauthor{Medipix}}
+
+\subsection{UiO Portable Front-End Readout System}
 \label{e-uio}
 During the school year 2014-2015 two master students at \gls{uio} made a portable front-end readout system for radiation detectors \citep{tali} \citep{oltedal}. This system consists of two custom made cards and a \gls{FPGA} evaluation board. The first card, the analog card, has three channels with pre-amplifiers while two of those channels also including shapers. The second card, the digital card, includes an \gls{ADC}, comparators, and current monitors. The components of the digital card is connected to the \gls{FPGA} on the SoCKit evaluation board by Arrow, which is connected to a computer through network. The system is made to detect fission fragments which produce very large signals, and therefore has a low gain. This makes the system too noisy for the low noise requirements of the 3DMiMic detector at the default gain, but this can be changed using external components.
 
-\section{IDEAS Amadeus Preamp-Shaper}
+\subsection{IDEAS IDE1180 Amadeus Preamp-Shaper}
 \label{e-ide1180}
 IDE1180, or Amadeus, by Oslo-based IDEAS is an \gls{asic} for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. The preliminary datasheet \citep{IDE1180} specifies a shaping time between 20~ns and 40~ns, negative and positive input charges up to 400~fC with lowest gain, and equivalent noise charge of 1106~e- plus 68~e- per pF load at default gain. 
 
 This chip was considered by multiple projects at \gls{ift} and a evaluation board (7045) was given to \gls{ift} so that more extensive tests could be performed. Later, a second evaluation board (7048) was also received from IDEAS. The IDE1180 characterization is described in chapter \ref{ide}. 
 
-\section{Ortec 142A Pre-Amplifier}
+\subsection{Ortec 142A Pre-Amplifier}
 \label{e-ortec}
-Ortec 142A is a single channel low-noise \gls{CSA} optimized for charged particle or heavy-ion detectors. It was considered for the 3DMiMic project since \gls{uib} already owns a few of these. It features a very high dynamic range, up to 55~Me-, and an equivalent noise charge between 444~e- and 944~e- for detector capacitances between 0~pF and 100~pF. The University does not have a fitting portable shaping amplifier that can be used with the 142A, and it was therefore not prioritized for this project. The 142A is also well characterized and documented by Ortec.
+Ortec 142A is a single channel low-noise \gls{CSA} optimized for charged particle or heavy-ion detectors. It was considered for the 3DMiMic project since \gls{uib} already owns a few of these. It features a very high dynamic range, up to 55~Me-, and an equivalent noise charge between 444~e- and 944~e- for detector capacitances between 0~pF and 100~pF. The University does not have a fitting portable shaping amplifier that can be used with the 142A, and it was therefore not prioritized for this project. The 142A is also well characterized and documented by Ortec. \citep{Ortecdata}
 
 %but the gain is too low for the 3DMiMic detector. <-wrong
 
 \section{Portable PCIe ADC System}
 \label{e-adc}
-The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sitting in a VMI crate. This features four 14 bit channels with 2~GS/s sampling rate, and 0.3 mV accuracy, but is very large and heavy, making it cumbersome to bring for radiation tests. It was desirable to purchase a new \gls{ADC} for the department that could be put inside a small computer using \gls{PCIe} to make a portable system. Three manufacturers that produced suitable \gls{ADC}s for a reasonable price were found; AlazarTech, Keysight Technologies, and SP Devices. The considered models are listed in table~\ref{tab-adc}. 
+The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sitting in a VME crate. This features four 14 bit channels with 2~GS/s sampling rate, and 0.3 mV accuracy (125 $\mu$V quantisation error and 175 $\mu$V noise), but is very large and heavy, making it cumbersome to bring for radiation tests. It was decided to purchase a new \gls{ADC} for the department that could be put inside a small computer using \gls{PCIe} to make a portable system. Three manufacturers that produced suitable \gls{ADC}s for a reasonable price were found; AlazarTech, Keysight Technologies, and SP Devices. The considered models are listed in table~\ref{tab-adc}. 
 
 \begin{table}[h]
 \begin{center}
@@ -149,15 +155,19 @@ The current \gls{ADC} system used at \gls{uib} is a Caen V1729A digitizer sittin
 \end{center}
 \end{table}
 
-The Keysight model was interesting with a signal interleaving feature where both 1.6~GS/s channels could be combined into one 3.2~GS/s channel. In the end SP Devices was chosen, being the only discovered company that produces 14 bit \gls{PCIe} \gls{ADC}s in the GS/s range. ADQ14AC-4C was chosen since having two extra channels was considered more important than higher sampling rate for radiation tests, and the old Caen \gls{ADC} can be used for projects and tests that require higher sampling rate. This has a input range of 1.9 $V_{pp}$ and has a variable DC offset of $\pm1.05$ V. It has an \gls{ENOB} of 10.2, which gives an accuracy of 1.62 mV. 
+The Keysight model was interesting with a signal interleaving feature where both 1.6~GS/s channels could be combined into one 3.2~GS/s channel. In the end SP Devices was chosen, being the only discovered company that produces 14 bit \gls{PCIe} \gls{ADC}s in the GS/s range. ADQ14AC-4C was chosen since having two extra channels was considered more important than higher sampling rate for radiation tests, and the old Caen \gls{ADC} can be used for projects and tests that require higher sampling rate. 
 
-\subsection{PC for ADC}
+\subsection{SP Devices ADQ14AC-4C ADC}
 \label{e-adc-pc}
-A computer to host the SP Devices \gls{ADC} was needed. As this computer will be brought around to radiation tests, it was desirable to purchase as small a computer as possible to make this easier. The main requirement for the computer is that it is able to transfer data over \gls{PCIe} close to the maximum data transfer rate of 3.2 GB/s specified in the ADQ14 datasheet. This puts requirements on the CPU, RAM, and motherboard. The CPU and motherboard needs to have eight available \gls{PCIe} 2.0 lanes for the ADQ14. In addition, the CPU, chipset, and BIOS needs to support a \gls{PCIe} payload size of 256 bytes. However, this parameter is not something CPU and motherboard manufacturers typically supply in datasheets. Also, the CPU and RAM needs to be able to handle a high load from the ADC, operating system, and software. Since most of these requirements is not something you can check in the datasheet, the safest way to assure maximum performance is to buy a high-end CPU and motherboard, and a good amount of RAM.
+
+The SP Devices ADQ14AC-4C has a input range of 1.9 $V_{pp}$ and has a variable DC offset of $\pm1.05$ V. It has an \gls{ENOB} of 10.2, which gives an accuracy of 1.62 mV. This gives it worse accuracy and sampling rate then the Caen ADC. 
+
+A computer is needed to host the SP Devices \gls{ADC}. The main requirement for the computer is that it is able to transfer data over \gls{PCIe} close to the maximum data transfer rate of 3.2 GB/s specified in the ADQ14 datasheet. This puts requirements on the CPU, RAM, and motherboard. The CPU and motherboard needs to have eight available \gls{PCIe} 2.0 lanes for the ADQ14. In addition, the CPU, chipset, and BIOS needs to support a \gls{PCIe} payload size of 256 bytes. %However, this parameter is not something CPU and motherboard manufacturers typically supply in datasheets. Also, the CPU and RAM needs to be able to handle a high load from the ADC, operating system, and software. Since most of these requirements is not something you can check in the datasheet, the safest way to assure maximum performance is to buy a high-end CPU and motherboard, and a good amount of RAM.
 %cite datasheet?
 
 %bygge selv vs. Dell/HP
-The main choice in computers stood between buying individual components, or purchasing a computer through a deal the IT department has with the computer manufacturers. The benefits of buying individual components would be higher certainty that the motherboard has good enough performence, and possibilities to buy a chassis of desired size. The benefits of buying a computer through the IT department is extended warranty and help setting up software. In the end, HP~ProDesk~600~G2 with a micro-tower chassis was chosen. This has an Intel i7-6700 CPU, 64~GB of DDR4 RAM, a 256~GB SSD, and a 3~TB HDD. 
+%The main choice in computers stood between buying individual components, or purchasing a computer through a deal the IT department has with the computer manufacturers. The benefits of buying individual components would be higher certainty that the motherboard has good enough performence, and possibilities to buy a chassis of desired size. The benefits of buying a computer through the IT department is extended warranty and help setting up software. In the end, HP~ProDesk~600~G2 with a micro-tower chassis was chosen. This has an Intel i7-6700 CPU, 64~GB of DDR4 RAM, a 256~GB SSD, and a 3~TB HDD. 
+A HP~ProDesk~600~G2 with a micro-tower chassis has been purchased to be used with the new ADC. This has an Intel i7-6700 CPU, 64~GB of DDR4 RAM, a 256~GB SSD, and a 3~TB HDD. 
 
 
 \end{document}

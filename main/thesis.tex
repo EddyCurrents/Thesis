@@ -6,11 +6,13 @@
 \graphicspath{{./../img/}}
 
 \begin{document}
-
 \maketitle
 
 \newcommand{\blankpage}{\newpage{}\thispagestyle{empty}\mbox{}\newpage{}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+\blankpage %for two page pdf reading
 
 \begin{titlepage}
 \begin{center}
@@ -43,28 +45,57 @@
 \blankpage	%Maybe replace this with a quote
 
 \pagenumbering{roman}
-%%\chapter*{Abstract} %begin abstract?
+
+\clearpage	%All this stuff to have content vertically centered. 
+\vspace*{\stretch{1}}
+\begin{center}
+\begin{minipage}{\textwidth}
+\chapter*{Abstract} %begin abstract?
 %\begin{abstract}
-%Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
-%\addcontentsline{toc}{chapter}{Abstract}
+This thesis is related to the 3DMiMic micro-dosimeter project by SINTEF and the University of Wollongong. 3DMiMic is made to mimic the response of biological tissue to radiation, and will be used to learn more about the effects of radiation to tissue on a small scale. This knowledge can be used to reduce the uncertainties when treating cancer with particle radiotherapy, which will lead to more successful treatments. The thesis includes some work on the characterization of the 3DMiMic detectors. This includes I-V \& C-V characterisation and measurements with radiation. The author has also created a circuit board to interface the detectors. The measurements show good results for the newest revisions of the detectors, and suggests that they will be useful in the future.
+\\ \\
+The main focus of the thesis has been the readout electronics for the 3DMiMic detectors. The work started with assembling a list of viable systems with their relevant properties. The system selected as the main focus for the thesis was a prototype pre-amplifier \& shaper by IDEAS, called IDE1180. This had not been extensively tested by the company, and therefore needed a lot of tests before it could be properly compared to other, more proven, systems. The work includes gain characterization, and measurements on noise, pulse shape, dynamic range, crosstalk, power consumption, and pile-up. The thesis shows some unexpected gain behaviour that must be considered before use, and noise measurements that are much higher than the datasheet shows. Because of the high noise requirements for the 3DMiMic detectors, the thesis does not recommend using this system for these detectors at its current state. 
+
+
+\addcontentsline{toc}{chapter}{Abstract}
 %\end{abstract}
-%
-%\blankpage
-%
-%\chapter*{Acknowledgements}
-%Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur \gls{asic} ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas \cite{obt} mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.
+\end{minipage}
+\end{center}
+\vspace{\stretch{3}}
+\clearpage
+
+\blankpage
+
+\clearpage
+\vspace*{\stretch{1}}
+\begin{center}
+\begin{minipage}{\textwidth}
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+%First of all, I would like to thank my co-supervisor Professor Dieter Röhrich for giving me the opportunity to work with a project related to something as important as cancer research. Just as important, I would like to thank my supervisor Professor Kjetil Ullaland for advising me when needed and for running the microelectronics group. 
+First of all, I would like to thank my supervisor Professor Kjetil Ullaland for helping me when needed and for running the microelectronics group. Secondly, I would like to thank my co-supervisor Professor Dieter Röhrich for giving me the opportunity to work with a project related to something as important as cancer research.
+\\ \\
+A huge thanks to Andreas Samnøy who has in practice worked as a co-supervisor for me due to Dieter's busy schedule. It has been great to have you around to bring advice and laughs. I would also like to thank Thomas Poulianitis and Sanjeeda Sharmin for the cooperation and discussions.
+\\ \\ 
+I would like to thank Marco Povoli for letting me and Andreas come to SINTEF to work on the detectors, and for letting me pick the detectors up on short notice when they were ready. Related to this, I would like to thank Jørgen Lien, Kristin Imenes, and Thai Anh Tuan Nguyen for on very short notice letting me borrow \comm{Tuan and }the wire-bonding machine at Vestfold Innovation Park. Special thanks to Tuan for assistance with the bonding. Also thanks to everyone else who has helped me with the project in some way.
+\\ \\ 
+Finally, I would like to thank to my friends and family for always being there. A special thanks to Ole Faltin, Lars Bratrud, Torgrim Næss, Daniel Follesø, Vaffel (they know who they are), and everyone in room 312. 
 
 %Kjetil, Dieter, Andreas, Marco, Imenes og vestfoldingeniør, Enver?
 %Thanks to my friends and family for keeping me sane. A special thanks to Ole Faltin, Lars Bratrud, Torgrim Næss, Daniel Follesø, Vaffel, and Caveat Emptor. 
-%\addcontentsline{toc}{chapter}{Acknowledgements}
-%
-%\blankpage
+\end{minipage}
+\end{center}
+\vspace{\stretch{3}}
+\clearpage
 
-\setcounter{tocdepth}{3}
+%
+\blankpage
+
+\setcounter{tocdepth}{2} %3 for down to subsubsection, 2 for down to subsection
 \tableofcontents
 
 % fjern denne blanke siden om TOC lengde = partall
-%\blankpage
+\blankpage
 % --
 \newpage
 \setlength{\parskip}{0.2in}
@@ -89,8 +120,28 @@
 \subfile{./../tex/ideas.tex}
 
 %Conclusions
-
+\subfile{./../tex/conclusion.tex}
 %Outlook/Further Work
+
+
+%\appendixpagenumbering
+\begin{appendices}
+	%\appendixpagenumbering
+	
+	\subfile{./../tex/appendix_3dmimic.tex}
+	
+	\subfile{./../tex/appendix_pcb.tex}
+	
+	\subfile{./../tex/appendix_asics.tex} %%ASICs.xlsx
+	
+	\subfile{./../tex/appendix_gainlin.tex}
+	
+	\subfile{./../tex/appendix_shape.tex}
+	
+	%\appendixpagenumbering
+	%test
+\end{appendices}
+
 
 % innhold slutt
 \newpage
@@ -126,21 +177,6 @@
 %\lstlistoflistings
 %\addcontentsline{toc}{section}{List of Listings}
 
-%\appendixpagenumbering
-\begin{appendices}
-%\appendixpagenumbering
-
-\subfile{./../tex/appendix_3dmimic.tex}
-
-\subfile{./../tex/appendix_pcb.tex}
-
-\subfile{./../tex/appendix_asics.tex} %%ASICs.xlsx
-
-\subfile{./../tex/appendix_gainlin.tex}
-
-%\appendixpagenumbering
-%test
-\end{appendices}
 
 
 \end{document}

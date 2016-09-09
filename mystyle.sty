@@ -62,6 +62,15 @@
 	\usetikzlibrary{positioning}
 \usepackage[european]{circuitikz}
 
+\usepackage{ifthen}
+\newcommand{\newchapter}{	%Make sure chapter starts at odd page (right)
+	\newpage
+	\ifthenelse{\isodd{\thepage}}%
+	{}%True
+	{\thispagestyle{empty}\mbox{}\newpage{}}%False
+	
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

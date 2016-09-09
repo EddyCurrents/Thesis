@@ -7,6 +7,11 @@ ASU (2000).
   \url{https://www.asu.edu/courses/phs208/patternsbb/PiN/rdg/mechanism/}.
 \newblock Accessed: 14/10/2015.
 
+\bibitem[\protect\citeauthoryear{Bansal}{Bansal}{2015}]{Yashika}
+Bansal, Y. (2015).
+\newblock {PowerPoint-presentation: Characterization of Silicon based Neutron
+  Pixel detectors}.
+
 \bibitem[\protect\citeauthoryear{Bentley}{Bentley}{2005}]{Bentley}
 Bentley, J.~P. (2005).
 \newblock {\em Principles of Measurement Systems}.
@@ -19,6 +24,12 @@ Bentley, J.~P. (2005).
 \newblock {\em Radiotherapy Dose-Fractionation}.
 \newblock Royal College of Radiologists, London.
 
+\bibitem[\protect\citeauthoryear{CERN}{CERN}{}]{Medipix}
+CERN.
+\newblock {The Medipix website}.
+\newblock \url{http://medipix.web.cern.ch/medipix/}.
+\newblock Accessed: 04/04/2016.
+
 \bibitem[\protect\citeauthoryear{Ermis and Celiktas}{Ermis and
   Celiktas}{2012}]{shapingtimedef}
 Ermis, E.~E. and C.~Celiktas (2012).
@@ -26,6 +37,7 @@ Ermis, E.~E. and C.~Celiktas (2012).
   Scintillation Detectors}.
 \newblock {\em International Journal of Instrumentation Science\/}~{\em
   1\/}(5), 54--62.
+\newblock http://article.sapub.org/10.5923.j.instrument.20120105.01.html.
 
 \bibitem[\protect\citeauthoryear{Freeman}{Freeman}{2013}]{proton-ct}
 Freeman, T. (2013).
@@ -44,6 +56,7 @@ Gray, P.~R., P.~J. Hurstand, S.~H. Lewis, and R.~G. Meyer (2009).
 Halámek, J., I.~Visčor, and M.~Kasal (2001).
 \newblock Dynamic range and acquisition system.
 \newblock {\em MEASUREMENT SCIENCE REVIEW\/}~{\em 1\/}(1).
+\newblock http://www.measurement.sk/PAPERS/Halamek1.pdf.
 
 \bibitem[\protect\citeauthoryear{Hamamatsu}{Hamamatsu}{2001}]{Hamamatsu}
 Hamamatsu (2001, 10).
@@ -79,6 +92,12 @@ Khan, F.~M. and J.~P. Gibbons (2014).
 Knoll, G.~F. (2010).
 \newblock {\em Radiation Detection and Measurement}.
 \newblock Wiley.
+
+\bibitem[\protect\citeauthoryear{LU}{LU}{1994}]{Lund}
+LU (1994).
+\newblock {Table of Radioactive Isotopes}.
+\newblock \url{http://nucleardata.nuclear.lu.se/toi/nuclide.asp?iZA=950241}.
+\newblock Accessed: 06/09/2016.
 
 \bibitem[\protect\citeauthoryear{Lynnebakken}{Lynnebakken}{2012}]{uio2012}
 Lynnebakken, H. (2012).
@@ -118,6 +137,12 @@ Oltedal, E.~J. (2015).
 \newblock
   \url{http://www.ortec-online.com/download/amplifier-introduction.pdf}.
 
+\bibitem[\protect\citeauthoryear{ORTEC}{ORTEC}{2011}]{Ortecdata}
+ORTEC (2011, 03).
+\newblock {\em 142A, B, and C Preamplifiers\/} (030211 ed.).
+\newblock ORTEC.
+\newblock \url{http://www.ortec-online.com/download/142A-B-C.pdf}.
+
 \bibitem[\protect\citeauthoryear{P-Cure}{P-Cure}{}]{pcure}
 P-Cure.
 \newblock {P-Cure Clinics}.
@@ -129,6 +154,7 @@ Paganetti, H. (2012).
 \newblock Range uncertainties in proton therapy and the role of monte carlo
   simulations.
 \newblock {\em Physics in Medicine and Biology\/}~{\em 57\/}(11), R99.
+\newblock http://stacks.iop.org/0031-9155/57/i=11/a=R99.
 
 \bibitem[\protect\citeauthoryear{Poulianitis}{Poulianitis}{2016}]{Thomas}
 Poulianitis, T. (2016).
