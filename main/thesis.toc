@@ -63,13 +63,13 @@
 \contentsline {section}{\numberline {5.9}Power Consumption}{64}{section.5.9}
 \contentsline {section}{\numberline {5.10}Pile-up Considerations}{65}{section.5.10}
 \contentsline {section}{\numberline {5.11}The 7048 Evaluation Board}{65}{section.5.11}
-\contentsline {chapter}{Conclusions \& Outlook}{67}{chapter*.74}
-\contentsline {chapter}{Appendices}{69}{section*.75}
+\contentsline {chapter}{\numberline {6}Conclusions \& Outlook}{67}{chapter.6}
+\contentsline {chapter}{Appendices}{69}{section*.74}
 \contentsline {chapter}{\numberline {A}3DMiMic Layouts}{70}{Appendix.1.A}
 \contentsline {chapter}{\numberline {B}3DMiMic I-V Measurements}{74}{Appendix.1.B}
 \contentsline {chapter}{\numberline {C}Detector Interface PCB}{77}{Appendix.1.C}
 \contentsline {chapter}{\numberline {D}List of Readout Electronics Systems}{84}{Appendix.1.D}
 \contentsline {chapter}{\numberline {E}IDE1180 Gain Linearity Graphs}{86}{Appendix.1.E}
 \contentsline {chapter}{\numberline {F}IDE1180 Shape Graphs}{88}{Appendix.1.F}
-\contentsline {chapter}{Bibliography}{90}{figure.caption.107}
-\contentsline {chapter}{Glossary}{94}{section*.109}
+\contentsline {chapter}{Bibliography}{90}{figure.caption.106}
+\contentsline {chapter}{Glossary}{94}{section*.108}

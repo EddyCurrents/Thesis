@@ -251,7 +251,7 @@ Note that the default shaping time curve in figure \ref{fig-IDE1180-gain} does n
 \newpage
 \subsection{Gain vs. Capacitance Simulations}
 
-To investigate the behaviour of a pre-amplifier being loaded with an input capacitance, a pre-amplifier was simulated in LTspice IV. One of the pre-amplifiers from \citep{tali} was simulated (figure \ref{fig-sim-sch}), as the specifications of the IDE1180 pre-amplifier are unavailable. This was simulated both with an ideal \gls{opamp}, and with the LT1122 that was tested in \citep{tali}. LT1122 is a fast settling amplifier with a good bandwidth, but is noisy and was therefore not used for the pre-amplifier in Tali's final design. The input signal for this simulation was a square wave of 2 ms period, 100 mV amplitude, and 10 ns edge times. Simulations were performed for $C_{load}$ of 1 pF and 100 pF.  
+To investigate the behaviour of a pre-amplifier being loaded with an input capacitance, a pre-amplifier was simulated in LTspice IV. One of the pre-amplifiers from \citep{tali} was simulated (figure \ref{fig-sim-sch}), as the specifications of the IDE1180 pre-amplifier are unavailable. This was simulated both with an ideal \gls{opamp}, and with the LT1122 that was tested in \citep{tali}. LT1122 is a fast settling amplifier with a good bandwidth, but is noisy and was therefore not used for the pre-amplifier in Tali's final design. The input signal for this simulation was a square wave of 2 ms period, 100 mV amplitude, and 10 ns edge times. Simulations were performed for $C_{load}$ of 1~pF and 100~pF.  
 
 \begin{figure}%[p]
 \centering
@@ -383,7 +383,7 @@ Noise measurements on the IDE1180 have been performed with the ADC setup in figu
 	\item With pulse on input. Using peak detection. Fit a Gaussian to the peak histogram.   
 \end{enumerate}
 
-The results were expected to be somehow different on method three as it does not use the same histogram. Methods one and two observe variations in the baseline, while method three observes variations in the peak height. Figure \ref{fig-noise-methods} shows a comparison of measurement results on the same system with the three different methods. All methods show a slightly different slope. For method two, the higher noise values at high capacitance is because the histogram consists of two overlapping Gaussians.  %If the noise varies between 10 mV and 30 mV, the raw signal measurements will see noise up to 30 mV, while the peak measurement will only see noise of 20 mV, because the period of the noise is much shorter than the peak width. 
+The results were expected to be somehow different on method three as it does not use the same histogram. Methods one and two observe variations in the baseline, while method three observes variations in the peak height. Figure \ref{fig-noise-methods} shows a comparison of measurement results on the same system with the three different methods, with linear fits to the data. All methods show a slightly different slope on the fit. For method two, the higher noise values at high capacitance is because the histogram consists of two overlapping Gaussians.  %If the noise varies between 10 mV and 30 mV, the raw signal measurements will see noise up to 30 mV, while the peak measurement will only see noise of 20 mV, because the period of the noise is much shorter than the peak width. 
 
 \begin{figure}[h!]   %2016.04.18
 	\centering
@@ -392,6 +392,7 @@ The results were expected to be somehow different on method three as it does not
 	\label{fig-noise-methods}
 \end{figure} 
 
+\newpage
 Noise is calculated as \acrfull{ENC}, the number of electrons needed on the input to create a signal equivalent to the measured noise, using eq. \ref{eq-noise}, where G is the gain, and $\sigma$ (sigma) is the standard deviation of the noise histogram. The noise can also be given in \gls{FWHM} by multiplying with $2\sqrt{2*ln2}$ ($\approx 2.355$). 
 
 \begin{equation}%[h]
