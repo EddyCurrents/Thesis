@@ -15,7 +15,7 @@
 \usepackage[integrals]{wasysym}
 \usepackage{latexsym}
 \usepackage{amssymb}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref} %Hidelinks removes colored box around links
 \tolerance=1000
 \usepackage{amsmath}
 \usepackage[T1]{fontenc}
@@ -70,7 +70,9 @@
 	{\thispagestyle{empty}\mbox{}\newpage{}}%False
 	
 }
-
+\usepackage{rotating} %to rotate tables
+\widowpenalty10000	%Avoid lone lines in top of page
+\clubpenalty10000	%bottom
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

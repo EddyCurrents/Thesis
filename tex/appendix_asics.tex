@@ -1,7 +1,44 @@
 \documentclass[../main/thesis.tex]{subfiles}
 \begin{document}
 
-\chapter{List of Readout Electronics}
+\chapter{List of Readout Electronics Systems}
 \label{a-asics}
+
+This appendix lists most readout electronics systems that has been considered during this project. ENC is shown for no detector connected, as not all specifications noted how the noise changes with capacitance. Some of the systems have a multiplexed output, which might be a problem in case many channels need to be read out continuously. 
+
+\begin{sidewaystable}[h!]
+	\begin{center}
+		\caption{Readout electronics systems that has been considered for use during this project.}
+		\label{tab-asics}
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{lccrlrllll}		\toprule %\hline
+				& \textbf{Channels} & \textbf{Shaping time} & \textbf{ENC} &  & \textbf{Dynamic}  & \textbf{range} & \textbf{ADC} & \textbf{Reference}   & \textbf{Note}             \\
+				\textbf{CSAs with ADC} & & \textbf{[ns]} & \textbf{[e-]} & \textbf{[fC]} & \textbf{{[}e-{]}} &\textbf{[fC]}& \textbf{bins} &&\\ \midrule
+				Portable UiO System               & 2        & 1100                  & 15750        & 2.5      & 32M                    & 5200     & 12 bit         & \citep{tali} \citep{oltedal} &                  \\
+				IDEAS VATA451                     & 64       & 600 to 4000           & 30           & 0.005    & 10000                  & 1.6      & 10 bit         & \citep{ideasweb}               & Multiplexed      \\
+				R$^3$B tracker ASIC & 128      & 500 to 8000           & 7000         & 1.1      & 13.9M                  & 2200     & 12 bit         & \citep{R3B}                    &                  \\
+				&          &                       &              &          &                        &          &                &                                  &                  \\
+				\textbf{CSAs without ADC}                   &          &                       &              &          &                        &          &                &                                  &                  \\ \midrule
+				ORTEC 142A                        & 1        &                       & 444          & 0.07     & 55M                    & 8800     &                & \citep{Ortecdata}              & No shaper        \\
+				PANDA APFEL                       & 22000    &                       & 2600         & 0.42     & 18.8M                  & 3000     &                & \citep{panda}                  & No shaper        \\
+				ALICE TPC PASA                    & 16       & 190                   & 244          & 0.04     & 938k                   & 150      &                & \citep{pasa}                   &                  \\
+				IDEAS IDE1140                     & 64       & 5000 to 8000          & 98           & 0.016    & 1.25M                  & 200      &                & \citep{ideasweb}               & Multiplexed      \\
+				IDEAS IDE1180                     & 16       & 20 to 40              & 1106         & 0.18     & 2.5M                   & 400      &                & \citep{IDE1180}                &                  \\
+				IDEAS IDE3465                     & 16       & 1000                  & 3500         & 0.56     & 16.2M                  & 2600     &                & \citep{ideasweb}               & Multiplexed      \\
+				& 4        & 1000                  & 26000        & 4.2      & 162M                   & 26000    &                &                                  & Multiplexed      \\
+				IDEAS IDE3466           & 32       & 1000                  &              &          & 16.2M                  & 2600     &                & \citep{ideasweb}               & Multiplexed      \\
+				& 4        & 1000                  & 42000        & 6.7      & 162M                   & 26000    &                &                                  & Multiplexed      \\
+				IDEAS VA32HDR14.2                 & 32       & 2000                  & 2700         & 0.4      & 81M                    & 13000    &                & \citep{ideasweb}               & Multiplexed      \\
+				&          &                       &              &          &                        &          &                &                                  &                  \\
+				\textbf{CSAs with ToT}     &          & \textbf{Deadtime}              &              &          &                        &          &                &                                  &                  \\ \midrule
+				Timepix3                          & 256x256  & 25ns to 410us         & 70           & 0.011    & 150k                   & 24       &                & \citep{timepix3}               &                  \\
+				VELOpix       & 256x256  & Low                   &              &          &                        &          &                &                                  & Work in progress \\
+				Dosepix                           & 16x16    &                       & 1500         & 0.24     & 44.4k                  & 7.1      &                & \citep{dosepix}                &                 
+				 \\ \bottomrule%\hline
+		\end{tabular}
+	}
+	\end{center}
+\end{sidewaystable}
+
 
 \end{document}

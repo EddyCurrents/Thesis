@@ -18,7 +18,8 @@
 \begin{center}
 %{ \Huge \bfseries Readout of silicon pixel detectors \\with the Medipix ASIC}\\[1cm]
 %{ \Huge \bfseries The Medipix ASIC\\is useless for my project}\\[1cm]
-{ \Huge \bfseries Characterization and Readout of\\3D Silicon Microdosimeters}\\[1cm]
+%{ \Huge \bfseries Characterization and Readout of\\3D Silicon Microdosimeters}\\[1cm]
+{ \Huge \bfseries Characterization of\\3D Silicon Microdosimeters\\and corresponding Readout System}\\[1cm]
 
 \large by\\ \Large Øyvind Lye\\[1.6cm]
 
@@ -26,7 +27,7 @@
 \textsc{\Large Thesis}\\
 \large for the degree of\\
 \textsc{\Large Master of Science in Physics}\\[0.5cm]
-\large (Specialisation in Microelectronics) \\[0.5cm]
+\large (Specialisation in Microelectronics) \\%[0.5cm]
 
 
 %\paragraph*{}
@@ -52,9 +53,10 @@
 \begin{minipage}{\textwidth}
 \chapter*{Abstract} %begin abstract?
 %\begin{abstract}
-This thesis is related to the 3DMiMic micro-dosimeter project by SINTEF and the University of Wollongong. 3DMiMic is made to mimic the response of biological tissue to radiation, and will be used to learn more about the effects of radiation to tissue on a small scale. This knowledge can be used to reduce the uncertainties when treating cancer with particle radiotherapy, which will lead to more successful treatments. The thesis includes some work on the characterization of the 3DMiMic detectors. This includes I-V \& C-V characterisation and measurements with radiation. The author has also created a circuit board to interface the detectors. The measurements show good results for the newest revisions of the detectors, and suggests that they will be useful in the future.
+This thesis is related to the 3DMiMic micro-dosimeter project by SINTEF and the University of Wollongong. 3DMiMic is made to mimic the response of biological tissue to radiation, and will be used to learn more about the effects of radiation to tissue on a small scale. This knowledge can be used to reduce the uncertainties when treating cancer with particle radiotherapy, which will lead to more successful treatments. The thesis includes some work on the characterization of the 3DMiMic detectors. This includes I-V \& C-V characterisation and measurements with radiation. A circuit board to interface the detectors has also been created. The measurements show good results for the newest revisions of the detectors, and suggests that the collaboration project has been a success.
+%they will be useful in the future.
 \\ \\
-The main focus of the thesis has been the readout electronics for the 3DMiMic detectors. The work started with assembling a list of viable systems with their relevant properties. The system selected as the main focus for the thesis was a prototype pre-amplifier \& shaper by IDEAS, called IDE1180. This had not been extensively tested by the company, and therefore needed a lot of tests before it could be properly compared to other, more proven, systems. The work includes gain characterization, and measurements on noise, pulse shape, dynamic range, crosstalk, power consumption, and pile-up. The thesis shows some unexpected gain behaviour that must be considered before use, and noise measurements that are much higher than the datasheet shows. Because of the high noise requirements for the 3DMiMic detectors, the thesis does not recommend using this system for these detectors at its current state. 
+The main focus of the thesis has been the readout electronics for the 3DMiMic detectors. The work started with assembling a list of viable systems with their relevant properties. The system selected as the main focus for the thesis was an early prototype pre-amplifier \& shaper by IDEAS, called IDE1180. As an early prototype, the IDE1180 needed a lot of tests before it could be properly compared to other, more proven, systems. The work includes gain characterization, and measurements on noise, pulse shape, dynamic range, crosstalk, power consumption, and pile-up. The thesis shows some unexpected gain behaviour that must be considered before use, and noise measurements that are higher than shown in the datasheet. Because of the high noise requirements for the 3DMiMic detectors, the thesis does not recommend using this system for these detectors at its current state, but it is recommended to pay attention to future revisions. 
 
 
 \addcontentsline{toc}{chapter}{Abstract}
@@ -129,6 +131,8 @@ Finally, I would like to thank to my friends and family for always being there. 
 	%\appendixpagenumbering
 	
 	\subfile{./../tex/appendix_3dmimic.tex}
+	
+	\subfile{./../tex/appendix_iv.tex}
 	
 	\subfile{./../tex/appendix_pcb.tex}
 	

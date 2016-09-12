@@ -7,12 +7,12 @@
 
 \section{Semiconductors}
 \label{t-semi}
-XXX references for this section
-A semiconductor is a material with higher resistance than typical resistive materials, like copper, but lower resistance than insulators. Silicon is the most widely used semiconductor element for electronic devices. A semiconductor's conducting properties can be altered by adding different atoms into the crystal lattice. This is called doping. An n-type semiconductor has been doped with atoms containing more free electrons. A p-type similarly has more free holes. Atoms with extra electrons are called donors, and phosphorus is a common donor for silicon doping. Atoms with extra holes are called acceptors, and boron is a common acceptor for silicon doping. 
+
+A semiconductor is a material with higher resistance than typical resistive materials, like copper, but lower resistance than insulators. Silicon is the most widely used semiconductor element for electronic devices. A semiconductor's conducting properties can be altered by adding different atoms into the crystal lattice. This is called doping. An n-type semiconductor has been doped with atoms containing more free electrons. A p-type similarly has more free holes. Atoms with extra electrons are called donors, and phosphorus is a common donor for silicon doping. Atoms with extra holes are called acceptors, and boron is a common acceptor for silicon doping. \citep[chap. 11]{Knoll}
 
 \subsection{Semiconductor Diodes}
 
-A basic semiconductor diode is based on a pn junction, which is a p-type material in contact with a n-type material. Without an external bias applied, electrons from the n-region near the junction will recombine with holes in the p-region, leaving behind negatively charged ions in the n-region. The opposite happens in the p-region, creating positively charged ions. This creates a region in the junction with a strong electric field, which is called the depletion region, because it is depleted of charge carriers. This makes the depletion region non-conductive. A pn junction is shown in figure \ref{fig-pn}. The depletion region can be made smaller, eventually causing a current to flow, by setting up a voltage across the junction, with the higher potential on the p-side. This is called forward bias. The opposite, reverse bias, causes the depletion region to grow bigger as the charge carriers are pulled away from the junction. 
+A basic semiconductor diode is based on a pn junction, which is a p-type material in contact with a n-type material. Without an external bias applied, electrons from the n-region near the junction will recombine with holes in the p-region, leaving behind negatively charged ions in the n-region. The opposite happens in the p-region, creating positively charged ions. This creates a region in the junction with a strong electric field, which is called the depletion region, because it is depleted of charge carriers. This makes the depletion region non-conductive. A pn junction is shown in figure \ref{fig-pn}. The depletion region can be made smaller, eventually causing a current to flow, by setting up a voltage across the junction, with the higher potential on the p-side. This is called forward bias. The opposite, reverse bias, causes the depletion region to grow bigger as the charge carriers are pulled away from the junction. \citep[chap. 1]{analogbok}
 
 \begin{figure}%[h]
 	\centering
@@ -21,7 +21,7 @@ A basic semiconductor diode is based on a pn junction, which is a p-type materia
 	\label{fig-pn}
 \end{figure}
 
-The insulating properties of the depletion region causes only a minimal leakage current to flow during reverse bias. This current is caused by drift, which increases with the electric field up to the point of velocity saturation. The increased interactions between the carriers and the lattice for higher electric fields causes the leakage current to become almost independent of the voltage. This current is often called the reverse saturation current. Once the reverse bias becomes too strong, the high electric field causes the depletion region to break down and high current to flow. This current can break diodes that have not been made to withstand it. Currents for different bias voltages can be seen in figure \ref{fig-pn-iv}. 
+The insulating properties of the depletion region causes only a minimal leakage current to flow during reverse bias. This current is caused by drift, which increases with the electric field up to the point of velocity saturation. The increased interactions between the carriers and the lattice for higher electric fields causes the leakage current to become almost independent of the voltage. This current is often called the reverse saturation current. Once the reverse bias becomes too strong, the high electric field causes the depletion region to break down and high current to flow. This current can break diodes that have not been made to withstand it. Currents for different bias voltages can be seen in figure \ref{fig-pn-iv}. \citep[chap. 1]{analogbok}
 
 \begin{figure}%[h]
 	\centering
@@ -32,7 +32,7 @@ The insulating properties of the depletion region causes only a minimal leakage 
 %https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics
 %http://www.circuitstoday.com/pn-junction-diode-characteristics
 
-A PIN diode has a large undoped intrinsic semiconductor region between the p-region and n-region. The i-region is flooded with charge carriers from the p- and n-regions. This causes the electric field to cover almost the entire length of the i-region, which speeds up the transport of charge carriers. The depletion region is also independent of the bias voltage. 
+A PIN diode has a large undoped intrinsic semiconductor region between the p-region and n-region. The i-region is flooded with charge carriers from the p- and n-regions. This causes the electric field to cover almost the entire length of the i-region, which speeds up the transport of charge carriers. The depletion region is also independent of the bias voltage. \citep{pin}
 
 \section{Radiation Detectors}
 \label{t-detector}
@@ -66,7 +66,7 @@ A semiconductor detector, like other diodes, can be forward biased or reverse bi
 \label{t-cv}
 \gls{CV} profiling is a semiconductor characterisation technique that is much used to find doping- and defect densities in semiconductor junctions. The technique relies on the fact that the width of a reverse biased depletion region depends on the applied voltage. The small signal capacitance is dependent on both the doping density and width of the depletion region. \gls{CV} profiles are made by measuring the capacitance while sweeping over a voltage range. The doping density is found from the slope of a C-V curve or a $1/C^2$-V curve. \citep[chap. 2]{Schroder}
 
-There are multiple ways to measure capacitance. A simple method is to supply a known current, and measure how fast the voltage across the capacitor rises. This method assumes an ideal capacitor, and is therefore inaccurate for a real capacitor. A more accurate method is to supply an AC signal to the \gls{DUT} and measure the AC current and voltage. A high frequency signal ($\sim$10 MHz) will be better for measuring dynamic performance, while a low frequency signal ($\sim$10 kHz) is better to find quasistatic characteristics. The capacitance is calculated from the frequency, current, and voltage. 
+There are multiple ways to measure capacitance. A simple method is to supply a known current, and measure how fast the voltage across the capacitor rises. This method assumes an ideal capacitor, and is therefore inaccurate for a real capacitor. A more accurate method is to supply an AC signal to the device under test and measure the AC current and voltage. A high frequency signal ($\sim$10 MHz) will be better for measuring dynamic performance, while a low frequency signal ($\sim$10 kHz) is better to find quasistatic characteristics. The capacitance is calculated from the frequency, current, and voltage. 
 %%XXX equation?
 
 %https://en.wikipedia.org/wiki/Capacitance_meter
@@ -92,9 +92,9 @@ Si-3DMiMic, or simply 3DMiMic, is a silicon-based 3D mini and micro-dosimeter be
 
 %Each diode, or cell, is made of a 3 $\mu$m diameter n+ core cylinder, a 2 $\mu$m thick p+ trench about 10 $\mu$m further out, and a 4 $\mu$m thick n+ ring about 20 $\mu$m outside the core. The silicon between the different cells has been etched away and replaced with tissue equivalent \gls{PMMA}. %Need to double check all this later, I have contradicting sources
 
-Figure \ref{fig-3dmimic-side} show a "3D" layout with the n+ core cylinder and the p+ trench going all the way through the bulk, and a planar n+ guard ring. There also exist designs with either or both the n+ core and p+ trench made planar. Figure \ref{fig-3dmimic-top15} shows the smallest, "15 $\mu$m", layout of 3DMiMic from above with a size scale. The larger, "30 $\mu$m", layout has a roughly 25 \% larger radius than the "15 $\mu$m" layout. The detectors with the smaller diodes have 50x50 cells, while the larger variant has 32x33 cells. Images of some of the different layouts can be found in Appendix \ref{a-3dmimic-layout}.
+Figure \ref{fig-3dmimic-side} show a "3D" layout with the n+ core cylinder and the p+ trench going all the way through the bulk, and a planar n+ guard ring. There also exist designs with either or both the n+ core and p+ trench made planar. There are designs with cells in two different sizes, seen in figure \ref{fig-top-both}. The radii of the p+ trench circles are roughly 15 and 20 $\mu$m for the two designs. The detectors with the smaller diodes have 50x50 cells, while the larger variant has 32x33 or 33x33 cells depending on the layout. Images of some of the different layouts can be found in Appendix \ref{a-3dmimic-layout}.
+%Figure \ref{fig-3dmimic-top15} shows the smallest, "15 $\mu$m", layout of 3DMiMic from above with a size scale.
 
-%%XXX doublecheck 32x33 again
 
 %\begin{figure}%[h]
 %	\centering
@@ -122,18 +122,18 @@ Figure \ref{fig-3dmimic-side} show a "3D" layout with the n+ core cylinder and t
 \end{figure}
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{3d-top15.png}
-	\caption{Smallest, "15 $\mu$m", layout of 3DMiMic seen from above. Shows a zoom of figure \ref{fig-3dmimic-top} with a distance scale is in $\mu$m. \citep{Marco}}
-	\label{fig-3dmimic-top15} %need to check permission
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{3d-top15.png}
+%	\caption{Smallest, "15 $\mu$m", layout of 3DMiMic seen from above. Shows a zoom of figure \ref{fig-3dmimic-top} with a distance scale is in $\mu$m. \citep{Marco}}
+%	\label{fig-3dmimic-top15} %need to check permission
+%\end{figure}
 
 In the main layout of 3DMiMic, all the n+ cores in a line is connected together. Every second line is also connected, leaving two channels (odd/even) for readout. When present, all the outer n+ rings are connected and can be read out if desired. A full die is shown in figure \ref{fig-3dmimic-die}, where the "+" pads are the n+ cores, the "G" pads are for the p+ trenches, the "GUARD" pads are for the cell guard rings, and the large square around the detector is a guard ring. There also exist other layouts, for example with all diodes connected together, readout in eight channels, and a larger design made to be bump bonded to a Medipix chip (see section \ref{e-medipix}). 
 
 \begin{figure}%[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{3d-die.png}
+	\includegraphics[width=0.7\textwidth]{3d-die.png}
 	\caption{Layout of a full 3DMiMic die, showing bonding pads and the guard ring outside the active area. \citep{Marco}}
 	\label{fig-3dmimic-die} %need to check permission
 \end{figure}
@@ -159,6 +159,8 @@ Table \ref{tab-3d-response} show the expected signal strength from the 3DMiMic d
 		\end{tabular}
 	\end{center}
 \end{table}
+
+Table \ref{tab-3d-response} sets the requirements for the readout electronics' dynamic range to between 1000 and 4 million electrons, which is equivalent to a range of 4000:1. A range this long can be very difficult to get without sacrificing too much of the other properties of the electronics. One possible method of reducing the required dynamic range is to exploit the odd / even readout scheme. The dynamic range can be split in two, one range for each readout channel. Then half the pixels can be used to read the smallest particles, and the other half can read the largest particles. 
 
 \section{I-V Measurements of 3DMiMic Detectors on Wafer}
 \label{3d-IV}
@@ -186,20 +188,24 @@ Table \ref{tab-3d-response} show the expected signal strength from the 3DMiMic d
 	\label{fig-3d-S10-17-PSTOP_L} 
 \end{figure}
 
-As an example, figure \ref{fig-3d-S10-17} shows the measurements from all the measured detectors on wafer S10-17. This clearly shows the huge differences between the detectors. This is also partly because there are multiple different layouts on one wafer, but figure \ref{fig-3d-S10-17-PSTOP_L} also shows large differences between the detectors of one layout. This is not very surprising, as the 3DMiMic detectors are made of very small, complex structures. Small variations in the production process, for example etching acting at different speeds on different parts of the wafer, can make a huge impact, especially if contacts to multiple pixels are broken. It would be interesting to test the number of dead pixels on the detector. This has previously been done at \gls{uib} by scanning a detector with a laser while moving the detector with an XY table. The laser point must be precise enough to not hit two pixels at once, and the XY table must be able to perform steps smaller than the distance between two pixels.  
+All measurements can be seen in appendix \ref{a-iv}. As an example, figure \ref{fig-3d-S10-17} shows the measurements from all the measured detectors on wafer S10-17. This clearly shows the huge differences between the detectors. This is also partly because there are multiple different layouts on one wafer, but figure \ref{fig-3d-S10-17-PSTOP_L} also shows large differences between the detectors of one layout. This is not very surprising, as the 3DMiMic detectors are made of very small, complex structures. Small variations in the production process, for example etching acting at different speeds on different parts of the wafer, can make a huge impact, especially if contacts to multiple pixels are broken. It would be interesting to test the number of dead pixels on the detector. This has previously been done at \gls{uib} by scanning a detector with a laser while moving the detector with an XY table. The laser point must be precise enough to not hit two pixels at once, and the XY table must be able to perform steps smaller than the distance between two pixels.  
 
 In general, wafers S10-1, S10-2, S10-11, S10-16 break down very early. S10-16 has a few good looking plateus, but most of them are at very high currents. S10-15 currents increase rapidly and do not saturate. S10-14 also lacks the plateau curves. S10-4 has many relatively nice curves, but also many that rise too rapidly. S10-17 has the most curves with a nice saturation plateau at a not too high current. Which of the layouts that show the best characteristics varies a bit between the wafers, but MIC\_ARRAY\_3, 3\_L, PSTOP, and 3\_PSTOP\_L seem to show the best characteristics. In general, MIC\_ARRAY\_1 and 2 seem to show the worst characteristics. 
 
-XXX More graphs in appendix? 70 graphs total
-
 \section{Detector Interface PCB}
 \label{3d-pcb}
-A \gls{PCB} was designed to interface 3DMiMic to the supply and readout electronics. This is described in detail in appendix \ref{a-pcb}.
+A \gls{PCB}, see figure \ref{fig-3dmimic-photo}, was designed to interface 3DMiMic to the supply and readout electronics. This could have been very simple, but after discussions with Marco at SINTEF it was decided to make it as multi-purpose as possible with possibilities for quick reconnection for different setups. One of the main reasons for this was that the PCB was designed months before the detectors were finished. The PCB is described in detail in appendix \ref{a-pcb}.
 
-XXX picture with chip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{3dmimic.jpg}
+	\caption{Photo of 3DMiMic detector on PCB.}
+	\label{fig-3dmimic-photo}
+\end{figure} 
 
+\newpage
 \section{Wire Bonding}
-Wire bonding the detectors to the PCB was supposed to be performed by SINTEF, but they had problems with the wire bonder in June 2016 which would have led to another delay. To avoid this delay, three detectors glued to PCBs were picket up at SINTEF and brought to the cleanroom at Vestfold Innovation Park for wire bonding. The wire bonder was already loaded with 17.5 $\mu$m gold wire, and this was used even though it is thinner than necessary for the 3DMiMic detectors. Each connection was done with two parallel wires to have some redundancy in case of mechanical damage to the thin wires. The three detectors are numbered: S10-15 $\#$128 (MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout), S10-17 $\#$51 (MIC$\_$ARRAY$\_$1 layout), and S10-17 $\#$128 (MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout). See appendix \ref{a-3dmimic-layout} for the differences in the wafers and layouts, and appendix \ref{a-pcb} for bonding schematics. 
+Wire bonding the detectors to the PCB was supposed to be performed by SINTEF, but they had problems with the wire bonder in June 2016 which would have led to another delay. To avoid this delay, three detectors glued to PCBs were picket up at SINTEF and brought to the cleanroom at Vestfold Innovation Park for wire bonding. The wire bonder was already loaded with 17.5 $\mu$m gold wire, and this was used even though it is thinner than necessary for the 3DMiMic detectors. Each connection was done with two parallel wires for redundancy in case of mechanical damage to the thin wires. The three detectors are numbered: S10-15 $\#$128 (MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout), S10-17 $\#$51 (MIC$\_$ARRAY$\_$1 layout), and S10-17 $\#$128 (MIC$\_$ARRAY$\_$3$\_$PSTOP$\_$L layout). See appendix \ref{a-3dmimic-layout} for the differences in the wafers and layouts, and appendix \ref{a-pcb} for bonding schematics. 
 
 \section{I-V Measurements of 3DMiMic Detectors on PCB}
 \label{3dmimic-iv-pcb}
@@ -208,7 +214,7 @@ The I-V measurements in Bergen has been done with the Keithley 2635A sourcemeter
 
 Both sides (odd/even) of the three detectors brought to Bergen have been repeatedly measured over a period of 1.5 months. The odd sides of both S10-17 \#128 and S10-17 \#51 appear to be short-circuited. Since the only measurements from SINTEF are the even sides of S10-17 \#128 and S10-17 \#51, it is unclear if the problem is on the detector, or on the \gls{PCB}. For the S10-17 \#51 it is considered likely that the wire bonding is the cause, as this is bonded according to figure \ref{fig-wire-2-g}. The bond on the odd side is very long and difficult to perform. Microscope observations show that the bond is very close to, and possibly touching the edge of the detector. The S10-17 \#51, which has guard rings for every pixel, was tested with guard rings disconnected and connected to ground. This showed no difference on the I-V measurements, so the rest of the measurements have been done with the guard rings connected to ground. 
 
-\begin{figure}
+\begin{figure}[p]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -226,7 +232,7 @@ Both sides (odd/even) of the three detectors brought to Bergen have been repeate
 	\label{fig-3d-iv-S10-17}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[p]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -244,7 +250,7 @@ Both sides (odd/even) of the three detectors brought to Bergen have been repeate
 	\label{fig-3d-iv-S10-17-z}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[p]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -266,11 +272,12 @@ Figures \ref{fig-3d-iv-S10-17} and \ref{fig-3d-iv-S10-15} show the I-V measureme
 
 %show a drop in current over time. If this continues, it could be an issue. It should also be investigated if this drop is caused by the measuring equipment, and not the detectors. 
 
+\newpage
 \section{C-V Measurements of 3DMiMic Detectors}
 
 C-V measurements have been performed in Bergen with the HP 4263B LCR meter and Keithley 2635A sourcemeter, controlled by a LabVIEW program made by Enver Alagoz. Ground is connected to p+ through a separate cable to the p+ connector. 
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -288,7 +295,7 @@ C-V measurements have been performed in Bergen with the HP 4263B LCR meter and K
 	\label{fig-3d-cv-S10-17}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -306,14 +313,14 @@ C-V measurements have been performed in Bergen with the HP 4263B LCR meter and K
 	\label{fig-3d-cv-S10-15}
 \end{figure}
 
-The expected capacitance value from simulations from \gls{UOW} was about 20 to 30~pF for the detectors with large pixels. These measurements therefore show very good results, with the highest value of less than 23~pF at 10~V. Assuming every pixel is connected and no capacitance from wires etc., the capacitance per pixel is 22~fF, 2~fF, 14~fF, and 15~fF at 10~V for the four detectors in the order they are shown in the figures above. 
+The expected capacitance value from simulations from \gls{UOW} was about 20 to 30~pF for the detectors with large pixels. These measurements therefore show very good results, with the highest value of less than 23~pF at 10~V. Assuming every pixel is connected and no capacitance from wires etc., the capacitance per pixel is 21~fF, 2~fF, 14~fF, and 15~fF at 10~V for the four detectors in the order they are shown in the figures. 
 
+\newpage
 \section{Radiation Measurements with Americium source}
 
-A few radiation measurements have been performed in Bergen with an Americium-241 source after the detectors were received. Am-241 has a half-life of 432.2 years, and decays by releasing an alpha (helium-4 nucleus) and a photon. The alpha energy is 5.486~MeV 85~\% of the time, 5.443~MeV 13~\% of the time, and 5.388~MeV 2~\% of the time. The most common photon  energy is 59.54~keV. \citep{Lund} The even sides of the detectors from section \ref{3dmimic-iv-pcb} have been tested and seem to be working. Figures \ref{fig-3dmimic-am-17-128-10} and \ref{fig-3dmimic-am-17-128-25} show measurements with the S10-17~\#128 detectors. These were measured with 10~V bias voltage on the detectors, and the Americium source at two different distances from the detector. The detectors were read out with the Ortec 142A pre-amplifier and the Caen V1729A ADC. The 10 and 25~mm measurements were taken over roughly 38 and 72~hours respectively. The figures show that the histogram consists of two Gaussians. The second, lower (in counts) Gaussian is for the radiation particles that pass through the metal on top of the pixel before entering the detector volume. This is much lower in number of counts, because the metal covers only a small part of the active volume. 
+A few radiation measurements have been performed in Bergen with an Americium-241 source after the detectors were received. Am-241 has a half-life of 432.2 years, and decays by releasing an alpha (helium-4 nucleus) and a photon. The alpha energy is 5.486~MeV 85~\% of the time, 5.443~MeV 13~\% of the time, and 5.388~MeV 2~\% of the time. The most common photon  energy is 59.54~keV. \citep{Lund} The even sides of the detectors from section \ref{3dmimic-iv-pcb} have been tested and seem to be working. Figures \ref{fig-3dmimic-am-17-128-10} and \ref{fig-3dmimic-am-17-128-25} show measurements with the S10-17~\#128 detectors. These were measured with 10~V bias voltage on the detectors, and the Americium source at two different distances from the detector in order to attenuate the beam before reaching the detector, giving two different spectrums. The detectors were read out with the Ortec 142A pre-amplifier and the Caen V1729A ADC. The 10 and 25~mm measurements were taken over roughly 38 and 72~hours respectively. The figures show that the histogram consists of two Gaussians. The second, lower (in counts) Gaussian is for the radiation particles that pass through the metal on top of the pixel before entering the detector volume. This is much lower in number of counts, because the metal covers only a small part of the active volume. 
 
-The deposited energy is higher for longer distance between the source and detector, because the increased distance causes the Bragg peak to be closer to the detector. In figure \ref{fig-3dmimic-am-17-128-10} the peak from the alpha particles passing through the metal is at higher energy because the metal slows the particles, causing the Bragg peak to move closer. 
-XXX small moves left why
+The deposited energy is higher for longer distance between the source and detector, because the increased distance causes the Bragg peak to be closer to the detector. In figure \ref{fig-3dmimic-am-17-128-10} the peak from the alpha particles passing through the metal is at higher energy because the metal slows the particles, causing the Bragg peak to move closer. After going through 2.5~cm of air, the alphas will have lost a lot of energy, which makes them loose a lot of energy when passing he aluminium layer. They therefore have little energy left to deposit in the sensitive volume. This is why the lower Gaussian is to the left of the main Gaussian in figure \ref{fig-3dmimic-am-17-128-25}. 
 
 \begin{figure}[p]
 	\centering

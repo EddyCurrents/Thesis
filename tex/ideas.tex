@@ -6,9 +6,14 @@
 \chapter{Characterization of IDE1180}
 \label{ide}
 
-XXX bilde av kort
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{IDE1180.jpg}
+	\caption{Photo of IDE1180 evaluation board.}
+	\label{fig-ide-picture}
+\end{figure} 
 
-IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \acrlong{CSA}s and shapers with adjustable shaping time. Important specifications from the preliminary datasheet can be seen in table \ref{tab-ide-specs}. The gain at default settings is specified as 12.45 mV/fC. Two chips, on evaluation boards 7045-1-03 and 7048-1-04 were characterized by the author, partly together with master student Sanjeeda Sharmin and chief engineer Thomas Poulianitis. The tests have been focused on the 7045 board as it showed the best characteristics, and the 7048 board is therefore only mentioned in section \ref{ide-7048}. 
+IDE1180, or Amadeus, by Oslo-based IDEAS is an early prototype integrated circuit for the front-end readout of radiation detectors. It features 16 channels of \acrlong{CSA}s and shapers with adjustable shaping time. Important specifications from the preliminary datasheet can be seen in table \ref{tab-ide-specs}. The gain at default settings is specified as 12.45 mV/fC. Two chips, on evaluation boards 7045-1-03 (figure \ref{fig-ide-picture}) and 7048-1-04 were characterized by the author, partly together with master student Sanjeeda Sharmin and chief engineer Thomas Poulianitis. The tests have been focused on the 7045 board as it showed the best characteristics, and the 7048 board is therefore only mentioned in section \ref{ide-7048}. 
 
 \begin{table}[h!]
 	\begin{center}
@@ -19,6 +24,7 @@ IDE1180, or Amadeus, by Oslo-based IDEAS is an integrated circuit for the front-
 			\textbf{Input range [fC]}     & 0 to $\pm$50/100/200/400  \\
 			\textbf{Maximum non-linearity}	&	3 \%	\\
 			\textbf{\gls{ENC} [e-]}		& 	1106 + 68 per pF load at default gain \\
+			\textbf{Shaping time} & 20 to 40 ns\\
 			\textbf{Maximum input event rate}	&	5 MHz	\\
 			\textbf{Maximum power consumption}	&	32 mW	\\
 			 \bottomrule
@@ -33,7 +39,7 @@ The IDE1180 can be configured to different gains, shapes, etc. by setting differ
 
 The main measurement setup used for the characterization included the Caen V1729A \gls{ADC} mentioned in section \ref{e-adc}. This \gls{ADC} has an input impedance of 50 $\Omega$, while the IDE1180 is configured to drive a load impedance of 1 M$\Omega$. Therefore an in-house buffer was used between the IDE1180 and ADC. The in-house buffer cuts the signal at about 1.2~V which makes the \gls{ADC} a bad choice for measurements that need to cover the entire dynamic range of IDE1180. By default, the IDE1180 has an output offset voltage of 0.5 V. Since the ADC has an input range from -1 V to +1 V, a 100 nF capacitor (DC block) was used to remove the offset. Some measurements used an oscilloscope instead of the ADC, which made the buffer and DC blocking capacitor unnecessary. Two different oscilloscopes have been used: Tektronix DPO 7254, and Agilent InfiniiVision MSO-X 3104A. The accuracy of the ADC is 0.3~mV. Both oscilloscopes have an effective resolution of 8~bit at the used sampling rates, which if the signal always covers minimum half the screen gives a quantisation error of maximum 0.78~\% ($\frac{100\%}{2^8/2}$). %Tektronix MSO 4034 not used in thesis results
 
-A wave generator was used to simulate the pulse from a detector. This has mainly been configured to a ramp with a long rise time and a fall time as short as possible. At first, Agilent 3325OA was used, but this generator was unable to produce a quick falling edge when a long rise time was used. The Tektronix AFG3252 wave generator was later used to obtain a rise time of 1 ms. Unless otherwise mentioned, the Tektronix wave generator has been used with a period of 1 ms. The wave generator is mainly connected to the external calibrate input, where a test capacitance of 1 pF is present in series (see figure \ref{fig-capmount}). The input charge to the pre-amplifier is then equal to 1 pF times the peak-to-peak voltage of the test pulse from the generator. The original 1 pF $\pm5\%$ capacitor on the board was broken and replaced with a 1 pF $\pm25\%$ on the 29.05.2016. The only measurements shown in this thesis with the original capacitor is those from table \ref{tab-gain-nobuffer} to \ref{tab-gain-adc}, table \ref{tab-dynrange-estimate}, and subsection \ref{ide-noise-input}. The rest are with the second capacitor. A third capacitor with $\pm5\%$ was added on the 29.08.2016 to better estimate the values of the capacitors by comparing measurements with the exact same setup. This gave values of 1.02 pF, 0.95 pF, and 0.98 pF $\pm0.02$ pF for the three capacitors. These values have been used for compensation in all the data of the thesis.
+A wave generator was used to simulate the pulse from a detector. This has been configured to a ramp with a long rise time and a fall time as short as possible. At first, Agilent 3325OA was used, but this generator was unable to produce a quick falling edge when a long rise time was used. The Tektronix AFG3252 wave generator was later used to obtain a rise time of 1 ms. Unless otherwise mentioned, the Tektronix wave generator has been used with a period of 1 ms. The wave generator is connected to the external calibrate input, where a test capacitance of 1 pF is present in series (see figure \ref{fig-capmount}). The input charge to the pre-amplifier is then equal to 1 pF times the peak-to-peak voltage of the test pulse from the generator. The original 1 pF $\pm5\%$ capacitor on the board was broken and replaced with a 1 pF $\pm25\%$ on the 29.05.2016. The only measurements shown in this thesis with the original capacitor is those from table \ref{tab-gain-nobuffer} to \ref{tab-gain-adc}, table \ref{tab-dynrange-estimate}, and subsection \ref{ide-noise-input}. The rest are with the second capacitor. A third capacitor with $\pm5\%$ was added on the 29.08.2016 to better estimate the values of the capacitors by comparing measurements with the exact same setup. This gave values of 1.02 pF, 0.95 pF, and 0.98 pF $\pm0.02$ pF for the three capacitors. These values have been used for compensation in all the data of the thesis.
 
 \begin{figure}
 \centering
@@ -100,7 +106,7 @@ For many measurements it is required to vary the input load capacitance of the p
 	\label{fig-capmount}
 \end{figure} 
 
-The IDE1180 has been configured to six different shaping times: 40~ns (default), 100~ns, 300~ns, 500~ns, 1~$\mu$s, and 2~$\mu$s. The 100~ns and 300~ns settings have only been used to investigate the relationship between noise and shaping time. Table \ref{tab-ide-shaping} shows the necessary parameters to configure the IDE1180 to these shaping times. 40 ns is the default shaping time, and therefore requires no jumpers. The voltages specify the potential that should be across the 10~$k\Omega$ resistor belonging to said signal, and can be measured when a GND jumper is in place. PZ\_ENABLE enables the pole-zero cancellation on 3V3. PZ\_BIAS\_HI to 3V3 switches to high range of pole-zero time constant (low pole-zero resistance). SH\_BIAS adjusts the shaper operation current. VFS\_BIAS sets the peaking time. PZ\_BIAS adjusts the pole-zero time constant. SH\_BIAS and VFS\_BIAS must be enabled with 3V3 jumpers for settings to take effect, while for PZ\_BIAS settings take effect for a GND jumper. 
+The IDE1180 has been configured to six different shaping times: 40~ns (default), 100~ns, 300~ns, 500~ns, 1~$\mu$s, and 2~$\mu$s. The 100~ns and 300~ns settings have only been used to investigate the relationship between noise and shaping time. Table \ref{tab-ide-shaping} shows the necessary parameters to configure the IDE1180 to these shaping times. 40 ns is the default shaping time, and therefore requires no jumpers. The voltages specify the potential that should be across the 10~$k\Omega$ resistor belonging to said signal, and can be measured when a GND jumper is in place. PZ\_ENABLE enables the pole-zero cancellation on 3V3. PZ\_BIAS\_HI to 3V3 switches to high range of pole-zero time constant (low pole-zero resistance). SH\_BIAS adjusts the shaper operation current. VFS\_BIAS sets the peaking time. PZ\_BIAS adjusts the pole-zero time constant. SH\_BIAS and VFS\_BIAS must be enabled with 3V3 jumpers for settings to take effect, while for PZ\_BIAS settings take effect for a GND jumper. Note that the other shaping times are outside the range the chip is designed to work in. It is therefore not expected that the chip will work as well at this configurations as for default shaping time.
 
 \begin{table}[h!]
 	\centering
@@ -119,19 +125,32 @@ The IDE1180 has been configured to six different shaping times: 40~ns (default),
 	}
 \end{table}
 
-
+\newpage
 \section{Gain vs. Input Load Capacitance}
 \label{ide-gain}
 
-During early measurements it quickly became evident that the output voltage from the IDE1180 is reduced when the input load capacitance is increased, see figure \ref{fig-gain-drop}. This drop was at first not understood by the team. It was found to be caused by multiple effects, which are investigated in this section. Tables \ref{tab-gain-nobuffer} to \ref{tab-gain-nobuffer-offset} show gain measurements with different gain settings, using different setups. The oscilloscope measurements were done by placing a cursor in the middle of the noise using the Tektronix oscilloscope. The ADC measurements are calculated from the mean of a gaussian fit to amplitude measurements done by the ADC. The measurements shown in these tables were done with an input ramp pulse with 1~$\mu$s period from the Agilent oscilloscope.
+During early measurements it quickly became evident that the output voltage from the IDE1180 is reduced when the input load capacitance is increased, see figure \ref{fig-gain-drop}. This drop was at first not understood by the team. It was found to be caused by multiple effects, which are investigated in this section. Tables \ref{tab-gain-adc} to \ref{tab-gain-nobuffer-offset} show gain measurements with different gain settings, using different setups. The oscilloscope measurements were done by placing a cursor in the middle of the noise using the Tektronix oscilloscope. The ADC measurements are calculated from the mean of a gaussian fit to amplitude measurements done by the ADC. The measurements shown in these tables were done with an input ramp pulse with 1~$\mu$s period from the Agilent oscilloscope.
 %A "1" is either a jumper to the left, or no jumper at all, while a "0" is a jumper to the right. "11" is equal to default setting with no jumpers in place. 
 
 \begin{figure}%[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{shaper_pulses.png}
+	\includegraphics[width=0.5\textwidth]{shaper_pulses.png}
 	\caption{Pulses from IDE1180 with different input load capacitance.}
 	\label{fig-gain-drop}
 \end{figure} 
+
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Gain [mV/fC] vs. capacitance measured with ADC.}
+		\label{tab-gain-adc}
+		\begin{tabular}{clcccc}\toprule
+			&\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
+			%			"GND-GND"     & 10.8 & 9.4  & 5.8  & 4.5   \\ \bottomrule
+			00 &GND-GND     & 10.6 & 9.2  & 5.7  & 4.4   \\ \bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
 
 \begin{table}[h!] %%XXX like this or not?
 	\begin{center}
@@ -172,18 +191,6 @@ During early measurements it quickly became evident that the output voltage from
 
 \begin{table}[h!]
 	\begin{center}
-		\caption{Gain [mV/fC] vs. capacitance measured with ADC.}
-		\label{tab-gain-adc}
-		\begin{tabular}{clcccc}\toprule
-			&\textbf{PA\_GAIN<1:0>} & \textbf{0pF}  & \textbf{10pF} & \textbf{56pF} & \textbf{100pF} \\ \midrule
-%			"GND-GND"     & 10.8 & 9.4  & 5.8  & 4.5   \\ \bottomrule
-			00 &GND-GND     & 10.6 & 9.2  & 5.7  & 4.4   \\ \bottomrule
-		\end{tabular}
-	\end{center}
-\end{table}
-
-\begin{table}[h!]
-	\begin{center}
 		\caption{Gain [mV/fC] vs. capacitance for different gain settings measured with oscilloscope without buffer connected. Input load capacitor connected to $V_{offset}$ instead of ground.}
 		\label{tab-gain-nobuffer-offset}
 		\begin{tabular}{clccc}\toprule
@@ -200,19 +207,15 @@ During early measurements it quickly became evident that the output voltage from
 	\end{center}
 \end{table}
 
+\newpage
 As the ADC measurements takes the maximum peak signal, while the oscilloscope measurements are done with cursors in the center of the peak noise, it was expected that the table \ref{tab-gain-adc} values were slightly higher than the table \ref{tab-gain-wbuffer} values. The values in table \ref{tab-gain-wbuffer} are 10 to 20 \% lower than those in table \ref{tab-gain-nobuffer}, showing that the in-house buffer does not perfectly pass the signal. This could be caused by gain lower than one, bandwidth limitations, or impedance problems. It should also be noted that the measured gains at 0 pF are very different from the gains of 24/12/6/3 mV/fC that are noted in the datasheet \citep{IDE1180}. \comm{ The values in table \ref{tab-gain-nobuffer-offset} are 8 to 15 \% lower than those in table \ref{tab-gain-nobuffer}.}
 
 
 
 Figure \ref{fig-IDE1180-gain} shows how the gain falls off for the different shaping times. This is measured using the Agilent oscilloscope, with the IDE1180 inside a Faraday cage. The drop becomes less and less distinct as the shaping time is increased, and at 2~$\mu$s the gain vs. capacitance curve is fairly flat. It is possible to increase the gain of the IDE1180 by 50~\% with the BUF\_GAIN\_HI setting. This can for example be useful when using the IDE1180 with long shaping times where the gain is very low.
 
-\subsubsection{Faraday cage load issue}
-Note that the default shaping time curve in figure \ref{fig-IDE1180-gain} does not fit well with the data in the tables in this section. This was first assumed to be due to the differences in the two 1~pF test capacitors and the imperfect gain of the buffer, but after the 1~pF was compensated for it became obvious that this was not the only contributor. The real main reason was very late discovered to be the line capacitance of the Faraday cage and the cables on the output, see figure \ref{fig-box-pulse}. The IDE1180 is made to drive a line capacitance of nominally 4~pF and maximum 20~pF \citep{IDE1180}. The extra capacitance from the box and extra cables causes the pulse height to drop and the pulse fall time to increase. It was attempted to counter this by tuning the BUF\_BIAS input, which is the output buffer operation current, but this only caused the opposite effect by increasing the fall time and reducing the peak height. 
-%% 1pF replaced blah blah
 
-%% teste om forskjell på gain skyldes dc block før/etter buffer. Eller annen signalgenerator. kanskje fordi 1pf ble byttet ut (29.04)....
-
-\begin{figure}%2016.07.18
+\begin{figure}[h]%2016.07.18
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -230,18 +233,27 @@ Note that the default shaping time curve in figure \ref{fig-IDE1180-gain} does n
 	\label{fig-IDE1180-gain}
 \end{figure}
 
-\begin{figure}%[h]
+One possible explanation for the gain drop could be leakage current from the capacitor. Since a large capacitance causes the rise time of the pulse to be very slow, it is possible that the leakage causes the pulse never being able to reach proper maximum value. 
+
+\subsubsection{Faraday cage load issue}
+Note that the default shaping time curve in figure \ref{fig-IDE1180-gain} does not fit well with the data in the tables in this section. This was first assumed to be due to the differences in the two 1~pF test capacitors and the imperfect gain of the buffer, but after the 1~pF was compensated for it became obvious that this was not the only contributor. The real main reason was very late discovered to be the line capacitance of the Faraday cage and the cables on the output, see figure \ref{fig-box-pulse}. The IDE1180 is made to drive a line capacitance of nominally 4~pF and maximum 20~pF \citep{IDE1180}. The extra capacitance from the box and extra cables causes the pulse height to drop and the pulse fall time to increase. It was attempted to counter this by tuning the BUF\_BIAS input, which is the output buffer operation current, but this only caused the opposite effect by increasing the fall time and reducing the peak height. 
+%% 1pF replaced blah blah
+
+%% teste om forskjell på gain skyldes dc block før/etter buffer. Eller annen signalgenerator. kanskje fordi 1pf ble byttet ut (29.04)....
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{boxpulse.png}
 	\caption{Pulses from IDE1180 with (blue) a direct cable from IDE1180 to Agilent oscilloscope, and (red) with first a cable to a connector on the Faraday cage and a cable on the other side to the oscilloscope.}
 	\label{fig-box-pulse}
 \end{figure} 
 
+\newpage
 \subsection{Gain vs. Capacitance Simulations}
 
 To investigate the behaviour of a pre-amplifier being loaded with an input capacitance, a pre-amplifier was simulated in LTspice IV. One of the pre-amplifiers from \citep{tali} was simulated (figure \ref{fig-sim-sch}), as the specifications of the IDE1180 pre-amplifier are unavailable. This was simulated both with an ideal \gls{opamp}, and with the LT1122 that was tested in \citep{tali}. LT1122 is a fast settling amplifier with a good bandwidth, but is noisy and was therefore not used for the pre-amplifier in Tali's final design. The input signal for this simulation was a square wave of 2 ms period, 100 mV amplitude, and 10 ns edge times. Simulations were performed for $C_{load}$ of 1 pF and 100 pF.  
 
-\begin{figure}
+\begin{figure}%[p]
 \centering
 \begin{circuitikz}  
 	\draw  
@@ -264,24 +276,22 @@ To investigate the behaviour of a pre-amplifier being loaded with an input capac
 \label{fig-sim-sch}
 \end{figure}
 
-\begin{figure}%[h]
+\begin{figure}%[p]%[h]
 	\centering
 	\includegraphics[width=\textwidth]{sim_ideal_both.png}
 	\caption{Simulation of ideal \gls{opamp} with 1 pF (blue) and 100 pF (red) load capacitance. Input pulse in green.}
 	\label{fig-sim-ideal}
 \end{figure} 
 
-\begin{figure}%[h]
+\begin{figure}%[p]%[h]
 	\centering
 	\includegraphics[width=\textwidth]{sim_LT1122_both.png}
 	\caption{Simulation of LT1122 \gls{opamp} with 1 pF (blue) and 100 pF (red) load capacitance.}
 	\label{fig-sim-LT1122}
 \end{figure} 
 
-For the ideal \gls{opamp}, figure \ref{fig-sim-ideal} shows a peak height drop of roughly 9 \% and an increase in pulse area of about 1 \% when the load capacitance is increased from 1 pF to 100 pF. Similarly for the LT1122, figure \ref{fig-sim-LT1122} shows a peak height drop of about 32 \% and a pulse area increase of roughly 11 \%. Compared to the measured peak amplitude drops of almost 60 \%, this shows that the drops should have been expected, but not in that magnitude. This has later been confirmed by figure \ref{fig-ide-gain} which shows an expected peak amplitude drop of about 10 \% at 100 pF, calculated by IDEAS. 
+For the ideal \gls{opamp}, figure \ref{fig-sim-ideal} shows a peak height drop of roughly 9 \% and an increase in pulse area of about 1 \% when the load capacitance is increased from 1~pF to 100~pF. Similarly for the LT1122, figure \ref{fig-sim-LT1122} shows a peak height drop of about 32~\% and a pulse area increase of roughly 11 \%. However, this pulse has a strange shape suggesting that some other effect is also taking place. Compared to the measured peak amplitude drops of almost 60 \%, these simulations show that the drops should have been expected, but not in that magnitude. This has later been confirmed by figure \ref{fig-ide-gain} which shows an expected peak amplitude drop of about 10 \% at 100 pF, calculated by IDEAS. 
 %For the ideal \gls{opamp}, figure \ref{fig-sim-ideal} shows a peak height drop of roughly 9 \% and an increase in pulse area of about 1 \% when the load capacitance is increased from 1 pF to 100 pF. Similarly for the LT1122, figure \ref{fig-sim-LT1122} shows a peak height drop of about 32 \% and a pulse area increase of roughly 11 \%. Calculations by IDEAS, figure \ref{fig-ide-gain}, shows an expected peak amplitude drop of about 10 \% at 100 pF. Compared to the measured peak amplitude drops of almost 60 \%, these graphs show that the drops should have been expected, but not in that magnitude. 
-
-XXX discuss lt1122 shape
 
 \begin{figure}%[h]
 	\centering
@@ -290,15 +300,14 @@ XXX discuss lt1122 shape
 	\label{fig-ide-gain}
 \end{figure} 
 
-One possible explanation for the gain drop could be leakage current from the capacitor. Since a large capacitance causes the rise time of the pulse to be very slow, it is possible that the leakage causes the pulse never being able to reach proper maximum value. 
-
+\newpage
 \subsection{Ballistic deficit}
 \label{ide-gain-ballistic}
 %http://ns.ph.liv.ac.uk/~ajb/radiometrics/glossary/ballistic_deficit.html
 %http://ns.ph.liv.ac.uk/~ajb/radiometrics/practical_analysis/practical_aspects/shaping_time_constant.htm
 %http://www-physics.lbl.gov/~spieler/USPAS-MSU_2012/pdf/IV_Signal_Processing.pdf
 
-Ballistic deficit (see section \ref{t-shaper}) is an error source that was investigated as a contributor to the drop in amplitude for high load capacitors.\comm{ This occurs when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude.} Figures \ref{fig-IDE1180-shaperamp} to \ref{fig-IDE1180-shaperrisetime} show measurements investigating the drop in gain by comparing the output signal from the IDE1180 when the shaper is connected and disconnected using the SH\_ENABLE pin header. This is measured at default settings, using the Agilent oscilloscope, and the IDE1180 inside a Faraday cage. These data are based on only one curve saved from the oscilloscope, except  for 100 pF with shaper disabled, where two curves were saved as the signal was very noisy. Therefore this data is not very accurate, but it is good for observing trends. 
+Ballistic deficit (see section \ref{t-shaper}) is an error source that was investigated as a contributor to the drop in amplitude for high load capacitors.\comm{ This occurs when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude.} Figures \ref{fig-IDE1180-shaperamp} to \ref{fig-IDE1180-shaperrisetime} show measurements investigating the drop in gain by comparing the output signal from the IDE1180 when the shaper is connected and disconnected using the SH\_ENABLE pin header. This is measured at default settings, using the Agilent oscilloscope, and the IDE1180 inside a Faraday cage. These data are based on only one curve saved from the oscilloscope, except  for 100 pF with shaper disabled, where two curves were saved as the signal was very noisy. Therefore this data is not very accurate, but it is good enough for observing trends. 
 
 %2016.06.21
 \begin{figure}[p]
@@ -390,7 +399,6 @@ ENC_\sigma [e-] = \frac{\sigma [mV]}{G [mV/fC]*1.6*10^{-4} [fC/e-]}
 \label{eq-noise}
 \end{equation}
 
-It is unknown if the noise measurement from IDEAS, figure \ref{fig-ide-noise}, is measured from the baseline variations or peak height variations, or if it is calculated as $\sigma$ or \gls{FWHM}. It is therefore hard to compare to this measurement. 
 
 \begin{figure}%[h]
 	\centering
@@ -399,8 +407,9 @@ It is unknown if the noise measurement from IDEAS, figure \ref{fig-ide-noise}, i
 	\label{fig-ide-noise}
 \end{figure} 
 
-Figure \ref{fig-noise-nocomp} shows a noise measurement using method 3, calculated with a gain of 12~mV/fC, as specified in the datasheet \citep{IDE1180}. It is clear that the slope is extremely low, about 25~\%, compared to the measurement from IDEAS in figure \ref{fig-ide-noise}. 
+It is unknown if the noise measurement from IDEAS, figure \ref{fig-ide-noise}, is measured from the baseline variations or peak height variations, or if it is calculated as $\sigma$ or \gls{FWHM}. It is therefore hard to compare to this measurement. Figure \ref{fig-noise-nocomp} shows a noise measurement using method 3, calculated with a gain of 12~mV/fC, as specified in the datasheet \citep{IDE1180}. It is clear that the slope is extremely low, about 25~\%, compared to the measurement from IDEAS in figure \ref{fig-ide-noise}. 
 
+\newpage
 \subsection{Gain Compensation}
 \label{ide-noise-gain}
 
@@ -484,7 +493,7 @@ The main conclusion from table \ref{tab-noise-input} is that the input circuitry
 
 Gain linearity has been measured by saving pulses from the Agilent oscilloscope and using Matlab to find the pulse peak value. This was done since the buffer does not cover the entire dynamic range of the IDE1180. The IDE1180 was inside a Faraday cage. Since these measurements are only based on a single pulse for each data point, they have an extra inaccuracy from the noise that would be avoided by saving pulse height histograms on the ADC. 
 
-\begin{figure} %2016.07.18 & 2016.08.12
+\begin{figure} [h]%2016.07.18 & 2016.08.12
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -502,7 +511,7 @@ Gain linearity has been measured by saving pulses from the Agilent oscilloscope 
 	\label{fig-gainlin}
 \end{figure}
 
-Figure \ref{fig-gainlin} shows two gain linearity graphs. The rest are in appendix \ref{a-gainlin}. The measurements at default settings look very much as expected, but all the other measurements show a bump in the low end, like in figure \ref{fig-gainlin-1u}. The source of this is unknown, but it is likely not from measurement inaccuracies, since the same bump is visible for all the measurements. It is possible that it is somehow related to the pole-zero cancellation that is active for these configurations, but not the default setting. Another possibility is that the bump comes from noise, since the noise has a higher relative effect on weak signals. As seen in figure \ref{fig-noise-shape}, the noise is higher for the other shaping times than for default settings. 
+Figure \ref{fig-gainlin} shows two gain linearity graphs. The rest are in appendix \ref{a-gainlin}. The measurements at default settings look very much as expected with very good gain linearity, but all the other measurements show a bump in the low end, like in figure \ref{fig-gainlin-1u}. The source of this is unknown, but it is likely not from measurement inaccuracies, since the same bump is visible for all the measurements. Since these configurations are far outside the shaping time range the IDE1180 is made to work in, some strange behaviour here is not unexpected. It is possible that it is somehow related to the pole-zero cancellation that is active for these configurations, but not the default setting. Another possibility is that the bump comes from noise, since the noise has a higher relative effect on weak signals. As seen in figure \ref{fig-noise-shape}, the noise is higher for the other shaping times than for default settings. 
 
 \section{Dynamic Range}
 \label{ide-dynamicrange}
@@ -528,7 +537,7 @@ The dynamic range of the pre-amplifier shaper is on the lower level limited by t
 	\end{center}
 \end{table}
 
-The dynamic range has only been accurately calculated for the default gain setting. For the other three gain settings, the higher end of the dynamic range has been estimated by observing the output of the IDE1180 using the Tektronix oscilloscope. See table \ref{tab-dynrange-estimate}. The actual maximum input charge is slightly lower than this, as it is hard to see on an oscilloscope exactly when the pulse height increase stops being linear.
+The dynamic range has only been accurately calculated for the default gain setting. For the other three gain settings, the higher end of the dynamic range has been estimated by observing the output of the IDE1180 using the Tektronix oscilloscope. See table \ref{tab-dynrange-estimate}. The actual maximum input charge is slightly lower than this, as it is hard to see on an oscilloscope exactly when the pulse height increase stops being linear. Note that these estimates are very different from the 50/100/200/400~fC listed in the datasheet \citep{IDE1180}. 
 %table from gain excel
 \begin{table}[h!]
 	\begin{center}
@@ -606,13 +615,13 @@ The shaping time has some variations from the input load capacitance and input c
 
 \begin{figure} [h!]%2016.07.18 & 2016.08.12
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.48\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{sh_40_0.png}
 		\caption{Default settings.}
 		\label{fig-shape-40-0-}
 	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{sh_1_0.png}
 		\caption{1 $\mu$s shaping time.}
@@ -628,13 +637,13 @@ The shaping time has some variations from the input load capacitance and input c
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.48\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{risetime-default.png}
 		\caption{Default settings.}
 		\label{fig-IDE1180-risetime-def}
 	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{risetime-1us.png}
 		\caption{1 $\mu$s shaping.}
@@ -645,7 +654,7 @@ The shaping time has some variations from the input load capacitance and input c
 \end{figure}
 
 %slew rate
-Figure \ref{fig-IDE1180-risetime-def} shows that at 40 ns shaping time the slope increases when the amplitude increases, which makes sure that the peaking time is more or less unchanged, see figure \ref{fig-shape-40-0-}. For increased shaping time however, the slope in \ref{fig-IDE1180-risetime-1us} is constant for all input charges. This leads to a greatly increased peaking time for higher input charges, see figure \ref{fig-shape-1-0-}. This unchanging slope looks very linear, which leads to the assumption that this could due to a slew rate limitations. The changes to the system performed to increase the shaping time might have reduced the maximum slew rate, which makes the system unable to increase the voltage fast enough. All peaking time measurements can be seen in appendix \ref{a-shape}.
+Figure \ref{fig-IDE1180-risetime-def} shows that at 40 ns shaping time the slope increases when the amplitude increases, which makes sure that the peaking time is more or less unchanged, see figure \ref{fig-shape-40-0-}. For increased shaping time however, the slope in \ref{fig-IDE1180-risetime-1us} is constant for all input charges. This leads to a greatly increased peaking time for higher input charges, see figure \ref{fig-shape-1-0-}. This unchanging slope looks very linear, which leads to the assumption that this could due to a slew rate limitations. The changes to the system performed to increase the shaping time might have reduced the maximum slew rate, which makes the system unable to increase the voltage fast enough. All peaking time measurements can be seen in appendix \ref{a-shape}. Peaking time has been calculated from 10~\% to 90~\% of peak value to reduce errors from the noise.
 
 
 \section{Crosstalk}
@@ -721,12 +730,23 @@ Power consumption was measured for different shaping times by connecting an ampe
 
 The power consumption values in table \ref{tab-ide-power} are a lot higher than the 32 mW from the datasheet. This is expected, as the datasheet is made from measurements directly on the chip. The extra power consumption comes from components on the PCB. 
 
-\section{Pile-up}
+\newpage
+\section{Pile-up Considerations}
 \label{ide-pileup}
 
-The maximum count rate that can be used without causing pile-up has been calculated from the time between the pulse starts to rise until the undershoot has stabilized. This has been measured at the highest input signal of the dynamic range, as the pulse width is slightly increased by input charge. C depancy?XXX
+The maximum count rate that can be used without causing pile-up has been calculated from the time between the pulse starts to rise until the signal has returned to the stable baseline, see table \ref{tab-ide-pileup}. This has been measured at the highest input signal of the dynamic range, as the pulse width is slightly increased by input charge. No dependency on input load capacitance was observed, so this was measured only with a capacitance of 24 pF. This was measured with the IDE1180 inside a Faraday cage, but with the lid of the cage open and a cable directly to the Agilent oscilloscope to avoid the problems of figure \ref{fig-box-pulse}. Due to the noise of this setup, an accurate measurement is not easy, and this is therefore only an estimate. At 40~ns shaping time, the maximum count rate can be greatly increased by eliminating the undershoot using pole-zero cancellation. 
 
-XXX table
+\begin{table}[h!]
+	\begin{center}
+		\caption{Pile-up estimates.}
+		\label{tab-ide-pileup}
+		\begin{tabular}{lcccc}\toprule
+			\textbf{Shaping time [ns]}      & \textbf{40 (Default)}    & \textbf{500}    & \textbf{1000}    & \textbf{2000}       \\ \midrule
+			\textbf{Deadtime [$\mu$s]} & 3 & 4 & 7 & 12    \\ 
+			\textbf{Maximum count rate [kHz]} & 333 & 250 & 145 & 85 \\\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
 
 \comm{
 \section{Resolution}

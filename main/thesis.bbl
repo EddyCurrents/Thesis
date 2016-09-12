@@ -39,6 +39,12 @@ Ermis, E.~E. and C.~Celiktas (2012).
   1\/}(5), 54--62.
 \newblock http://article.sapub.org/10.5923.j.instrument.20120105.01.html.
 
+\bibitem[\protect\citeauthoryear{Flemming and Wieczorek}{Flemming and
+  Wieczorek}{2011}]{panda}
+Flemming, H. and P.~Wieczorek (2011).
+\newblock Low noise preamplifier asic for the panda experiment.
+\newblock {\em Journal of Instrumentation\/}~{\em 6\/}(12), C12055.
+
 \bibitem[\protect\citeauthoryear{Freeman}{Freeman}{2013}]{proton-ct}
 Freeman, T. (2013).
 \newblock The potential of proton {CT}.
@@ -70,6 +76,12 @@ Hysing, L.~B. (2015).
 \newblock Powerpoint presentation from PHYS213 lecture October 2015 at
   \gls{uib}.
 
+\bibitem[\protect\citeauthoryear{IDEAS}{IDEAS}{2016}]{ideasweb}
+IDEAS (2016).
+\newblock Ideas webpage.
+\newblock \url{http://www.ideas.no/}.
+\newblock Accessed: 10/09/2016.
+
 \bibitem[\protect\citeauthoryear{Iniewski}{Iniewski}{2010}]{ToT}
 Iniewski, K. (2010).
 \newblock {\em Electronics for Radiation Detection}.
@@ -82,6 +94,14 @@ JLab.
 \newblock \url{https://www.jlab.org/div_dept/train/rad_guide/effects.html}.
 \newblock Accessed: 06/10/2015.
 
+\bibitem[\protect\citeauthoryear{Jones, Bell, Morrissey, Prydderch, Church,
+  Lazarus, Kogimtzis, Pucknell, Labiche, Thornhill, and Borri}{Jones
+  et~al.}{2016}]{R3B}
+Jones, L., S.~Bell, Q.~Morrissey, M.~Prydderch, I.~Church, I.~Lazarus,
+  M.~Kogimtzis, V.~Pucknell, M.~Labiche, J.~Thornhill, and M.~Borri (2016).
+\newblock A 128-channel event driven readout asic for the r3b tracker.
+\newblock {\em Journal of Instrumentation\/}~{\em 11\/}(02), C02076.
+
 \bibitem[\protect\citeauthoryear{Khan and Gibbons}{Khan and
   Gibbons}{2014}]{Khan}
 Khan, F.~M. and J.~P. Gibbons (2014).
@@ -92,6 +112,12 @@ Khan, F.~M. and J.~P. Gibbons (2014).
 Knoll, G.~F. (2010).
 \newblock {\em Radiation Detection and Measurement}.
 \newblock Wiley.
+
+\bibitem[\protect\citeauthoryear{Llopart}{Llopart}{2011}]{timepix3}
+Llopart, X. (2011).
+\newblock Design of the timepix3.
+\newblock
+  \url{https://indico.cern.ch/event/122027/contributions/88228/attachments/69334/99368/FEE_Xavi_Final.pptx}.
 
 \bibitem[\protect\citeauthoryear{LU}{LU}{1994}]{Lund}
 LU (1994).
@@ -192,6 +218,14 @@ SINTEF (2015).
 \newblock \url{https://www.sintef.no/en/projects/3dmimic/}.
 \newblock Accessed: 24/09/2015.
 
+\bibitem[\protect\citeauthoryear{Soltveit, Stachel, Braun-Munzinger, Musa,
+  Gustafsson, Bonnes, Oeschler, Osterman, and Lang}{Soltveit
+  et~al.}{2012}]{pasa}
+Soltveit, H., J.~Stachel, P.~Braun-Munzinger, L.~Musa, H.~Gustafsson,
+  U.~Bonnes, H.~Oeschler, L.~Osterman, and S.~Lang (2012).
+\newblock The preamplifier shaper for the alice tpc-detector.
+\newblock https://arxiv.org/abs/1203.3564.
+
 \bibitem[\protect\citeauthoryear{SparkFun}{SparkFun}{}]{SparkFun}
 SparkFun.
 \newblock Real diode characteristics.
@@ -203,6 +237,10 @@ SparkFun.
 Tali, M. (2015).
 \newblock {Portable Front-End Readout System for Radiation Detection}.
 
+\bibitem[\protect\citeauthoryear{van Zeghbroeck}{van Zeghbroeck}{2011}]{pin}
+van Zeghbroeck, B. (2011).
+\newblock {\em Principles of Semiconductor Devices}.
+
 \bibitem[\protect\citeauthoryear{Young, Freedman, and Ford}{Young
   et~al.}{2007}]{UniversityPhysics}
 Young, H.~D., R.~A. Freedman, and L.~Ford (2007).
@@ -213,5 +251,15 @@ Young, H.~D., R.~A. Freedman, and L.~Ford (2007).
 Ytre-Hauge, K.~S. (2015).
 \newblock Radiation therapy with photons, protons and carbon ions.
 \newblock Powerpoint presentation from PHYS231 lecture march 2015 at \gls{uib}.
+
+\bibitem[\protect\citeauthoryear{Zang, Anton, Ballabriga, Bisello, Campbell,
+  Celi, Fauler, Fiederle, Jensch, Kochanski, Llopart, Michel, Mollenhauer,
+  Ritter, Tennert, Wölfel, Wong, and Michel}{Zang et~al.}{2015}]{dosepix}
+Zang, A., G.~Anton, R.~Ballabriga, F.~Bisello, M.~Campbell, J.~Celi, A.~Fauler,
+  M.~Fiederle, M.~Jensch, N.~Kochanski, X.~Llopart, N.~Michel, U.~Mollenhauer,
+  I.~Ritter, F.~Tennert, S.~Wölfel, W.~Wong, and T.~Michel (2015).
+\newblock The dosepix detector—an energy-resolving photon-counting pixel
+  detector for spectrometric measurements.
+\newblock {\em Journal of Instrumentation\/}~{\em 10\/}(04), C04015.
 
 \end{thebibliography}

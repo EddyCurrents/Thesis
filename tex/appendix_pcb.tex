@@ -28,9 +28,14 @@ A \gls{PCB} was needed to connect the detector to the outside world, as the dete
 
 After the design had been produced, it was again considered to read out the two sides of the detector separately, instead of in one signal. On the \gls{PCB}, this can be solved by wire-bonding one of the sides to one of the spare pads and connecting this to the through-hole by the GUARD connector with a wire. To avoid extra capacitance, the wires leading to the unused surface-mounting pads can be cut with a knife. If cutting the wires after the detector has been mounted, try to protect the detector from flying debris. A new layout for two channel readout has been designed, and can be produced when needed. 
 
-\gls{uib} uses an X-Y table to position the detector during beam tests. This can move the detector in two dimensions with small, controlled steps. A mount was designed that can be used to connect the PCB to the X-Y table, see figure . 
+\gls{uib} uses an X-Y table to position detectors during beam tests. This can move the detector in two dimensions with small, controlled steps. A mount was designed that can be used to connect the PCB to the X-Y table, see figure \ref{fig-xytable-picture}. 
 
-XXX Picture
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{xytable.jpg}
+	\caption{3DMiMic PCB mounted on X-Y table.}
+	\label{fig-xytable-picture}
+\end{figure} 
 
 Figures \ref{fig-wire-1-g} to \ref{fig-wire-2} show how wire-bonding should be performed for different detectors and readout schemes. Figures \ref{fig-wiring-1-g} to \ref{fig-wiring-2} show where external wires (red) should be soldered, and where PCB lanes should be cut (black). Dotted line for optional wires not necessary for detector operation.
 

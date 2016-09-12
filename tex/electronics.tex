@@ -9,7 +9,7 @@
 
 \section{Detector Readout}
 \label{t-read}
-In different situations, the desired output from the detector readout will be different. In some cases, it is enough to simply count the radiation quanta, and in other cases one might want to read out a energy spectrum. In both cases the readout chain starts with a pre-amplifier that produces a voltage that is proportional to the radiation charge. The output from the pre-amplifier is sent to a shaping amplifier which converts the signal to a shape that is more suitable for the next component in the readout chain. This is to select the interesting pulses and convert the analog signal to a digital signal in one way or another. \citep[chap. 16]{Knoll}
+In different situations, the desired output from the detector readout will vary. In some cases, it is enough to simply count the radiation quanta, and in other cases one might want to read out a energy spectrum. In both cases the readout chain starts with a pre-amplifier that produces a voltage that is proportional to the radiation charge. The output from the pre-amplifier is sent to a shaping amplifier which converts the signal to a shape that is more suitable for the next component in the readout chain. This is to select the interesting pulses and convert the analog signal to a digital signal in one way or another. \citep[chap. 16]{Knoll}
 
 \subsection{Pre-Amplifier}
 \label{t-amp}
@@ -26,7 +26,7 @@ It is typically convenient to use the pre-amplifier to supply bias voltage to th
 \label{t-csa}
 \begin{figure}%[h]
 	\centering
-	\includegraphics[width=\textwidth]{csa.png}
+	\includegraphics[width=0.77\textwidth]{csa.png}
 	\caption{Schematic of a basic \gls{CSA}. \citep{Hamamatsu}}
 	\label{fig-csa}
 \end{figure}
@@ -40,7 +40,7 @@ Figure \ref{fig-csa} shows a general \gls{CSA}. When a radiation quanta strikes 
 %%XXX basic noise stuff too? 
 
 Since noise affects the resolution and dynamic range of a readout system, it is common to document the noise of an amplifier as \textit{input referred noise}. This is the equivalent noise on the input of the amplifier that would create the noise that is seen on the output. This is done to more easily compare the noise to the expected signal strength at the input. For a charge-sensitive amplifer, it is then natural to refer to the noise as the \acrfull{ENC} on the input.  
-
+\\
 \subsection{Shaper}
 \label{t-shaper}
 The shaper, or shaping amplifier, converts the shape of the signal from the pre-amplifier to a form that is suitable for measurement.  It is important that the output from the shaper quickly returns to the baseline to prevent pulse overlapping that will cause measurement errors. The first stage of a simple shaper, figure \ref{fig-preampshaper}, is a differentiator (high pass filter) which passes the steep rise of the input pulse, but quickly returns to the baseline, and also reduces the noise. The differentiator decides the fall time of the pulse. The signal is then amplified to a level that is suitable for the \gls{ADC}, before it is passed through the integrator (low pass filter) that filters away noise and increases the rise time of the pulse. This simple shaper is often called a CR-RC shaper, from the electronic components it is made from. \citep[chap. 16]{Knoll}
@@ -61,8 +61,15 @@ A much used parameter to describe a shaper is the shaping time, which is related
 	\label{fig-shapingtime-def}
 \end{figure}
 
-There are many factors that come into play when deciding the shaping time. A short shaping time is needed to avoid subsequent pulses to overlap (pile-up), but a too short shaping time can lead to an error called ballistic deficit. This is when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude. The signal-to-noise ratio is also affected by both the shape and the shaping time. At short shaping times, the series noise component of the pre-amplifier dominates the total noise. The series noise is typically dominated by thermal noise in the first amplifying stage of the pre-amplifier. At long shaping times the parallel noise dominates. This could for example be detector leakage current, transistor leakage current, and thermal noise in the pre-amplifier feedback resistor. To total noise has a minimum where the series and parallel noise is equal, see figure \ref{fig-noise-min}. This is typically at 0.5 to 1 $\mu$s for semiconductor particle detectors. \citep{ORTEC}
-XXX fig ballistic deficit
+There are many factors that come into play when deciding the shaping time. A short shaping time is needed to avoid subsequent pulses to overlap (pile-up), but a too short shaping time can lead to an error called ballistic deficit. This is when a too short shaping time compared to the rise time of the input pulse leads to a decrease in amplitude, see figure \ref{fig-ballistic-deficit}. When the shaping time is too short, not all of the charge will have had time to be collected, and the output pulse does not reach the full amplitude. The signal-to-noise ratio is also affected by both the shape and the shaping time. At short shaping times, the series noise component of the pre-amplifier dominates the total noise. The series noise is typically dominated by thermal noise in the first amplifying stage of the pre-amplifier. At long shaping times the parallel noise dominates. This could for example be detector leakage current, transistor leakage current, and thermal noise in the pre-amplifier feedback resistor. To total noise has a minimum where the series and parallel noise is equal, see figure \ref{fig-noise-min}. This is typically at 0.5 to 1 $\mu$s for semiconductor particle detectors. \citep{ORTEC}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{ballistic-deficit.png}
+	\caption{Definition of ballistic deficit. \citep{Knoll} }
+	\label{fig-ballistic-deficit}
+\end{figure}
+
 \begin{figure}%[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{noisemin.png}
@@ -74,9 +81,9 @@ There are many other shaper configurations that can be used to create different 
 
 Most shapers include a pole-zero cancellation network (figure \ref{fig-shaper-pz}) to remove an undershoot that is often seen after the pulse. This makes it possible to have higher counting rates without problems with pile-up. Pole-zero cancellation is done with a potentiometer in parallel with the capacitor in the CR differentiator. The name comes from the poles and zeroes in the transfer function of the system. The network uses a zero to cancel out a pole in the complex plane. \citep{ORTEC}
 
-\begin{figure}%[h]
+\begin{figure}[h!]%[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{pz.png}
+	\includegraphics[width=0.6\textwidth]{pz.png}
 	\caption{The benefit of Pole-Zero Cancellation. \citep{ORTEC} }
 	\label{fig-shaper-pz}
 \end{figure}
@@ -88,7 +95,7 @@ Most shapers include a pole-zero cancellation network (figure \ref{fig-shaper-pz
 
 \subsection{Analog-to-Digital Conversion}
 \label{t-adc}
-The analog signal from the shaper needs to be converted to a digital signal for processing and storage. When it is desired to keep as much information as possible, an \gls{ADC} is used, but these use a lot of area and power. In situations where area, power, and cost is more important than accuracy of measurements (typically when there are a lot of channels), there are some simpler methods that can be used instead. The simplest is a counter, which merely counts the number of pulses with a height above a defined threshold. The information on the radiation quanta energy is lost, but the circuit is very simple. It is also possible to have multiple counters with different thresholds, which will keep some information about the distribution of radiation quanta energies. Another much used method is the \gls{ToT} technique. A \gls{ToT} circuit measures the time that the pulse is over a defined threshold, and then this measurement can be used to estimate the height of the pulse. The relationship between pulse height and \gls{ToT} is only linear within a certain range, and will usually limit the dynamic range of the readout system. \citep[chap. 6]{ToT}
+The analog signal from the shaper needs to be converted to a digital signal for processing and storage. When it is desired to keep as much information as possible, an \acrfull{ADC} is used, but these use a lot of area and power. In situations where area, power, and cost is more important than accuracy of measurements (typically when there are a lot of channels), there are some simpler methods that can be used instead. The simplest is a counter, which merely counts the number of pulses with a height above a defined threshold. The information on the radiation quanta energy is lost, but the circuit is very simple. It is also possible to have multiple counters with different thresholds, which will keep some information about the distribution of radiation quanta energies. Another much used method is the \gls{ToT} technique. A \gls{ToT} circuit measures the time that the pulse is over a defined threshold, and then this measurement can be used to estimate the height of the pulse. The relationship between pulse height and \gls{ToT} is only linear within a certain range, and will usually limit the dynamic range of the readout system. \citep[chap. 6]{ToT}
 
 %This link for ADC vs ToT: https://books.google.no/books?id=DFDRBQAAQBAJ&pg=PA173&lpg=PA173&dq=time+over+threshold+energy+measurement&source=bl&ots=J7wJ9nACVW&sig=ra60jHHnJxCc7g3g1TV2RLwHjqU&hl=en&sa=X&ved=0CBsQ6AEwADgKahUKEwi-zcfjuZTJAhUKnnIKHSQ4BAI#v=onepage&q=time%20over%20threshold%20energy%20measurement&f=false
 
@@ -125,9 +132,9 @@ During the school year 2014-2015 two master students at \gls{uio} made a portabl
 
 \subsection{IDEAS IDE1180 Amadeus Preamp-Shaper}
 \label{e-ide1180}
-IDE1180, or Amadeus, by Oslo-based IDEAS is an \gls{asic} for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA} and shapers with adjustable shaping time. The preliminary datasheet \citep{IDE1180} specifies a shaping time between 20~ns and 40~ns, negative and positive input charges up to 400~fC with lowest gain, and equivalent noise charge of 1106~e- plus 68~e- per pF load at default gain. 
+IDE1180, or Amadeus, by Oslo-based IDEAS is a prototype \gls{asic} for the front-end readout of radiation detectors. It features 16 channels of \gls{CSA}s and shapers with adjustable shaping time. The preliminary datasheet \citep{IDE1180} specifies a shaping time between 20~ns and 40~ns, negative and positive input charges up to 400~fC with lowest gain, and equivalent noise charge of 1106~e- plus 68~e- per pF load at default gain. 
 
-This chip was considered by multiple projects at \gls{ift} and a evaluation board (7045) was given to \gls{ift} so that more extensive tests could be performed. Later, a second evaluation board (7048) was also received from IDEAS. The IDE1180 characterization is described in chapter \ref{ide}. 
+This chip was considered by multiple projects at \gls{ift} and a evaluation board (7045) was given to \gls{ift} so that more tests could be performed. Later, a second evaluation board (7048) was also received from IDEAS. The IDE1180 characterization is described in chapter \ref{ide}. 
 
 \subsection{Ortec 142A Pre-Amplifier}
 \label{e-ortec}

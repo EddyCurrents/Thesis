@@ -9,8 +9,8 @@ I'm skipping whatever remains of this entry
 Warning--entry type for "oltedal" isn't style-file defined
 --line 157 of file ../literature.bib
 Warning--entry type for "tali" isn't style-file defined
---line 266 of file ../literature.bib
-You're missing a field name---line 274 of file ../literature.bib
+--line 272 of file ../literature.bib
+You're missing a field name---line 280 of file ../literature.bib
  : 
  : %title={PHYS231},
 (Error may have been on previous line)
@@ -25,5 +25,9 @@ Warning--empty year in pcure
 Warning--empty note in Thomas
 Warning--empty note in Marco
 Warning--empty note in Samnoy
+Warning--no journal in pasa
+Warning--no number and no volume in pasa
+Warning--page numbers missing in pasa
 Warning--empty year in SparkFun
+Warning--empty publisher in pin
 (There were 2 error messages)
